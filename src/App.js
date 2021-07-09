@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+//https://www.shebrowsandbeauty.com/
+
+import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Header from "./components/Header"
+import NavBar from "./components/NavBar"
+import AboutUs from "./pages/AboutUs"
+import Beauty from "./pages/Beauty"
+import MakeUp from "./pages/MakeUp"
+import Reviews from "./pages/Reviews"
+
+import '@popperjs/core'
+import 'bootstrap/dist/js/bootstrap'  //bootstrap uses popperjs 
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Browser>
+        <Header/>
+        <NavBar/>
+        <Switch>
+          <Route path="/" exact={true} component={Home}/>
+          <Route path="/about-us"  component={AboutUs}/>
+          <Route path="/beauty" component={Beauty}/>
+          <Route path="/make-up" component={MakeUp}/>
+          <Route path="/reviews" component={Reviews}/>
+        </Switch>
+      </Browser>     
     </div>
   );
 }

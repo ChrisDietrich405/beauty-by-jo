@@ -1,0 +1,29 @@
+@import "../global.scss"; 
+
+.header-container {
+
+    height: 10rem; 
+    width: 100vw; 
+    display: flex; 
+    justify-content: space-around;
+    align-items: center !important; 
+        
+    button {
+        padding: .5rem 1rem; 
+        color: white; 
+        background-color: $primary-color; 
+        border-radius: 1rem; 
+        transition: 4s ease;
+    }
+
+    button:hover {
+        transition: 1s ease;
+        color: $secondary-color;
+    }
+
+    img {
+        width: 130px; 
+        border-radius: 50%; 
+    }
+
+}

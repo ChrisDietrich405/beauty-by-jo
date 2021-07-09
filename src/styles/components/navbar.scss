@@ -1,0 +1,93 @@
+@import "../global.scss";
+
+.navbar {
+
+    width: 100vw; 
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    
+    .navbar-brand img {
+        width: 50px; 
+        border-radius: 10px; 
+    }
+
+    .alignment {
+        display: flex; 
+        justify-content: space-around;
+        align-items: center; 
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0px; // remove the gap so it doesn't close
+    }
+
+    .btn {
+        width: 150px;
+        height: 50px;
+        font-size: 20px;
+        color: white; 
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+        transition: all .3s;
+      }
+      
+      .btn::before, .btn::after {
+        position: absolute;
+        background: black;
+        z-index: -1;
+        transition: all .3s;
+        content: '';
+      }
+      
+      .btn::before {
+        height: 50px;
+        width: 130px;
+      }
+      
+      .btn::after {
+        width: 150px;
+        height: 30px;
+      }
+      
+      .noselect {
+        -webkit-touch-callout: none;
+          -webkit-user-select: none;
+           -khtml-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+      }
+      
+      .btn:hover::before {
+        width: 0px;
+        background: black;
+      }
+      
+      .btn:hover::after {
+        height: 0px;
+      }
+      
+      .btn:hover {
+        border: solid 5px white;
+        color: $secondary-color; 
+        background: black;
+      }
+
+
+
+
+    
+
+    }
+}
+
+
+
+
