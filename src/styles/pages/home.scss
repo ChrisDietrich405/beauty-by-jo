@@ -1,4 +1,4 @@
-@import "../global.scss";
+@import "../_variables.scss"; 
 
 .home-container {
     width: 100vw; 
@@ -59,7 +59,7 @@
 
     .centered {
         position: absolute;
-        color: $primary-color;
+        color: $primary;
         width: 70%; 
         top: 50%;
         left: 50%;

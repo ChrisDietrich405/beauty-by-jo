@@ -1,4 +1,4 @@
-@import "../global.scss";
+@import "../_variables.scss"; 
 
 .navbar {
 
@@ -6,7 +6,7 @@
     background-color: black;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 100;
     
     .navbar-brand img {
         width: 50px; 
@@ -81,7 +81,7 @@
       
       .btn:hover {
         border: solid 5px white;
-        color: $secondary-color; 
+        color: $secondary; 
         background: black;
       }
 

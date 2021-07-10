@@ -1,4 +1,4 @@
-@import "../global.scss"; 
+@import "../_variables.scss"; 
 
 .header-container {
 
@@ -11,14 +11,14 @@
     button {
         padding: .5rem 1rem; 
         color: white; 
-        background-color: $primary-color; 
+        background-color: $primary; 
         border-radius: 1rem; 
         transition: 4s ease;
     }
 
     button:hover {
         transition: 1s ease;
-        color: $secondary-color;
+        color: $secondary;
     }
 
     img {

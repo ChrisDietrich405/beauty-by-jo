@@ -12,6 +12,8 @@ import Reviews from "./pages/Reviews"
 import '@popperjs/core'
 import 'bootstrap/dist/js/bootstrap'  //bootstrap uses popperjs 
 
+import "./styles/global.scss"
+
 
 function App() {
   return (

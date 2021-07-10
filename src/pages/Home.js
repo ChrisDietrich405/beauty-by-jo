@@ -1,5 +1,5 @@
-import "../styles/pages/home.scss"
-import Waxing from "../assets/images/home1.jpg"
+
+import Waxing from "../assets/images/home4.jpg"
 import Eyebrow from "../assets/images/home2.jpg"
 import BeautySupplies from "../assets/images/home5.jpg"
 import SlideShow from "../components/SlideShow"

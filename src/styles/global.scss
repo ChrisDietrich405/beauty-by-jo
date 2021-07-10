@@ -2,8 +2,13 @@
 @import "./_variables.scss";
 @import "~bootstrap/scss/mixins";
 @import '~bootstrap/scss/bootstrap';
+
+@import "./components/header.scss";
+@import "./components/navbar.scss";
+@import "./pages/home.scss";
+@import "./components/slideshow.scss"; 
+
+
 //EXPLANATION
 
 // font-family: 'Montserrat', sans-serif;
-$primary-color: black;
-$secondary-color: #d1c4f2;

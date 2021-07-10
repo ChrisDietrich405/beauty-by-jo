@@ -1,30 +1,86 @@
-import { useState, useEffect } from "react"
+import React, { useState } from "react";
+import { Fade } from "react-slideshow-image";
+import 'react-slideshow-image/dist/styles.css'
 
-import Pic1 from "../assets/images/home1.jpg"
-import Pic2 from "../assets/images/home3.jpg"
-import Pic3 from "../assets/images/home6.jpg"
+const AutoplayExample = () => {
+  const [autoplay, setAutoplay] = useState(true);
 
-import "../styles/components/slideshow.scss"
+  const slideImages = [
+    'images/home1.jpg',
+    'images/home3.jpg',
+    'images/home6.jpg'
+  ];
 
-export default function SlideShow() {
+  const style = {
+    textAlign: "center",
+    background: "teal",
+    padding: "200px 0",
+    fontSize: "30px"
+  }
 
-    const [currentPicture, setCurrentPicture] = useState(0)
+  return (
+    <div>
+      <div>
+        <Fade autoplay={true} arrows={false} duration={3000}>
+        <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+                <div className="span-container">
+                    <span className="span">Waxing</span>
+                </div>
+            </div>
+        </div>
+        <div className="each-slide">
+        <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+                <div className="span-container">
+                    <span className="span">Waxing</span>
+                </div>
+            </div>
+        </div>
+        <div className="each-slide">
+          <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+         
+          </div>
+        </div>
+        </Fade>
+      </div>
 
-    const pics = [Pic1, Pic2, Pic3]
+    </div>
+  );
+};
 
-    useEffect(() => {
-        const slideshow = setInterval(() => {
-            if(currentPicture === pics.length - 1) {
-                setCurrentPicture(0)
-            } else {
-                setCurrentPicture(currentPicture + 1)
-            }
-        }, 3000 ) 
-        return () => clearInterval(slideshow)
-    }, [currentPicture, pics])
-    
-    return (
-        <div className="slideshow-container"><img src={pics[currentPicture]} alt="" /></div>
-    )
+export default AutoplayExample;
+// import React from 'react';
+// import { Slide } from 'react-slideshow-image';
+// import "../styles/components/slideshow.scss"
 
-}
+// const slideImages = [
+//   'images/home1.jpg',
+//   'images/home3.jpg',
+//   'images/home6.jpg'
+// ];
+
+// const Slideshow = () => {
+//     return (
+//       <div>
+//         <Slide easing="ease">
+//           <div className="each-slide">
+//             <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+//               <span>Slide 1</span>
+//             </div>
+//           </div>
+//           <div className="each-slide">
+//             <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+//               <span>Slide 2</span>
+//             </div>
+//           </div>
+//           <div className="each-slide">
+//             <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+//               <span>Slide 3</span>
+//             </div>
+//           </div>
+//         </Slide>
+//       </div>
+//     )
+// };
+
+// export default Slideshow;
