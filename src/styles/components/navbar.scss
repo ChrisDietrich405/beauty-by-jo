@@ -20,7 +20,12 @@
 
     .dropdown:hover .dropdown-menu {
         display: block;
-        margin-top: 0px; // remove the gap so it doesn't close
+    
+        margin-top: 0px;  // remove the gap so it doesn't close
+    }
+
+    .beauty {
+      margin-top: 10px; 
     }
 
     .btn {

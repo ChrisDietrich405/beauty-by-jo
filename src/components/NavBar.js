@@ -24,11 +24,14 @@ export default function Navbar() {
                             <span className="noselect">About Us</span></div></Link> 
                         </li> 
                         <li className="nav-item dropdown">
-                            <Link to="/beauty" className="nav-link dropdown-hover btn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> Beauty</Link>
+                            <Link to="/beauty" className="nav-link dropdown-hover btn beauty" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> Beauty</Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">  
                                     <li>
                                     <Link to="/LawnCare" className="dropdown-item">Eyebrows and Eyelashes</Link>
                                     </li>
+                                    <li>
+									<hr className="dropdown-divider" />
+								    </li>
                                     <li>
                                     <Link to="/PowerWashing" className="dropdown-item">Skin Treatments</Link>
                                     </li>

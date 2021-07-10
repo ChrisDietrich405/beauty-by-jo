@@ -2,13 +2,15 @@ import "../styles/pages/home.scss"
 import Waxing from "../assets/images/home1.jpg"
 import Eyebrow from "../assets/images/home2.jpg"
 import BeautySupplies from "../assets/images/home5.jpg"
+import SlideShow from "../components/SlideShow"
 
 export default function Home() {
     return (
         <div className="home-container">
-            <div className="waxing-container">
+            <SlideShow/>
+            {/* <div className="waxing-container">
                 <img className="waxing-img" src={Waxing}/>
-            </div>
+            </div> */}
             <div className="bar-separator">
                 <h4>Serving the Glen Burnie and Pasadena communities</h4>
             </div>
