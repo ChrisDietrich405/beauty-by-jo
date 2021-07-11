@@ -3,6 +3,10 @@ import Waxing from "../assets/images/home4.jpg"
 import Eyebrow from "../assets/images/home2.jpg"
 import BeautySupplies from "../assets/images/home5.jpg"
 import SlideShow from "../components/SlideShow"
+import Grid1 from "../assets/images/grid-pic1.jpg"
+import Grid2 from "../assets/images/grid-pic2.jpg"
+import Grid3 from "../assets/images/grid-pic3.jpg"
+import Grid4 from "../assets/images/grid-pic4.jpg"
 
 export default function Home() {
     return (
@@ -27,6 +31,14 @@ export default function Home() {
                     <h1>A Range of Beauty Services To Keep You Looking and Feeling Great</h1>
                     <p>The trained and experienced beauty experts at She Brows And Beauty LLC offer more than just skill and    expertise. Visit our esthetician salon for attentive service that is customized according to your  particular requirements. Benefit from practical beauty tips from our qualified estheticians. Treat yourself  to top quality beauty products at a fully equipped esthetician salon offering a range of services.
                     </p>
+                </div>
+            </div>
+            <div className="grid">
+                <div className="grid-item-container">
+                    <div className="grid-item-1 grid-item"/>
+                    <div className="grid-item-2 grid-item"/>
+                    <div className="grid-item-3 grid-item"/>
+                    <div className="grid-item-4 grid-item"/>
                 </div>
             </div>
         </div>

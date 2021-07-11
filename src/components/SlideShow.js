@@ -6,9 +6,9 @@ const AutoplayExample = () => {
   const [autoplay, setAutoplay] = useState(true);
 
   const slideImages = [
-    'images/home1.jpg',
-    'images/home3.jpg',
-    'images/home6.jpg'
+    'images/slideshow1.jpg',
+    'images/slideshow2.jpg',
+    'images/slideshow3.jpg'
   ];
 
   const style = {
@@ -25,21 +25,23 @@ const AutoplayExample = () => {
         <div className="each-slide">
             <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
                 <div className="span-container">
-                    <span className="span">Waxing</span>
+                    <h1 className="span-text">Waxing</h1>
                 </div>
             </div>
         </div>
         <div className="each-slide">
-        <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
-                <div className="span-container">
-                    <span className="span">Waxing</span>
-                </div>
-            </div>
-        </div>
-        <div className="each-slide">
-          <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
-         
+          <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+                  <div className="span-container">
+                    <h1 className="span-text">Facials</h1>
+                  </div>
+              </div>
           </div>
+        <div className="each-slide">
+        <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+            <div className="span-container">
+              <h1 className="span-text">Eyebrow Maintenance</h1>
+            </div>
+        </div>
         </div>
         </Fade>
       </div>

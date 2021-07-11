@@ -25,7 +25,7 @@ export default function Navbar() {
                         </li> 
                         <li className="nav-item dropdown">
                             <Link to="/beauty" className="nav-link dropdown-hover btn beauty" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> Beauty</Link>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">  
+                                <ul className="dropdown-menu text-center" aria-labelledby="navbarDropdown">  
                                     <li>
                                     <Link to="/LawnCare" className="dropdown-item">Eyebrows and Eyelashes</Link>
                                     </li>
@@ -36,17 +36,18 @@ export default function Navbar() {
                                     <Link to="/PowerWashing" className="dropdown-item">Skin Treatments</Link>
                                     </li>
                                     <li>
+									<hr className="dropdown-divider" />
+								    </li>
+                                    <li>
                                     <Link to="/SnowRemoval" className="dropdown-item">Facials</Link>
                                     </li>
                                     <li>
+									<hr className="dropdown-divider" />
+								    </li>
+                                    <li>
                                     <Link to="/StumpRemoval" className="dropdown-item">Waxing</Link>
                                     </li>
-                                    <li>
-                                    <Link to="/Demolition" className="dropdown-item">Demolition & Hauling</Link>
-                                    </li>
-                                    <li>
-                                    <Link to="/Regrades" className="dropdown-item">Regrades</Link>
-                                    </li>
+
                                 </ul>
                         </li>
                         <li className="nav-item">

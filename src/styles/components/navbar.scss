@@ -2,7 +2,7 @@
 
 .navbar {
 
-    width: 100vw; 
+    width: 100%; 
     background-color: black;
     position: sticky;
     top: 0;
@@ -20,9 +20,14 @@
 
     .dropdown:hover .dropdown-menu {
         display: block;
-    
         margin-top: 0px;  // remove the gap so it doesn't close
     }
+
+    .dropdown-menu > li > a:hover {
+      background-image: none;
+      background-color: $primary;
+      color: $secondary;
+  }
 
     .beauty {
       margin-top: 10px; 
@@ -84,12 +89,48 @@
         color: $secondary; 
         background: black;
       }
+////////////////////////////////////////////////////////////////
+      .dropdown .nav-link::after {
+        width: 0;
+        height: 15px !important;
+        margin-left: 5px; 
+        margin-top: 10px; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 13px solid white;
+        position: relative;
+      }
 
-
-
-
+      .dropdown .nav-link:hover::after {
+        color: $secondary;
+        border-top: 13px solid $secondary;
+      }
     
+     
 
+
+    //   .dropdown-menu {
+    //     width: 0;
+    //     height: 100px !important;
+    //     border-left: 8px solid transparent;
+    //     border-right: 8px solid transparent;
+    //     border-top: 13px solid red;
+    //     position: relative;
+    //   }
+
+    //   .dropdown-menu:before,
+    //   .dropdown-menu:after {
+    //     content: "";
+    //     position: absolute;
+    //     display: block;
+    //     width: 30px !important;
+    //     height: 12px;
+    //     top: 44px !important;
+    //     border-width: 37px 48px;
+    //     border-style: solid;
+    //     border-color: transparent;
+    //     z-index: 1001;
+    //   }
     }
 }
 
