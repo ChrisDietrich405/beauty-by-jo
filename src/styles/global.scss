@@ -10,6 +10,10 @@
 @import "./components/footer.scss"; 
 
 
-//EXPLANATION
+body { 
+    font-family: 'Montserrat', sans-serif;
+}
 
-// font-family: 'Montserrat', sans-serif;
+p {
+    font-family: 'Roboto', sans-serif;
+}

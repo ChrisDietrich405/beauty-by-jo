@@ -2,14 +2,14 @@
 
 .header-container {
 
-    height: 10rem; 
+    height: 9rem; 
     width: 100%; 
     display: flex; 
     justify-content: space-around;
     align-items: center !important; 
         
     button {
-        padding: .5rem 1rem; 
+        padding: .3rem .8rem; 
         color: white; 
         background-color: $primary; 
         border-radius: 1rem; 
@@ -22,8 +22,7 @@
     }
 
     img {
-        width: 130px; 
+        width: 100px; 
         border-radius: 50%; 
     }
-
 }

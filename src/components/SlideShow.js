@@ -32,7 +32,7 @@ const AutoplayExample = () => {
         <div className="each-slide">
           <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
                   <div className="span-container">
-                    <h1 className="span-text">Facials</h1>
+                    <h1 className="span-text">helloooooooooo</h1>
                   </div>
               </div>
           </div>

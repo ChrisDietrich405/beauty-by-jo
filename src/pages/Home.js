@@ -1,8 +1,9 @@
-
+import { Parallax, Background } from "react-parallax";
 import Waxing from "../assets/images/home4.jpg"
-import Eyebrow from "../assets/images/home2.jpg"
-import BeautySupplies from "../assets/images/home5.jpg"
+
 import SlideShow from "../components/SlideShow"
+import ZoomInZoomOut from "../components/ZoomInZoomOut";
+import BeautySupplies from "../assets/images/home5.jpg"
 import Grid1 from "../assets/images/grid-pic1.jpg"
 import Grid2 from "../assets/images/grid-pic2.jpg"
 import Grid3 from "../assets/images/grid-pic3.jpg"
@@ -19,19 +20,20 @@ export default function Home() {
                 <h4>Serving the Glen Burnie and Pasadena communities</h4>
             </div>
             <div className="about-section">
-                <img className="eyebrow-img" src={Eyebrow}/>
+                <ZoomInZoomOut/>
                 <div className="about-section-definition">
-                    <h2>Beauty By Jo Salon</h2>
+                    <h3>Beauty By Jo Salon</h3>
+                    <hr />
                     <p>Visit She Brows And Beauty for all of your eyebrow and eyelash needs. When you come to our salon in Philadelphia, we treat you with the same high level of care we would want to receive. Our main goal is for you to leave here feeling more confident with beautiful eyebrows and eyelashes.</p>
                 </div>
             </div>
-            <div className="beauty-supplies-container">
-                <img className="beauty-supplies-img" src={BeautySupplies}/>
-                <div className="centered">
-                    <h1>A Range of Beauty Services To Keep You Looking and Feeling Great</h1>
-                    <p>The trained and experienced beauty experts at She Brows And Beauty LLC offer more than just skill and    expertise. Visit our esthetician salon for attentive service that is customized according to your  particular requirements. Benefit from practical beauty tips from our qualified estheticians. Treat yourself  to top quality beauty products at a fully equipped esthetician salon offering a range of services.
-                    </p>
-                </div>
+            <div>
+                <Parallax className="beauty-supplies-container" bgImage={BeautySupplies} strength={500}>
+                    <div className="beauty-supplies-container-text">{/* <div style={{ height: 400 }}> */}
+                        <h1>A Range of Beauty Services To Keep You Looking and Feeling Great</h1>
+                        <p>The trained and experienced beauty experts at She Brows And Beauty LLC offer more than just skill and    expertise. Visit our esthetician salon for attentive service that is customized according to your  particular requirements. Benefit from practical beauty tips from our qualified estheticians. Treat yourself  to top quality beauty products at a fully equipped esthetician salon offering a range of services.</p>
+                    </div>
+                </Parallax>
             </div>
             <div className="grid">
                 <div className="grid-item-container">
