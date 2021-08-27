@@ -15,16 +15,8 @@ export default function Navbar() {
                             <Link to="/" className="nav-link" href="#"><div className="btn">
                             <span className="noselect">Home</span></div></Link> 
                         </li> 
-                        <li className="nav-item">
-                            <Link to="/make-up" className="nav-link" href="#"><div className="btn">
-                            <span className="noselect">Make Up</span></div></Link> 
-                        </li> 
-                        <li className="nav-item">
-                            <Link to="/about-us" className="nav-link" href="#"><div className="btn">
-                            <span className="noselect">About Us</span></div></Link> 
-                        </li> 
                         <li className="nav-item dropdown">
-                            <Link to="/beauty" className="nav-link dropdown-hover btn beauty" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> Beauty</Link>
+                            <Link to="/beauty" className="nav-link dropdown-hover btn beauty" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Services</Link>
                                 <ul className="dropdown-menu text-center" aria-labelledby="navbarDropdown">  
                                     <li>
                                     <Link to="/LawnCare" className="dropdown-item">Eyebrows and Eyelashes</Link>
@@ -50,6 +42,18 @@ export default function Navbar() {
 
                                 </ul>
                         </li>
+                        <li className="nav-item">
+                            <Link to="/make-up" className="nav-link" href="#"><div className="btn">
+                            <span className="noselect">Calendar</span></div></Link> 
+                        </li> 
+                        <li className="nav-item">
+                            <Link to="/about-us" className="nav-link" href="#"><div className="btn">
+                            <span className="noselect">Policies</span></div></Link> 
+                        </li> 
+                        <li className="nav-item">
+                            <Link to="/about-us" className="nav-link" href="#"><div className="btn">
+                            <span className="noselect">About Us</span></div></Link> 
+                        </li> 
                         <li className="nav-item">
                             <Link to="/reviews" className="nav-link" href="#"><div className="btn">
                             <span className="noselect">Reviews</span></div></Link> 
