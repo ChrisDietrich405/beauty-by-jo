@@ -1,4 +1,5 @@
 //https://www.shebrowsandbeauty.com/
+//https://artofallurement.com/
 
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
 import {Helmet} from "react-helmet";
@@ -9,6 +10,7 @@ import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import SignIn from "./components/SignIn"
+import CreateAccount from "./components/CreateAccount"
 import AboutUs from "./pages/AboutUs"
 import Beauty from "./pages/Beauty"
 import MakeUp from "./pages/MakeUp"
@@ -40,6 +42,7 @@ function App() {
           <Route path="/reviews" component={Reviews}/>
           <Route path="/calendar" component={Calendar}/>
           <Route path="/signin" component={SignIn}/>
+          <Route path="/create-account" component={CreateAccount}/>
         </Switch>
       </Browser> 
       <Footer/>    

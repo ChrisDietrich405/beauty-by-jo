@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+import "../../components/SignIn"
+
 import "./styles.scss"
 
 export default function Calendar() {
@@ -12,7 +15,8 @@ export default function Calendar() {
                     </ul>
                     <div className="login">
                         <p>Returning?</p>
-                        <p>Login</p>
+                        <Link to="/signin" className="">
+                        <span className="">Sign in</span></Link> 
                     </div>
                     <div className="services">
                         <p>Choose a category....</p>

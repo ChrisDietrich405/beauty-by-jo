@@ -2,7 +2,7 @@ import { Parallax, Background } from "react-parallax";
 import Waxing from "../assets/images/home4.jpg"
 
 import SlideShow from "../components/SlideShow"
-import ZoomInZoomOut from "../components/ZoomInZoomOut";
+import ZoomInZoomOut from "../components/ZoomInZoomOut"
 import BeautySupplies from "../assets/images/home5.jpg"
 import Grid1 from "../assets/images/grid-pic1.jpg"
 import Grid2 from "../assets/images/grid-pic2.jpg"
