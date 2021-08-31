@@ -8,10 +8,12 @@ import Home from "./pages/Home"
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
+import SignIn from "./components/SignIn"
 import AboutUs from "./pages/AboutUs"
 import Beauty from "./pages/Beauty"
 import MakeUp from "./pages/MakeUp"
 import Reviews from "./pages/Reviews"
+import Calendar from "./pages/Calendar"
 
 import '@popperjs/core'
 import 'bootstrap/dist/js/bootstrap'  //bootstrap uses popperjs 
@@ -36,6 +38,8 @@ function App() {
           <Route path="/beauty" component={Beauty}/>
           <Route path="/make-up" component={MakeUp}/>
           <Route path="/reviews" component={Reviews}/>
+          <Route path="/calendar" component={Calendar}/>
+          <Route path="/signin" component={SignIn}/>
         </Switch>
       </Browser> 
       <Footer/>    

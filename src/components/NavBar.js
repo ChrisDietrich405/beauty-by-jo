@@ -43,7 +43,7 @@ export default function Navbar() {
                                 </ul>
                         </li>
                         <li className="nav-item">
-                            <Link to="/make-up" className="nav-link" href="#"><div className="btn">
+                            <Link to="/calendar" className="nav-link" href="#"><div className="btn">
                             <span className="noselect">Calendar</span></div></Link> 
                         </li> 
                         <li className="nav-item">

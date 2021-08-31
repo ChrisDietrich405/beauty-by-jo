@@ -1,7 +1,8 @@
 import { useState } from "react"
 import Logo from "../assets/images/logo.jpg"
-import { AiOutlineInstagram, AiFillPhone, AiTwotoneMail } from "react-icons/ai"
+import { AiOutlineInstagram, AiOutlineFacebook, AiFillPhone, AiTwotoneMail } from "react-icons/ai"
 import Instagram from "../assets/images/instagram.jpg"
+import Facebook from "../assets/images/instagram.jpg"
 
 
 export default function Footer() {
@@ -21,7 +22,10 @@ export default function Footer() {
             <div className="footer-wrapper">
                 <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
                     < AiOutlineInstagram size={60} />
-                    <img src={Instagram}/>
+                    
+                </a>
+                <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
+                    < AiOutlineFacebook size={60} />
                 </a>
                 <div className="footer-address">
                     <form action="">
