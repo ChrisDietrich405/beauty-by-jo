@@ -47,7 +47,7 @@ export default function Navbar() {
                             <span className="noselect">Calendar</span></div></Link> 
                         </li> 
                         <li className="nav-item">
-                            <Link to="/about-us" className="nav-link" href="#"><div className="btn">
+                            <Link to="/policies" className="nav-link" href="#"><div className="btn">
                             <span className="noselect">Policies</span></div></Link> 
                         </li> 
                         <li className="nav-item">

@@ -15,6 +15,7 @@ import AboutUs from "./pages/AboutUs"
 import Beauty from "./pages/Beauty"
 import MakeUp from "./pages/MakeUp"
 import Reviews from "./pages/Reviews"
+import Policies from "./pages/Policies"
 import Calendar from "./pages/Calendar"
 
 import '@popperjs/core'
@@ -40,6 +41,7 @@ function App() {
           <Route path="/beauty" component={Beauty}/>
           <Route path="/make-up" component={MakeUp}/>
           <Route path="/reviews" component={Reviews}/>
+          <Route path="/policies" component={Policies}/>
           <Route path="/calendar" component={Calendar}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/create-account" component={CreateAccount}/>

@@ -5,12 +5,12 @@ import GridPic from "../assets/images/grid-pic1.jpg"
 
 import "../styles/pages/about-us.scss"
 
-export default function Reviews() {
+export default function Policies() {
     return (
         <div className="about-us-container">
             <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
                 <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                    <h1>Reviews</h1>                  
+                    <h1>Policies</h1>                  
                 </div>
                 </Parallax>
                 <div className="about-us-intro">
