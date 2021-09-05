@@ -40,6 +40,19 @@
         h3, p {
             text-align: center; 
         }
+
+        h3 {
+            color: #d1c4f2; 
+        }
+    }
+
+    #movetxt {
+        -webkit-animation: moving 2s;
+        animation: moving 2s;
+    }
+    @keyframes moving {
+        from {transform: translateY(200px);}
+        to {transform: translateY(0px);}
     }
 }
 

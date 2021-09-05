@@ -20,13 +20,14 @@ export default function Footer() {
         <Link to={{ pathname: "https://example.zendesk.com/hc/en-us/articles/123456789-Privacy-Policies" }} target="_blank" />
         </Router> */}
             <div className="footer-wrapper">
-                <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
-                    < AiOutlineInstagram size={60} />
-                    
-                </a>
-                <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
-                    < AiOutlineFacebook size={60} />
-                </a>
+                <div className="footer-social-media">
+                    <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
+                        < AiOutlineInstagram size={60} />    
+                    </a>
+                    <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
+                        < AiOutlineFacebook size={60} className="facebook" />
+                    </a>
+                </div>
                 <div className="footer-address">
                     <form action="">
                         <label htmlFor="email">

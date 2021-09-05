@@ -14,7 +14,7 @@ export default function AboutUs() {
                 </div>
                 </Parallax>
                 <div className="about-us-intro">
-                    <div className="about-us-intro-text">
+                    <div className="about-us-intro-text" id="movetxt">
                         <h3>Come and Rejuvenate Yourself at our Salon</h3>
                         <p>
                         It is important that every once and a while you take time for   yourself. We live in a                    fast-paced world that   demands our attention whether it is work, family life or  personal                 health. It can be hard to find the time to  slow down and let yourself enjoy the moment.

@@ -8,6 +8,7 @@ import "../styles/pages/calendar.scss"
 
 export default function Calendar() {
 
+    const [isTimeVisible, setIsTimeVisible] = useState(false)
     const [service, setService] = useState(null)
     const [value, onChange] = useState(new Date());
     const [serviceArray, setServiceArray] = useState([
@@ -38,9 +39,10 @@ export default function Calendar() {
         }, 
     ])
 
+    const timeArray = ["1:00", "3:00", "5:00", "7:00", "9:00", "11:00"]
 
     const selectService = (selectedService) => {
-        if (service === null) {  //WHAT IS THIS FOR?
+        if (service === null) {  //if I don't have any service selected
             const serviceArrayCopy = serviceArray.map(service => { 
             if(service.id === selectedService.id) {
                 return {...selectedService, hidden: false} 
@@ -73,16 +75,31 @@ export default function Calendar() {
                     <div className="services">
                         <p>Choose a category....</p>
                         <ul className="services-container">
-                            {serviceArray.map(service => (
+                            {serviceArray.map(service => (  //service here refers to the service on the next line
                                 service.hidden === false && <li key={service.id} onClick={() => selectService(service)}>{service.name}</li>
                             ))}                       
                         </ul>
                     </div>
-                    <div className="date-picker-container">
-                        <DatePicker
-                            onChange={onChange}
-                            value={value}
-                        />
+                    <div className="appointment-container">
+                        <h4>Choose a day and time that works for you.</h4>
+                        <div className="date-picker-container">
+                            <div className="date-container">
+                                <DatePicker
+                                    onChange={() => setIsTimeVisible(true)}
+                                    value={value}
+                                />
+                            </div>
+                            <div className="time-container">
+                                {isTimeVisible ? 
+                                    timeArray.map(hour => (
+                                        <div className="time-content">
+                                            {hour}
+                                        </div>
+                                    ))
+                                
+                                : null }
+                            </div>
+                        </div>
                     </div>
                 </div>             
             </div>
