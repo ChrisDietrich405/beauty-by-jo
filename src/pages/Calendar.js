@@ -10,7 +10,7 @@ export default function Calendar() {
 
     const [isTimeVisible, setIsTimeVisible] = useState(false)
     const [service, setService] = useState(null)
-    const [value, onChange] = useState(new Date());
+    const [value, onChange] = useState(new Date())
     const [serviceArray, setServiceArray] = useState([
         {
             name: "Eyebrow",
@@ -42,26 +42,29 @@ export default function Calendar() {
     const timeArray = ["1:00", "3:00", "5:00", "7:00", "9:00", "11:00"]
 
     const selectService = (selectedService) => {
-        if (service === null) {  //if I don't have any service selected
-            const serviceArrayCopy = serviceArray.map(service => { 
-            if(service.id === selectedService.id) {
+        if (service === null) {  //the initial value of the service is null meaning nothing has been clicked
+            //next a service gets clicked and we run the following code 
+            const serviceArrayCopy = serviceArray.map(serviceItem => { 
+            if(serviceItem.id === selectedService.id) {  //the selectedService here represents what the user clicks
                 return {...selectedService, hidden: false} 
             }  
-            return {...service, hidden: true} 
+            return {...serviceItem, hidden: true}   //else statement //if the user doesn't click on an item it's hidden
             })
             setServiceArray(serviceArrayCopy);
-            setService(selectedService)  //WHAT IS THIS FOR?
+            setService(selectedService)  //WHAT IS THIS FOR? //this resets the ability of the clicked item to toggle back 
+            //to showing the whole list 
         } else {
             const serviceArrayCopy = serviceArray.map(service => ({...service, hidden: false})); //WHAT IS THIS FOR?
-            setServiceArray(serviceArrayCopy);
+            setServiceArray(serviceArrayCopy);  //when you click a second time on a service it will show all the services 
             setService(null)
         }
     }
 
+
     return (
         <div className="calendar">
             <div className="wizard">
-                <div className="header">
+                <div className="header" style={service ? { height: "150vh" }: { height: "220vh"}}>
                     <ul className="links-container">
                         <li className="choose-appt">Choose appointment</li>
                         <li className="customer-info">Customer info</li>
