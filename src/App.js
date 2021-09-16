@@ -1,5 +1,12 @@
 //https://www.shebrowsandbeauty.com/
 //https://artofallurement.com/
+//instead of calendar it should schedule an appointment
+//https://booksy.com/en-us/s/hair-braids?availableFor=2021-09-22Tmorning
+//the user needs to fill out the three inputs (category, date, time) and then they will
+//be taken to the specific category page
+//to the right of the three inputs there will be a search button that directs them to the specific page
+//when the user chooses the date they will be directed to the time 
+
 
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
 import {Helmet} from "react-helmet";
