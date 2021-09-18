@@ -1,5 +1,9 @@
 @import "../_variables.scss"; 
 
+.header {
+    width: 100%; 
+}
+
 .header-container {
 
     height: 9rem; 
@@ -29,18 +33,30 @@
 }
 
 .appointment-wrapper {
-    width: 100%;
+    max-width: 100%;
     padding-left: 3rem; 
     height: 100px; 
     background: black;
     display: grid; 
-    grid-template-columns: repeat(4, 25%); 
+    grid-template-columns: repeat(5, 20%); 
     align-items: center;
-    gap: 2rem;   
+    grid-template-columns: [col] 250px [col] 250px [col] 250px [col] 250px [col] 250px;   
 
     input {
         width: 10rem;
+        padding: 10px 30px; 
+        border-radius: 8px;
+        outline: none; 
+    }
 
+    button {
+        width: 5rem; 
+        border-radius: 10px; 
+    }
+
+    span {
+        color: white; 
+        margin-left: 10px; 
     }
 }
 

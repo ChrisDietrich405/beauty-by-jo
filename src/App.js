@@ -1,3 +1,4 @@
+//switch navbar and service calender
 //https://www.shebrowsandbeauty.com/
 //https://artofallurement.com/
 //instead of calendar it should schedule an appointment
@@ -7,7 +8,7 @@
 //to the right of the three inputs there will be a search button that directs them to the specific page
 //when the user chooses the date they will be directed to the time 
 
-
+import { useState } from "react"
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
 import {Helmet} from "react-helmet";
 
@@ -23,7 +24,7 @@ import Beauty from "./pages/Beauty"
 import MakeUp from "./pages/MakeUp"
 import Reviews from "./pages/Reviews"
 import Policies from "./pages/Policies"
-import Calendar from "./pages/Calendar"
+import AppointmentCalendar from "./pages/AppointmentCalendar"
 
 import '@popperjs/core'
 import 'bootstrap/dist/js/bootstrap'  //bootstrap uses popperjs 
@@ -32,6 +33,9 @@ import "./styles/global.scss"
 
 
 function App() {
+
+ 
+
   return (
     <div className="App">
       <Helmet>
@@ -49,7 +53,7 @@ function App() {
           <Route path="/make-up" component={MakeUp}/>
           <Route path="/reviews" component={Reviews}/>
           <Route path="/policies" component={Policies}/>
-          <Route path="/calendar" component={Calendar}/>
+          <Route path="/calendar" component={AppointmentCalendar}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/create-account" component={CreateAccount}/>
         </Switch>
