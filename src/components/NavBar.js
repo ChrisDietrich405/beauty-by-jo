@@ -36,21 +36,11 @@ export default function Navbar() {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link
-								className="nav-link"
-								href="#"
-								id="navbarDropdown"
-								role="button"
-								data-toggle="dropdown"
-								aria-expanded="false"
-							>
-                                <div className="btn">
-								    {" "}
-								    <button className="services-btn" onClick={() => setModalOpen(true)}>
-								    	Services
-								    </button>
-                                </div>
-							</Link>
+                            <div id="services-button">
+							    <button className="services-btn" onClick={() => setModalOpen(true)}>
+							    	Services
+							    </button>
+                            </div>
 						</li>
 						<li className="nav-item">
 							<Link to="/policies" className="nav-link" href="#">
@@ -74,7 +64,7 @@ export default function Navbar() {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link to="/reviews" className="nav-link" href="#">
+							<Link to="/signin" className="nav-link" href="#">
 								<div className="btn">
 									<BsFillPersonFill color="white" size="30" />
 									<span className="noselect">Login</span>

@@ -19,22 +19,8 @@ export default function Header() {
                       <button>410-292-4710</button>
                       <img src={Logo}/>
                       <button>Contact Us</button>
-                 </div>
-                 <div className="appointment-wrapper">
-                     <button onClick={() => setModalOpen(true)}>Services</button>
-                     {/* <DatePicker /> */}
-                     <button onClick={() => setModalOpen(true)}>Pick a time</button>
-                     <div className="submit-container">
-                         <IoIosLogIn color="white" size="30"/>
-                         <span>Submit</span>
-                     </div>
-                     <div className="login-container">
-                          <BsFillPersonFill color="white" size="30"/>
-                          <span>Login</span>
-                     </div>
-                 </div>
+                 </div>              
             </div>
-            {modalOpen && <Modal setOpenModal={setModalOpen} setService={setService}/>}
         </> 
     )
 

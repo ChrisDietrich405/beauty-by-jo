@@ -71,3 +71,15 @@
   #cancelBtn {
     background-color: crimson;
   }
+
+  .link-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem; 
+  }
+
+  .service-button {
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+  }

@@ -37,7 +37,7 @@ export default function SignIn() {
                     </label>
                     <p>New to Beauty by Jo</p>
                     <Link to="/create-account">
-                    <button type="submit" className="btn">Create your Beauty by Jo account</button>               
+                        <button type="submit" className="btn">Create your Beauty by Jo account</button>               
                     </Link>
                 </form>
             

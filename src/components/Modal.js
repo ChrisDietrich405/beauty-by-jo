@@ -1,8 +1,11 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom"
 import "../styles/components/modal.scss"
 
-function Modal({ setOpenModal, setService }) {
+function Modal({ setOpenModal }) {
+
+  const [service, setService] = useState([])  
+  
   const services = [
       {
           name: "Eyebrow",
@@ -43,26 +46,25 @@ const handleService = (service) => {
           </button>
         </div>
         <div className="title">
-          <Link to="/calendar">
-            <button onClick={() => handleService("Eyebrow")}>Eyebrow</button>
-          </Link> 
-          <Link to="/calendar">
-            <button onClick={() => handleService("Waxing")}>Waxing</button>
-          </Link> 
-        </div>
-        <div className="body">
-          <p>The next page looks amazing. Hope you want to go there!</p>
-        </div>
-        <div className="footer">
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Cancel
-          </button>
-          <button>Continue</button>
+          <h2>Services</h2>
+          <hr />
+          <div className="link-container">
+            <Link to="/make-up">
+              <button className="service-button" onClick={() => handleService("Makeup")}>Makeup</button>
+            </Link> 
+            <Link to="/calendar">
+              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
+            </Link> 
+			<Link to="/calendar">
+              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
+            </Link> 
+			<Link to="/calendar">
+              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
+            </Link> 
+			<Link to="/calendar">
+              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
+            </Link> 
+          </div>
         </div>
       </div>
     </div>

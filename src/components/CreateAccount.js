@@ -29,7 +29,7 @@ export default function CreateAccount() {
         <div className="form-container">
             <h2>Beauty by Jo</h2>
                 <form onSubmit={submit}>
-                    <h3>Create account</h3>
+                    <h4>Create account</h4>
                     <label htmlFor="name">
                         Name
                         <input type="text" id="name" value={name} onChange={addName}  />
@@ -43,7 +43,7 @@ export default function CreateAccount() {
                         <input type="text" placeholder="" id="password" value={password} onChange={addPassword}  />
                         <p className="password-minimum">(At least 6 characters)</p>
                     </label>
-                    <button type="submit" className="btn">Create your Beauty by Jo account</button> 
+                    <button type="submit" className="btn">Submit</button> 
                 </form>
             
         </div>
