@@ -1,6 +1,43 @@
 .service-container {
+    height: 100vh; 
+    margin-bottom: 5rem; 
+
     h2, p {
         margin-top: 2rem; 
         text-align: center; 
     }
+
+    .date-picker-container {
+      width: 100%;
+      height: 300px; 
+      display: flex; 
+
+    
+    .date-container {
+      width: 50%; 
+      display: flex; 
+      justify-content: center; 
+      align-items: flex-start;
+      margin-bottom: 10rem;  
+    }
+
+    .time-container {
+      width: 50%; 
+      display: grid; 
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: .5rem; 
+
+      .time-content {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black; 
+        border-radius: 8px; 
+        width: 120px; 
+        height: 45px;
+      }
+    }
+  }
+
+  
 }

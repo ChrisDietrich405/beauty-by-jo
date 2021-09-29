@@ -35,10 +35,10 @@ export default function Navbar() {
 								</div>
 							</Link>
 						</li>
-						<li className="nav-item">
+						<li className="nav-item-services">
                             <div id="services-button">
 							    <button className="services-btn" onClick={() => setModalOpen(true)}>
-							    	Services
+							    	Services <span className="schedule-span">Schedule an appointment</span>
 							    </button>
                             </div>
 						</li>

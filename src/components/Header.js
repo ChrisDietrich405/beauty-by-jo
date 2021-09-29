@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useState } from "react"
 import Logo from "../assets/images/logo.jpg"
 
@@ -16,7 +17,8 @@ export default function Header() {
        <>
             <div className="header">
                  <div className="header-container">
-                      <button>410-292-4710</button>
+                      <Link to="/calendar">About</Link>
+
                       <img src={Logo}/>
                       <button>Contact Us</button>
                  </div>              
