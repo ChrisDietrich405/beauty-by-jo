@@ -46,24 +46,30 @@ const handleService = (service) => {
           </button>
         </div>
         <div className="title">
-          <h2>Services</h2>
+          <h2>Pick a service to schedule your appointment</h2>
           <hr />
           <div className="link-container">
-            <Link to="/make-up">
+            {services.map(service => (
+              <Link to="/make-up">
+                <button className="service-button" onClick={() => handleService("Makeup")}>{service.name}</button>
+              </Link>
+              ))}
+            
+            {/* <Link to="/make-up">
               <button className="service-button" onClick={() => handleService("Makeup")}>Makeup</button>
             </Link> 
             <Link to="/calendar">
               <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
             </Link> 
-			<Link to="/calendar">
+			      <Link to="/calendar">
               <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
             </Link> 
-			<Link to="/calendar">
+			      <Link to="/calendar">
               <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
             </Link> 
-			<Link to="/calendar">
+			      <Link to="/calendar">
               <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
-            </Link> 
+            </Link>  */}
           </div>
         </div>
       </div>

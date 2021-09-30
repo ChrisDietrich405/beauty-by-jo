@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import Tab from "../components/Tab"
+
 import DatePicker from 'react-date-picker'
 
 import "../styles/pages/services.scss"
@@ -37,6 +39,7 @@ export default function MakeUp() {
                     </div>
                 </div>
             </div>
+            <Tab/>
         </div>
     )
 }

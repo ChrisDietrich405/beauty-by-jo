@@ -17,11 +17,16 @@ export default function Header() {
        <>
             <div className="header">
                  <div className="header-container">
-                      <Link to="/calendar">About</Link>
+                      <Link to="/calendar">
+                           <button onClick={() => setModalOpen(true)}>
+                                Schedule an appointment
+                           </button>
+                      </Link>
 
                       <img src={Logo}/>
                       <button>Contact Us</button>
-                 </div>              
+                 </div> 
+                 {modalOpen && <Modal setOpenModal={setModalOpen} />}             
             </div>
         </> 
     )

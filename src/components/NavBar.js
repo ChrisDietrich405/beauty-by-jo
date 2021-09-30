@@ -38,7 +38,7 @@ export default function Navbar() {
 						<li className="nav-item-services">
                             <div id="services-button">
 							    <button className="services-btn" onClick={() => setModalOpen(true)}>
-							    	Services <span className="schedule-span">Schedule an appointment</span>
+							    	 <span className="noselects">Services</span>
 							    </button>
                             </div>
 						</li>
