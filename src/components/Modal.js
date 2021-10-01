@@ -8,7 +8,7 @@ function Modal({ setOpenModal }) {
   
   const services = [
       {
-          name: "Eyebrow",
+          name: "Makeup",
 
       }, 
       {
@@ -23,10 +23,15 @@ function Modal({ setOpenModal }) {
           name: "Lashes",
       }, 
       {
-          name: "Skin Treatments",
+          name: "Skin",
 
       }, 
-    ]
+      {
+        name: "Eyebrow",
+
+    }, 
+  ]
+  
 
 const handleService = (service) => {
   setService(service)

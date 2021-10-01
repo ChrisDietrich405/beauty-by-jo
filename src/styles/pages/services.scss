@@ -1,6 +1,6 @@
 .service-container {
     height: 100vh; 
-    margin-bottom: 5rem; 
+    margin-bottom: 25rem; 
 
     h2, p {
         margin-top: 2rem; 
@@ -10,15 +10,13 @@
     .date-picker-container {
       width: 100%;
       height: 300px; 
-      display: flex; 
+      display: flex;
 
-    
     .date-container {
       width: 50%; 
       display: flex; 
       justify-content: center; 
-      align-items: flex-start;
-      margin-bottom: 10rem;  
+      align-items: flex-start; 
     }
 
     .time-container {

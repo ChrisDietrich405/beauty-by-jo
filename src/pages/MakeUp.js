@@ -1,10 +1,14 @@
 import { useState } from "react"
+import { Parallax, Background } from "react-parallax";
 
-import Tab from "../components/Tab"
+import BeautySupplies from "../assets/images/about-us.jpg"
+
+
 
 import DatePicker from 'react-date-picker'
 
 import "../styles/pages/services.scss"
+import "../styles/components/parallax.scss"
 
 
 export default function MakeUp() {
@@ -16,8 +20,14 @@ export default function MakeUp() {
 
     return (
         <div className="service-container">
-            <h2>Make Up</h2>
+            <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
+                <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
+                    <h1>Makeup</h1>                  
+                </div>
+            </Parallax>
+            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis, voluptas facilis voluptatum est   soluta inventore nemo accusamus quod necessitatibus adipisci blanditiis nulla iure pariatur qui labore    explicabo perspiciatis harum, consequuntur tempore alias maxime deleniti aliquid? Ullam, excepturi     quisquam!</p>
+            <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>
                 <div className="date-picker-container">
@@ -39,7 +49,8 @@ export default function MakeUp() {
                     </div>
                 </div>
             </div>
-            <Tab/>
+            </div>
+            
         </div>
     )
 }

@@ -8,10 +8,10 @@ import "../styles/pages/about-us.scss"
 export default function Reviews() {
     return (
         <div className="about-us-container">
-            <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
-                <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                    <h1>Reviews</h1>                  
-                </div>
+                <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
+                    <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
+                        <h1>Reviews</h1>                  
+                    </div>
                 </Parallax>
                 <div className="about-us-intro">
                     <div className="about-us-intro-text">

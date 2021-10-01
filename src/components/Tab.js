@@ -20,14 +20,11 @@ export default function Tab() {
     return (
         <>
         <ul>
-        {services.map((service, index) => 
-            
+        {services.map((service, index) =>     
            <li><button onClick={() => setCurrentService(index)}>{service.name}</button></li>
-
            )}
         </ul>
         <div>
-
             {services[currentService].name}
         </div>
         </>

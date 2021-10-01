@@ -3,6 +3,8 @@ import { Parallax, Background } from "react-parallax";
 import BeautySupplies from "../assets/images/about-us.jpg"
 import GridPic from "../assets/images/grid-pic1.jpg"
 
+import Tab from "../components/Tab"
+
 import "../styles/pages/about-us.scss"
 
 export default function Policies() {
@@ -27,6 +29,7 @@ export default function Policies() {
                         <img className="about-us-intro-pic" src={GridPic} alt="" />
                     </div>
                 </div>
+                <Tab/>
            
         </div>
     )
