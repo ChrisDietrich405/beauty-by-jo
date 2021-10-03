@@ -22,6 +22,8 @@ import CreateAccount from "./components/CreateAccount"
 import AboutUs from "./pages/AboutUs"
 import Beauty from "./pages/Beauty"
 import MakeUp from "./pages/MakeUp"
+import Vagacial from "./pages/Vagacial"
+import SkinCare from "./pages/SkinCare"
 import Reviews from "./pages/Reviews"
 import Policies from "./pages/Policies"
 import AppointmentCalendar from "./pages/AppointmentCalendar"
@@ -51,6 +53,8 @@ function App() {
           <Route path="/about-us"  component={AboutUs}/>
           <Route path="/beauty" component={Beauty}/>
           <Route path="/make-up" component={MakeUp}/>
+          <Route path="/vagacial" component={Vagacial}/>
+          <Route path="/skin-care" component={SkinCare}/>
           <Route path="/reviews" component={Reviews}/>
           <Route path="/policies" component={Policies}/>
           <Route path="/calendar" component={AppointmentCalendar}/>

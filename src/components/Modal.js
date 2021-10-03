@@ -27,9 +27,8 @@ function Modal({ setOpenModal }) {
 
       }, 
       {
-        name: "Eyebrow",
-
-    }, 
+          name: "Eyebrow",
+      }, 
   ]
   
 
