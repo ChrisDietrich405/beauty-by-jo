@@ -16,7 +16,18 @@
         width: 100%; 
     }
 
-    div {
-        
+    .selected-content {
+        margin: 0 2rem 0 2rem; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    .selected-content-image {
+        width: 70%;
+    }
+
+    .selected-content-image img{
+        width: 90%;
     }
 }

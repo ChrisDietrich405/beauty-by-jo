@@ -35,8 +35,7 @@ export default function Tab() {
                 </div>
                 <div className="selected-content-text">
                     <h4>{services[currentService].name}</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus hic, culpa porro autem, modi, sed inventore commodi officiis nulla ab adipisci quibusdam?</p>
-                    
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus hic, culpa porro autem, modi, sed inventore commodi officiis nulla ab adipisci quibusdam?</p>              
                 </div>
                 
             </div>
