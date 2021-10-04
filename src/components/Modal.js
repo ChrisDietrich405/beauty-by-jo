@@ -9,25 +9,30 @@ function Modal({ setOpenModal }) {
   const services = [
       {
           name: "Makeup",
-
+          path: "/make-up"
       }, 
       {
           name: "Waxing",
+          path: "/waxing"
 
       }, 
       {
           name: "Vagacial",
+          path: "/vagacial"
 
       }, 
       {
           name: "Lashes",
+          path: "/lashes"
       }, 
       {
           name: "Skin",
+          path: "/skin-care"
 
       }, 
       {
           name: "Eyebrow",
+          path: "/eyebrow"
       }, 
   ]
   
@@ -54,26 +59,10 @@ const handleService = (service) => {
           <hr />
           <div className="link-container">
             {services.map(service => (
-              <Link to="/make-up">
+              <Link to={service.path ? service.path : "/"}>
                 <button className="service-button" onClick={() => handleService("Makeup")}>{service.name}</button>
               </Link>
               ))}
-            
-            {/* <Link to="/make-up">
-              <button className="service-button" onClick={() => handleService("Makeup")}>Makeup</button>
-            </Link> 
-            <Link to="/calendar">
-              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
-            </Link> 
-			      <Link to="/calendar">
-              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
-            </Link> 
-			      <Link to="/calendar">
-              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
-            </Link> 
-			      <Link to="/calendar">
-              <button className="service-button" onClick={() => handleService("Waxing")}>Waxing</button>
-            </Link>  */}
           </div>
         </div>
       </div>

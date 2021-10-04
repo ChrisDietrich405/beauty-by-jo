@@ -1,0 +1,22 @@
+.tab-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    ul {
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    li {
+       list-style: none; 
+       width: 100%;   
+    }
+
+    button {
+        width: 100%; 
+    }
+
+    div {
+        
+    }
+}
