@@ -26,7 +26,7 @@ export default function MakeUp() {
                 </div>
             </Parallax>
             <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis, voluptas facilis voluptatum est   soluta inventore nemo accusamus quod necessitatibus adipisci blanditiis nulla iure pariatur qui labore    explicabo perspiciatis harum, consequuntur tempore alias maxime deleniti aliquid? Ullam, excepturi     quisquam!</p>
+            <p>Since 2017 I’ve been a certified and fully-insured makeup artist, helping women all across Maryland look and feel more beautiful. However, my love of beauty treatments started much, much earlier. In fact, my parents remember catching me trying to apply a full face of glam at age three.</p>
             <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>

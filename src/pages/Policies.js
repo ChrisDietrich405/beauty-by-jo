@@ -5,7 +5,7 @@ import GridPic from "../assets/images/grid-pic1.jpg"
 
 import Tab from "../components/Tab"
 
-import "../styles/pages/about-us.scss"
+import "../styles/pages/policies.scss"
 
 export default function Policies() {
     return (
@@ -15,7 +15,7 @@ export default function Policies() {
                     <h1>Policies</h1>                  
                 </div>
             </Parallax>
-            <div>
+            <div className="policies-container">
                 <p>I just want to thank you for booking with me!
                 <br/>  
                 <p>  Please Read The Following Before Booking!:</p> 
