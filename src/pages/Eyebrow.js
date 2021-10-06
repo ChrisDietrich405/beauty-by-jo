@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
 
-import BeautySupplies from "../assets/images/about-us.jpg"
+import EyebrowThreading from "../assets/images/eyebrow-threading2.jpg"
 
 import DatePicker from 'react-date-picker'
 
@@ -18,13 +18,13 @@ export default function Eyebrow() {
 
     return (
         <div className="service-container">
-            <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
-                <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
+            <Parallax className="parallax-container" bgImage={EyebrowThreading} strength={500}>
+                <div className="parallax-container-text">
                     <h1>Eyebrow</h1>                  
                 </div>
             </Parallax>
             <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis, voluptas facilis voluptatum est   soluta inventore nemo accusamus quod necessitatibus adipisci blanditiis nulla iure pariatur qui labore    explicabo perspiciatis harum, consequuntur tempore alias maxime deleniti aliquid? Ullam, excepturi     quisquam!</p>
+            <p>Eyebrow threading is an ancient method of shaping your eyebrow it is done with the help of thread so that there is no harm to your skin . It provides you clean shape and gentle skin & well defined edges which frame the eyes.</p>
             <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>

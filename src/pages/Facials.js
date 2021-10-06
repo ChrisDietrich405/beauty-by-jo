@@ -9,7 +9,7 @@ import "../styles/pages/services.scss"
 import "../styles/components/parallax.scss"
 
 
-export default function SkinCare() {
+export default function Facials() {
 
     const [isTimeVisible, setIsTimeVisible] = useState(false)
     const [value, onChange] = useState(new Date())
@@ -20,7 +20,7 @@ export default function SkinCare() {
         <div className="service-container">
             <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
                 <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                    <h1>Skin Care</h1>                  
+                    <h1>Facials</h1>                  
                 </div>
             </Parallax>
             <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>

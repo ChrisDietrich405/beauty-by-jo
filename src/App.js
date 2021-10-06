@@ -26,7 +26,7 @@ import Lashes from "./pages/Lashes"
 import Waxing from "./pages/Waxing"
 import Eyebrow from "./pages/Eyebrow"
 import Vagacial from "./pages/Vagacial"
-import SkinCare from "./pages/SkinCare"
+import Facials from "./pages/Facials"
 import Reviews from "./pages/Reviews"
 import Policies from "./pages/Policies"
 import AppointmentCalendar from "./pages/AppointmentCalendar"
@@ -60,7 +60,7 @@ function App() {
           <Route path="/waxing" component={Waxing}/>
           <Route path="/eyebrow" component={Eyebrow}/>
           <Route path="/vagacial" component={Vagacial}/>
-          <Route path="/skin-care" component={SkinCare}/>
+          <Route path="/facials" component={Facials}/>
           <Route path="/reviews" component={Reviews}/>
           <Route path="/policies" component={Policies}/>
           <Route path="/calendar" component={AppointmentCalendar}/>

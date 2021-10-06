@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
 
-import BeautySupplies from "../assets/images/about-us.jpg"
+import VagacialPic from "../assets/images/vagacial.jpeg"
 
 
 
@@ -20,13 +20,17 @@ export default function Vagacial() {
 
     return (
         <div className="service-container">
-            <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
+            <Parallax className="parallax-container" bgImage={VagacialPic} strength={500}>
                 <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
                     <h1>Vagacial</h1>                  
                 </div>
             </Parallax>
             <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis, voluptas facilis voluptatum est   soluta inventore nemo accusamus quod necessitatibus adipisci blanditiis nulla iure pariatur qui labore    explicabo perspiciatis harum, consequuntur tempore alias maxime deleniti aliquid? Ullam, excepturi     quisquam!</p>
+            <p>Includes skin specific masques and moisturizers to calm and protect your skin post wax.
+                Anti-Inflammatory & Antibacterial
+                Brings nourishment back to the skin
+                Speeds up the healing process
+                Hydrating, Soothing & Skin brightening</p>
             <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>

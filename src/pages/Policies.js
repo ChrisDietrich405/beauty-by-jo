@@ -41,7 +41,7 @@ export default function Policies() {
                 <p>*WHEN PAYING A DEPOSIT YOU AGREE TO OUR POLICY*</p>
                 </p>
             </div>
-            <Tab/>
+            
            
         </div>
     )

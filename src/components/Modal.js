@@ -26,12 +26,12 @@ function Modal({ setOpenModal }) {
           path: "/lashes"
       }, 
       {
-          name: "Skin",
-          path: "/skin-care"
+          name: "Facials",
+          path: "/facials"
 
       }, 
       {
-          name: "Eyebrow",
+          name: "Brows",
           path: "/eyebrow"
       }, 
   ]
