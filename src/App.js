@@ -1,3 +1,12 @@
+//schedule appointment button- modal for service. after user clicks on service there
+// is a modal for the date. after user clicks on the date there is a modal for possible times
+//make sure to include a back and forward button for each modal 
+//after user picks time it directs you to page with confirmation of appointment, policies
+//for unavailable times, dates have a color like gray to demonstrate that it's disabled 
+
+
+
+
 //switch navbar and service calender
 //https://www.shebrowsandbeauty.com/
 //https://artofallurement.com/
