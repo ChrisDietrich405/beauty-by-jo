@@ -5,7 +5,7 @@ import GridPic from "../assets/images/grid-pic1.jpg"
 
 import Tab from "../components/Tab"
 
-import "../styles/pages/about-us.scss"
+import "../styles/pages/reviews.scss"
 
 export default function Reviews() {
     return (

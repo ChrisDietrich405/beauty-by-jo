@@ -16,33 +16,27 @@ export default function Policies() {
                 </div>
             </Parallax>
             <div className="policies-container">
-                <p>I just want to thank you for booking with me!
+                <p>I just want to thank you for booking with me!</p>
                 <br/>  
                 <p>  Please Read The Following Before Booking!:</p> 
                 <br />
                 <p>DEPOSIT AND PAYMENT:</p>
-                <p>A $20 NON-REFUNDABLE deposit is REQUIRED to book any appointment
-                CASH ONLY ACCEPTED (No change provided)
-                CANCELLATION POLICY AND FEES:</p>
+                <p>-$15 non-refundable deposit through Zelle or venmo (Venmo: Jordancahillxo)</p>
                 <br />
-                <p>You will not be charged if you cancel at least 24 hours before your appointment starts. Otherwise, you will be charged 50% of the service price for late cancellations and 100% for no shows.
-                When in need of rescheduling, your reschedule date must be within 14 DAYS or your deposit will be FORFEITED and you will be REQUIRED to put down a new one.
-                If you are later than 10 minutes there will be a $10 late fee , if you are 15 minutes late there will be a $15 late fee , NO EXCEPTIONS! after 15 min you may be required to reschedule due to the next client.
-                NO ADDITIONAL GUEST ALLOWED. you will be asked to reschedule your appointment. STRICTLY ENFORCED DUE TO COVID</p>
+                <p>- No deposit = no appointment, once deposit is sent your appointment is official</p>
                 <br />
-                <p>No-call/no-show = no future appointments.
-                Please come ready with NO mascara and NO glue or it will be an additional $15
-                All fill ins booked after 3.5 weeks will be a full set.</p>
+                <p>- Day of appointment please pay remainder of balance in cash, no change please bring exact change</p>
                 <br />
-                <p>I hope to service you soon!</p>
-                <p>Feel free to contact me if you have any questions.</p>
-                <p>Phone number: (410)292-4710</p>
-                <p>- Jordan</p>
-                <p>*WHEN PAYING A DEPOSIT YOU AGREE TO OUR POLICY*</p>
-                </p>
+                <p>-If you are more than 15 minutes late you will be charged an extra $10, after 15 minutes your appointment could be cancelled due to the next client's appointment</p>
+                <p>-Please understand my time is how I make my money. When late, you are taking up another appointment slot. Please arrive on time.</p>
+                <p>-When in need of rescheduling, you will not be charged if you cancel 24 hours before your appointment. Anything after the 24hr window, you will be forfeiting your deposit. </p>
+                <p>-No call/No show = no future appointments</p>
+                <br />
+                <p>OTHER</p>
+                <p>-Please complete all paperwork and email it back to Beautybyjocahill@gmail.com prior to appointment </p>
+                <p>-Please wear a mask</p>
+                <p>-No extra guests</p>
             </div>
-            
-           
         </div>
     )
 }

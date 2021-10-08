@@ -20,11 +20,14 @@ export default function Tab() {
             name: "Hailey",
             image: "/images/slideshow3.jpg"
         },
+        {
+            name: "Susie",
+            image: "images/slideshow2.jpg"
+        }
     ]
 
     useEffect(() => {
-        setTimeout(() => {
-            
+        setTimeout(() => {        
             if(currentService == services.length - 1) {
                 setCurrentService(0)
             } else {
@@ -33,15 +36,16 @@ export default function Tab() {
         }, 5000)
     }, [currentService])
 
-    // const handleButtonClick = () => {
+    // const handleButtonClick = (index) => {
     //     setCurrentService(2)
     // }
 
     return (
         <div className="tab-container">
+            <h3>See what people are saying about us!</h3>
             <ul>
             {services.map((service, index) =>     
-            //    <li><button onClick={handleButtonClick}>{service.name}</button></li>
+            //    <li><button onClick={() => handleButtonClick(some Argument)}>{service.name}</button></li>
                   <li><button onClick={() => setCurrentService(index)}>{service.name}</button></li>
                )}
             </ul>

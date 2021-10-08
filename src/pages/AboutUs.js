@@ -13,6 +13,9 @@ export default function AboutUs() {
                     <h1>About Us</h1>                  
                 </div>
                 </Parallax>
+                <div>
+                    <p>Welcome to Beauty By Jo. My name is Jordan Cahill, I am a 20 year old licensed esthetician located in Glen Burnie,MD. I've had a love for all things beauty for as long as I could remember, so I absolutely knew this was the career path for me! My goal as your esthetician is to enhance your natural beauty and help empower all my clients to radiate confidence! I love having the ability to not only be your esthetician but also your friend (sometimes even your therapist) and I have been very fortunate in having great clientele that allow me to continue doing what I love. So to my future and current clients, thank you! I wouldn't be doing this without you all. </p>
+                </div>
                 <div className="about-us-intro">
                     <div className="about-us-intro-text" id="movetxt">
                         <h3>Come and Rejuvenate Yourself at our Salon</h3>
