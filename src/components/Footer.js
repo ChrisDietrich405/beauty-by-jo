@@ -16,9 +16,6 @@ export default function Footer() {
     return (
         <div className="footer-container">
             <hr />
-        {/* <Router>
-        <Link to={{ pathname: "https://example.zendesk.com/hc/en-us/articles/123456789-Privacy-Policies" }} target="_blank" />
-        </Router> */}
             <div className="footer-wrapper">
                 <div className="footer-social-media">
                     <a href="https://www.instagram.com/beautybyjo._/" target="_blank">

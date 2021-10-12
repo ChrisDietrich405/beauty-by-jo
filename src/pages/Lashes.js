@@ -23,8 +23,31 @@ export default function Lashes() {
                     <h1>Lashes</h1>                  
                 </div>
             </Parallax>
-            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis, voluptas facilis voluptatum est   soluta inventore nemo accusamus quod necessitatibus adipisci blanditiis nulla iure pariatur qui labore    explicabo perspiciatis harum, consequuntur tempore alias maxime deleniti aliquid? Ullam, excepturi     quisquam!</p>
+            <h3>Lashes</h3>
+            <p>What is a lash lift?-</p>
+            <br/>
+            <p>A lash lift is a chemical process safe for the lashes and eye area which softens the keratin bonds in the hair follicle. During the service we discuss how curly you would like them and perform the service to your liking. To put it in simpler terms, this service adds a semi-permanent curl to your lashes for an effortless, bolder lash.</p>
+            <br />
+            <p>What is pre and post care for this service?</p>
+            <p>Pre</p>
+            <br />
+            <p>Come to your appointment with clean lashes. No makeup or extensions.</p>
+            <br />
+            <p>Post</p>
+            <p>Be gentle with your lashes; no rubbing.</p>
+            <p>Do not get your lashes wet for the first 24 hrs.</p>
+            <p>Do not use harsh products on your eyes/lashes.</p>
+            <p>Use of Sauna/Steam is possible after 24hrs but may weaken the effect of the lift.</p>
+            <p>No eye make up for 24 hours.</p>
+            <p>Avoid waterproof mascara’s.</p>
+            <p>Avoid sleeping on face</p>
+            <p>Do not use oil based products or any conditioning treatments/ serums on the lashes.</p>
+            <br />
+            <p>How long does the lift last?</p>
+            <p>Around 3-4 weeks </p>
+            <p>Lash lift- $55 45minutes (1 hr on my schedule) </p>
+            <p>Lash lift AND tint- $70</p>
+
             <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>

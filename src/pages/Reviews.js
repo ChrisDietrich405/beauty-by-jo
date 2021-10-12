@@ -12,7 +12,7 @@ export default function Reviews() {
         <div className="about-us-container">
                 <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
                     <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                        <h1>Reviews</h1>                  
+                        <h1><b>Reviews</b></h1>                  
                     </div>
                 </Parallax>
                 <Tab/>

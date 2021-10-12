@@ -22,7 +22,7 @@ export default function Vagacial() {
         <div className="service-container">
             <Parallax className="parallax-container" bgImage={VagacialPic} strength={500}>
                 <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                    <h1>Vagacial</h1>                  
+                    <h1><b>Vagacial</b></h1>                  
                 </div>
             </Parallax>
             <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>

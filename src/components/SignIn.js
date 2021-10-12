@@ -35,6 +35,7 @@ export default function SignIn() {
                         <input type="text" placeholder="" id="password" value={password} onChange={addPassword}  />
                         <p className="password-minimum">(At least 6 characters)</p>
                     </label>
+                    <button>submit</button>
                     <p>New to Beauty by Jo</p>
                     <Link to="/create-account">
                         <button type="submit" className="btn">Create your Beauty by Jo account</button>               

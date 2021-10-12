@@ -89,7 +89,7 @@
         color: $secondary; 
         background: black;
       }
-////////////////////////////////////////////////////////////////
+
       .dropdown .nav-link::after {
         width: 0;
         height: 0;
@@ -112,43 +112,17 @@
         border: none; 
       }
 
-      #services-button {
-        margin-top: .9rem;
-      }
-
       .schedule-span {
         font-size: .5rem; 
       }
 
-      .nav-item-services {
+      #service-item {
         display: flex; 
-        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
       }
-     
 
-
-    //   .dropdown-menu {
-    //     width: 0;
-    //     height: 100px !important;
-    //     border-left: 8px solid transparent;
-    //     border-right: 8px solid transparent;
-    //     border-top: 13px solid red;
-    //     position: relative;
-    //   }
-
-    //   .dropdown-menu:before,
-    //   .dropdown-menu:after {
-    //     content: "";
-    //     position: absolute;
-    //     display: block;
-    //     width: 30px !important;
-    //     height: 12px;
-    //     top: 44px !important;
-    //     border-width: 37px 48px;
-    //     border-style: solid;
-    //     border-color: transparent;
-    //     z-index: 1001;
-    //   }
+      
     }
 }
 

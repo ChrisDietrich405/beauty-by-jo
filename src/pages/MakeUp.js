@@ -25,8 +25,9 @@ export default function MakeUp() {
                     <h1>Makeup</h1>                  
                 </div>
             </Parallax>
-            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
-            <p>Since 2017 I’ve been a certified and fully-insured makeup artist, helping women all across Maryland look and feel more beautiful. However, my love of beauty treatments started much, much earlier. In fact, my parents remember catching me trying to apply a full face of glam at age three. Beauty by Jo offers makeup services for various events, providing our clients with stunning, natural, soft, bold, or dramatic looks for any occasion. We use high-quality, long-lasting makeup, including our signature lip stains, glosses, and liners. </p>
+            
+            <p>Makeup Consultation- $50: 1 hour 30 minutes- 2 hours
+            Prior to appointment, please send your look inspirations to beautybyjocahill@gmail.com. The price of            your makeup session will have to be discussed after inspiration pictures are sent. Different looks          require a different amount of time and product, therefore they will be priced accordingly. </p>
             <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>

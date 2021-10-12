@@ -19,3 +19,13 @@ body {
 p {
     font-family: 'Roboto', sans-serif;
 }
+
+
+.price-wrapper {
+    display: flex; 
+    justify-content: space-around; 
+}
+
+.price-button {
+    border-radius: 8px; 
+}

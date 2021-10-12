@@ -1,3 +1,17 @@
+
+//delete titles from below the pictures
+//in each service page https://booksy.com/en-us/407809_kriz-cordero_barber-shop_15932_ocoee#ba_s=sgr_1
+// Policies page Please read the (only capitalize first word and make this an h2)
+//Deposit and Payment and Other can be h3
+//change to bullets 
+//footer move icons and logo to top 
+//submit button for email
+//move the phone number and the email to under the social media icons 
+//login page submit button this should be black with white lettering to stand out
+//on create page submit button should be black with white lettering 
+//forgot your password?
+
+
 //schedule appointment button- modal for service. after user clicks on service there
 // is a modal for the date. after user clicks on the date there is a modal for possible times
 //make sure to include a back and forward button for each modal 

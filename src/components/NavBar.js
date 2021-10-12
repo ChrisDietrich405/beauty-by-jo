@@ -35,12 +35,10 @@ export default function Navbar() {
 								</div>
 							</Link>
 						</li>
-						<li className="nav-item-services">
-                            <div id="services-button">
-							    <button className="services-btn" onClick={() => setModalOpen(true)}>
-							    	 <span className="noselects">Services</span>
+						<li className="nav-item" id="service-item">
+							    <button className="services-btn btn" onClick={() => setModalOpen(true)}>
+							    	 <span className="noselect">Services</span>
 							    </button>
-                            </div>
 						</li>
 						<li className="nav-item">
 							<Link to="/policies" className="nav-link" href="#">
@@ -74,7 +72,7 @@ export default function Navbar() {
 					</ul>
 				</div>
 			</div>
-			{modalOpen && <Modal setOpenModal={setModalOpen} />}
+			{modalOpen && <Modal setModalOpen={setModalOpen} />}
 		</nav>
 	);
 }

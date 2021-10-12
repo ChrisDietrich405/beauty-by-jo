@@ -10,7 +10,7 @@ export default function AboutUs() {
         <div className="about-us-container">
             <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
                 <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                    <h1>About Us</h1>                  
+                    <h1><b>About Us</b></h1>                  
                 </div>
                 </Parallax>
                 <div>

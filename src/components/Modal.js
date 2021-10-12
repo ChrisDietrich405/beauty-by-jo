@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom"
 import "../styles/components/modal.scss"
 
-function Modal({ setOpenModal }) {
+function Modal({ setModalOpen }) {
 
   const [service, setService] = useState([])  
   
@@ -35,22 +35,17 @@ function Modal({ setOpenModal }) {
           path: "/eyebrow"
       }, 
   ]
-  
 
-const handleService = (service) => {
-  setService(service)
-  setOpenModal(false)
-} 
-
+  console.log("whatever")
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
           <button
             onClick={() => {
-              setOpenModal(false);
+              setModalOpen(false);
             }}
-          >
+          > 
             X
           </button>
         </div>
@@ -60,7 +55,7 @@ const handleService = (service) => {
           <div className="link-container">
             {services.map(service => (
               <Link to={service.path ? service.path : "/"}>
-                <button className="service-button" onClick={() => handleService("Makeup")}>{service.name}</button>
+                <button className="service-button" onClick={() => setModalOpen(false)}>{service.name}</button>
               </Link>
               ))}
           </div>

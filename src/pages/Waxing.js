@@ -20,11 +20,21 @@ export default function Waxing() {
         <div className="service-container">
             <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
                 <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                    <h1>Waxing</h1>                  
+                    <h1><b>Waxing</b></h1>                  
                 </div>
             </Parallax>
-            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis, voluptas facilis voluptatum est   soluta inventore nemo accusamus quod necessitatibus adipisci blanditiis nulla iure pariatur qui labore    explicabo perspiciatis harum, consequuntur tempore alias maxime deleniti aliquid? Ullam, excepturi     quisquam!</p>
+            <p>Waxing Menu</p>
+            Full leg- $55: 55 minutes including 10 minutes for clean up
+            Half Leg (above or below the knee)- $35: 40 minutes including 10 minute clean up
+            Full Arm- $40: 40 minutes including 10 minute clean up
+            Half Arm (above or below elbow)- $30: 30 minutes including 10 minute clean up
+            Armpits- $20: 20 minutes including 10 minute clean up
+            Bikini- $30: 25 minutes including 10 minute clean up
+            French Bikini- $45: 35 minutes including 10 minute clean up
+            Brazilian- $65: 45 minutes including 10 minute clean up
+            Lip or Chin- $10: 15 minutes including clean up 
+            Full face (lip, chin, brows, sides)- $40: 30 minutes including 10 minute clean up time
+            <p>Eyebrow Shaping- $15: 20 minutes including 10 minute clean up</p>
             <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>
