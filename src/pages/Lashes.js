@@ -23,7 +23,7 @@ export default function Lashes() {
                     <h1>Lashes</h1>                  
                 </div>
             </Parallax>
-            <h3>Lashes</h3>
+            <div className="service-description">
             <p>What is a lash lift?-</p>
             <br/>
             <p>A lash lift is a chemical process safe for the lashes and eye area which softens the keratin bonds in the hair follicle. During the service we discuss how curly you would like them and perform the service to your liking. To put it in simpler terms, this service adds a semi-permanent curl to your lashes for an effortless, bolder lash.</p>
@@ -47,8 +47,9 @@ export default function Lashes() {
             <p>Around 3-4 weeks </p>
             <p>Lash lift- $55 45minutes (1 hr on my schedule) </p>
             <p>Lash lift AND tint- $70</p>
+            </div>
 
-            <div className="calendar-wrapper">
+            {/* <div className="calendar-wrapper">
             <div className="appointment-container">
                 <h4>Choose a day and time that works for you.</h4>
                 <div className="date-picker-container">
@@ -70,7 +71,7 @@ export default function Lashes() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
             
         </div>
     )

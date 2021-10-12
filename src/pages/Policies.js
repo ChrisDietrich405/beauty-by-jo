@@ -16,22 +16,25 @@ export default function Policies() {
                 </div>
             </Parallax>
             <div className="policies-container">
-                <p>  Please Read The Following Before Booking!:</p> 
+                <h4>Please read the following before booking!</h4> 
                 <br />
-                <p>DEPOSIT AND PAYMENT:</p>
-                <p>-$15 non-refundable deposit through Zelle or venmo (Venmo: Jordancahillxo)</p>
-                <p>- No deposit = no appointment, once deposit is sent your appointment is official</p>
-                <br />
-                <p>- Day of appointment please pay remainder of balance in cash, no change please bring exact change</p>
-                <p>-If you are more than 15 minutes late you will be charged an extra $10, after 15 minutes your appointment could be cancelled due to the next client's appointment</p>
-                <p>-Please understand my time is how I make my money. When late, you are taking up another appointment slot. Please arrive on time.</p>
-                <p>-When in need of rescheduling, you will not be charged if you cancel 24 hours before your appointment. Anything after the 24hr window, you will be forfeiting your deposit. </p>
-                <p>-No call/No show = no future appointments</p>
-                <br />
-                <p>OTHER</p>
-                <p>-Please complete all paperwork and email it back to Beautybyjocahill@gmail.com prior to appointment </p>
-                <p>-Please wear a mask</p>
-                <p>-No extra guests</p>
+                <h5>DEPOSIT AND PAYMENT:</h5>
+                <ul>
+                    <li>$15 non-refundable deposit through Zelle or venmo (Venmo: Jordancahillxo)</li>
+                    <li>No deposit = no appointment, once deposit is sent your appointment is official</li>
+                    <li>Day of appointment please pay remainder of balance in cash, no change please bring exact change</li>
+                    <li>If you are more than 15 minutes late you will be charged an extra $10, after 15 minutes your appointment could be cancelled due to the next client's appointment</li>
+                    <li>Please understand my time is how I make my money. When late, you are taking up another appointment slot. Please arrive on time.</li>
+                    <li>When in need of rescheduling, you will not be charged if you cancel 24 hours before your appointment. Anything after the 24hr window, you will be forfeiting your deposit.</li>
+                    <li>No call/No show = no future appointments</li>
+                </ul>
+                <h5>OTHER</h5>
+                <ul>
+                    <li>Please complete all paperwork and email it back to Beautybyjocahill@gmail.com prior to appointment</li>
+                    <li>Please wear a mask</li>
+                    <li>No extra guests</li>
+                </ul>
+
             </div>
         </div>
     )

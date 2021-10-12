@@ -23,7 +23,13 @@ export default function Waxing() {
                     <h1><b>Waxing</b></h1>                  
                 </div>
             </Parallax>
-            <p>Waxing Menu</p>
+            <div className="service-description">
+                <div className="price-wrapper">
+                        <div className="price-title">Makeup Consultation</div>
+                        <div className="price-cost-time">$50: 1 hour 30 minutes- 2 hours</div>
+                        <button className="price-button">Book</button>
+                </div>
+            </div>
             Full leg- $55: 55 minutes including 10 minutes for clean up
             Half Leg (above or below the knee)- $35: 40 minutes including 10 minute clean up
             Full Arm- $40: 40 minutes including 10 minute clean up

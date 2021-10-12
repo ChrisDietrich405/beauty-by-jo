@@ -1,35 +1,11 @@
 
-//delete titles from below the pictures
-//in each service page https://booksy.com/en-us/407809_kriz-cordero_barber-shop_15932_ocoee#ba_s=sgr_1
-// Policies page Please read the (only capitalize first word and make this an h2)
-//Deposit and Payment and Other can be h3
-//change to bullets 
-//footer move icons and logo to top 
-//submit button for email
-//move the phone number and the email to under the social media icons 
-//login page submit button this should be black with white lettering to stand out
-//on create page submit button should be black with white lettering 
-//forgot your password?
-
-
-//schedule appointment button- modal for service. after user clicks on service there
-// is a modal for the date. after user clicks on the date there is a modal for possible times
-//make sure to include a back and forward button for each modal 
-//after user picks time it directs you to page with confirmation of appointment, policies
-//for unavailable times, dates have a color like gray to demonstrate that it's disabled 
 
 
 
 
-//switch navbar and service calender
-//https://www.shebrowsandbeauty.com/
-//https://artofallurement.com/
-//instead of calendar it should schedule an appointment
-//https://booksy.com/en-us/s/hair-braids?availableFor=2021-09-22Tmorning
-//the user needs to fill out the three inputs (category, date, time) and then they will
-//be taken to the specific category page
-//to the right of the three inputs there will be a search button that directs them to the specific page
-//when the user chooses the date they will be directed to the time 
+
+
+
 
 import { useState } from "react"
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"

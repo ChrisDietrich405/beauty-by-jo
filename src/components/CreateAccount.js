@@ -43,7 +43,7 @@ export default function CreateAccount() {
                         <input type="text" placeholder="" id="password" value={password} onChange={addPassword}  />
                         <p className="password-minimum">(At least 6 characters)</p>
                     </label>
-                    <button type="submit" className="btn">Submit</button> 
+                    <button type="submit" className="sign-in-button">Submit</button> 
                 </form>
             
         </div>

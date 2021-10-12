@@ -16,14 +16,23 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+    font-weight: bold; 
+}
+
 p {
     font-family: 'Roboto', sans-serif;
 }
 
+.service-description {
+    width: 80vw;
+    margin: 0 auto; 
+}
 
 .price-wrapper {
     display: flex; 
     justify-content: space-around; 
+    margin-bottom: 2rem; 
 }
 
 .price-button {

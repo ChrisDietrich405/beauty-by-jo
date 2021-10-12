@@ -23,8 +23,7 @@ export default function Eyebrow() {
                     <h1><b>Eyebrows</b></h1>                  
                 </div>
             </Parallax>
-            
-            
+            <div className="service-description">
             <div className="price">
                 <div className="price-wrapper">
                     <div className="price-title">Brow Lamination</div>
@@ -68,7 +67,7 @@ export default function Eyebrow() {
             </ul>
             <p><b> How long does the lamination last? - </b></p>  
             <p>     As long as you apply castor oil every night, between appointments, and are gentle with the area, this           should last 3-4 weeks</p> 
-           
+            </div>
             {/* <div className="calendar-wrapper">
                 <div className="appointment-container">
                     <h4>Choose a day and time that works for you.</h4>

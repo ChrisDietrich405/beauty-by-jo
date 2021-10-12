@@ -20,10 +20,9 @@ export default function Facials() {
         <div className="service-container">
             <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
                 <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                    <h1><b>Facials</b></h1>                  
+                    <h1>Facials</h1>                  
                 </div>
             </Parallax>
-            <h3>Facials</h3>
             <p>-MINI MAKEOVER- $60: 45 minutes (On calendar schedule on my end it would block off an hour of time, leaving 15 minutes to clean after service)
 The mini makeover is everything you need to feel refreshed and revived if 45 minutes is all your busy schedule allows. 
 -SIGNATURE JO-GLOW- $80: 1 hour (On calendar schedule on my end it would block off an hour and 15 minutes of time, leaving 15 minutes to clean after service)
