@@ -26,7 +26,7 @@ export default function Header() {
                       <img src={Logo}/>
                       <button>Contact Us</button>
                  </div> 
-                 {modalOpen && <Modal setOpenModal={setModalOpen} />}             
+                 {modalOpen && <Modal onClose={() => setModalOpen(false)} />}             
             </div>
         </> 
     )

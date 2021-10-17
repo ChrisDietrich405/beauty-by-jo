@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 import { useState } from "react"
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
 import {Helmet} from "react-helmet";
@@ -28,7 +19,7 @@ import Vagacial from "./pages/Vagacial"
 import Facials from "./pages/Facials"
 import Reviews from "./pages/Reviews"
 import Policies from "./pages/Policies"
-import AppointmentCalendar from "./pages/AppointmentCalendar"
+import AppointmentConfirmation from "./pages/AppointmentConfirmation"
 
 import '@popperjs/core'
 import 'bootstrap/dist/js/bootstrap'  //bootstrap uses popperjs 
@@ -62,7 +53,7 @@ function App() {
           <Route path="/facials" component={Facials}/>
           <Route path="/reviews" component={Reviews}/>
           <Route path="/policies" component={Policies}/>
-          <Route path="/calendar" component={AppointmentCalendar}/>
+          <Route path="/confirmation" component={AppointmentConfirmation}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/create-account" component={CreateAccount}/>
         </Switch>
@@ -72,4 +63,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
