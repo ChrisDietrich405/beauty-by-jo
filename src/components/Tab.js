@@ -36,16 +36,11 @@ export default function Tab() {
         }, 5000)
     }, [currentService])
 
-    // const handleButtonClick = (index) => {
-    //     setCurrentService(2)
-    // }
-
     return (
         <div className="tab-container">
             <h3>See what people are saying about us!</h3>
-            <ul>
+            <ul className="service-tabs">
             {services.map((service, index) =>     
-            //    <li><button onClick={() => handleButtonClick(some Argument)}>{service.name}</button></li>
                   <li><button onClick={() => setCurrentService(index)}>{service.name}</button></li>
                )}
             </ul>

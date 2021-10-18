@@ -11,9 +11,8 @@ export default function Header() {
 
     const [modalOpen, setModalOpen] = useState(false)
     const [service, setService] = useState("Choose a service")
-
-
-    return (
+     
+     return (
        <>
             <div className="header">
                  <div className="header-container">
@@ -26,7 +25,8 @@ export default function Header() {
                       <img src={Logo}/>
                       <button>Contact Us</button>
                  </div> 
-                 {modalOpen && <Modal onClose={() => setModalOpen(false)} />}             
+                 {modalOpen && <Modal onClose={() => setModalOpen(false)} />} 
+                 {/* when modalOpen is true it will render the Modal component             */}
             </div>
         </> 
     )

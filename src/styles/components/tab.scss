@@ -1,6 +1,7 @@
 .tab-container {
     display: grid;
     grid-template-columns: 1fr;
+   
     
     h3 {
         text-align: center;
@@ -21,11 +22,16 @@
         width: 100%; 
     }
 
+    .service-tabs {
+        width: 97%; 
+    }
+
     .selected-content {
-        margin: 0 2rem 0 2rem; 
+        margin: -20px 2rem 0 2rem; 
         display: flex; 
         justify-content: space-between; 
-        align-items: center; 
+        align-items: center;
+        border: 3px solid black;  
     }
 
     .selected-content-image {

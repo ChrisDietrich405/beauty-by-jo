@@ -73,9 +73,10 @@
   }
 
   .link-container {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem; 
+    column-gap: 3rem; 
+    row-gap: 2rem; 
   }
 
   .service-button {

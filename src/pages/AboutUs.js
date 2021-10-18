@@ -13,8 +13,9 @@ export default function AboutUs() {
                     <h1><b>About Us</b></h1>                  
                 </div>
                 </Parallax>
-                <div>
-                    <p>Welcome to Beauty By Jo. My name is Jordan Cahill, I am a 20 year old licensed esthetician located in Glen Burnie,MD. I've had a love for all things beauty for as long as I could remember, so I absolutely knew this was the career path for me! My goal as your esthetician is to enhance your natural beauty and help empower all my clients to radiate confidence! I love having the ability to not only be your esthetician but also your friend (sometimes even your therapist) and I have been very fortunate in having great clientele that allow me to continue doing what I love. So to my future and current clients, thank you! I wouldn't be doing this without you all. </p>
+                <div className="about-us-content">
+                    <h2>Welcome to Beauty By Jo!</h2>
+                    <p>My name is Jordan Cahill, I am a 20 year old licensed esthetician located in Glen Burnie,MD. I've had a love for all things beauty for as long as I could remember, so I absolutely knew this was the career path for me! My goal as your esthetician is to enhance your natural beauty and help empower all my clients to radiate confidence! I love having the ability to not only be your esthetician but also your friend (sometimes even your therapist) and I have been very fortunate in having great clientele that allow me to continue doing what I love. So to my future and current clients, thank you! I wouldn't be doing this without you all. </p>
                 </div>
                 <div className="about-us-intro">
                     <div className="about-us-intro-text" id="movetxt">
