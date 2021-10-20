@@ -39,6 +39,7 @@ function App() {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Browser>
+
         <Header/>
         <NavBar/>
         <Switch>
@@ -56,8 +57,10 @@ function App() {
           <Route path="/signin" component={SignIn}/>
           <Route path="/create-account" component={CreateAccount}/>
         </Switch>
+    
       </Browser> 
-      <Footer/>    
+      
+       
     </div>
   );
 }

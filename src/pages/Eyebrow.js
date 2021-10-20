@@ -23,24 +23,33 @@ export default function Eyebrow() {
                     <h1><b>Eyebrows</b></h1>                  
                 </div>
             </Parallax>
-            <div className="service-description">
-            <div className="price">
-                <div className="price-wrapper">
-                    <div className="price-title">Brow Lamination</div>
-                    <div className="price-cost-time">$50: 45 minutes advertised ( 1 hour on my schedule)</div>
-                    <button className="price-button">Book</button>
-                </div>
-                <div className="price-wrapper">
-                    <div className="price-title">Brow Lamination + Wax OR Tint</div>
-                    <div className="price-cost-time">$60: 55 minutes (1 hour on my schedule) </div>
-                    <button className="price-button">Book</button>
-                </div>
-                <div className="price-wrapper">
-                    <div className="price-title">Brow Lamination, Wax AND Tint</div>
-                    <div className="price-cost-time">$70: 1 hour ( 1 hour 10 minutes on my schedule)</div>
-                    <button className="price-button">Book</button>
+            <div className="price-content">
+                <div className="price">
+                    <div className="price-wrapper">
+                        <div className="price-title">Brow Lamination</div>
+                        <div className="price-cost-time">$50: 45 minutes advertised ( 1 hour on my schedule)</div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
+                    <div className="price-wrapper">
+                        <div className="price-title">Brow Lamination + Wax OR Tint</div>
+                        <div className="price-cost-time">$60: 55 minutes (1 hour on my schedule) </div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
+                    <div className="price-wrapper">
+                        <div className="price-title">Brow Lamination, Wax AND Tint</div>
+                        <div className="price-cost-time">$70: 1 hour ( 1 hour 10 minutes on my schedule)</div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div className="service-description">
+           
             <h3>FAQ-</h3>
             <p><b>What is brow lamination?</b></p>
             <p>Brow Lamination is a chemical process that softens the keratin bonds and the hair follicle. This            allows me to create a new shape, playing with the brow hairs to create a thicker, and more structured       look. Whether you like them fluffy or more defined, this service is great for anyone looking to step            up their brow game. </p>

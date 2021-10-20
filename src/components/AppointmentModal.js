@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import DatePicker from "react-date-picker";
 
+import ServicesList from "./ServicesList";
 import ModalTemplate from "./ModalTemplate";
 
 import "../styles/components/modal.scss";
 
-function Modal({ onClose }) {
+function AppointmentModal({ label, onClose }) {
 	const [service, setService] = useState([]);
 	const [showServices, setShowServices] = useState(true);
 	const [showAppointmentCal, setShowAppointmentCal] = useState(false);
@@ -16,33 +17,6 @@ function Modal({ onClose }) {
 	const [selectedTime, setSelectedTime] = useState("");
 	const [showAppointmentConfirmation, setShowAppointmentConfirmation] =
 		useState(false);
-
-	const services = [
-		{
-			name: "Makeup",
-			path: "/make-up",
-		},
-		{
-			name: "Waxing",
-			path: "/waxing",
-		},
-		{
-			name: "Vagacial",
-			path: "/vagacial",
-		},
-		{
-			name: "Lashes",
-			path: "/lashes",
-		},
-		{
-			name: "Facials",
-			path: "/facials",
-		},
-		{
-			name: "Brows",
-			path: "/eyebrow",
-		},
-	];
 
 	const timeArray = [
 		"9:00",
@@ -54,28 +28,6 @@ function Modal({ onClose }) {
 		"4:00",
 		"5:00",
 	];
-
-	const servicesList = () => {
-		return (
-			<div className="title">
-				<h2>Pick a service to schedule your appointment</h2>
-				<hr />
-				<div className="link-container">
-					{services.map((service) => (
-						<button
-							className="service-button"
-							onClick={() => {
-								toggleState("appointment");
-								setSelectedService(service.name);
-							}}
-						>
-							{service.name}
-						</button>
-					))}
-				</div>
-			</div>
-		);
-	};
 
 	const datePicker = () => {
 		return (
@@ -147,7 +99,15 @@ function Modal({ onClose }) {
 
 	return (
 		<ModalTemplate onClose={onClose}>
-			{showServices ? servicesList() : null}
+			{showServices ? (
+				<ServicesList
+					label={label}
+					onSelect={(service) => {
+						setService(service.name);
+						toggleState("appointment");
+					}}
+				/>
+			) : null}
 			{showAppointmentCal ? datePicker() : null}
 			{showTimes ? timePicker() : null}
 			{showAppointmentConfirmation ? appointmentConfirmation() : null}
@@ -156,4 +116,4 @@ function Modal({ onClose }) {
 	);
 }
 
-export default Modal;
+export default AppointmentModal;

@@ -1,40 +1,56 @@
 @import "~bootstrap/scss/functions";
 @import "./_variables.scss";
 @import "~bootstrap/scss/mixins";
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 @import "./components/header.scss";
 @import "./components/navbar.scss";
 @import "./pages/home.scss";
-@import "./components/slideshow.scss"; 
+@import "./components/slideshow.scss";
 @import "./components/footer.scss";
-@import "./pages/calendar.scss"; 
+@import "./pages/calendar.scss";
 
-
-
-body { 
-    font-family: 'Montserrat', sans-serif;
+body {
+	font-family: "Montserrat", sans-serif;
 }
 
 h1 {
-    font-weight: bold; 
+	font-weight: bold;
 }
 
 p {
-    font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 }
+
+.main {
+	position: relative;
+	min-height: 100vh;
+   }
 
 .service-description {
-    width: 80vw;
-    margin: 0 auto; 
+	width: 80vw;
+	margin: 0 auto;
 }
 
+.price-content {
+	display: flex;
+	justify-content: center;
+}
+
+.price {
+	width: 90%;
+}
 .price-wrapper {
-    display: flex; 
-    justify-content: space-around; 
-    margin-bottom: 2rem; 
+	display: grid;
+	margin-bottom: 2rem;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button-wrapper {
+    text-align: center; 
 }
 
 .price-button {
-    border-radius: 8px; 
+	width: 5rem; 
+	border-radius: 8px;
 }

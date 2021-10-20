@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import Modal from "./Modal";
+import ServicesModal from "./ServicesModal";
 
 import { BsFillPersonFill } from "react-icons/bs";
 
@@ -36,9 +36,12 @@ export default function Navbar() {
 							</Link>
 						</li>
 						<li className="nav-item" id="service-item">
-							    <button className="services-btn btn" onClick={() => setModalOpen(true)}>
-							    	 <span className="noselect">Services</span>
-							    </button>
+							<button
+								className="services-btn btn"
+								onClick={() => setModalOpen(true)}
+							>
+								<span className="noselect">Services</span>
+							</button>
 						</li>
 						<li className="nav-item">
 							<Link to="/policies" className="nav-link" href="#">
@@ -72,7 +75,12 @@ export default function Navbar() {
 					</ul>
 				</div>
 			</div>
-			{modalOpen && <Modal setModalOpen={setModalOpen} />}
+			{modalOpen && (
+				<ServicesModal
+					label="Go to page"
+					onClose={() => setModalOpen(false)}
+				/>
+			)}
 		</nav>
 	);
 }
