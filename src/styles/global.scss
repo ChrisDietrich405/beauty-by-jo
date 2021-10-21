@@ -40,11 +40,17 @@ p {
 .price {
 	width: 90%;
 }
+
 .price-wrapper {
 	display: grid;
 	margin-bottom: 2rem;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 2fr 1fr 1fr;
 }
+
+.price-title {
+	width: 80%; 
+}
+
 
 .button-wrapper {
     text-align: center; 

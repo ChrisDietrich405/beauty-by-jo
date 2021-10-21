@@ -27,7 +27,6 @@ export default function CreateAccount() {
 
     return (
         <div className="form-container">
-            <h2>Beauty by Jo</h2>
                 <form onSubmit={submit}>
                     <h4>Create account</h4>
                     <label htmlFor="name">

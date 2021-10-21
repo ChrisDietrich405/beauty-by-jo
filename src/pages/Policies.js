@@ -16,7 +16,7 @@ export default function Policies() {
                 </div>
             </Parallax>
             <div className="policies-container">
-                <h4>Please read the following before booking!</h4> 
+                <h3>Please read the following before booking!</h3> 
                 <br />
                 <h5>DEPOSIT AND PAYMENT:</h5>
                 <ul>

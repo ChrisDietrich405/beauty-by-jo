@@ -23,7 +23,6 @@ export default function SignIn() {
 
     return (
         <div className="form-container">
-            <h2>Beauty by Jo</h2>
                 <form onSubmit={submit}>
                     <h3>Sign In</h3>
                     <label htmlFor="name">
@@ -35,9 +34,9 @@ export default function SignIn() {
                         <input type="text" placeholder="" id="password" value={password} onChange={addPassword}  />
                         <p className="password-minimum">(At least 6 characters)</p>
                     </label>
-                    <button className="sign-in-button">submit</button>
-                    <p>Forgot password?</p>
-                    <p>New to Beauty by Jo?</p>
+                    <button className="sign-in-button">Submit</button>
+                    <p className="forgot-password">Forgot password?</p>
+                    <p className="new-to-beauty">New to Beauty by Jo?</p>
                     <Link to="/create-account">
                         <button type="submit" className="btn create-account-btn">Create your Beauty by Jo account</button>               
                     </Link>

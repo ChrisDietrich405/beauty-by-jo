@@ -27,19 +27,20 @@ export default function Lashes() {
                 <div className="price">
                     <div className="price-wrapper">
                         <div className="price-title">Lash lift</div>
-                        <div className="price-cost-time">$50:$60: 45 minutes (On calendar schedule on my end it would block off an hour of time, leaving 15 minutes to clean after service)</div>
+                        <div className="price-cost-time">$55 45minutes (1 hr on my schedule) </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">SIGNATURE JO-GLOW</div>
-                        <div className="price-cost-time">$80: 1 hour (On calendar schedule on my end it would block off an hour and 15 minutes of time, leaving 15 minutes to clean after service) </div>
+                        <div className="price-title">Lash lift AND tint</div>
+                        <div className="price-cost-time">$70 </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>    
                 </div>
+            </div>
             <div className="service-description">
             <p>What is a lash lift?-</p>
             <br/>
@@ -62,10 +63,8 @@ export default function Lashes() {
             <br />
             <p>How long does the lift last?</p>
             <p>Around 3-4 weeks </p>
-            <p>- $55 45minutes (1 hr on my schedule) </p>
-            <p>Lash lift AND tint- $70</p>
             </div>   
         </div>
-    </div>
+   
     )
 }

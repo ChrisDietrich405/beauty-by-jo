@@ -58,9 +58,9 @@ export default function Navbar() {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link to="/reviews" className="nav-link" href="#">
+							<Link to="/testimonials" className="nav-link" href="#">
 								<div className="btn">
-									<span className="noselect">Reviews</span>
+									<span className="noselect">Testimonials</span>
 								</div>
 							</Link>
 						</li>

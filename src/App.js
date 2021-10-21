@@ -1,3 +1,22 @@
+
+
+
+//TESTIMONIALS
+//the person should specify the service they received 
+//https://cdn.dribbble.com/users/3100395/screenshots/9333269/media/cf3593e3553e48956bda98823abdd55a.png?compress=1&resize=1600x1200
+
+//FACIALS 
+//put description underneath the title 
+//make the center column smaller 
+//the content is centered 
+
+//LASHES
+//RECOMMEND TO JORDAN TO HAVE A FAQ FOR EACH PAGE 
+//Accordion menu 
+//FAQ title 
+
+
+
 import { useState } from "react"
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
 import {Helmet} from "react-helmet";
@@ -17,7 +36,7 @@ import Waxing from "./pages/Waxing"
 import Eyebrow from "./pages/Eyebrow"
 import Vagacial from "./pages/Vagacial"
 import Facials from "./pages/Facials"
-import Reviews from "./pages/Reviews"
+import Testimonials from "./pages/Testimonials"
 import Policies from "./pages/Policies"
 
 
@@ -52,7 +71,7 @@ function App() {
           <Route path="/eyebrow" component={Eyebrow}/>
           <Route path="/vagacial" component={Vagacial}/>
           <Route path="/facials" component={Facials}/>
-          <Route path="/reviews" component={Reviews}/>
+          <Route path="/testimonials" component={Testimonials}/>
           <Route path="/policies" component={Policies}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/create-account" component={CreateAccount}/>

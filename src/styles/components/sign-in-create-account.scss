@@ -9,7 +9,7 @@
     h3 {
         display: flex;
         align-items: start;
-        width: 11rem; 
+        width: 13rem; 
         margin-bottom: .5rem; 
     }
 
@@ -31,7 +31,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        margin-bottom: 1rem; 
     }
 
     input {
@@ -59,7 +58,6 @@
         box-shadow: 5px 5px 5px rgba(0, 0, 0, .5)
     }
 
-
     span {
         display: flex;
         align-items: flex-start;
@@ -76,7 +74,16 @@
     .sign-in-button {
         background-color: black;
         color: white;
-        font-size: 1rem;  
+        font-size: 1rem; 
+        margin-bottom: .6rem;  
+    }
+
+    .forgot-password:hover {
+        text-decoration: underline;
+    }
+
+    .new-to-beauty {
+        margin-bottom: 4px; 
     }
 
     .create-account-btn {
