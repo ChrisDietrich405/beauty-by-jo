@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./styles/global.scss" //WHY DOESN'T THIS HAVE TWO ..
+import "./styles/global.scss" 
 import App from './App';
 
 

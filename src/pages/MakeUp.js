@@ -21,43 +21,29 @@ export default function MakeUp() {
     return (
         <div className="service-container">
             <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
-                <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
+                <div className="parallax-container-text">
                     <h1>Makeup</h1>                  
                 </div>
             </Parallax>
             
             <div className="service-description">
-                <div className="price-wrapper">
-                        <div className="price-title">Makeup Consultation</div>
-                        <div className="price-cost-time">$50: 1 hour 30 minutes- 2 hours</div>
-                        <button className="price-button">Book</button>
+                <div className="price-content">
+                    <div className="price">
+                        <div className="price-wrapper">
+                            <div className="price-title">
+                                <h5>Makeup Consultation</h5>
+
+                            </div>
+                            <div className="price-cost-time">$50: 1 hour 30 minutes- 2 hours</div>
+                            <div className="button-wrapper">
+                                <button className="price-button">Book</button>
+                            </div>
+                        </div>    
                 </div>
-                <p>Prior to appointment, please send your look inspirations to beautybyjocahill@gmail.com. The price of            your makeup session will have to be discussed after inspiration pictures are sent. Different looks          require a different amount of time and product, therefore they will be priced accordingly. </p>
-                {/* <div className="calendar-wrapper">
-                <div className="appointment-container">
-                    <h4>Choose a day and time that works for you.</h4>
-                    <div className="date-picker-container">
-                        <div className="date-container">
-                            <DatePicker
-                                onChange={() => setIsTimeVisible(true)}
-                                value={value}
-                            />
-                        </div>
-                        <div className="time-container">
-                            {isTimeVisible ? 
-                                timeArray.map(hour => (
-                                    <div className="time-content">
-                                        {hour}
-                                    </div>
-                                ))
+                </div>
+                    <p>Prior to appointment, please send your look inspirations to beautybyjocahill@gmail.com. The price    of            your makeup session will have to be discussed after inspiration pictures are sent.   Different looks          require a different amount of time and product, therefore they will be   priced accordingly. </p>
+                </div>
                                 
-                            : null }
-                        </div>
-                    </div>
-                </div>
-                </div> */}
             </div>
-                                
-        </div>
     )
 }

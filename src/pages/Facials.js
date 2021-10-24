@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
-import Footer from "../components/Footer"
 
 import BeautySupplies from "../assets/images/about-us.jpg"
 
@@ -79,8 +78,7 @@ export default function Facials() {
                     </div>
                 </div>
             </div>
-            
-            <Footer/>  
+             
         </div>
         
     )

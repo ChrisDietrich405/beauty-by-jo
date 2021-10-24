@@ -14,9 +14,9 @@
     }
 
     .alignment {
-        display: flex; 
-        justify-content: space-around;
-        align-items: center; 
+        // display: flex; 
+        // justify-content: space-around;
+        // align-items: center; 
 
     .dropdown:hover .dropdown-menu {
         display: block;
@@ -117,6 +117,12 @@
       }
 
       #service-item {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+      }
+
+      .nav-item {
         display: flex; 
         align-items: center; 
         justify-content: center; 

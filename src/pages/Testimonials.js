@@ -4,6 +4,7 @@ import BeautySupplies from "../assets/images/about-us.jpg"
 import GridPic from "../assets/images/grid-pic1.jpg"
 
 import Tab from "../components/Tab"
+import TestimonialsSlideShow from "../components/TestimonialsSlideShow"
 
 import "../styles/pages/reviews.scss"
 
@@ -15,9 +16,8 @@ export default function Testimonials() {
                         <h1><b>Testimonials</b></h1>                  
                     </div>
                 </Parallax>
-                <Tab/>
-                
-           
+                <TestimonialsSlideShow/>
+                {/* <Tab/> */}
         </div>
     )
 }

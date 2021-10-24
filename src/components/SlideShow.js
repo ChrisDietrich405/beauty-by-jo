@@ -11,13 +11,6 @@ const AutoplayExample = () => {
     'images/slideshow3.jpg'
   ];
 
-  const style = {
-    textAlign: "center",
-    background: "teal",
-    padding: "200px 0",
-    fontSize: "30px"
-  }
-
   return (
     <div>
       <div>

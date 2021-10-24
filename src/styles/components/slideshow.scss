@@ -29,16 +29,18 @@
       z-index: 100; 
   }
 
+.each-slide > div {
+    background-position: center; 
+    background-size: content;
 
+    //background-attachment: fixed; 
+}
 
-// .slideshow-container {
-//     width: 100vw; 
-//     height: 75vh;  
-//     animation: slide 10s ease-in-out infinite;
-// }
+//   @media only screen and (max-width: 900px) {
+//     .each-slide > div {
+//         background-position: center; 
+//         background-size: cover; 
+//     }
+//   }
 
-// .slideshow-container img {
-//     width: 100vw; 
-//     height: 75vh; 
-// }
 

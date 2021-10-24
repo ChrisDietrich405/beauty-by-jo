@@ -5,6 +5,8 @@ import EyebrowThreading from "../assets/images/eyebrow-threading2.jpg"
 
 import DatePicker from 'react-date-picker'
 
+import FAQ from "../components/FAQ"
+
 import "../styles/pages/services.scss"
 import "../styles/components/parallax.scss"
 
@@ -15,7 +17,20 @@ export default function Eyebrow() {
     const [value, onChange] = useState(new Date())
 
     const timeArray = ["9:00AM", "9:30AM", "10:00AM", "10:30AM", "11:00AM", "11:30AM", "12:00PM", "1:00PM", "1:30PM", "2:00PM", "2:30PM", "3:00PM", "3:30PM", "4:00PM"]
+    
+    const faqContent = [
+        {
+            id: 1,
+            title: "What is brow lamination?",
+            info: "Brow Lamination is a chemical process that softens the keratin bonds and the hair follicle. This            allows me to create a new shape, playing with the brow hairs to create a thicker, and more structured       look. Whether you like them fluffy or more defined, this service is great for anyone looking to step            up their brow game."
+        },
+        {   
+            id: 2, 
+            title: "How long does the lamination last?",
+            info: " As long as you apply castor oil every night, between appointments, and are gentle with the area, this           should last 3-4 weeks"
+        },
 
+    ]
     return (
         <div className="service-container">
             <Parallax className="parallax-container" bgImage={EyebrowThreading} strength={500}>
@@ -49,6 +64,7 @@ export default function Eyebrow() {
                 </div>
             </div>
             <div className="service-description">
+            <FAQ questions={faqContent}/>
            
             <h3>FAQ-</h3>
             <p><b>What is brow lamination?</b></p>

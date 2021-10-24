@@ -5,10 +5,7 @@
 //the person should specify the service they received 
 //https://cdn.dribbble.com/users/3100395/screenshots/9333269/media/cf3593e3553e48956bda98823abdd55a.png?compress=1&resize=1600x1200
 
-//FACIALS 
-//put description underneath the title 
-//make the center column smaller 
-//the content is centered 
+
 
 //LASHES
 //RECOMMEND TO JORDAN TO HAVE A FAQ FOR EACH PAGE 
@@ -38,6 +35,7 @@ import Vagacial from "./pages/Vagacial"
 import Facials from "./pages/Facials"
 import Testimonials from "./pages/Testimonials"
 import Policies from "./pages/Policies"
+
 
 
 import '@popperjs/core'
@@ -76,10 +74,8 @@ function App() {
           <Route path="/signin" component={SignIn}/>
           <Route path="/create-account" component={CreateAccount}/>
         </Switch>
-    
-      </Browser> 
-      
-       
+      <Footer/>
+      </Browser>   
     </div>
   );
 }
