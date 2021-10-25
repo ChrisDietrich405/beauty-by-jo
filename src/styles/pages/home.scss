@@ -163,11 +163,51 @@
             margin: 2rem;          
         }
 
+        .grid {
+            display: flex; 
+            justify-content: center; 
+            margin: 0 auto; 
+        }
+
         .home-container .grid-item-container {
             display: grid; 
-            grid-template-columns: auto auto;
-        }
+            grid-template-columns: 1fr 1fr;
+        }    
+
+        .grid-item {
+            margin: 0 .5rem .5rem 2rem; 
+        }   
     }
+
+    @media only screen and(max-width: 640px) {
+
+        .about-section {
+            display: flex;
+            flex-direction: column; 
+            margin: 2rem;          
+        }
+
+        .home-container .grid-item-container {
+            display: grid; 
+            grid-template-columns: 1fr;
+        }   
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
