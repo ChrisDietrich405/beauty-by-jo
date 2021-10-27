@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
 
+import { BiTimeFive } from "react-icons/bi";
+import { AiOutlineDollarCircle } from "react-icons/ai";
+
 import EyebrowThreading from "../assets/images/eyebrow-threading2.jpg"
 
 import DatePicker from 'react-date-picker'
@@ -29,6 +32,21 @@ export default function Eyebrow() {
             title: "How long does the lamination last?",
             info: " As long as you apply castor oil every night, between appointments, and are gentle with the area, this           should last 3-4 weeks"
         },
+        {   
+            id: 3, 
+            title: "What would prevent me from getting this service?",
+            info: " As long as you apply castor oil every night, between appointments, and are gentle with the area, this           should last 3-4 weeks"
+        },
+        {   
+            id: 4, 
+            title: "How long does the lamination last?",
+            info: " As long as you apply castor oil every night, between appointments, and are gentle with the area, this           should last 3-4 weeks"
+        },
+        {   
+            id: 5, 
+            title: "How long does the lamination last?",
+            info: " As long as you apply castor oil every night, between appointments, and are gentle with the area, this           should last 3-4 weeks"
+        },
 
     ]
     return (
@@ -42,21 +60,30 @@ export default function Eyebrow() {
                 <div className="price">
                     <div className="price-wrapper">
                         <div className="price-title">Brow Lamination</div>
-                        <div className="price-cost-time">$50: 45 minutes advertised ( 1 hour on my schedule)</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $50</p>
+                            <p><BiTimeFive/> 45 minutes</p>
+                        </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
                         <div className="price-title">Brow Lamination + Wax OR Tint</div>
-                        <div className="price-cost-time">$60: 55 minutes (1 hour on my schedule) </div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $60</p>
+                            <p><BiTimeFive/> 55 minutes</p>
+                        </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
                         <div className="price-title">Brow Lamination, Wax AND Tint</div>
-                        <div className="price-cost-time">$70: 1 hour ( 1 hour 10 minutes on my schedule)</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $70</p>
+                            <p><BiTimeFive/> 1 hour</p>
+                        </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
@@ -93,30 +120,24 @@ export default function Eyebrow() {
             <p><b> How long does the lamination last? - </b></p>  
             <p>     As long as you apply castor oil every night, between appointments, and are gentle with the area, this           should last 3-4 weeks</p> 
             </div>
-            {/* <div className="calendar-wrapper">
-                <div className="appointment-container">
-                    <h4>Choose a day and time that works for you.</h4>
-                    <div className="date-picker-container">
-                        <div className="date-container">
-                            <DatePicker
-                                onChange={() => setIsTimeVisible(true)}
-                                value={value}
-                            />
-                        </div>
-                        <div className="time-container">
-                            {isTimeVisible ? 
-                                timeArray.map(hour => (
-                                    <div className="time-content">
-                                        {hour}
-                                    </div>
-                                ))
-                                
-                            : null }
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             
         </div>
     )
 }
+
+{/* <div className="price-title">Brow Lamination</div>
+                        <div className="price-cost-time">$50: 45 minutes advertised ( 1 hour on my schedule)</div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
+                    <div className="price-wrapper">
+                        <div className="price-title">Brow Lamination + Wax OR Tint</div>
+                        <div className="price-cost-time">$60: 55 minutes (1 hour on my schedule) </div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
+                    <div className="price-wrapper">
+                        <div className="price-title">Brow Lamination, Wax AND Tint</div>
+                        <div className="price-cost-time">$70: 1 hour ( 1 hour 10 minutes on my schedule)</div> */}

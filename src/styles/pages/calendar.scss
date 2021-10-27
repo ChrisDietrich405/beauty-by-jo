@@ -314,6 +314,11 @@
     display: flex;
     flex-direction: column; 
     justify-content: space-around;
+
+    button {
+      border-radius: 5px; 
+      margin-top: 8rem; 
+    }
     
 
     h4 {

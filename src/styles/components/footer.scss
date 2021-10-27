@@ -93,7 +93,11 @@
 }
 
 @media only screen and(max-width: 900px) {
-    
+    .footer-wrapper {
+        display: flex; 
+        flex-direction: column; 
+        background-color: $secondary; 
+    }
 }
 
 

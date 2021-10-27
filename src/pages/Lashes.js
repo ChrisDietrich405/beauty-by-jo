@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
 
+import { BiTimeFive } from "react-icons/bi";
+import { AiOutlineDollarCircle } from "react-icons/ai";
+
 import FAQ from "../components/FAQ"
 import BeautySupplies from "../assets/images/about-us.jpg"
 
@@ -28,6 +31,11 @@ export default function Lashes() {
             title: "How long does the lift last?",
             info: "Around 3-4 weeks"
         },
+        {   
+            id: 3, 
+            title: "What is pre care for this service?",
+            info: "Come to your appointment with clean lashes. No makeup or extensions."
+        },
 
     ]
     
@@ -41,19 +49,31 @@ export default function Lashes() {
             <div className="price-content">
                 <div className="price">
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Lash lift</h5>
+                        <div className="price-title">Lash lift</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $55</p>
+                            <p><BiTimeFive/> 45 minutes</p>
                         </div>
-                        <div className="price-cost-time">$55 45minutes (1 hr on my schedule)</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Lash lift AND tint</h5>
+                        <div className="price-title">Lash lift and Tint</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $70</p>
+                            <p><BiTimeFive/> 55 minutes</p>
                         </div>
-                        <div className="price-cost-time">$70</div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
+                    <div className="price-wrapper">
+                        <div className="price-title">Brow Lamination, Wax AND Tint</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $70</p>
+                            <p><BiTimeFive/> 1 hour</p>
+                        </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
@@ -89,3 +109,15 @@ export default function Lashes() {
 <p>How long does the lift last?</p>
 <p>Around 3-4 weeks </p>
 </div> */}
+
+{/* <div className="price-content">
+<div className="price">
+    <div className="price-wrapper">
+        <div className="price-title">
+            <h5>Lash lift</h5>
+        </div>
+        <div className="price-cost-time">$55 45minutes (1 hr on my schedule)</div>
+        <div className="button-wrapper">
+            <button className="price-button">Book</button>
+        </div>
+    </div> */}

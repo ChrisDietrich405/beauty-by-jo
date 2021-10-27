@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
 
+import { BiTimeFive } from "react-icons/bi";
+import { AiOutlineDollarCircle } from "react-icons/ai";
+
 import BeautySupplies from "../assets/images/makeup.jpg"
-
-
 
 import DatePicker from 'react-date-picker'
 
@@ -25,25 +26,23 @@ export default function MakeUp() {
                     <h1>Makeup</h1>                  
                 </div>
             </Parallax>
-            
-            <div className="service-description">
-                <div className="price-content">
-                    <div className="price">
-                        <div className="price-wrapper">
-                            <div className="price-title">
-                                <h5>Makeup Consultation</h5>
-
-                            </div>
-                            <div className="price-cost-time">$50: 1 hour 30 minutes- 2 hours</div>
-                            <div className="button-wrapper">
-                                <button className="price-button">Book</button>
-                            </div>
-                        </div>    
+            <div className="price-content">
+                <div className="price">
+                    <div className="price-wrapper">
+                        <div className="price-title">Make up consultation</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $50</p>
+                            <p><BiTimeFive/> 1 hour - 1 hour thirty minutes</p>
+                        </div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                    <p>Prior to appointment, please send your look inspirations to beautybyjocahill@gmail.com. The price    of            your makeup session will have to be discussed after inspiration pictures are sent.   Different looks          require a different amount of time and product, therefore they will be   priced accordingly. </p>
-                </div>
-                                
             </div>
+            <div className="service-definition">
+                <p>Prior to appointment, please send your look inspirations to <b>beautybyjocahill@gmail.com.</b> The price    of            your makeup session will have to be discussed after inspiration pictures are sent.   Different looks          require a different amount of time and product, therefore they will be   priced accordingly. </p>                    
+            </div>
+        </div>
     )
 }

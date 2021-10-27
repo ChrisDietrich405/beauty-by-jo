@@ -1,3 +1,25 @@
+//SCHEDULE YOUR APPOINTMENT 
+//add a back button to each modal 
+//second to last modal should have: 
+//We're almost there
+//your make up appointment is set for Thursday, October 22nd. Please confirm. 
+//confirmation button, back button
+//the last modal will have:
+//thank you for your business. your ...appointment is schedule for 
+//make another appointment
+
+//BROWS AND FAQ
+
+//the individual questions should be the same size as the services above 
+//align FAQ to the left in line with the services 
+//put the plus sign to the left of the question 
+
+//TESTIMONIALS 
+//MAKE PICTURES CIRCLES
+//GET RID OF THE QUOTATION ICON
+//UNDER NAME HAVE JOB TITLE
+//KEEP THE NAME UPPERCASE AND MAKE THE JOB TITLE BOLD 
+//PUT THE ARROWS IN THE MIDDLE OF THE PICTURE
 
 
 
@@ -17,7 +39,7 @@
 import { useState } from "react"
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
 import {Helmet} from "react-helmet";
-
+import "react-datetime/css/react-datetime.css";
 
 import Home from "./pages/Home"
 import Header from "./components/Header"

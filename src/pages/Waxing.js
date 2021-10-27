@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
 
+import { BiTimeFive } from "react-icons/bi";
+import { AiOutlineDollarCircle } from "react-icons/ai";
+
 import BeautySupplies from "../assets/images/about-us.jpg"
 
 import DatePicker from 'react-date-picker'
@@ -26,101 +29,111 @@ export default function Waxing() {
             <div className="price-content">
                 <div className="price">
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Full leg</h5>
+                        <div className="price-title">Full leg</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $55</p>
+                            <p><BiTimeFive/> 45 minutes</p>
                         </div>
-                        <div className="price-cost-time">$55</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Half Leg (above or below the knee)</h5>
+                        <div className="price-title">Half Leg (above or below the knee)</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $35</p>
+                            <p><BiTimeFive/> 55 minutes</p>
                         </div>
-                        <div className="price-cost-time">$35 </div>
-                        <div className="button-wrapper">
-                            <button className="price-button">Book</button>
-                        </div>
-                    </div>    
-                    <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Full arm</h5>
-                        </div>
-                        <div className="price-cost-time">$40</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Half Arm (above or below elbow)</h5>
+                        <div className="price-title">Full Arm</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $40</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$30</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Armpits</h5>
+                        <div className="price-title">Half Arm (above or below elbow)</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $30</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$20 </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Bikini</h5>
-                            
+                        <div className="price-title">Armpits</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $20</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$30</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>French bikini</h5>
+                        <div className="price-title">Bikini</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $30</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$45</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Brazilian</h5>
+                        <div className="price-title">French bikini</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $45</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$65</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Lip or chin</h5>
+                        <div className="price-title">Brazilian</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $65</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$10 </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Full face (lip, chin, brows, sides)</h5>
+                        <div className="price-title">Lip or chin</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $10</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$40</div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>
                     </div>
                     <div className="price-wrapper">
-                        <div className="price-title">
-                            <h5>Eyebrow shaping</h5>
+                        <div className="price-title">Full face (lip, chin, brows, sides)</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $40</p>
+                            <p><BiTimeFive/> 1 hour</p>
                         </div>
-                        <div className="price-cost-time">$15</div>
+                        <div className="button-wrapper">
+                            <button className="price-button">Book</button>
+                        </div>
+                    </div>
+                    <div className="price-wrapper">
+                        <div className="price-title">Eyebrow shaping</div>
+                        <div className="price-cost-time">
+                            <p><AiOutlineDollarCircle/> $15</p>
+                            <p><BiTimeFive/> 1 hour</p>
+                        </div>
                         <div className="button-wrapper">
                             <button className="price-button">Book</button>
                         </div>

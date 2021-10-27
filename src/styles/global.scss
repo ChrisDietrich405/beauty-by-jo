@@ -28,7 +28,7 @@ p {
    }
 
 .service-description {
-	width: 80vw;
+	width: 100vw;
 	margin: 0 auto;
 }
 
@@ -49,8 +49,26 @@ p {
 }
 
 .price-title {
+	font-weight: 900; 
 	width: 80%; 
 }
+
+.price-cost-time {
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center; 
+	align-items: flex-start; 
+	margin-bottom: -2px; 
+
+	p {
+		margin: 0 24px -2px 0; 
+	}
+
+	svg {
+		margin-bottom: 2px; 
+	}
+}
+
 
 
 .button-wrapper {
@@ -60,4 +78,8 @@ p {
 .price-button {
 	width: 5rem; 
 	border-radius: 8px;
+}
+
+.service-defintion {
+	width: 80%; 
 }
