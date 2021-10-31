@@ -1,33 +1,10 @@
-export default function ServicesList({ label, onSelect }) {
-	const services = [
-		{
-			name: "Makeup",
-			path: "/make-up",
-		},
-		{
-			name: "Waxing",
-			path: "/waxing",
-		},
-		{
-			name: "Vagacial",
-			path: "/vagacial",
-		},
-		{
-			name: "Lashes",
-			path: "/lashes",
-		},
-		{
-			name: "Facials",
-			path: "/facials",
-		},
-		{
-			name: "Brows",
-			path: "/eyebrow",
-		},
-	];
+import classNames from "classnames";
+
+export default function ServicesList({ label, services, className, onSelect }) {
+	console.log(services);
 
 	return (
-		<div className="title">
+		<div className={classNames("title", className)}>
 			<h2>{label}</h2>
 			<hr />
 			<div className="link-container">

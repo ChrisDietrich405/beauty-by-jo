@@ -13,7 +13,7 @@
   
   .modalContainer {
     width: 500px;
-    height: 500px;
+    height: 80%; 
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -80,9 +80,21 @@
   }
 
   .service-button {
+    padding: 8px 16px; 
     border-radius: 8px;
-    width: 6rem;
-    height: 2rem; 
     background-color: black;
     color: white;
+  }
+
+  .specific .link-container {
+    display: flex;
+    flex-wrap: wrap; 
+  }
+
+  .specific .service-button {
+    width: 100%; 
+  }
+
+  .modal-bod {
+    min-height: 80%; 
   }
