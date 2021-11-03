@@ -68,16 +68,6 @@ export default function Lashes() {
                             <button className="price-button">Book</button>
                         </div>
                     </div>
-                    <div className="price-wrapper">
-                        <div className="price-title">Brow Lamination, Wax AND Tint</div>
-                        <div className="price-cost-time">
-                            <p><AiOutlineDollarCircle/> $70</p>
-                            <p><BiTimeFive/> 1 hour</p>
-                        </div>
-                        <div className="button-wrapper">
-                            <button className="price-button">Book</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <FAQ questions={faqContent}/>   

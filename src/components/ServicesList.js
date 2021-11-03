@@ -1,7 +1,6 @@
 import classNames from "classnames";
 
 export default function ServicesList({ label, services, className, onSelect }) {
-	console.log(services);
 
 	return (
 		<div className={classNames("title", className)}>
@@ -13,8 +12,6 @@ export default function ServicesList({ label, services, className, onSelect }) {
 						className="service-button"
 						onClick={() => {
 							onSelect(service);
-							// toggleState("appointment");
-							// setSelectedService(service.name);
 						}}
 					>
 						{service.name}

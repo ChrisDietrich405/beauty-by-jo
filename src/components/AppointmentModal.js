@@ -19,7 +19,7 @@ function AppointmentModal({ label, onClose }) {
 	const [selectedTime, setSelectedTime] = useState("");
 
 	const [showServices, setShowServices] = useState(true);
-	const [showSpecificServices, setShowSpecificServices] = useState(true);
+	const [showSpecificServices, setShowSpecificServices] = useState(false);
 	const [showAppointmentCal, setShowAppointmentCal] = useState(false);
 	const [showTimes, setShowTimes] = useState(false);
 	const [selectedService, setSelectedService] = useState("");
@@ -28,18 +28,18 @@ function AppointmentModal({ label, onClose }) {
 		useState(false);
 
 	const onModalBack = () => {
-		if(showServices === true) {
+		if (showServices === true) {
 			setShowAppointmentConfirmation(true);
 			setShowServices(false);
-		} else if(showAppointmentConfirmation === true) {
+		} else if (showAppointmentConfirmation === true) {
 			setShowPreconfirmation(true);
 			setShowAppointmentConfirmation(false);
-		} else if(showPreconfirmation === true) {
-			setShowSpecificServices(true)
-			setShowPreconfirmation(false)
-		} else if(showSpecificServices === true) {
-			setShowServices(true)
-			setShowSpecificServices(false)
+		} else if (showPreconfirmation === true) {
+			setShowSpecificServices(true);
+			setShowPreconfirmation(false);
+		} else if (showSpecificServices === true) {
+			setShowServices(true);
+			setShowSpecificServices(false);
 		}
 	};
 
@@ -78,12 +78,9 @@ function AppointmentModal({ label, onClose }) {
 				<div className="modal-bod">
 					<h1>We're almost there!</h1>
 					<p>
-						Your {service} appointment is set for{" "}
+						Your {service} {specificService} appointment is set for{" "}
 						{selectedDate.toLocaleDateString("en-US")} at{" "}
-						{selectedDate.toLocaleTimeString([], {
-							hour: "2-digit",
-							minute: "2-digit",
-						})}
+						{selectedTime}
 					</p>
 				</div>
 				<button
@@ -139,7 +136,6 @@ function AppointmentModal({ label, onClose }) {
 		const specificServices = services
 			.filter((value) => value.name === service)
 			.map((service) => service.specificService);
-
 		if (specificServices.length) {
 			return specificServices[0];
 		}

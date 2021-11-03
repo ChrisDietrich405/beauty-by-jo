@@ -1,25 +1,26 @@
 .modalBackground {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0; 
     background: rgba(0, 0, 0, 0.35);
     position: fixed;
     display: flex;
     justify-content: center;
-    align-items: center;
     z-index: 1000; 
+    overflow: auto; 
   }
   
   .modalContainer {
     width: 500px;
-    height: 80%; 
+    height: fit-content; 
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     padding: 25px;
+    margin: 25px 0; 
   }
   
   .modalContainer .title {
@@ -30,7 +31,12 @@
   
   .titleCloseBtn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+  }
+
+  .titleCloseBtn button:first-child {
+      background: blue; 
+      border-radius: 10px; 
   }
   
   .titleCloseBtn button {

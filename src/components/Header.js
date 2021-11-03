@@ -26,7 +26,6 @@ export default function Header() {
                       <button>Contact Us</button>
                  </div> 
                  {modalOpen && <AppointmentModal label="Pick a service to schedule your appointment" onClose={() => setModalOpen(false)} />} 
-                 {/* when modalOpen is true it will render the Modal component             */}
             </div>
         </> 
     )
