@@ -9,6 +9,7 @@ export default function ServicesList({ label, services, className, onSelect }) {
 			<div className="link-container">
 				{services.map((service) => (
 					<button
+						// key={service.id}  //after adding individual ids to each specificService uncomment this out
 						className="service-button"
 						onClick={() => {
 							onSelect(service);

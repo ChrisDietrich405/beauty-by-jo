@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import ServicesList from "./ServicesList";
 import ModalTemplate from "./ModalTemplate";
 
-import services from "../data/services";
+import services from "../assets/data/services";
 
 export default function ServicesModal({ label, onClose }) {
 	const history = useHistory();

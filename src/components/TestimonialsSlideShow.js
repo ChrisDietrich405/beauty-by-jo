@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { FaQuoteRight } from 'react-icons/fa';
-import data from '../assets/testimonial-slideshow-data';
+import data from '../assets/data/testimonial-slideshow-data';
 
 import "../styles/components/testimonials-slideshow.scss"
 

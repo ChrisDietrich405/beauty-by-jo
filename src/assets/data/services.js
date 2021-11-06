@@ -1,5 +1,6 @@
 export default [
 	{
+		id: 1,
 		name: "Makeup",
 		path: "/make-up",
 		specificService: [
@@ -9,10 +10,12 @@ export default [
 		],
 	},
 	{
+		id: 2,
 		name: "Waxing",
 		path: "/waxing",
 		specificService: [
 			{
+				// id: 1,
 				name: "Full leg",
 			},
 			{
@@ -48,10 +51,12 @@ export default [
 		],
 	},
 	{
+		id: 3,
 		name: "Vagacial",
 		path: "/vagacial",
 	},
 	{
+		id: 4, 
 		name: "Lashes",
 		path: "/lashes",
 		specificService: [
@@ -64,10 +69,12 @@ export default [
 		],
 	},
 	{
+		id: 5,
 		name: "Facials",
 		path: "/facials",
 	},
 	{
+		id: 6,
 		name: "Brows",
 		path: "/eyebrow",
 		specificService: [

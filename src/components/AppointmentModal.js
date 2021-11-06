@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import DatePicker from "react-date-picker";
 import Datetime from "react-datetime";
 
-import services from "../data/services";
+import services from "../assets/data/services";
+
 import ServicesList from "./ServicesList";
 import ModalTemplate from "./ModalTemplate";
 import TimeList from "./TimeList";
@@ -11,21 +12,18 @@ import TimeList from "./TimeList";
 import "../styles/components/modal.scss";
 
 function AppointmentModal({ label, onClose }) {
-	const [showPreconfirmation, setShowPreconfirmation] = useState(false);
-
-	const [service, setService] = useState("");
-	const [specificService, setSpecificService] = useState("");
-	const [selectedDate, setSelectedDate] = useState(new Date());
-	const [selectedTime, setSelectedTime] = useState("");
-
 	const [showServices, setShowServices] = useState(true);
 	const [showSpecificServices, setShowSpecificServices] = useState(false);
 	const [showAppointmentCal, setShowAppointmentCal] = useState(false);
-	const [showTimes, setShowTimes] = useState(false);
-	const [selectedService, setSelectedService] = useState("");
-
+	const [showPreconfirmation, setShowPreconfirmation] = useState(false);
 	const [showAppointmentConfirmation, setShowAppointmentConfirmation] =
 		useState(false);
+
+	const [service, setService] = useState("");
+	const [specificService, setSpecificService] = useState("");
+
+	const [selectedDate, setSelectedDate] = useState(new Date());
+	const [selectedTime, setSelectedTime] = useState("");
 
 	const onModalBack = () => {
 		if (showServices === true) {
@@ -43,75 +41,63 @@ function AppointmentModal({ label, onClose }) {
 		}
 	};
 
-	const datePicker = () => {
-		return (
-			<div className="appointment-container">
-				<div className="modal-bod">
-					<h4>Choose a day and time that works for you.</h4>
-					<div className="date-picker-container">
-						<div className="date-container">
-							<Datetime
-								timeFormat={false}
-								closeOnSelect={true}
-								value={selectedDate}
-								onChange={(date) =>
-									setSelectedDate(date.toDate())
-								}
-							/>
-							<TimeList
-								onSelectTime={(timeSelected) => {
-									setSelectedTime(timeSelected);
-									setShowPreconfirmation();
-									toggleState("preconfirmation");
-								}}
-							/>
-						</div>
+	const DatePicker = () => (
+		<div className="appointment-container">
+			<div className="modal-bod">
+				<h4>Choose a day and time that works for you.</h4>
+				<div className="date-picker-container">
+					<div className="date-container">
+						<Datetime
+							timeFormat={false}
+							closeOnSelect={true}
+							value={selectedDate}
+							onChange={(date) => setSelectedDate(date.toDate())}
+						/>
+						<TimeList
+							onSelectTime={(timeSelected) => {
+								setSelectedTime(timeSelected);
+								toggleState("preconfirmation");
+							}}
+						/>
 					</div>
 				</div>
 			</div>
-		);
-	};
+		</div>
+	);
 
-	const preConfirmation = () => {
-		return (
-			<>
-				<div className="modal-bod">
-					<h1>We're almost there!</h1>
-					<p>
-						Your {service} {specificService} appointment is set for{" "}
-						{selectedDate.toLocaleDateString("en-US")} at{" "}
-						{selectedTime}
-					</p>
-				</div>
-				<button
-					onClick={() => {
-						toggleState("confirmation");
-					}}
-				>
-					confirm
-				</button>
-				{/* <button onClick={() => toggleState("appointmentConfirmation")}>Confirm Appointment</button> */}
-			</>
-		);
-	};
+	const preConfirmation = () => (
+		<>
+			<div className="modal-bod">
+				<h1>We're almost there!</h1>
+				<p>
+					Your {specificService} appointment is set for{" "}
+					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}
+				</p>
+			</div>
+			<button
+				onClick={() => {
+					toggleState("confirmation");
+				}}
+			>
+				confirm
+			</button>
+		</>
+	);
 
-	const appointmentConfirmation = () => {
-		return (
-			<>
-				<div className="modal-bod">
-					<h1>Thank you for your business!</h1>
-					<p>
-						Your {selectedService} appointment has been scheduled
-						for {selectedDate.toLocaleDateString("en-US")} at{" "}
-						{selectedTime}
-					</p>
-				</div>
-				<button onClick={() => toggleState("additionalAppointment")}>
-					Make another appointment
-				</button>
-			</>
-		);
-	};
+	const appointmentConfirmation = () => (
+		<>
+			<div className="modal-bod">
+				<h1>Thank you for your business!</h1>
+				<p>
+					Your {specificService} appointment has been scheduled for{" "}
+					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}
+				</p>
+			</div>
+			<button onClick={() => toggleState("additionalAppointment")}>
+				Make another appointment
+			</button>
+		</>
+	);
 
 	const toggleState = (state) => {
 		if (state === "services") {
@@ -133,16 +119,15 @@ function AppointmentModal({ label, onClose }) {
 	};
 
 	const getSpecificServices = () => {
-		const specificServices = services
-			.filter((value) => value.name === service)
-			.map((service) => service.specificService);
-		if (specificServices.length) {
-			return specificServices[0];
+		const filterServices = services.filter(
+			(value) => value.name === service  
+		);
+		if (filterServices.length) {
+			return filterServices[0].specificService;
 		}
-
 		return [];
 	};
-
+	
 	return (
 		<ModalTemplate onBack={onModalBack} onClose={onClose}>
 			{showServices ? (
@@ -166,7 +151,7 @@ function AppointmentModal({ label, onClose }) {
 					}}
 				/>
 			) : null}
-			{showAppointmentCal ? datePicker() : null}
+			{showAppointmentCal && <DatePicker />}
 			{showPreconfirmation ? preConfirmation() : null}
 			{showAppointmentConfirmation ? appointmentConfirmation() : null}
 		</ModalTemplate>
