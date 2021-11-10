@@ -4,3 +4,12 @@
     grid-gap: 10px;
     margin-top: 10px;
 }
+
+.time {
+    background-color: #d1c4f2;
+    transition: all 1s ease-out;
+}
+
+.time:hover {
+    opacity: 0.5;
+  }

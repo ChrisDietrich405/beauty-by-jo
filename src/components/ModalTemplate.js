@@ -1,11 +1,11 @@
+import classNames from "classnames"
 
-
-export default function ModalTemplate({onClose, onBack, children}) {
+export default function ModalTemplate({onClose, onBack, isShowBackButton, children}) {
     return (
         <>
           <div className="modalBackground">
             <div className="modalContainer">
-                <div className="titleCloseBtn">
+                <div className={classNames("titleCloseBtn", {modalBackButtonVisible: isShowBackButton})}>
                  <button
 				          	onClick={() => {
 				          		onBack();

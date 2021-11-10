@@ -31,6 +31,16 @@
   .titleCloseBtn {
     display: flex;
     justify-content: flex-end;
+
+    button:first-child {
+      visibility: hidden; 
+    }
+  }
+
+  .modalBackButtonVisible {
+    button:first-child {
+      display: unset;  
+    }
   }
   
   .titleCloseBtn button {

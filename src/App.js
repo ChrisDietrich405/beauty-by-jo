@@ -1,25 +1,14 @@
-//SCHEDULE YOUR APPOINTMENT 
-//add a back button to each modal 
-//second to last modal should have: 
-//We're almost there
-//your make up appointment is set for Thursday, October 22nd. Please confirm. 
-//confirmation button, back button
-//the last modal will have:
-//thank you for your business. your ...appointment is schedule for 
-//make another appointment
+//first schedule appointment modal doesn't need a back button
+//add the price to the preconfirmation and confirmation 
+//the modal's background should be the home page
 
-//BROWS AND FAQ
 
-//the individual questions should be the same size as the services above 
-//align FAQ to the left in line with the services 
-//put the plus sign to the left of the question 
 
-//TESTIMONIALS 
-//MAKE PICTURES CIRCLES
-//GET RID OF THE QUOTATION ICON
-//UNDER NAME HAVE JOB TITLE
-//KEEP THE NAME UPPERCASE AND MAKE THE JOB TITLE BOLD 
-//PUT THE ARROWS IN THE MIDDLE OF THE PICTURE
+//After MVP
+//the four pictures at the bottom of the home page should have titles for example eye lashes and they should be
+//clickable so that you go to that specific page 
+
+
 
 
 

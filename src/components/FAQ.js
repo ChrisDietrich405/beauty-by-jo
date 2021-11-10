@@ -1,4 +1,3 @@
-import { useState } from "react"
 import SingleQuestion from './Question';
 
 import "../styles/components/faq.scss"

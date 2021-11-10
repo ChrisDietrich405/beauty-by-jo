@@ -84,3 +84,27 @@ p {
 .service-defintion {
 	width: 80%; 
 }
+
+.confirm-button {
+	background-color: #000; 
+	color: #fff; 
+	border-radius: 8px;
+	transition: all 1s ease-out; 
+	padding: 10px; 	  
+}
+
+.confirm-button:hover {
+    opacity: 0.8;
+}
+
+.another-appointment-button {
+	background-color: #000; 
+	color: #fff; 
+	border-radius: 8px;
+	padding: 10px; 
+	transition: all 1s ease-out; 	  
+}
+
+.another-appointment-button:hover {
+    opacity: 0.8;
+}

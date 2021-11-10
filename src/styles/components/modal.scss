@@ -37,6 +37,7 @@
   .titleCloseBtn button:first-child {
       background: #d1c4f2;
       border-radius: 10px; 
+      visibility: hidden;
   }
   
   .titleCloseBtn button {
@@ -44,6 +45,12 @@
     border: none;
     font-size: 25px;
     cursor: pointer;
+  }
+
+  .modalBackButtonVisible {
+    button:first-child {
+      visibility: unset;  
+    }
   }
   
   .modalContainer .body {
@@ -88,8 +95,8 @@
   .service-button {
     padding: 8px 16px; 
     border-radius: 8px;
-    background-color: black;
-    color: white;
+    background-color: #d1c4f2;
+    color: #000;
   }
 
   .specific .link-container {
@@ -103,4 +110,12 @@
 
   .modal-bod {
     min-height: 80%; 
+    
+    h4 {
+      margin-top: 20px; 
+    }
   }
+
+
+
+  

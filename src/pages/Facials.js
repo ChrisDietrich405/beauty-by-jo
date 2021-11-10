@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { Parallax, Background } from "react-parallax";
+import DatePicker from 'react-date-picker'
 
 import BeautySupplies from "../assets/images/about-us.jpg"
-
-import DatePicker from 'react-date-picker'
 
 import "../styles/pages/services.scss"
 import "../styles/pages/facials.scss"

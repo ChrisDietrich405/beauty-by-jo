@@ -21,6 +21,7 @@ function AppointmentModal({ label, onClose }) {
 
 	const [service, setService] = useState("");
 	const [specificService, setSpecificService] = useState("");
+	const [price, setPrice] = useState("")
 
 	const [selectedDate, setSelectedDate] = useState(new Date());
 	const [selectedTime, setSelectedTime] = useState("");
@@ -65,35 +66,40 @@ function AppointmentModal({ label, onClose }) {
 		</div>
 	);
 
-	const preConfirmation = () => (
+	const PreConfirmation = () => (
 		<>
 			<div className="modal-bod">
-				<h1>We're almost there!</h1>
+				<h4>We're almost there!</h4>
 				<p>
 					Your {specificService} appointment is set for{" "}
-					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}
+					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}.
+					The cost will be {specificService.price}. 
 				</p>
 			</div>
 			<button
+				className="confirm-button"
 				onClick={() => {
 					toggleState("confirmation");
 				}}
 			>
-				confirm
+				confirm your appointment
 			</button>
 		</>
 	);
 
-	const appointmentConfirmation = () => (
+	const AppointmentConfirmation = () => (
 		<>
 			<div className="modal-bod">
-				<h1>Thank you for your business!</h1>
+				<h4>Thank you for your business!</h4>
 				<p>
 					Your {specificService} appointment has been scheduled for{" "}
-					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}
+					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The 
+					cost will be {specificService.price}. 
 				</p>
 			</div>
-			<button onClick={() => toggleState("additionalAppointment")}>
+			<button
+				className="another-appointment-button" 
+				onClick={() => toggleState("additionalAppointment")}>
 				Make another appointment
 			</button>
 		</>
@@ -129,7 +135,7 @@ function AppointmentModal({ label, onClose }) {
 	};
 	
 	return (
-		<ModalTemplate onBack={onModalBack} onClose={onClose}>
+		<ModalTemplate onBack={onModalBack} onClose={onClose} isShowBackButton={!showServices}>
 			{showServices ? (
 				<ServicesList
 					label={label}
@@ -143,17 +149,18 @@ function AppointmentModal({ label, onClose }) {
 			{showSpecificServices ? (
 				<ServicesList
 					className="specific"
-					label={label}
+					label={"Now please choose a specific service"}
 					services={getSpecificServices()}
 					onSelect={(specificService) => {
 						setSpecificService(specificService.name);
+						setPrice(specificService.price) ///////////////////////
 						toggleState("appointment");
 					}}
 				/>
 			) : null}
 			{showAppointmentCal && <DatePicker />}
-			{showPreconfirmation ? preConfirmation() : null}
-			{showAppointmentConfirmation ? appointmentConfirmation() : null}
+			{showPreconfirmation && <PreConfirmation />}
+			{showAppointmentConfirmation && <AppointmentConfirmation/>}
 		</ModalTemplate>
 	);
 }

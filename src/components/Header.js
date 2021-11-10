@@ -16,11 +16,11 @@ export default function Header() {
        <>
             <div className="header">
                  <div className="header-container">
-                      <Link to="/calendar">
+                     
                            <button onClick={() => setModalOpen(true)}>
                                 Schedule an appointment
                            </button>
-                      </Link>
+                   
 
                       <img src={Logo}/>
                       <button>Contact Us</button>
