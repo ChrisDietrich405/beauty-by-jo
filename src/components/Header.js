@@ -16,12 +16,9 @@ export default function Header() {
        <>
             <div className="header">
                  <div className="header-container">
-                     
                            <button onClick={() => setModalOpen(true)}>
                                 Schedule an appointment
                            </button>
-                   
-
                       <img src={Logo}/>
                       <button>Contact Us</button>
                  </div> 

@@ -1,3 +1,8 @@
+//contact page - https://booksy.com/en-us/p/contact 
+//line dividing each question
+//for sign-in, log in change name to email 
+
+
 //first schedule appointment modal doesn't need a back button
 //add the price to the preconfirmation and confirmation 
 //the modal's background should be the home page

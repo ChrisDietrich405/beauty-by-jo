@@ -6,10 +6,10 @@ import "../styles/components/sign-in-create-account.scss"
 
 export default function SignIn() {
 
-    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const addName = (e) => {
+    const addEmail = (e) => {
         setName(e.target.value)
     }
 
@@ -27,7 +27,7 @@ export default function SignIn() {
                     <h3>Sign In</h3>
                     <label htmlFor="name">
                         Name
-                        <input type="text" id="name" value={name} onChange={addName}  />
+                        <input type="text" id="name" value={name} onChange={addEmail}  />
                     </label>
                     <label htmlFor="password">
                         Password 
