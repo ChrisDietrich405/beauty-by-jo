@@ -1,4 +1,4 @@
-import SingleQuestion from './Question';
+import Question from './Question';
 
 import "../styles/components/faq.scss"
 
@@ -10,13 +10,13 @@ export default function FAQ({questions}) {
                <div className="container">
                    <h2>Frequently Asked Questions</h2>
                    <section className="info">
-                       {
-                        questions.map((question) => {
-                            return (
-                                <SingleQuestion key={question.id} {...question} />
+                       {questions.map((question) => (
+                                <div>
+                                    <Question key={question.id} {...question} />
+                                    <hr/>
+                                </div>
                             )
-                        })   
-                       }
+                        )}
                    </section>
                </div>
            </main>

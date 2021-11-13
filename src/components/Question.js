@@ -15,7 +15,9 @@ const Question = ({title, info}) => {
               </button>
               <h5>{title}</h5>   
           </header>
-          {showInfo && <p>{info}</p>}
+          {showInfo && <ul>{info.map((item, index) => (
+              <li key={index}>{item}</li>   
+          ))}</ul>}
           
       </article>
   );

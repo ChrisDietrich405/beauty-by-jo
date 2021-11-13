@@ -5,7 +5,7 @@ export default [
 		path: "/make-up",
 		specificService: [
 			{
-				name: "Make up consultation",
+				name: "make up consultation",
 				price: "$50"
 			}
 		],

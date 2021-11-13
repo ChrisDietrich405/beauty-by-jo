@@ -39,6 +39,9 @@ function AppointmentModal({ label, onClose }) {
 		} else if (showSpecificServices === true) {
 			setShowServices(true);
 			setShowSpecificServices(false);
+		} else if (showAppointmentCal === true) {
+			setShowSpecificServices(true)
+			setShowAppointmentCal(false)
 		}
 	};
 
@@ -73,7 +76,7 @@ function AppointmentModal({ label, onClose }) {
 				<p>
 					Your {specificService} appointment is set for{" "}
 					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}.
-					The cost will be {specificService.price}. 
+					The cost will be {price}. 
 				</p>
 			</div>
 			<button
@@ -94,7 +97,7 @@ function AppointmentModal({ label, onClose }) {
 				<p>
 					Your {specificService} appointment has been scheduled for{" "}
 					{selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The 
-					cost will be {specificService.price}. 
+					cost will be {price}. 
 				</p>
 			</div>
 			<button
@@ -153,7 +156,7 @@ function AppointmentModal({ label, onClose }) {
 					services={getSpecificServices()}
 					onSelect={(specificService) => {
 						setSpecificService(specificService.name);
-						setPrice(specificService.price) ///////////////////////
+						setPrice(specificService.price) 
 						toggleState("appointment");
 					}}
 				/>

@@ -10,7 +10,7 @@ export default function SignIn() {
     const [password, setPassword] = useState("")
 
     const addEmail = (e) => {
-        setName(e.target.value)
+        setEmail(e.target.value)
     }
 
     const addPassword = (e) => {
@@ -26,8 +26,8 @@ export default function SignIn() {
                 <form onSubmit={submit}>
                     <h3>Sign In</h3>
                     <label htmlFor="name">
-                        Name
-                        <input type="text" id="name" value={name} onChange={addEmail}  />
+                        Email
+                        <input type="text" id="name" value={email} onChange={addEmail}  />
                     </label>
                     <label htmlFor="password">
                         Password 

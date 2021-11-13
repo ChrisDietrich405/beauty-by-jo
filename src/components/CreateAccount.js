@@ -4,7 +4,7 @@ import "../styles/components/sign-in-create-account.scss"
 
 export default function CreateAccount() {
 
-    const [name, setName] = useState("")
+    const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -18,8 +18,12 @@ export default function CreateAccount() {
                 <form onSubmit={submit}>
                     <h4>Create account</h4>
                     <label htmlFor="name">
-                        Name
-                        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)}  />
+                        First Name
+                        <input type="text" id="name" value={firstName} onChange={(e) => setFirstName(e.target.value)}  />
+                    </label>
+                    <label htmlFor="name">
+                        Last Name
+                        <input type="text" id="name" value={lastName} onChange={(e) => setLastName(e.target.value)}  />
                     </label>
                     <label htmlFor="email">
                         Email

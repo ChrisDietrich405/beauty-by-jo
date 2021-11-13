@@ -24,18 +24,33 @@ export default function Lashes() {
         {
             id: 1,
             title: "What is a lash lift?",
-            info: "A lash lift is a chemical process safe for the lashes and eye area which softens the keratin bonds in the hair follicle. During the service we discuss how curly you would like them and perform the service to your liking. To put it in simpler terms, this service adds a semi-permanent curl to your lashes for an effortless, bolder lash."
+            info: ["A lash lift is a chemical process safe for the lashes and eye area which softens the keratin bonds in the hair follicle. During the service we discuss how curly you would like them and perform the service to your liking. To put it in simpler terms, this service adds a semi-permanent curl to your lashes for an effortless, bolder lash."]
         },
         {   
             id: 2, 
-            title: "How long does the lift last?",
-            info: "Around 3-4 weeks"
+            title: "What is pre care for this service?",
+            info: ["Come to your appointment with clean lashes. No makeup or extensions."]
         },
         {   
             id: 3, 
-            title: "What is pre care for this service?",
-            info: "Come to your appointment with clean lashes. No makeup or extensions."
+            title: "What is post care for this service?",
+            info: [
+                "Be gentle with your lashes; no rubbing.",
+                "Do not get your lashes wet for the first 24 hrs.",
+                "Do not use harsh products on your eyes/lashes.",
+                "Use of Sauna/Steam is possible after 24hrs but may weaken the effect of the lift.",
+                "No eye make up for 24 hours",
+                "Avoid waterproof mascara’s.",
+                "Avoid sleeping on face",
+                "Do not use oil based products or any conditioning treatments/ serums on the lashes.",
+            ]
         },
+        {   
+            id: 4, 
+            title: "How long does the lift last?",
+            info: ["Around 3-4 weeks"]
+        },
+
 
     ]
     

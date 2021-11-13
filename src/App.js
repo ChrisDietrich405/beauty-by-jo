@@ -1,6 +1,6 @@
 //contact page - https://booksy.com/en-us/p/contact 
-//line dividing each question
-//for sign-in, log in change name to email 
+
+
 
 
 //first schedule appointment modal doesn't need a back button
@@ -51,6 +51,7 @@ import Vagacial from "./pages/Vagacial"
 import Facials from "./pages/Facials"
 import Testimonials from "./pages/Testimonials"
 import Policies from "./pages/Policies"
+import Contact from "./pages/Contact"
 
 
 
@@ -89,6 +90,8 @@ function App() {
           <Route path="/policies" component={Policies}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/create-account" component={CreateAccount}/>
+          <Route path="/contact" component={Contact}/>
+          
         </Switch>
       <Footer/>
       </Browser>   
