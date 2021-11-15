@@ -41,16 +41,12 @@
     .about-section-definition {
         width: 450px;
         height: 400px; 
-        margin-left: 10px;
         font-size: 20px;  
         padding: 2rem; 
         box-shadow: 3px 5px 15px -1px #000000;
         text-align: center;  
     }
 
-    // .about-section-definition h2 {
-    //     color: $secondary-color; 
-    // }
     .beauty-supplies-container {
         position: relative;
         text-align: center;
@@ -160,7 +156,7 @@
         .about-section {
             display: flex;
             flex-direction: column; 
-            margin: 2rem;          
+            margin-bottom: 20px;          
         }
 
         .grid {
@@ -184,7 +180,7 @@
         .about-section {
             display: flex;
             flex-direction: column; 
-            margin: 2rem;          
+            margin-bottom: 20px;          
         }
 
         .home-container .grid-item-container {

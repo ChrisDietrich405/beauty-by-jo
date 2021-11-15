@@ -8,7 +8,7 @@ import BeautySupplies from "../assets/images/makeup.jpg"
 
 import DatePicker from 'react-date-picker'
 
-import "../styles/pages/services.scss"
+import "../styles/pages/make-up.scss"
 import "../styles/components/parallax.scss"
 
 
@@ -39,7 +39,7 @@ export default function MakeUp() {
                 </div>
             </div>
             <div className="service-definition">
-                <p>Prior to appointment, please send your look inspirations to <a href="mailto:beautybyjocahill@gmail.com">Beauty By Jo</a> The price    of            your makeup session will have to be discussed after inspiration pictures are sent.   Different looks          require a different amount of time and product, therefore they will be   priced accordingly. </p>                    
+                <p>Prior to appointment, please send your look inspirations to <a className="make-up-email" href="mailto:beautybyjocahill@gmail.com">Beauty By Jo.</a> The price    of            your makeup session will have to be discussed after inspiration pictures are sent.   Different looks          require a different amount of time and product, therefore they will be   priced accordingly. </p>                    
             </div>
         </div>
     )

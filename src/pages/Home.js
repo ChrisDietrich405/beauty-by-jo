@@ -17,9 +17,6 @@ export default function Home() {
     return (
         <div className="home-container">
             <SlideShow/>
-            {/* <div className="waxing-container">
-                <img className="waxing-img" src={Waxing}/>
-            </div> */}
             <div className="bar-separator">
                 <h4>Serving the Glen Burnie and Pasadena communities</h4>
             </div>

@@ -2,75 +2,80 @@
 
 .header {
     width: 100%; 
-}
 
-.header-container {
-
-    height: 9rem; 
-    width: 100%; 
-    display: flex; 
-    justify-content: space-around;
-    align-items: center !important; 
-        
-    .btn {
-        padding: .3rem .8rem; 
-        color: white; 
-        background-color: $primary; 
-        border-radius: 1rem; 
-        transition: 4s ease;
+    .header-container {
+        height: 27vh; 
+        width: 100%; 
+        display: flex; 
+        justify-content: space-around;
+        align-items: center !important; 
+            
+        .btn {
+            padding: .3rem .8rem; 
+            color: white; 
+            background-color: $primary; 
+            border-radius: 1rem; 
+            transition: 4s ease;
+        }
+    
+        .btn:hover {
+            transition: 1s ease;
+            color: $secondary;
+        }
+    
+        img {
+            width: 100px; 
+            border-radius: 50%; 
+        }
+    
     }
-
-    .btn:hover {
-        transition: 1s ease;
-        color: $secondary;
+    
+    .appointment-wrapper {
+        max-width: 100%;
+        padding-left: 3rem; 
+        height: 100px; 
+        background: black;
+        display: grid; 
+        grid-template-columns: repeat(5, 20%); 
+        align-items: center;
+        grid-template-columns: [col] 250px [col] 250px [col] 250px [col] 250px [col] 250px;   
+    
+        input {
+            width: 10rem;
+            padding: 10px 30px; 
+            border-radius: 8px;
+            outline: none; 
+        }
+    
+        button {
+            width: 5rem; 
+            border-radius: 10px; 
+        }
+    
+        span {
+            color: white; 
+            margin-left: 10px; 
+        }
     }
-
-    img {
-        width: 100px; 
-        border-radius: 50%; 
-    }
-
-}
-
-.appointment-wrapper {
-    max-width: 100%;
-    padding-left: 3rem; 
-    height: 100px; 
-    background: black;
-    display: grid; 
-    grid-template-columns: repeat(5, 20%); 
-    align-items: center;
-    grid-template-columns: [col] 250px [col] 250px [col] 250px [col] 250px [col] 250px;   
-
-    input {
-        width: 10rem;
-        padding: 10px 30px; 
-        border-radius: 8px;
-        outline: none; 
-    }
-
-    button {
-        width: 5rem; 
-        border-radius: 10px; 
-    }
-
-    span {
-        color: white; 
-        margin-left: 10px; 
-    }
-
-  
 }
 
 @media screen and (max-width: 880px) {
-    .header-container {
+    .header-container { 
       display: flex;
       flex-direction: column; 
       margin: 1rem; 
     }
 
     button {
-        margin: .5rem; 
+        margin-bottom: 10px; 
+    }
+
+    .header img {
+        margin-bottom: 10px; 
+    }
+
+    .header Link {
+        margin-bottom: 10px; 
     }
   }
 
