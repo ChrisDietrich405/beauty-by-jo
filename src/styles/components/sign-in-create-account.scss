@@ -33,18 +33,32 @@
         align-items: flex-start;
     }
 
-    input {
+    input, textarea {
         border-radius: 7px;
         width: 100%; 
         transition: all .4s;
         outline: none;  
         padding: .5rem 0;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+        border: 2px solid #000; 
     }
 
-    input:hover {
+    input, textarea:hover {
         cursor: pointer; 
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, .5)
     }
+
+    textarea {
+        margin-bottom: 30px; 
+    }
+
+    // textarea {
+    //     border-radius: 7px;
+    //     width: 100%; 
+    //     transition: all .4s;
+    //     outline: none;  
+    //     padding: .5rem 0;
+    // }
+
 
     button { 
         width: 100%; 

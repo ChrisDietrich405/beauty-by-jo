@@ -1,14 +1,14 @@
 @import "../_variables.scss"; 
 
 .header {
-    width: 100%; 
+
 
     .header-container {
         height: 27vh; 
         width: 100%; 
-        display: flex; 
-        justify-content: space-around;
-        align-items: center !important; 
+        display: flex;
+        justify-content: space-around; 
+        align-items: center; 
             
         .btn {
             padding: .3rem .8rem; 
@@ -16,6 +16,7 @@
             background-color: $primary; 
             border-radius: 1rem; 
             transition: 4s ease;
+            margin-right: 80px; 
         }
     
         .btn:hover {
@@ -25,7 +26,9 @@
     
         img {
             width: 100px; 
-            border-radius: 50%; 
+            border-radius: 50%;
+            align-items: center;  
+            margin-right: 80px;  
         }
     
     }

@@ -1,36 +1,3 @@
-//contact page - https://booksy.com/en-us/p/contact 
-
-
-
-
-//first schedule appointment modal doesn't need a back button
-//add the price to the preconfirmation and confirmation 
-//the modal's background should be the home page
-
-
-
-//After MVP
-//the four pictures at the bottom of the home page should have titles for example eye lashes and they should be
-//clickable so that you go to that specific page 
-
-
-
-
-
-//TESTIMONIALS
-//the person should specify the service they received 
-//https://cdn.dribbble.com/users/3100395/screenshots/9333269/media/cf3593e3553e48956bda98823abdd55a.png?compress=1&resize=1600x1200
-
-
-
-//LASHES
-//RECOMMEND TO JORDAN TO HAVE A FAQ FOR EACH PAGE 
-//Accordion menu 
-//FAQ title 
-
-
-
-import { useState } from "react"
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
 import {Helmet} from "react-helmet";
 import "react-datetime/css/react-datetime.css";
@@ -56,7 +23,7 @@ import Contact from "./pages/Contact"
 
 
 import '@popperjs/core'
-import 'bootstrap/dist/js/bootstrap'  //bootstrap uses popperjs 
+import 'bootstrap/dist/js/bootstrap' 
 
 import "./styles/global.scss"
 
