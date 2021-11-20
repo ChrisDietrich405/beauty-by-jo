@@ -2,7 +2,6 @@
 
 .header {
 
-
     .header-container {
         height: 27vh; 
         width: 100%; 
@@ -30,55 +29,31 @@
             align-items: center;  
             margin-right: 80px;  
         }
-    
-    }
-    
-    .appointment-wrapper {
-        max-width: 100%;
-        padding-left: 3rem; 
-        height: 100px; 
-        background: black;
-        display: grid; 
-        grid-template-columns: repeat(5, 20%); 
-        align-items: center;
-        grid-template-columns: [col] 250px [col] 250px [col] 250px [col] 250px [col] 250px;   
-    
-        input {
-            width: 10rem;
-            padding: 10px 30px; 
-            border-radius: 8px;
-            outline: none; 
-        }
-    
-        button {
-            width: 5rem; 
-            border-radius: 10px; 
-        }
-    
-        span {
-            color: white; 
-            margin-left: 10px; 
-        }
-    }
+    } 
 }
 
 @media screen and (max-width: 880px) {
     .header-container { 
-      display: flex;
-      flex-direction: column; 
-      margin: 1rem; 
-    }
-
-    button {
-        margin-bottom: 10px; 
-    }
-
-    .header img {
-        margin-bottom: 10px; 
-    }
-
-    .header Link {
-        margin-bottom: 10px; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        margin: 25px 0px 25px 40px; 
+  
+        button {
+          margin-bottom: 10px; 
+        
+        }
+  
+        img {
+          margin-bottom: 10px; 
+          
+        }
+  
+        Link {
+          margin-bottom: 10px;
+         
+        }
     }
   }
 
