@@ -1,60 +1,55 @@
-@import "../_variables.scss"; 
+@import "../_variables.scss";
 
 .header {
+  .header-container {
+    height: 27vh;
+    // width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-    .header-container {
-        height: 27vh; 
-        width: 100%; 
-        display: flex;
-        justify-content: space-around; 
-        align-items: center; 
-            
-        .btn {
-            padding: .3rem .8rem; 
-            color: white; 
-            background-color: $primary; 
-            border-radius: 1rem; 
-            transition: 4s ease;
-            margin-right: 80px; 
-        }
-    
-        .btn:hover {
-            transition: 1s ease;
-            color: $secondary;
-        }
-    
-        img {
-            width: 100px; 
-            border-radius: 50%;
-            align-items: center;  
-            margin-right: 80px;  
-        }
-    } 
+    .btn {
+      padding: 0.3rem 0.8rem;
+      color: white;
+      background-color: $primary;
+      border-radius: 1rem;
+      transition: 4s ease;
+      margin-right: 80px;
+    }
+
+    .btn:hover {
+      transition: 1s ease;
+      color: $secondary;
+    }
+
+    img {
+      width: 100px;
+      border-radius: 50%;
+      align-items: center;
+      margin-right: 120px;
+    }
+  }
 }
 
 @media screen and (max-width: 880px) {
-    .header-container { 
-        display: flex;
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: center; 
-        margin: 25px 0px 25px 40px; 
-  
-        button {
-          margin-bottom: 10px; 
-        
-        }
-  
-        img {
-          margin-bottom: 10px; 
-          
-        }
-  
-        Link {
-          margin-bottom: 10px;
-         
-        }
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0px 25px 100px;
+
+    button {
+      margin-bottom: 10px;
+    }
+
+    img {
+      margin-left: 40px;
+      margin-bottom: 10px;
+    }
+
+    Link {
+      margin-bottom: 10px;
     }
   }
-
-
+}

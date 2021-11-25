@@ -1,69 +1,105 @@
-import { BrowserRouter as Browser, Switch, Route } from "react-router-dom"
-import {Helmet} from "react-helmet";
+//SIGN IN PAGE
+
+//sign in title in center
+//at least 6 characterS needs to be bigger
+//  create your account instead of create your beauty by jo account
+
+//FOOTER
+//social media icons should be closer together
+
+//SERVICES
+//is not aligned horizontally. Needs to be more to the right to have equal white space on the left
+//and the right
+//cost and time should be side by side
+//make the book button wider
+//titles should all be the same as the Facials service title font and font weight
+//the price and time should be aligned to the top
+
+//FACIALS
+//descriptions shouldn't be bold
+//use the icons for the price and the time
+//the titles of the services should have a heavier font-weight
+//the price and time should be aligned to the top
+
+//FAQ
+//the bullets need to be under the questions
+
+//POLICIES
+//email needs to be a link
+
+//  TESTIMONIALS
+//make slideshow pic half the size
+
+import { BrowserRouter as Browser, Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+
 import "react-datetime/css/react-datetime.css";
 
-import Home from "./pages/Home"
-import Header from "./components/Header"
-import NavBar from "./components/NavBar"
-import Footer from "./components/Footer"
-import SignIn from "./components/SignIn"
-import CreateAccount from "./components/CreateAccount"
-import AboutUs from "./pages/AboutUs"
-import Beauty from "./pages/Beauty"
-import MakeUp from "./pages/MakeUp"
-import Lashes from "./pages/Lashes"
-import Waxing from "./pages/Waxing"
-import Eyebrow from "./pages/Eyebrow"
-import Vagacial from "./pages/Vagacial"
-import Facials from "./pages/Facials"
-import Testimonials from "./pages/Testimonials"
-import Policies from "./pages/Policies"
-import Contact from "./pages/Contact"
+import createStore from "./store";
 
+import Home from "./pages/Home";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import SignIn from "./components/SignIn";
+import CreateAccount from "./components/CreateAccount";
+import AboutUs from "./pages/AboutUs";
+import Beauty from "./pages/Beauty";
+import MakeUp from "./pages/MakeUp";
+import Lashes from "./pages/Lashes";
+import Waxing from "./pages/Waxing";
+import Eyebrow from "./pages/Eyebrow";
+import Vagacial from "./pages/Vagacial";
+import Facials from "./pages/Facials";
+import Testimonials from "./pages/Testimonials";
+import Policies from "./pages/Policies";
+import Contact from "./pages/Contact";
 
+import "@popperjs/core";
+import "bootstrap/dist/js/bootstrap";
 
-import '@popperjs/core'
-import 'bootstrap/dist/js/bootstrap' 
+import "./styles/global.scss";
 
-import "./styles/global.scss"
-
+const { store, persistor } = createStore();
 
 function App() {
-
- 
-
   return (
-    <div className="App">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Beauty By Jo</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
-      <Browser>
-
-        <Header/>
-        <NavBar/>
-        <Switch>
-          <Route path="/" exact={true} component={Home}/>
-          <Route path="/about-us"  component={AboutUs}/>
-          <Route path="/beauty" component={Beauty}/>
-          <Route path="/make-up" component={MakeUp}/>
-          <Route path="/lashes" component={Lashes}/>
-          <Route path="/waxing" component={Waxing}/>
-          <Route path="/eyebrow" component={Eyebrow}/>
-          <Route path="/vagacial" component={Vagacial}/>
-          <Route path="/facials" component={Facials}/>
-          <Route path="/testimonials" component={Testimonials}/>
-          <Route path="/policies" component={Policies}/>
-          <Route path="/signin" component={SignIn}/>
-          <Route path="/create-account" component={CreateAccount}/>
-          <Route path="/contact" component={Contact}/>
-          
-        </Switch>
-      <Footer/>
-      </Browser>   
-    </div>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <div className="App">
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>Beauty By Jo</title>
+            <link rel="canonical" href="http://mysite.com/example" />
+          </Helmet>
+          <Browser>
+            <Header />
+            <NavBar />
+            <Switch>
+              <Route path="/" exact={true} component={Home} />
+              <Route path="/about-us" component={AboutUs} />
+              <Route path="/beauty" component={Beauty} />
+              <Route path="/make-up" component={MakeUp} />
+              <Route path="/lashes" component={Lashes} />
+              <Route path="/waxing" component={Waxing} />
+              <Route path="/eyebrow" component={Eyebrow} />
+              <Route path="/vagacial" component={Vagacial} />
+              <Route path="/facials" component={Facials} />
+              <Route path="/testimonials" component={Testimonials} />
+              <Route path="/policies" component={Policies} />
+              <Route path="/signin" component={SignIn} />
+              <Route path="/create-account" component={CreateAccount} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+            <Footer />
+          </Browser>
+        </div>
+      </PersistGate>
+    </Provider>
   );
 }
 
-export default App
+export default App;

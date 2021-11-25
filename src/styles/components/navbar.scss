@@ -1,132 +1,132 @@
-@import "../_variables.scss"; 
+@import "../_variables.scss";
 
 .navbar {
-    width: 100%; 
-    background-color: black;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    
-    .navbar-brand img {
-        width: 50px; 
-        border-radius: 10px; 
-    }
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-    .navbar-nav {
-        margin-left: 100px; 
-    }
-    
-    .dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0px;  // remove the gap so it doesn't close
-    }
+  .navbar-brand img {
+    width: 50px;
+    border-radius: 10px;
+  }
 
-    .dropdown-menu > li > a:hover {
-      background-image: none;
-      background-color: $primary;
-      color: $secondary;
-    }
+  .navbar-nav {
+    margin-left: 100px;
+  }
 
-    .beauty {
-      margin-top: 10px; 
-    }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0px; // remove the gap so it doesn't close
+  }
 
-    .btn {
-        width: 150px;
-        height: 50px;
-        font-size: 20px;
-        color: white; 
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        z-index: 0;
-        transition: all .3s;
-      }
-      
-      .btn::before, .btn::after {
-        position: absolute;
-        background: black;
-        z-index: -1;
-        transition: all .3s;
-        content: '';
-      }
-      
-      .btn::before {
-        height: 50px;
-        width: 130px;
-      }
-      
-      .btn::after {
-        width: 150px;
-        height: 30px;
-      }
-      
-      .noselect {
-        -webkit-touch-callout: none;
-          -webkit-user-select: none;
-           -khtml-user-select: none;
-             -moz-user-select: none;
-              -ms-user-select: none;
-                  user-select: none;
-      }
-      
-      .btn:hover::before {
-        width: 0px;
-        background: black;
-      }
-      
-      .btn:hover::after {
-        height: 0px;
-      }
-      
-      .btn:hover {
-        border: solid 5px white;
-        color: $secondary; 
-        background: black;
-      }
+  .dropdown-menu > li > a:hover {
+    background-image: none;
+    background-color: $primary;
+    color: $secondary;
+  }
 
-      .dropdown .nav-link::after {
-        width: 0;
-        height: 0;
-        margin-left: 9px; 
-        margin-top: 10px; 
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 8px solid white;
-        position: relative;
-      }
+  .beauty {
+    margin-top: 10px;
+  }
 
-      .dropdown .nav-link:hover::after {
-        color: $secondary;
-        border-top: 8px solid $secondary;
-      }
+  .btn {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    transition: all 0.3s;
+  }
 
-      .services-btn {
-        color: white; 
-        background: black !important; 
-        border: none; 
-      }
+  .btn::before,
+  .btn::after {
+    position: absolute;
+    background: black;
+    z-index: -1;
+    transition: all 0.3s;
+    content: "";
+  }
 
-      .schedule-span {
-        font-size: .5rem; 
-      }
+  .btn::before {
+    height: 50px;
+    width: 130px;
+  }
 
-      #service-item {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-      }
+  .btn::after {
+    width: 150px;
+    height: 30px;
+  }
 
-      .nav-item {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-      }  
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .btn:hover::before {
+    width: 0px;
+    background: black;
+  }
+
+  .btn:hover::after {
+    height: 0px;
+  }
+
+  .btn:hover {
+    border: solid 5px white;
+    color: $secondary;
+    background: black;
+  }
+
+  .dropdown .nav-link::after {
+    width: 0;
+    height: 0;
+    margin-left: 9px;
+    margin-top: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid white;
+    position: relative;
+  }
+
+  .dropdown .nav-link:hover::after {
+    color: $secondary;
+    border-top: 8px solid $secondary;
+  }
+
+  .services-btn {
+    color: white;
+    background: black !important;
+    border: none;
+  }
+
+  .schedule-span {
+    font-size: 0.5rem;
+  }
+
+  #service-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-collapse {
+    margin-right: 95px;
+  }
 }
-
-
-
-

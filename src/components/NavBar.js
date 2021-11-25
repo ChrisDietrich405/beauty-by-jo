@@ -10,25 +10,12 @@ export default function Navbar() {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark">
 			<div className="container-fluid">
-				
-        <button
-					className="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
+				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				
-        <div
-					className="collapse navbar-collapse alignment"
-					id="navbarSupportedContent"
-				>
-					<ul className="navbar-nav ml-auto">
 
+				<div className="collapse navbar-collapse alignment" id="navbarSupportedContent">
+					<ul className="navbar-nav ml-auto">
 						<li className="nav-item">
 							<Link to="/" className="nav-link">
 								<div className="btn">
@@ -38,10 +25,7 @@ export default function Navbar() {
 						</li>
 
 						<li className="nav-item" id="service-item">
-							<button
-								className="services-btn btn"
-								onClick={() => setModalOpen(true)}
-							>
+							<button className="services-btn btn" onClick={() => setModalOpen(true)}>
 								<span className="noselect">Services</span>
 							</button>
 						</li>
@@ -78,16 +62,10 @@ export default function Navbar() {
 								</div>
 							</Link>
 						</li>
-            
 					</ul>
 				</div>
 			</div>
-			{modalOpen && (
-				<ServicesModal
-					label="Go to page"
-					onClose={() => setModalOpen(false)}
-				/>
-			)}
+			{modalOpen && <ServicesModal label="Go to page" onClose={() => setModalOpen(false)} />}
 		</nav>
 	);
 }
