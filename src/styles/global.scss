@@ -9,99 +9,99 @@
 @import "./components/slideshow.scss";
 @import "./components/footer.scss";
 @import "./pages/calendar.scss";
-@import "./components/time-list.scss"; 
+@import "./components/time-list.scss";
 
 body {
-	font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 p {
-	font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .main {
-	position: relative;
-	min-height: 100vh;
-   }
+  position: relative;
+  min-height: 100vh;
+}
 
 .service-description {
-	width: 100vw;
-	margin: 0 auto;
+  width: 100vw;
+  margin: 0 auto;
 }
 
 .price-content {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .price {
-	width: 90%;
+  width: 87%;
 }
 
 .price-wrapper {
-	display: grid;
-	margin-bottom: 2rem;
-	grid-template-columns: 2fr 1fr 1fr;
+  display: grid;
+  margin-bottom: 2rem;
+  grid-template-columns: 2fr 1fr 1fr;
 }
 
 .price-title {
-	font-weight: 900; 
-	width: 80%; 
+  font-weight: 900;
+  width: 80%;
 }
 
 .price-cost-time {
-	display: flex; 
-	flex-direction: column; 
-	justify-content: center; 
-	align-items: flex-start; 
-	margin-bottom: -2px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: -2px;
 
-	p {
-		margin: 0 24px -2px 0; 
-	}
+  p {
+    margin: 0 24px -2px 0;
+  }
 
-	svg {
-		margin-bottom: 2px; 
-	}
+  svg {
+    margin-bottom: 2px;
+  }
 }
 
 .button-wrapper {
-    text-align: center; 
+  text-align: center;
 }
 
 .price-button {
-	width: 5rem; 
-	border-radius: 8px;
+  width: 5rem;
+  border-radius: 8px;
 }
 
 .service-defintion {
-	width: 80%; 
+  width: 80%;
 }
 
 .confirm-button {
-	background-color: #000; 
-	color: #fff; 
-	border-radius: 8px;
-	transition: all 1s ease-out; 
-	padding: 10px; 	  
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  transition: all 1s ease-out;
+  padding: 10px;
 }
 
 .confirm-button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .another-appointment-button {
-	background-color: #000; 
-	color: #fff; 
-	border-radius: 8px;
-	padding: 10px; 
-	transition: all 1s ease-out; 	  
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 1s ease-out;
 }
 
 .another-appointment-button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }

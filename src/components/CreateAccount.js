@@ -56,7 +56,7 @@ function CreateAccount() {
       }) => (
         <div className="form-container">
           <form onSubmit={handleSubmit}>
-            <h4>Create account</h4>
+            <h2>Create account</h2>
             <label htmlFor="firstName">
               First Name
               <input type="text" name="firstName" id="firstName" value={values.firstName} onChange={handleChange} onBlur={handleBlur} />

@@ -1,19 +1,23 @@
 .question {
-    header {
-        display: flex; 
-        justify-content: flex-start; 
-        align-items: center; 
-    }
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-    button {
-        margin: 0 .4rem .5rem 0; 
-    }
+  button {
+    margin: 0 0.4rem 0.5rem 0;
+  }
 
-    p { 
-        font-size: 16px; 
-    }
+  p {
+    font-size: 16px;
+  }
 
-    h5 {
-        font-size: 20px; 
-    }
+  h5 {
+    font-size: 20px;
+  }
+
+  li {
+    margin-left: 42px;
+  }
 }

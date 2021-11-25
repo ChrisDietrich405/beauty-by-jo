@@ -15,7 +15,7 @@ export default function CreateAccount() {
   return (
     <div className="form-container">
       <form onSubmit={submit}>
-        <h3>Contact Us</h3>
+        <h2>Contact Us</h2>
         <label htmlFor="name">
           First Name
           <input type="text" id="name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />

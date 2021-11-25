@@ -1,12 +1,3 @@
-//SIGN IN PAGE
-
-//sign in title in center
-//at least 6 characterS needs to be bigger
-//  create your account instead of create your beauty by jo account
-
-//FOOTER
-//social media icons should be closer together
-
 //SERVICES
 //is not aligned horizontally. Needs to be more to the right to have equal white space on the left
 //and the right
