@@ -1,26 +1,3 @@
-//SERVICES
-//is not aligned horizontally. Needs to be more to the right to have equal white space on the left
-//and the right
-//cost and time should be side by side
-//make the book button wider
-//titles should all be the same as the Facials service title font and font weight
-//the price and time should be aligned to the top
-
-//FACIALS
-//descriptions shouldn't be bold
-//use the icons for the price and the time
-//the titles of the services should have a heavier font-weight
-//the price and time should be aligned to the top
-
-//FAQ
-//the bullets need to be under the questions
-
-//POLICIES
-//email needs to be a link
-
-//  TESTIMONIALS
-//make slideshow pic half the size
-
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 

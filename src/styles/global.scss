@@ -49,19 +49,15 @@ p {
 }
 
 .price-title {
-  font-weight: 900;
   width: 80%;
 }
 
 .price-cost-time {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: -2px;
 
   p {
-    margin: 0 24px -2px 0;
+    margin: 0 -146px -2px 0;
+    width: 226px;
   }
 
   svg {
@@ -74,7 +70,8 @@ p {
 }
 
 .price-button {
-  width: 5rem;
+  width: 10rem;
+  height: 3rem;
   border-radius: 8px;
 }
 
