@@ -1,10 +1,8 @@
-import { ADD, SAVE, SAVE_SUCCESS, ERROR } from "../actions/user";
+import { SIGNIN, SIGNIN_SUCCESS, ERROR } from "../actions/auth";
 
 const initialState = {
+  token: null,
   user: {
-    id: null,
-    firstName: null,
-    lastName: null,
     email: null,
     password: null,
   },
@@ -13,12 +11,10 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case ADD:
+    case SIGNIN:
       return { ...state, user: { ...initialState.user }, errors: {} };
-    case SAVE:
-      return { ...state, user: { ...state.user, ...action.payload } };
-    case SAVE_SUCCESS:
-      return { ...state, user: { ...state.user, ...action.payload } };
+    case SIGNIN_SUCCESS:
+      return { ...state, user: { ...state.user, ...action.payload.user }, token: action.payload.token };
     case ERROR:
       return { ...state, errors: action.payload };
     default:

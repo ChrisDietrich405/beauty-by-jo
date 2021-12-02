@@ -2,7 +2,7 @@ import UserResource from "../../resources/UserResource";
 
 export const ADD = "USER_ADD";
 export const CHANGE = "USER_CHANGE";
-//export const SAVE = "USER_SAVE";
+export const SAVE = "USER_SAVE";
 export const SAVE_SUCCESS = "USER_SAVE_SUCCESS";
 export const ERROR = "USER_ERROR";
 
@@ -15,7 +15,7 @@ export const change = (payload) => (dispatch) => {
 };
 
 export const save = (payload) => async (dispatch) => {
-  //dispatch({ type: SAVE, payload });
+  dispatch({ type: SAVE, payload });
   try {
     const response = await UserResource.post(payload);
     dispatch({ type: SAVE_SUCCESS, payload: response.data });

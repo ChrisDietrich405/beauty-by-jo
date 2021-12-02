@@ -1,6 +1,5 @@
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
-ffffff;
 
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
