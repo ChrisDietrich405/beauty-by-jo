@@ -36,12 +36,16 @@ const bindMiddleware = (middleware) => {
 const persistConfig = {
   key: "root",
   storage,
+  whitelist: ["auth"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const makeStore = () => {
-  let store = createStore(persistedReducer, bindMiddleware([thunkMiddleware, storeMiddleware]));
+  let store = createStore(
+    persistedReducer,
+    bindMiddleware([thunkMiddleware, storeMiddleware])
+  );
   let persistor = persistStore(store);
   return { store, persistor };
 };

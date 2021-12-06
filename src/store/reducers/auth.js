@@ -1,7 +1,7 @@
 import { SIGNIN, SIGNIN_SUCCESS, ERROR } from "../actions/auth";
 
 const initialState = {
-  token: null,
+  access_token: null,
   user: {
     email: null,
     password: null,
@@ -14,7 +14,11 @@ export default function reducer(state = initialState, action) {
     case SIGNIN:
       return { ...state, user: { ...initialState.user }, errors: {} };
     case SIGNIN_SUCCESS:
-      return { ...state, user: { ...state.user, ...action.payload.user }, token: action.payload.token };
+      return {
+        ...state,
+        user: { ...state.user, ...action.payload.user },
+        access_token: action.payload.access_token,
+      };
     case ERROR:
       return { ...state, errors: action.payload };
     default:
