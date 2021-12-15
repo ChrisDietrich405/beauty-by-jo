@@ -17,7 +17,11 @@ export default function MakeUp() {
 
   return (
     <div className="service-container">
-      <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
+      <Parallax
+        className="parallax-container"
+        bgImage={BeautySupplies}
+        strength={500}
+      >
         <div className="parallax-container-text">
           <h1>Makeup</h1>
         </div>
@@ -31,7 +35,7 @@ export default function MakeUp() {
                 <AiOutlineDollarCircle /> $50
               </p>
               <p>
-                <BiTimeFive /> 1 hour - 1 hour thirty minutes
+                <BiTimeFive /> 1h - 1h30min
               </p>
             </div>
             <div className="button-wrapper">
@@ -46,7 +50,9 @@ export default function MakeUp() {
           <a className="make-up-email" href="mailto:beautybyjocahill@gmail.com">
             Beauty By Jo.
           </a>{" "}
-          The price of your makeup session will have to be discussed after inspiration pictures are sent. Different looks require a different amount of time and product, therefore they will be priced accordingly.{" "}
+          The price of your makeup session will have to be discussed after
+          inspiration pictures are sent. Different looks require a different
+          amount of time and product, therefore they will be priced accordingly.{" "}
         </p>
       </div>
     </div>

@@ -1,3 +1,12 @@
+//schedule your appointment confirm appointment needs to be capitalized
+//services pages book button should be black, dollar and time icon should be twice the size
+//1h- 1h30min
+
+//MVP
+
+//FAQ
+//for any questions that only have one item don't have a bullet
+
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
