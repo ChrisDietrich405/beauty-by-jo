@@ -15,11 +15,30 @@ export default function Waxing() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [value, onChange] = useState(new Date());
 
-  const timeArray = ["9:00AM", "9:30AM", "10:00AM", "10:30AM", "11:00AM", "11:30AM", "12:00PM", "1:00PM", "1:30PM", "2:00PM", "2:30PM", "3:00PM", "3:30PM", "4:00PM"];
+  const timeArray = [
+    "9:00AM",
+    "9:30AM",
+    "10:00AM",
+    "10:30AM",
+    "11:00AM",
+    "11:30AM",
+    "12:00PM",
+    "1:00PM",
+    "1:30PM",
+    "2:00PM",
+    "2:30PM",
+    "3:00PM",
+    "3:30PM",
+    "4:00PM",
+  ];
 
   return (
     <div className="service-container">
-      <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
+      <Parallax
+        className="parallax-container"
+        bgImage={BeautySupplies}
+        strength={500}
+      >
         <div className="parallax-container-text">
           {/* <div style={{ height: 400 }}> */}
           <h1>
@@ -38,7 +57,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $55
               </p>
               <p>
-                <BiTimeFive /> 45 minutes
+                <BiTimeFive /> 45min
               </p>
             </div>
             <div className="button-wrapper">
@@ -54,7 +73,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $35
               </p>
               <p>
-                <BiTimeFive /> 55 minutes
+                <BiTimeFive /> 55min
               </p>
             </div>
             <div className="button-wrapper">
@@ -70,7 +89,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $40
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -86,7 +105,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $30
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -102,7 +121,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $20
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -118,7 +137,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $30
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -134,7 +153,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $45
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -150,7 +169,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $65
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -166,7 +185,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $10
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -182,7 +201,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $40
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">
@@ -198,7 +217,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $15
               </p>
               <p>
-                <BiTimeFive /> 1 hour
+                <BiTimeFive /> 1h
               </p>
             </div>
             <div className="button-wrapper">

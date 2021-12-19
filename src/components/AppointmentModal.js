@@ -16,7 +16,8 @@ function AppointmentModal({ label, onClose }) {
   const [showSpecificServices, setShowSpecificServices] = useState(false);
   const [showAppointmentCal, setShowAppointmentCal] = useState(false);
   const [showPreconfirmation, setShowPreconfirmation] = useState(false);
-  const [showAppointmentConfirmation, setShowAppointmentConfirmation] = useState(false);
+  const [showAppointmentConfirmation, setShowAppointmentConfirmation] =
+    useState(false);
 
   const [service, setService] = useState("");
   const [specificService, setSpecificService] = useState("");
@@ -50,7 +51,12 @@ function AppointmentModal({ label, onClose }) {
         <h4>Choose a day and time that works for you.</h4>
         <div className="date-picker-container">
           <div className="date-container">
-            <Datetime timeFormat={false} closeOnSelect={true} value={selectedDate} onChange={(date) => setSelectedDate(date.toDate())} />
+            <Datetime
+              timeFormat={false}
+              closeOnSelect={true}
+              value={selectedDate}
+              onChange={(date) => setSelectedDate(date.toDate())}
+            />
             <TimeList
               onSelectTime={(timeSelected) => {
                 setSelectedTime(timeSelected);
@@ -68,7 +74,9 @@ function AppointmentModal({ label, onClose }) {
       <div className="modal-bod">
         <h4>We're almost there!</h4>
         <p>
-          Your {specificService} appointment is set for {selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The cost will be {price}.
+          Your {specificService} appointment is set for{" "}
+          {selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The cost
+          will be {price}.
         </p>
       </div>
       <button
@@ -77,7 +85,7 @@ function AppointmentModal({ label, onClose }) {
           toggleState("confirmation");
         }}
       >
-        confirm your appointment
+        Confirm your appointment
       </button>
     </>
   );
@@ -87,10 +95,15 @@ function AppointmentModal({ label, onClose }) {
       <div className="modal-bod">
         <h4>Thank you for your business!</h4>
         <p>
-          Your {specificService} appointment has been scheduled for {selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The cost will be {price}.
+          Your {specificService} appointment has been scheduled for{" "}
+          {selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The cost
+          will be {price}.
         </p>
       </div>
-      <button className="another-appointment-button" onClick={() => toggleState("additionalAppointment")}>
+      <button
+        className="another-appointment-button"
+        onClick={() => toggleState("additionalAppointment")}
+      >
         Make another appointment
       </button>
     </>
@@ -125,7 +138,11 @@ function AppointmentModal({ label, onClose }) {
   };
 
   return (
-    <ModalTemplate onBack={onModalBack} onClose={onClose} isShowBackButton={!showServices}>
+    <ModalTemplate
+      onBack={onModalBack}
+      onClose={onClose}
+      isShowBackButton={!showServices}
+    >
       {showServices ? (
         <ServicesList
           label={label}

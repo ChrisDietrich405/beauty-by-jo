@@ -1,6 +1,8 @@
-//schedule your appointment confirm appointment needs to be capitalized
 //services pages book button should be black, dollar and time icon should be twice the size
-//1h- 1h30min
+
+//create your account button
+//password - user should have the ability to see the password they are typing
+// and they need to type the password twice when they create a password
 
 //MVP
 
