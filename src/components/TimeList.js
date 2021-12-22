@@ -1,6 +1,14 @@
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import { DateTime } from "luxon";
 
-export default function TimeList({ onSelectTime }) {
+import {
+  verifyAvailability,
+  VERIFY_AVAILABILITY_SUCCESS,
+  ERROR,
+} from "../store/actions/service";
+
+function TimeList({ onSelectTime }) {
   const arrayOfTimes = [
     "9:00AM",
     "9:30AM",
@@ -37,3 +45,13 @@ export default function TimeList({ onSelectTime }) {
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  availability: state.service.availability,
+  errors: state.service.errors,
+});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ verifyAvailability }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TimeList);

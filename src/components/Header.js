@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Logo from "../assets/images/logo.jpg";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { add } from "../store/actions/schedule";
 
 import AppointmentModal from "./AppointmentModal";
 
-export default function Header() {
+import Logo from "../assets/images/logo.jpg";
+
+function Header({ add }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
       <div className="header">
         <div className="header-container">
-          <button class="btn" onClick={() => setModalOpen(true)}>
+          <button
+            class="btn"
+            onClick={() => {
+              add();
+              setModalOpen(true);
+            }}
+          >
             Schedule an appointment
           </button>
           <Link to="/" className="logo-btn">
@@ -32,3 +43,7 @@ export default function Header() {
     </>
   );
 }
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({ add }, dispatch);
+
+export default connect(null, mapDispatchToProps)(Header);

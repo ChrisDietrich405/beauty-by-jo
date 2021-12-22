@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import DatePicker from "react-date-picker";
 import Datetime from "react-datetime";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-import services from "../assets/data/services";
+import { change } from "../store/actions/schedule";
+import { index } from "../store/actions/service";
 
 import ServicesList from "./ServicesList";
 import ModalTemplate from "./ModalTemplate";
@@ -11,7 +14,7 @@ import TimeList from "./TimeList";
 
 import "../styles/components/modal.scss";
 
-function AppointmentModal({ label, onClose }) {
+function AppointmentModal({ label, onClose, services, index, change }) {
   const [showServices, setShowServices] = useState(true);
   const [showSpecificServices, setShowSpecificServices] = useState(false);
   const [showAppointmentCal, setShowAppointmentCal] = useState(false);
@@ -25,6 +28,10 @@ function AppointmentModal({ label, onClose }) {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState("");
+
+  useEffect(() => {
+    index();
+  }, []);
 
   const onModalBack = () => {
     if (showServices === true) {
@@ -161,6 +168,7 @@ function AppointmentModal({ label, onClose }) {
           onSelect={(specificService) => {
             setSpecificService(specificService.name);
             setPrice(specificService.price);
+            change({ specific_service_id: specificService.id });
             toggleState("appointment");
           }}
         />
@@ -172,4 +180,14 @@ function AppointmentModal({ label, onClose }) {
   );
 }
 
-export default AppointmentModal;
+//export default AppointmentModal;
+
+const mapStateToProps = (state) => ({
+  services: state.service.services,
+  errors: state.service.errors,
+});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ index, change }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
