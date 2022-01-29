@@ -42,7 +42,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const makeStore = () => {
-  let store = createStore(
+  store = createStore(
     persistedReducer,
     bindMiddleware([thunkMiddleware, storeMiddleware])
   );

@@ -3,6 +3,16 @@ import AuthResource from "../../resources/AuthResource";
 export const SIGNIN = "AUTH_SIGNIN";
 export const SIGNIN_SUCCESS = "AUTH_SIGNIN_SUCCESS";
 export const ERROR = "AUTH_ERROR";
+export const GET_SUCCESS = "AUTH_GET_SUCCESS";
+
+export const get = () => async (dispatch) => {
+  try {
+    const response = await AuthResource.get();
+    dispatch({ type: GET_SUCCESS, payload: response.data });
+  } catch (error) {
+    dispatch({ type: ERROR, payload: error.response.data });
+  }
+};
 
 export const signin = (payload) => async (dispatch) => {
   dispatch({ type: SIGNIN, payload });
