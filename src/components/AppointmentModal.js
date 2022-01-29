@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import DatePicker from "react-date-picker";
 import Datetime from "react-datetime";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { DateTime } from "luxon";
 
 import { change } from "../store/actions/schedule";
 import { index } from "../store/actions/service";
+import { verifyAvailability } from "../store/actions/service";
 
 import ServicesList from "./ServicesList";
 import ModalTemplate from "./ModalTemplate";
@@ -14,7 +15,16 @@ import TimeList from "./TimeList";
 
 import "../styles/components/modal.scss";
 
-function AppointmentModal({ label, onClose, services, index, change }) {
+function AppointmentModal({
+  label,
+  onClose,
+  services,
+  index,
+  change,
+  availability,
+  verifyAvailability,
+  specific_service_id,
+}) {
   const [showServices, setShowServices] = useState(true);
   const [showSpecificServices, setShowSpecificServices] = useState(false);
   const [showAppointmentCal, setShowAppointmentCal] = useState(false);
@@ -32,6 +42,15 @@ function AppointmentModal({ label, onClose, services, index, change }) {
   useEffect(() => {
     index();
   }, []);
+
+  useEffect(() => {
+    if (selectedDate && specific_service_id) {
+      verifyAvailability({
+        date: DateTime.fromJSDate(selectedDate).toFormat("yyyy-MM-dd"),
+        specificServiceId: specific_service_id,
+      });
+    }
+  }, [selectedDate, specific_service_id]);
 
   const onModalBack = () => {
     if (showServices === true) {
@@ -52,29 +71,32 @@ function AppointmentModal({ label, onClose, services, index, change }) {
     }
   };
 
-  const DatePicker = () => (
-    <div className="appointment-container">
-      <div className="modal-bod">
-        <h4>Choose a day and time that works for you.</h4>
-        <div className="date-picker-container">
-          <div className="date-container">
-            <Datetime
-              timeFormat={false}
-              closeOnSelect={true}
-              value={selectedDate}
-              onChange={(date) => setSelectedDate(date.toDate())}
-            />
-            <TimeList
-              onSelectTime={(timeSelected) => {
-                setSelectedTime(timeSelected);
-                toggleState("preconfirmation");
-              }}
-            />
+  const DatePicker = () => {
+    return (
+      <div className="appointment-container">
+        <div className="modal-bod">
+          <h4>Choose a day and time that works for you.</h4>
+          <div className="date-picker-container">
+            <div className="date-container">
+              <Datetime
+                timeFormat={false}
+                closeOnSelect={true}
+                value={selectedDate}
+                onChange={(date) => setSelectedDate(date.toDate())}
+              />
+              <TimeList
+                availability={availability}
+                onSelectTime={(timeSelected) => {
+                  setSelectedTime(timeSelected);
+                  toggleState("preconfirmation");
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const PreConfirmation = () => (
     <>
@@ -180,14 +202,17 @@ function AppointmentModal({ label, onClose, services, index, change }) {
   );
 }
 
-//export default AppointmentModal;
-
 const mapStateToProps = (state) => ({
   services: state.service.services,
   errors: state.service.errors,
+  specific_service_id: state.schedule.schedule.specific_service_id,
+  availability: state.service.availability,
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ index, change }, dispatch);
+  bindActionCreators({ index, change, verifyAvailability }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
+
+//mapDispatchtoProps connects the actions to the AppointmentModel and dispatch is
+// dependency

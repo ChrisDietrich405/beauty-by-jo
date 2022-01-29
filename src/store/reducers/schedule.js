@@ -1,3 +1,5 @@
+import { ADD, CHANGE } from "../actions/schedule";
+
 const initialState = {
   schedule: {
     id: null,
