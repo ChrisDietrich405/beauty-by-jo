@@ -1,30 +1,42 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { add } from "../store/actions/schedule";
+import { get } from "../store/actions/auth";
+
 
 import AppointmentModal from "./AppointmentModal";
 
 import Logo from "../assets/images/logo.jpg";
 
-function Header({ add }) {
+function Header({ access_token, add, get }) {
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(async () => {
+    await get()
+  },[])
 
   return (
     <>
       <div className="header">
         <div className="header-container">
-          <button
-            class="btn"
+        {access_token === null ? <Link className="btn" to={{
+          pathname: "/signin",
+          state: {
+            btSchedule: true
+          }
+        }}>Schedule an appointment</Link> : <button
+            // disabled={access_token === null}
+            className="btn"
             onClick={() => {
               add();
               setModalOpen(true);
             }}
           >
             Schedule an appointment
-          </button>
+          </button> }
           <Link to="/" className="logo-btn">
             <img src={Logo} />
           </Link>
@@ -44,6 +56,13 @@ function Header({ add }) {
   );
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ add }, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({ add, get }, dispatch);
 
-export default connect(null, mapDispatchToProps)(Header);
+const mapStateToProps = (state) => ({
+  access_token: state.auth.access_token
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
+
+
+

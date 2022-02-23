@@ -9,7 +9,7 @@ import "../styles/components/sign-in-create-account.scss";
 import { useEffect } from "react";
 import { subscribe } from "../store";
 
-function SignIn({ user, signin }) {
+function SignIn({ user, signin, location }) {
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(SIGNIN_SUCCESS, () => {
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
@@ -62,6 +62,7 @@ function SignIn({ user, signin }) {
         /* and other goodies */
       }) => (
         <div className="form-container">
+          {location?.state?.btSchedule && <p>In order to ...</p>}
           <form onSubmit={handleSubmit}>
             <h2>Sign in</h2>
             <label htmlFor="username">

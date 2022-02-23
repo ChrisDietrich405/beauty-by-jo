@@ -10,3 +10,7 @@ export const add = () => (dispatch) => {
 export const change = (payload) => (dispatch) => {
   dispatch({ type: CHANGE, payload });
 };
+
+export const save = (payload) => (dispatch) => {
+  // dispatch({ type: SAVE });
+};

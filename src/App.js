@@ -1,3 +1,8 @@
+// 'react-scripts' is not recognized as an internal or external command,
+// operable program or batch file. I tried to install react-script, then I
+// tried npm install
+
+
 //services pages book button should be black, dollar and time icon should be twice the size
 
 //create your account button
