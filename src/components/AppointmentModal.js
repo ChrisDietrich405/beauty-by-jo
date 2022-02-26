@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { DateTime } from "luxon";
 
-import { change } from "../store/actions/schedule";
+import { change, save } from "../store/actions/schedule";
 import { index } from "../store/actions/service";
 import { verifyAvailability } from "../store/actions/service";
 
@@ -21,6 +21,8 @@ function AppointmentModal({
   services,
   index,
   change,
+  schedule,
+  save,
   availability,
   verifyAvailability,
   specific_service_id,
@@ -82,7 +84,11 @@ function AppointmentModal({
                 timeFormat={false}
                 closeOnSelect={true}
                 value={selectedDate}
-                onChange={(date) => setSelectedDate(date.toDate())}
+                onChange={(date) => {
+                  console.log(date);
+                  setSelectedDate(date.toDate());
+                  change({ date: date.toDate().toISOString() });
+                }}
               />
               <TimeList
                 availability={availability}
@@ -111,7 +117,8 @@ function AppointmentModal({
       <button
         className="confirm-button"
         onClick={() => {
-          toggleState("confirmation");
+          save(schedule);
+          // toggleState("confirmation");
         }}
       >
         Confirm your appointment
@@ -206,11 +213,12 @@ const mapStateToProps = (state) => ({
   services: state.service.services,
   errors: state.service.errors,
   specific_service_id: state.schedule.schedule.specific_service_id,
+  schedule: state.schedule.schedule,
   availability: state.service.availability,
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ index, change, verifyAvailability }, dispatch);
+  bindActionCreators({ index, change, save, verifyAvailability }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
 

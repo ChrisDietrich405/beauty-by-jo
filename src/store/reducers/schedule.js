@@ -1,4 +1,4 @@
-import { ADD, CHANGE } from "../actions/schedule";
+import { ADD, CHANGE, ERROR, SAVE_SUCCESS } from "../actions/schedule";
 
 const initialState = {
   schedule: {
@@ -16,7 +16,10 @@ export default function reducer(state = initialState, action) {
     case ADD:
       return initialState;
     case CHANGE:
+    case SAVE_SUCCESS:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };
+    case ERROR:
+      return { ...state, error: action.payload };
     default:
       return state;
   }
