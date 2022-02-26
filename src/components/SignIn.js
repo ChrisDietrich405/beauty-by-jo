@@ -62,7 +62,11 @@ function SignIn({ user, signin, location }) {
         /* and other goodies */
       }) => (
         <div className="form-container">
-          {location?.state?.btSchedule && <p>In order to ...</p>}
+          {location?.state?.btSchedule && (
+            <p className="signin-message">
+              In order to schedule an appointment you must first sign in.
+            </p>
+          )}
           <form onSubmit={handleSubmit}>
             <h2>Sign in</h2>
             <label htmlFor="username">
