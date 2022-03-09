@@ -15,6 +15,9 @@ import TimeList from "./TimeList";
 
 import "../styles/components/modal.scss";
 
+const DATE_FORMAT = "yyyy-MM-dd";
+const TIME_FORMAT = "HH:mm";
+
 function AppointmentModal({
   label,
   onClose,
@@ -38,11 +41,13 @@ function AppointmentModal({
   const [specificService, setSpecificService] = useState("");
   const [price, setPrice] = useState("");
 
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
   useEffect(() => {
     index();
+    const now = DateTime.now();
+    setSelectedDate(now.toFormat(DATE_FORMAT));
   }, []);
 
   useEffect(() => {
@@ -80,16 +85,21 @@ function AppointmentModal({
           <h4>Choose a day and time that works for you.</h4>
           <div className="date-picker-container">
             <div className="date-container">
-              <Datetime
+              <input
+                type="date"
+                value={selectedDate}
+                onChange={(e) => setSelectedDate(e.target.value)}
+              />
+              {/* <Datetime
                 timeFormat={false}
                 closeOnSelect={true}
                 value={selectedDate}
                 onChange={(date) => {
-                  console.log(date);
-                  setSelectedDate(date.toDate());
-                  change({ date: date.toDate().toISOString() });
+                  //console.log(date.format("YYYY-MM-DD"));
+                  setSelectedDate(date.format("YYYY-MM-DD"));
+                  // change({ date: date.toDate().toISOString() });
                 }}
-              />
+              /> */}
               <TimeList
                 availability={availability}
                 onSelectTime={(timeSelected) => {
@@ -117,7 +127,7 @@ function AppointmentModal({
       <button
         className="confirm-button"
         onClick={() => {
-          save(schedule);
+          save({ ...schedule, date: `${selectedDate} ${selectedTime}` });
           // toggleState("confirmation");
         }}
       >
