@@ -1,7 +1,7 @@
 # beauty-by-jo
 
-This app is an online cel phone store. 
-This project includes bootstrap and also the useContext React Hook
+This is a website built for a salon, my first freelance job 
+This project includes Redux, a couple of outside libraries and SASS
 
 ## How To Run This Project
 
