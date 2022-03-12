@@ -32,10 +32,10 @@ function TimeList({ onSelectTime, availability }) {
         {availability.map(({ Date, available }) => {
           return (
             <button
-            disable={available=="0"}
+              disable={available == "0"}
               className="time"
               onClick={() => {
-                onSelectTime(DateTime.fromISO(Date).toFormat("h:mma"));
+                onSelectTime(DateTime.fromISO(Date).toFormat("hh:mm"));
               }}
             >
               {DateTime.fromISO(Date).toFormat("h:mma")}

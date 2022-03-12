@@ -53,9 +53,10 @@ function AppointmentModal({
   useEffect(() => {
     if (selectedDate && specific_service_id) {
       verifyAvailability({
-        date: DateTime.fromJSDate(selectedDate).toFormat("yyyy-MM-dd"),
+        date: selectedDate,
         specificServiceId: specific_service_id,
       });
+      console.log(selectedDate);
     }
   }, [selectedDate, specific_service_id]);
 
@@ -120,14 +121,20 @@ function AppointmentModal({
         <h4>We're almost there!</h4>
         <p>
           Your {specificService} appointment is set for{" "}
-          {selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The cost
-          will be {price}.
+          {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+          The cost will be {price}.
         </p>
       </div>
       <button
         className="confirm-button"
         onClick={() => {
-          save({ ...schedule, date: `${selectedDate} ${selectedTime}` });
+          save({
+            ...schedule,
+            date: DateTime.fromString(
+              `${selectedDate} ${selectedTime}`,
+              "yyyy-MM-dd hh:mm"
+            ).toISO(),
+          });
           // toggleState("confirmation");
         }}
       >
@@ -142,8 +149,8 @@ function AppointmentModal({
         <h4>Thank you for your business!</h4>
         <p>
           Your {specificService} appointment has been scheduled for{" "}
-          {selectedDate.toLocaleDateString("en-US")} at {selectedTime}. The cost
-          will be {price}.
+          {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+          The cost will be {price}.
         </p>
       </div>
       <button
