@@ -4,14 +4,14 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { add } from "../store/actions/schedule";
-import { get } from "../store/actions/auth";
+import { get, display_appointment_modal } from "../store/actions/auth";
 
 import AppointmentModal from "./AppointmentModal";
 
 import Logo from "../assets/images/logo.jpg";
 
-function Header({ access_token, add, get }) {
-  const [modalOpen, setModalOpen] = useState(false);
+function Header({ access_token, add, get, show_appointment_modal }) {
+  // const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(async () => {
     await get();
@@ -39,7 +39,8 @@ function Header({ access_token, add, get }) {
               className="btn"
               onClick={() => {
                 add();
-                setModalOpen(true);
+                display_appointment_modal(true);
+                // setModalOpen(true);
               }}
             >
               Schedule an appointment
@@ -53,10 +54,10 @@ function Header({ access_token, add, get }) {
             Contact Us
           </Link>
         </div>
-        {modalOpen && (
+        {show_appointment_modal && (
           <AppointmentModal
             label="Pick a service to schedule your appointment"
-            onClose={() => setModalOpen(false)}
+            onClose={() => display_appointment_modal(false)}
           />
         )}
       </div>
@@ -65,10 +66,11 @@ function Header({ access_token, add, get }) {
 }
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ add, get }, dispatch);
+  bindActionCreators({ add, get, display_appointment_modal }, dispatch);
 
 const mapStateToProps = (state) => ({
   access_token: state.auth.access_token,
+  show_appointment_modal: state.auth.show_appointment_modal,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import ServicesModal from "./ServicesModal";
 
-export default function Navbar() {
-  const [modalOpen, setModalOpen] = useState(false);
+import { get, display_appointment_modal } from "../store/actions/auth";
 
+function Navbar({ show_appointment_modal, display_appointment_modal }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -38,7 +40,7 @@ export default function Navbar() {
             <li className="nav-item" id="service-item">
               <button
                 className="services-btn btn"
-                onClick={() => setModalOpen(true)}
+                onClick={() => display_appointment_modal(true)}
               >
                 <span className="noselect">Services</span>
               </button>
@@ -79,9 +81,24 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      {modalOpen && (
-        <ServicesModal label="Go to page" onClose={() => setModalOpen(false)} />
+      {show_appointment_modal && (
+        <ServicesModal
+          label="Go to page"
+          onClose={() => {
+            // display_appointment_modal(false);
+            console.log("hello");
+          }}
+        />
       )}
     </nav>
   );
 }
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ display_appointment_modal }, dispatch);
+
+const mapStateToProps = (state) => ({
+  show_appointment_modal: state.auth.show_appointment_modal,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
