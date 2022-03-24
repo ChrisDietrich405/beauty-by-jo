@@ -35,7 +35,9 @@ function CreateAccount({ user, save }) {
         }
         if (!values.email.trim()) {
           errors.email = "Email required";
-        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
           errors.email = "Invalid email address";
         }
         if (!values.password.trim()) {
@@ -78,22 +80,50 @@ function CreateAccount({ user, save }) {
             <h2>Create account</h2>
             <label htmlFor="firstName">
               First Name
-              <input type="text" name="firstName" id="firstName" value={values.firstName} onChange={handleChange} onBlur={handleBlur} />
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                value={values.firstName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
               <ErrorMessage name="firstName" />
             </label>
             <label htmlFor="lastName">
               Last Name
-              <input type="text" name="lastName" id="lastName" value={values.lastName} onChange={handleChange} onBlur={handleBlur} />
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                value={values.lastName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
               <ErrorMessage name="lastName" />
             </label>
             <label htmlFor="email">
               Email
-              <input type="text" name="email" id="email" value={values.email} onChange={handleChange} onBlur={handleBlur} />
+              <input
+                type="text"
+                name="email"
+                id="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
               <ErrorMessage name="email" />
             </label>
             <label htmlFor="password">
               Password
-              <input type="password" name="password" id="password" value={values.password} onChange={handleChange} onBlur={handleBlur} />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
               <ErrorMessage name="password" />
             </label>
 

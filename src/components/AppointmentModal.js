@@ -135,7 +135,7 @@ function AppointmentModal({
               "yyyy-MM-dd hh:mm"
             ).toISO(),
           });
-          // toggleState("confirmation");
+          toggleState("confirmation");
         }}
       >
         Confirm your appointment
@@ -175,6 +175,7 @@ function AppointmentModal({
     } else if (state === "confirmation") {
       setShowPreconfirmation(false);
       setShowAppointmentConfirmation(true);
+      console.log("hello");
     } else if (state === "additionalAppointment") {
       setShowAppointmentConfirmation(false);
       setShowServices(true);

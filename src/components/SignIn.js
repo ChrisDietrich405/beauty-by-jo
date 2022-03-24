@@ -6,16 +6,26 @@ import { Formik, ErrorMessage } from "formik";
 import { signin, SIGNIN_SUCCESS, ERROR } from "../store/actions/auth";
 
 import "../styles/components/sign-in-create-account.scss";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { subscribe } from "../store";
+import { add } from "../store/actions/schedule";
 
-function SignIn({ user, signin, location }) {
+import AppointmentModal from "./AppointmentModal";
+
+function SignIn({ user, signin, location, add }) {
+  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(SIGNIN_SUCCESS, () => {
+      alert("logged successfully");
+      add();
+      setModalOpen(true);
+
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });
 
     const unsubscribeAuthError = subscribe.on(ERROR, () => {
+      alert("you fucked up");
       // TODO: Show error messages, example Email and/or password are invalid!
     });
 
@@ -104,6 +114,12 @@ function SignIn({ user, signin, location }) {
               Create your Beauty by Jo account
             </Link>
           </form>
+          {modalOpen && (
+            <AppointmentModal
+              label="Pick a service to schedule your appointment"
+              onClose={() => setModalOpen(false)}
+            />
+          )}
         </div>
       )}
     </Formik>
@@ -116,7 +132,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ signin }, dispatch);
+  bindActionCreators({ signin, add }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
 
