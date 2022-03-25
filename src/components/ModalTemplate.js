@@ -1,9 +1,13 @@
+import { useState } from "react"
 import classNames from "classnames"
 
-export default function ModalTemplate({onClose, onBack, isShowBackButton, children}) {
-    return (
+export default function ModalTemplate({ onBack, isShowBackButton, children }) {
+  const [closeMainModal, setCloseMainModal] = useState(false)  
+  
+  return (
         <>
-          <div className="modalBackground">
+       
+          <div className="modalBackground" style={{display: closeMainModal ? "none" : "flex" }}>
             <div className="modalContainer">
                 <div className={classNames("titleCloseBtn", {modalBackButtonVisible: isShowBackButton})}>
                  <button
@@ -14,9 +18,7 @@ export default function ModalTemplate({onClose, onBack, isShowBackButton, childr
 				          	Back
 				         </button>
                  <button
-                   onClick={
-                     onClose
-                   }
+                   onClick={() => setCloseMainModal(!closeMainModal)}
                  > 
                    X
                  </button>
