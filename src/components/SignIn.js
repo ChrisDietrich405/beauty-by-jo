@@ -19,7 +19,6 @@ function SignIn({ user, signin, location, add }) {
     const unsubscribeAuthSuccess = subscribe.on(SIGNIN_SUCCESS, () => {
       alert("logged successfully");
       add();
-      setModalOpen(true);
 
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });
@@ -59,6 +58,7 @@ function SignIn({ user, signin, location, add }) {
       }}
       onSubmit={(values, { setSubmitting }) => {
         signin(values);
+        console.log(values);
       }}
     >
       {({
@@ -74,7 +74,7 @@ function SignIn({ user, signin, location, add }) {
         <div className="form-container">
           {location?.state?.btSchedule && (
             <p className="signin-message">
-              In order to schedule an appointment you must first sign in.
+              In order to schedule an appointment please first sign in.
             </p>
           )}
           <form onSubmit={handleSubmit}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import ServicesModal from "./ServicesModal";
@@ -9,6 +9,8 @@ import ServicesModal from "./ServicesModal";
 import { get, display_appointment_modal } from "../store/actions/auth";
 
 function Navbar({ show_appointment_modal, display_appointment_modal }) {
+  const { signin_success } = useSelector((state) => state.auth);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -74,7 +76,11 @@ function Navbar({ show_appointment_modal, display_appointment_modal }) {
               <Link to="/signin" className="nav-link">
                 <div className="btn">
                   <BsFillPersonFill color="white" size="30" />
-                  <span className="noselect">Sign In</span>
+                  {signin_success ? (
+                    <span className="noselect">Sign Out</span>
+                  ) : (
+                    <span className="noselect">Sign In</span>
+                  )}
                 </div>
               </Link>
             </li>

@@ -22,7 +22,7 @@ export const signin = (payload) => async (dispatch) => {
     const response = await AuthResource.post(payload);
     dispatch({ type: SIGNIN_SUCCESS, payload: response.data });
     if (response.data.success) {
-      dispatch({ type: SHOW_APPOINTMENT_MODAL, payload: true });
+      // dispatch({ type: SHOW_APPOINTMENT_MODAL, payload: true });
     }
   } catch (error) {
     dispatch({ type: ERROR, payload: error.response.data });

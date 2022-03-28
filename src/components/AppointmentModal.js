@@ -122,7 +122,7 @@ function AppointmentModal({
         <p>
           Your {specificService} appointment is set for{" "}
           {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-          The cost will be {price}.
+          The total cost will be ${price}. Thank you.
         </p>
       </div>
       <button

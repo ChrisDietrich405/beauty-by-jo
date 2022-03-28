@@ -17,7 +17,7 @@
     "luxon": "^2.3.0",
     "moment": "^2.29.1",
     "nanoevents": "^6.0.2",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-date-picker": "^8.3.2",
     "react-datetime": "^3.1.1",

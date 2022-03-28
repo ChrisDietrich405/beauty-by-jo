@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { add } from "../store/actions/schedule";
@@ -10,7 +10,10 @@ import AppointmentModal from "./AppointmentModal";
 
 import Logo from "../assets/images/logo.jpg";
 
-function Header({ access_token, add, get, show_appointment_modal }) {
+function Header({ access_token, add, get }) {
+  const { show_appointment_modal } = useSelector((state) => state.auth);
+  console.log(show_appointment_modal);
+
   // const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(async () => {
