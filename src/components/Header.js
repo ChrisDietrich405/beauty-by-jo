@@ -12,9 +12,6 @@ import Logo from "../assets/images/logo.jpg";
 
 function Header({ access_token, add, get }) {
   const { show_appointment_modal } = useSelector((state) => state.auth);
-  console.log(show_appointment_modal);
-
-  // const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(async () => {
     await get();
