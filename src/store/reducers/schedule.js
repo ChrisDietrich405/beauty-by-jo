@@ -14,7 +14,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD:
-      return initialState;
+      return { ...state, show_appointment_modal: true };
     case CHANGE:
     case SAVE_SUCCESS:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };

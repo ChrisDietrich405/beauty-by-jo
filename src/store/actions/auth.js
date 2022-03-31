@@ -30,6 +30,5 @@ export const signin = (payload) => async (dispatch) => {
 };
 
 export const display_appointment_modal = (payload) => (dispatch) => {
-  console.log(payload);
   dispatch({ type: SHOW_APPOINTMENT_MODAL, payload });
 };

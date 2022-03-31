@@ -17,6 +17,14 @@ function Header({ access_token, add, get }) {
     await get();
   }, []);
 
+  const handleSchedule = () => {
+    add();
+    display_appointment_modal(true);
+    console.log("hello");
+    console.log(show_appointment_modal);
+  };
+
+  console.log(access_token);
   return (
     <>
       <div className="header">
@@ -37,11 +45,7 @@ function Header({ access_token, add, get }) {
             <button
               // disabled={access_token === null}
               className="btn"
-              onClick={() => {
-                add();
-                display_appointment_modal(true);
-                // setModalOpen(true);
-              }}
+              onClick={handleSchedule}
             >
               Schedule an appointment
             </button>
