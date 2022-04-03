@@ -19,7 +19,6 @@ function SignIn({ user, signin, location, add }) {
     const unsubscribeAuthSuccess = subscribe.on(SIGNIN_SUCCESS, () => {
       alert("logged successfully");
       add();
-      setModalOpen(true);
 
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });

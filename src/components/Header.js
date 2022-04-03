@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { add } from "../store/actions/schedule";
@@ -12,6 +12,8 @@ import Logo from "../assets/images/logo.jpg";
 
 function Header({ access_token, add, get }) {
   const { show_appointment_modal } = useSelector((state) => state.auth);
+  console.log({ show_appointment_modal });
+  const dispatch = useDispatch();
 
   useEffect(async () => {
     await get();
@@ -19,9 +21,7 @@ function Header({ access_token, add, get }) {
 
   const handleSchedule = () => {
     add();
-    display_appointment_modal(true);
-    console.log("hello");
-    console.log(show_appointment_modal);
+    dispatch(display_appointment_modal(true));
   };
 
   console.log(access_token);

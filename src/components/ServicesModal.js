@@ -23,6 +23,7 @@ function ServicesModal({ label, onClose, index, services }) {
         services={services}
         label={label}
         onSelect={(service) => {
+          console.log({ service });
           history.push(service.path);
           onClose();
         }}
