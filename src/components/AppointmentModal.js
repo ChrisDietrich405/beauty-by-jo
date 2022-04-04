@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Datetime from "react-datetime";
 import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { DateTime } from "luxon";
 
 import { change, save } from "../store/actions/schedule";
@@ -14,6 +14,10 @@ import ModalTemplate from "./ModalTemplate";
 import TimeList from "./TimeList";
 
 import "../styles/components/modal.scss";
+import {
+  display_appointment_modal,
+  SHOW_APPOINTMENT_MODAL,
+} from "../store/actions/auth";
 
 const DATE_FORMAT = "yyyy-MM-dd";
 const TIME_FORMAT = "HH:mm";
@@ -43,6 +47,9 @@ function AppointmentModal({
 
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
+
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     index();
@@ -203,6 +210,8 @@ function AppointmentModal({
           services={services}
           onSelect={(service) => {
             setService(service.name);
+            dispatch(display_appointment_modal(false));
+            history.push(`${service.name}`);
             toggleState("services");
           }}
         />

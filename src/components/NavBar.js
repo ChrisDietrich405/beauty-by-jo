@@ -77,9 +77,9 @@ function Navbar({ show_appointment_modal, display_appointment_modal }) {
                 <div className="btn">
                   <BsFillPersonFill color="white" size="30" />
                   {signin_success ? (
-                    <span className="noselect">Sign Out</span>
+                    <span className="noselect">Log Out</span>
                   ) : (
-                    <span className="noselect">Sign In</span>
+                    <span className="noselect">Log In</span>
                   )}
                 </div>
               </Link>
