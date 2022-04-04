@@ -6,6 +6,7 @@ export const ERROR = "AUTH_ERROR";
 export const GET_SUCCESS = "AUTH_GET_SUCCESS";
 export const UNAUTHORIZED = "AUTH_UNAUTHORIZED";
 export const SHOW_APPOINTMENT_MODAL = "SHOW_APPOINTMENT_MODAL";
+export const SCHEDULE_SERVICE = "SCHEDULE_SERVICE";
 
 export const get = () => async (dispatch) => {
   try {
@@ -31,4 +32,9 @@ export const signin = (payload) => async (dispatch) => {
 
 export const display_appointment_modal = (payload) => (dispatch) => {
   dispatch({ type: SHOW_APPOINTMENT_MODAL, payload });
+};
+
+export const schedule_service = (payload) => (dispatch) => {
+  console.log(payload);
+  dispatch({ type: SCHEDULE_SERVICE, payload });
 };

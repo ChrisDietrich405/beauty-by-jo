@@ -5,9 +5,11 @@ import {
   ERROR,
   UNAUTHORIZED,
   SHOW_APPOINTMENT_MODAL,
+  SCHEDULE_SERVICE,
 } from "../actions/auth";
 
 const initialState = {
+  schedule_service: null,
   access_token: null,
   show_appointment_modal: false,
   signin_success: false,
@@ -40,6 +42,12 @@ export default function reducer(state = initialState, action) {
       return { ...state, access_token: null };
     case GET_SUCCESS:
       return { ...state, user: { ...state.user, ...action.payload } };
+    case SCHEDULE_SERVICE:
+      console.log(action.payload);
+      return {
+        ...state,
+        schedule_service: action.payload,
+      };
     default:
       return state;
   }

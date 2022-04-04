@@ -10,7 +10,7 @@ export default function ModalTemplate({ onBack, isShowBackButton, children }) {
 
   const handleCloseModal = () => {
     setCloseMainModal(!closeMainModal);
-    dispatch(display_appointment_modal(false));
+    dispatch(display_appointment_modal(true));
   };
 
   return (

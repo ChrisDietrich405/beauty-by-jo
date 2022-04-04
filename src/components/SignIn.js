@@ -78,7 +78,7 @@ function SignIn({ user, signin, location, add }) {
             </p>
           )}
           <form onSubmit={handleSubmit}>
-            <h2>Sign in</h2>
+            <h2>Log in</h2>
             <label htmlFor="username">
               username
               <input
@@ -135,28 +135,3 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ signin, add }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
-
-// return (
-//   <div className="form-container">
-//     <form onSubmit={submit}>
-//       <h2>Sign In</h2>
-//       <label htmlFor="name">
-//         username
-//         <input type="text" id="name" value={email} onChange={addEmail} />
-//       </label>
-//       <label htmlFor="password">
-//         Password
-//         <input type="text" placeholder="" id="password" value={password} onChange={addPassword} />
-//         <p className="password-minimum">(At least 6 characters)</p>
-//       </label>
-//       <button className="sign-in-button">Submit</button>
-//       <p className="forgot-password">Forgot password?</p>
-//       <p className="new-to-beauty">New to Beauty by Jo?</p>
-//       <Link to="/create-account">
-//         <button type="submit" className="btn create-account-btn">
-//           Create your Beauty by Jo account
-//         </button>
-//       </Link>
-//     </form>
-//   </div>
-// );

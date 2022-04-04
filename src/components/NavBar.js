@@ -1,15 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
-import { connect, useSelector } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import ServicesModal from "./ServicesModal";
 
-import { get, display_appointment_modal } from "../store/actions/auth";
+import {
+  get,
+  display_appointment_modal,
+  schedule_service,
+} from "../store/actions/auth";
 
 function Navbar({ show_appointment_modal, display_appointment_modal }) {
+  const dispatch = useDispatch();
   const { signin_success } = useSelector((state) => state.auth);
+
+  const handleServices = () => {
+    dispatch(schedule_service(null));
+    display_appointment_modal(true);
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
@@ -40,10 +50,7 @@ function Navbar({ show_appointment_modal, display_appointment_modal }) {
             </li>
 
             <li className="nav-item" id="service-item">
-              <button
-                className="services-btn btn"
-                onClick={() => display_appointment_modal(true)}
-              >
+              <button className="services-btn btn" onClick={handleServices}>
                 <span className="noselect">Services</span>
               </button>
             </li>

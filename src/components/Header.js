@@ -4,7 +4,11 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { add } from "../store/actions/schedule";
-import { get, display_appointment_modal } from "../store/actions/auth";
+import {
+  get,
+  display_appointment_modal,
+  schedule_service,
+} from "../store/actions/auth";
 
 import AppointmentModal from "./AppointmentModal";
 
@@ -22,6 +26,7 @@ function Header({ access_token, add, get }) {
   const handleSchedule = () => {
     add();
     dispatch(display_appointment_modal(true));
+    dispatch(schedule_service("schedule"));
   };
 
   console.log(access_token);

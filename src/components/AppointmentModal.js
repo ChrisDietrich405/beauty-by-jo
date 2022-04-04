@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Datetime from "react-datetime";
 import { bindActionCreators } from "redux";
-import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
 
 import { change, save } from "../store/actions/schedule";
@@ -50,6 +50,18 @@ function AppointmentModal({
 
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const { schedule_service } = useSelector((state) => state.auth);
+
+  const handleServices = (service) => {
+    console.log({ service });
+    setService(service.name);
+    if (schedule_service === null) {
+      dispatch(display_appointment_modal(false));
+    }
+    history.push(`${service.name}`);
+    toggleState("services");
+  };
 
   useEffect(() => {
     index();
@@ -209,10 +221,7 @@ function AppointmentModal({
           label={label}
           services={services}
           onSelect={(service) => {
-            setService(service.name);
-            dispatch(display_appointment_modal(false));
-            history.push(`${service.name}`);
-            toggleState("services");
+            handleServices(service);
           }}
         />
       ) : null}
