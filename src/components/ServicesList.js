@@ -10,12 +10,12 @@ export default function ServicesList({ label, services, className, onSelect }) {
 
   const handleServices = (service) => {
     onSelect(service);
-    console.log(schedule_service === null);
     if (schedule_service === null) {
-      // dispatch(display_appointment_modal(false));
     }
-
-    history.push(`${service.path}`);
+    if (service.path) {
+      history.push(`${service.path}`);
+      console.log(service.path);
+    }
   };
 
   return (

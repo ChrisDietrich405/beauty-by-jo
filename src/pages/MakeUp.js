@@ -1,19 +1,35 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { connect, useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Parallax, Background } from "react-parallax";
 
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
-import BeautySupplies from "../assets/images/makeup.jpg";
+import { add } from "../store/actions/schedule";
+import {
+  get,
+  display_appointment_modal,
+  schedule_service,
+} from "../store/actions/auth";
 
-import DatePicker from "react-date-picker";
+import BeautySupplies from "../assets/images/makeup.jpg";
 
 import "../styles/pages/make-up.scss";
 import "../styles/components/parallax.scss";
 
-export default function MakeUp() {
+function MakeUp({ access_token }) {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [value, onChange] = useState(new Date());
+
+  const dispatch = useDispatch();
+
+  const handleSchedule = () => {
+    add();
+    dispatch(display_appointment_modal(true));
+    dispatch(schedule_service("schedule"));
+  };
 
   return (
     <div className="service-container">
@@ -39,7 +55,24 @@ export default function MakeUp() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              {access_token === null ? (
+                <Link
+                  className="price-button"
+                  to={{
+                    pathname: "/signin",
+                    state: {
+                      btSchedule: true,
+                    },
+                  }}
+                >
+                  Book
+                </Link>
+              ) : (
+                <button className="price-button" onClick={handleSchedule}>
+                  Book
+                </button>
+              )}
+              {/* <button className="price-button">Book</button> */}
             </div>
           </div>
         </div>
@@ -58,3 +91,12 @@ export default function MakeUp() {
     </div>
   );
 }
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ add, get, display_appointment_modal }, dispatch);
+
+const mapStateToProps = (state) => ({
+  access_token: state.auth.access_token,
+  show_appointment_modal: state.auth.show_appointment_modal,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MakeUp);
