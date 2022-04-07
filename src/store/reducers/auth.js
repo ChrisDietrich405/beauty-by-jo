@@ -11,6 +11,7 @@ import {
 const initialState = {
   schedule_service: null,
   access_token: null,
+  show_services_modal: false,
   show_appointment_modal: false,
   signin_success: false,
   user: {

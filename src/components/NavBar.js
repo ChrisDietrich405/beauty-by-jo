@@ -14,7 +14,9 @@ import {
 
 function Navbar({ show_appointment_modal, display_appointment_modal }) {
   const dispatch = useDispatch();
-  const { signin_success } = useSelector((state) => state.auth);
+  const { signin_success, show_services_modal } = useSelector(
+    (state) => state.auth
+  );
 
   const handleServices = () => {
     dispatch(schedule_service(null));
@@ -94,11 +96,11 @@ function Navbar({ show_appointment_modal, display_appointment_modal }) {
           </ul>
         </div>
       </div>
-      {show_appointment_modal && (
+      {show_services_modal && (
         <ServicesModal
           label="Go to page"
           onClose={() => {
-            // display_appointment_modal(false);
+            display_appointment_modal(true);
             console.log("hello");
           }}
         />

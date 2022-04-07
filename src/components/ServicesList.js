@@ -9,12 +9,12 @@ export default function ServicesList({ label, services, className, onSelect }) {
   const dispatch = useDispatch();
 
   const handleServices = (service) => {
+    console.log(service.path);
     onSelect(service);
     if (schedule_service === null) {
     }
     if (service.path) {
       history.push(`${service.path}`);
-      console.log(service.path);
     }
   };
 

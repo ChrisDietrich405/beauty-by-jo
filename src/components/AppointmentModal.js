@@ -172,9 +172,10 @@ function AppointmentModal({
   );
 
   const toggleState = (state) => {
+    console.log("toggleState");
     if (state === "services") {
-      setShowSpecificServices(true);
-      setShowServices(false);
+      setShowSpecificServices(true); //second modal
+      setShowServices(false); //first modal
     } else if (state === "appointment") {
       setShowAppointmentCal(true);
       setShowSpecificServices(false);
