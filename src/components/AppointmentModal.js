@@ -32,7 +32,6 @@ function AppointmentModal({
   save,
   availability,
   verifyAvailability,
-  specific_service_id,
 }) {
   const [showServices, setShowServices] = useState(true);
   const [showSpecificServices, setShowSpecificServices] = useState(false);
@@ -52,6 +51,9 @@ function AppointmentModal({
   const dispatch = useDispatch();
 
   const { schedule_service } = useSelector((state) => state.auth);
+  const { specific_service_id } = useSelector(
+    (state) => state.schedule.schedule
+  );
 
   const handleServices = (service) => {
     setService(service.name);
@@ -115,6 +117,7 @@ function AppointmentModal({
                 onSelectTime={(timeSelected) => {
                   setSelectedTime(timeSelected);
                   toggleState("preconfirmation");
+                  change({ selected_time: true });
                 }}
               />
             </div>
@@ -174,12 +177,13 @@ function AppointmentModal({
   const toggleState = (state) => {
     console.log("toggleState");
     if (state === "services") {
-      setShowSpecificServices(true); //second modal
-      setShowServices(false); //first modal
+      setShowSpecificServices(true);
+      setShowServices(false);
     } else if (state === "appointment") {
       setShowAppointmentCal(true);
       setShowSpecificServices(false);
     } else if (state === "preconfirmation") {
+      change({ specific_service_id: null });
       setShowAppointmentCal(false);
       setShowPreconfirmation(true);
     } else if (state === "confirmation") {
@@ -229,7 +233,7 @@ function AppointmentModal({
           }}
         />
       ) : null}
-      {showAppointmentCal && <DatePicker />}
+      {specific_service_id !== null && <DatePicker />}
       {showPreconfirmation && <PreConfirmation />}
       {showAppointmentConfirmation && <AppointmentConfirmation />}
     </ModalTemplate>
@@ -248,6 +252,3 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ index, change, save, verifyAvailability }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
-
-//mapDispatchtoProps connects the actions to the AppointmentModel and dispatch is
-// dependency

@@ -5,11 +5,13 @@ import { display_appointment_modal } from "../store/actions/auth";
 
 export default function ServicesList({ label, services, className, onSelect }) {
   const { schedule_service } = useSelector((state) => state.auth);
+  const { specific_service_id } = useSelector(
+    (state) => state.schedule.schedule
+  );
   const history = useHistory();
   const dispatch = useDispatch();
 
   const handleServices = (service) => {
-    console.log(service.path);
     onSelect(service);
     if (schedule_service === null) {
     }
@@ -18,22 +20,29 @@ export default function ServicesList({ label, services, className, onSelect }) {
     }
   };
 
-  return (
-    <div className={classNames("title", className)}>
-      <h2>{label}</h2>
-      <hr />
-      <div className="link-container">
-        {services.map((service) => (
-          <button
-            key={service.id}
-            className="service-button"
-            onClick={() => handleServices(service)}
-          >
-            {service.name} &nbsp;
-            {service.price}
-          </button>
-        ))}
+  const ServicesContent = () => {
+    return (
+      <div className={classNames("title", className)}>
+        <h2>{label}</h2>
+        <hr />
+        <div className="link-container">
+          {services.map((service) => (
+            <button
+              key={service.id}
+              className="service-button"
+              onClick={() => handleServices(service)}
+            >
+              {service.name} &nbsp;
+              {service.price}
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  if (specific_service_id === null) {
+    return <ServicesContent />;
+  }
+  return <></>;
 }

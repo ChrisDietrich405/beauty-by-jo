@@ -16,7 +16,7 @@ import Logo from "../assets/images/logo.jpg";
 
 function Header({ access_token, add, get }) {
   const { show_appointment_modal } = useSelector((state) => state.auth);
-  console.log({ show_appointment_modal });
+  const { selected_time } = useSelector((state) => state.schedule.schedule);
   const dispatch = useDispatch();
 
   useEffect(async () => {
@@ -47,11 +47,7 @@ function Header({ access_token, add, get }) {
               Schedule an appointment
             </Link>
           ) : (
-            <button
-              // disabled={access_token === null}
-              className="btn"
-              onClick={handleSchedule}
-            >
+            <button className="btn" onClick={handleSchedule}>
               Schedule an appointment
             </button>
           )}
@@ -63,6 +59,7 @@ function Header({ access_token, add, get }) {
             Contact Us
           </Link>
         </div>
+
         {show_appointment_modal && (
           <AppointmentModal
             label="Pick a service to schedule your appointment"

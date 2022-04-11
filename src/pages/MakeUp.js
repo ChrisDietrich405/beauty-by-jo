@@ -7,7 +7,7 @@ import { Parallax, Background } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
-import { add } from "../store/actions/schedule";
+import { add, change } from "../store/actions/schedule";
 import {
   get,
   display_appointment_modal,
@@ -25,10 +25,11 @@ function MakeUp({ access_token }) {
 
   const dispatch = useDispatch();
 
-  const handleSchedule = () => {
-    add();
+  const handleSchedule = (id) => {
+    // add();
     dispatch(display_appointment_modal(true));
     dispatch(schedule_service("schedule"));
+    dispatch(change({ specific_service_id: id }));
   };
 
   return (
@@ -68,11 +69,13 @@ function MakeUp({ access_token }) {
                   Book
                 </Link>
               ) : (
-                <button className="price-button" onClick={handleSchedule}>
+                <button
+                  className="price-button"
+                  onClick={() => handleSchedule(1)}
+                >
                   Book
                 </button>
               )}
-              {/* <button className="price-button">Book</button> */}
             </div>
           </div>
         </div>
