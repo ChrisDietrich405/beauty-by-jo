@@ -213,7 +213,7 @@ function AppointmentModal({
     >
       {showServices ? (
         <ServicesList
-          label={label}
+          label={"Go to page"}
           services={services}
           onSelect={(service) => {
             handleServices(service);
@@ -233,7 +233,7 @@ function AppointmentModal({
           }}
         />
       ) : null}
-      {specific_service_id !== null && <DatePicker />}
+      {showAppointmentCal && <DatePicker />}
       {showPreconfirmation && <PreConfirmation />}
       {showAppointmentConfirmation && <AppointmentConfirmation />}
     </ModalTemplate>

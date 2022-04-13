@@ -101,7 +101,6 @@ function Navbar({ show_appointment_modal, display_appointment_modal }) {
           label="Go to page"
           onClose={() => {
             display_appointment_modal(true);
-            console.log("hello");
           }}
         />
       )}

@@ -10,6 +10,7 @@ import { index } from "../store/actions/service";
 
 function ServicesModal({ label, onClose, index, services }) {
   const history = useHistory();
+  console.log("title", label);
 
   useEffect(() => {
     index();
