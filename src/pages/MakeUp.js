@@ -27,7 +27,7 @@ function MakeUp({ access_token }) {
 
   const handleSchedule = (id) => {
     // add();
-    dispatch(display_appointment_modal(true));
+    // dispatch(display_appointment_modal(true));
     dispatch(schedule_service("schedule"));
     dispatch(change({ specific_service_id: id }));
   };
