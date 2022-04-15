@@ -1,28 +1,27 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { BsFillPersonFill } from "react-icons/bs";
-import { connect, useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { BsFillPersonFill } from 'react-icons/bs';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import ServicesModal from "./ServicesModal";
+import ServicesModal from './ServicesModal';
 
 import {
   get,
   display_appointment_modal,
-  schedule_service,
-} from "../store/actions/auth";
+  displayServiceModal,
+} from '../store/actions/auth';
+import { kindService } from '../store/actions/schedule';
 
-function Navbar({ show_appointment_modal, display_appointment_modal }) {
+function Navbar({ display_appointment_modal }) {
+  const { signin_success } = useSelector((state) => state.auth);
+  const { show_service_modal } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const { signin_success, show_services_modal } = useSelector(
-    (state) => state.auth
-  );
-
   const handleServices = () => {
-    dispatch(schedule_service(null));
-    display_appointment_modal(true);
+    console.log('KindServices');
+    dispatch(kindService({ serviceName: 'Services' }));
+    dispatch(displayServiceModal(true));
   };
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -86,9 +85,9 @@ function Navbar({ show_appointment_modal, display_appointment_modal }) {
                 <div className="btn">
                   <BsFillPersonFill color="white" size="30" />
                   {signin_success ? (
-                    <span className="noselect">Log Out</span>
+                    <span className="noselect">Sign Out</span>
                   ) : (
-                    <span className="noselect">Log In</span>
+                    <span className="noselect">Sign In</span>
                   )}
                 </div>
               </Link>
@@ -96,11 +95,11 @@ function Navbar({ show_appointment_modal, display_appointment_modal }) {
           </ul>
         </div>
       </div>
-      {show_services_modal && (
+      {show_service_modal && (
         <ServicesModal
           label="Go to page"
           onClose={() => {
-            display_appointment_modal(true);
+            // display_appointment_modal(false);
           }}
         />
       )}

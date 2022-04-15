@@ -1,35 +1,33 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import { add } from "../store/actions/schedule";
-import {
-  get,
-  display_appointment_modal,
-  schedule_service,
-} from "../store/actions/auth";
+import { add } from '../store/actions/schedule';
+import { get, display_appointment_modal } from '../store/actions/auth';
 
-import AppointmentModal from "./AppointmentModal";
+import AppointmentModal from './AppointmentModal';
 
-import Logo from "../assets/images/logo.jpg";
+import Logo from '../assets/images/logo.jpg';
 
 function Header({ access_token, add, get }) {
-  const { show_appointment_modal } = useSelector((state) => state.auth);
-  const { selected_time } = useSelector((state) => state.schedule.schedule);
   const dispatch = useDispatch();
+  const { show_appointment_modal, show_service_modal } = useSelector(
+    (state) => state.auth
+  );
+  console.log('ModalState', show_appointment_modal);
 
   useEffect(async () => {
     await get();
   }, []);
 
   const handleSchedule = () => {
-    add();
     dispatch(display_appointment_modal(true));
-    dispatch(schedule_service("schedule"));
+
+    console.log('HandleSchedule');
+    add();
   };
 
-  console.log(access_token);
   return (
     <>
       <div className="header">
@@ -38,16 +36,23 @@ function Header({ access_token, add, get }) {
             <Link
               className="btn"
               to={{
-                pathname: "/signin",
+                pathname: '/signin',
                 state: {
                   btSchedule: true,
                 },
               }}
             >
-              Schedule an appointment
+              Schedule an appointment-UNAUTHORIZED
             </Link>
           ) : (
-            <button className="btn" onClick={handleSchedule}>
+            <button
+              // disabled={access_token === null}
+              className="btn"
+              onClick={
+                handleSchedule
+                // setModalOpen(true);
+              }
+            >
               Schedule an appointment
             </button>
           )}
@@ -59,11 +64,10 @@ function Header({ access_token, add, get }) {
             Contact Us
           </Link>
         </div>
-
         {show_appointment_modal && (
           <AppointmentModal
             label="Pick a service to schedule your appointment"
-            onClose={() => display_appointment_modal(false)}
+            onClose={display_appointment_modal(false)}
           />
         )}
       </div>

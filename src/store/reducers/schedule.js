@@ -1,12 +1,20 @@
-import { ADD, CHANGE, ERROR, SAVE_SUCCESS } from "../actions/schedule";
+import {
+  ADD,
+  BOOK_SERVICE,
+  CHANGE,
+  ERROR,
+  KIND_SERVICE,
+  SAVE_SUCCESS,
+} from '../actions/schedule';
 
 const initialState = {
   schedule: {
     id: null,
     specific_service_id: null,
+    serviceName: null,
+    isBooking: false,
     date: null,
     status: null,
-    selected_time: false,
   },
   schedules: [],
   error: {},
@@ -15,8 +23,10 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD:
-      return { ...state, show_appointment_modal: true };
+      return initialState;
     case CHANGE:
+    case BOOK_SERVICE:
+    case KIND_SERVICE:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };
     case SAVE_SUCCESS:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };

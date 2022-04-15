@@ -1,26 +1,23 @@
-import { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import Datetime from "react-datetime";
-import { bindActionCreators } from "redux";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { DateTime } from "luxon";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Datetime from 'react-datetime';
+import { bindActionCreators } from 'redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { DateTime } from 'luxon';
 
-import { change, save } from "../store/actions/schedule";
-import { index } from "../store/actions/service";
-import { verifyAvailability } from "../store/actions/service";
+import { change, save } from '../store/actions/schedule';
+import { index } from '../store/actions/service';
+import { verifyAvailability } from '../store/actions/service';
 
-import ServicesList from "./ServicesList";
-import ModalTemplate from "./ModalTemplate";
-import TimeList from "./TimeList";
+import ServicesList from './ServicesList';
+import ModalTemplate from './ModalTemplate';
+import TimeList from './TimeList';
 
-import "../styles/components/modal.scss";
-import {
-  display_appointment_modal,
-  SHOW_APPOINTMENT_MODAL,
-} from "../store/actions/auth";
+import '../styles/components/modal.scss';
+import { display_appointment_modal } from '../store/actions/auth';
 
-const DATE_FORMAT = "yyyy-MM-dd";
-const TIME_FORMAT = "HH:mm";
+const DATE_FORMAT = 'yyyy-MM-dd';
+const TIME_FORMAT = 'HH:mm';
 
 function AppointmentModal({
   label,
@@ -32,6 +29,7 @@ function AppointmentModal({
   save,
   availability,
   verifyAvailability,
+  specific_service_id,
 }) {
   const [showServices, setShowServices] = useState(true);
   const [showSpecificServices, setShowSpecificServices] = useState(false);
@@ -40,47 +38,53 @@ function AppointmentModal({
   const [showAppointmentConfirmation, setShowAppointmentConfirmation] =
     useState(false);
 
-  const [service, setService] = useState("");
-  const [specificService, setSpecificService] = useState("");
-  const [price, setPrice] = useState("");
+  const [service, setService] = useState('');
+  const [specificService, setSpecificService] = useState('');
+  const [price, setPrice] = useState('');
 
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedTime, setSelectedTime] = useState("");
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
 
-  const history = useHistory();
-  const dispatch = useDispatch();
-
-  const { schedule_service } = useSelector((state) => state.auth);
-  const { specific_service_id } = useSelector(
+  const { show_appointment_modal } = useSelector((state) => state.auth);
+  const { serviceName, isBooking } = useSelector(
     (state) => state.schedule.schedule
   );
-
-  const handleServices = (service) => {
-    setService(service.name);
-    if (schedule_service === null) {
-      dispatch(display_appointment_modal(false));
-    }
-    history.push(`${service.name}`);
-    toggleState("services");
-  };
+  const [currentTitle, setCurrentTittle] = useState('My title');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     index();
+    // if (isBooking) {
+    //   showCurrentModal('appointment');
+    //   verifyAvailability({
+    //     date: selectedDate,
+    //     specificServiceId: specific_service_id,
+    //   });
+    // }
     const now = DateTime.now();
     setSelectedDate(now.toFormat(DATE_FORMAT));
   }, []);
 
   useEffect(() => {
-    if (selectedDate && specific_service_id) {
+    if (isBooking) {
+      showCurrentModal('appointment');
+      // verifyAvailability({
+      //   date: selectedDate,
+      //   specificServiceId: specific_service_id,
+      // });
+    }
+    //if (selectedDate && specific_service_id) {
+    if (selectedDate) {
       verifyAvailability({
         date: selectedDate,
-        specificServiceId: specific_service_id,
+        specificServiceId: 1,
       });
       console.log(selectedDate);
     }
   }, [selectedDate, specific_service_id]);
 
   const onModalBack = () => {
+    console.log('onModalBack');
     if (showServices === true) {
       setShowAppointmentConfirmation(true);
       setShowServices(false);
@@ -99,6 +103,11 @@ function AppointmentModal({
     }
   };
 
+  const handleOnChange = (service) => {
+    console.log('handleOnchanse');
+    setService(service.name);
+    //showCurrentModal('preconfirmation');
+  };
   const DatePicker = () => {
     return (
       <div className="appointment-container">
@@ -111,13 +120,21 @@ function AppointmentModal({
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
               />
-
+              {/* <Datetime
+                timeFormat={false}
+                closeOnSelect={true}
+                value={selectedDate}
+                onChange={(date) => {
+                  //console.log(date.format("YYYY-MM-DD"));
+                  setSelectedDate(date.format("YYYY-MM-DD"));
+                  // change({ date: date.toDate().toISOString() });
+                }}
+              /> */}
               <TimeList
                 availability={availability}
                 onSelectTime={(timeSelected) => {
                   setSelectedTime(timeSelected);
-                  toggleState("preconfirmation");
-                  change({ selected_time: true });
+                  showCurrentModal('preconfirmation');
                 }}
               />
             </div>
@@ -132,7 +149,7 @@ function AppointmentModal({
       <div className="modal-bod">
         <h4>We're almost there!</h4>
         <p>
-          Your {specificService} appointment is set for{" "}
+          Your {specificService} appointment is set for{' '}
           {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
           The total cost will be ${price}. Thank you.
         </p>
@@ -144,10 +161,10 @@ function AppointmentModal({
             ...schedule,
             date: DateTime.fromString(
               `${selectedDate} ${selectedTime}`,
-              "yyyy-MM-dd hh:mm"
+              'yyyy-MM-dd hh:mm'
             ).toISO(),
           });
-          toggleState("confirmation");
+          showCurrentModal('confirmation');
         }}
       >
         Confirm your appointment
@@ -160,14 +177,14 @@ function AppointmentModal({
       <div className="modal-bod">
         <h4>Thank you for your business!</h4>
         <p>
-          Your {specificService} appointment has been scheduled for{" "}
+          Your {specificService} appointment has been scheduled for{' '}
           {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
           The cost will be {price}.
         </p>
       </div>
       <button
         className="another-appointment-button"
-        onClick={() => toggleState("additionalAppointment")}
+        onClick={() => showCurrentModal('additionalAppointment')}
       >
         Make another appointment
       </button>
@@ -175,24 +192,58 @@ function AppointmentModal({
   );
 
   const toggleState = (state) => {
-    console.log("toggleState");
-    if (state === "services") {
+    if (state === 'services') {
       setShowSpecificServices(true);
       setShowServices(false);
-    } else if (state === "appointment") {
+    } else if (state === 'appointment') {
       setShowAppointmentCal(true);
       setShowSpecificServices(false);
-    } else if (state === "preconfirmation") {
-      change({ specific_service_id: null });
+    } else if (state === 'preconfirmation') {
       setShowAppointmentCal(false);
       setShowPreconfirmation(true);
-    } else if (state === "confirmation") {
+    } else if (state === 'confirmation') {
       setShowPreconfirmation(false);
       setShowAppointmentConfirmation(true);
-      console.log("hello");
-    } else if (state === "additionalAppointment") {
+      console.log('hello');
+    } else if (state === 'additionalAppointment') {
       setShowAppointmentConfirmation(false);
       setShowServices(true);
+    }
+  };
+
+  const showCurrentModal = (state) => {
+    setCurrentTittle(
+      serviceName === 'Services' ? 'Got to page' : 'Pick schedule'
+    );
+    switch (state) {
+      case 'services':
+        if (serviceName === 'Services') {
+          dispatch(display_appointment_modal(false));
+        }
+        setShowServices(false);
+        setShowSpecificServices(true);
+
+        break;
+      case 'appointment':
+        setShowSpecificServices(false);
+        setShowServices(false);
+        setShowAppointmentCal(true);
+
+        break;
+      case 'preconfirmation':
+        setShowAppointmentCal(false);
+        setShowPreconfirmation(true);
+        break;
+      case 'confirmation':
+        setShowPreconfirmation(false);
+        setShowAppointmentConfirmation(true);
+        break;
+      case 'additionalAppointment':
+        setShowAppointmentConfirmation(false);
+        setShowServices(true);
+        break;
+      default:
+        break;
     }
   };
 
@@ -211,28 +262,29 @@ function AppointmentModal({
       onClose={onClose}
       isShowBackButton={!showServices}
     >
-      {showServices ? (
+      {showServices && (
         <ServicesList
-          label={"Go to page"}
+          label={label}
           services={services}
           onSelect={(service) => {
-            handleServices(service);
+            setService(service.name);
+            showCurrentModal('services');
           }}
         />
-      ) : null}
-      {showSpecificServices ? (
+      )}
+      {showSpecificServices && (
         <ServicesList
           className="specific"
-          label={"Now please choose a specific service"}
+          label={'Now please choose a specific service'}
           services={getSpecificServices()}
           onSelect={(specificService) => {
             setSpecificService(specificService.name);
             setPrice(specificService.price);
             change({ specific_service_id: specificService.id });
-            toggleState("appointment");
+            showCurrentModal('appointment');
           }}
         />
-      ) : null}
+      )}
       {showAppointmentCal && <DatePicker />}
       {showPreconfirmation && <PreConfirmation />}
       {showAppointmentConfirmation && <AppointmentConfirmation />}
@@ -252,3 +304,6 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ index, change, save, verifyAvailability }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
+
+//mapDispatchtoProps connects the actions to the AppointmentModel and dispatch is
+// dependency

@@ -1,8 +1,9 @@
+import { SCHEDULE_SERVICE } from '../actions/auth';
 import {
   INDEX_SUCCESS,
   ERROR,
   VERIFY_AVAILABILITY_SUCCESS,
-} from "../actions/service";
+} from '../actions/service';
 
 const initialState = {
   services: [],
@@ -13,6 +14,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case INDEX_SUCCESS:
+      console.log('INDEX_SUCCESS', action);
       return {
         ...state,
         services: action.payload,
@@ -21,6 +23,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, errors: action.payload };
     case VERIFY_AVAILABILITY_SUCCESS:
       return { ...state, availability: action.payload };
+    case SCHEDULE_SERVICE:
+
     default:
       return state;
   }

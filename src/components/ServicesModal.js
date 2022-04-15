@@ -1,17 +1,20 @@
-import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
+import { connect, useDispatch } from 'react-redux';
 
-import ServicesList from "./ServicesList";
-import ModalTemplate from "./ModalTemplate";
-import { index } from "../store/actions/service";
+import ServicesList from './ServicesList';
+import ModalTemplate from './ModalTemplate';
+import { index } from '../store/actions/service';
+import { useEffect } from 'react';
+import { displayServiceModal } from '../store/actions/auth';
+
+// import services from "../assets/data/services";
 
 function ServicesModal({ label, onClose, index, services }) {
   const history = useHistory();
-  console.log("title", label);
-
+  const dispatch = useDispatch();
+  console.log('My modal Services', label);
   useEffect(() => {
     index();
   }, []);
@@ -21,8 +24,10 @@ function ServicesModal({ label, onClose, index, services }) {
       <ServicesList
         services={services}
         label={label}
+        type="Services"
         onSelect={(service) => {
-          history.push(`${service.name}`);
+          dispatch(displayServiceModal(false));
+          history.push(service.path);
           onClose();
         }}
       />
