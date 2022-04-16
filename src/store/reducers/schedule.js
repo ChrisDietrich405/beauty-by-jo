@@ -5,7 +5,7 @@ import {
   ERROR,
   KIND_SERVICE,
   SAVE_SUCCESS,
-} from '../actions/schedule';
+} from "../actions/schedule";
 
 const initialState = {
   schedule: {
