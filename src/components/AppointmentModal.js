@@ -46,9 +46,12 @@ function AppointmentModal({
   const [selectedTime, setSelectedTime] = useState("");
 
   const { show_appointment_modal } = useSelector((state) => state.auth);
-  const { serviceName, isBooking } = useSelector(
-    (state) => state.schedule.schedule
-  );
+  const {
+    serviceName,
+    isBooking,
+    specific_service_id: specificServiceId,
+    specific_service,
+  } = useSelector((state) => state.schedule.schedule);
 
   const data = useSelector((state) => state.service.services);
 
@@ -64,9 +67,8 @@ function AppointmentModal({
   useEffect(() => {
     if (isBooking) {
       showCurrentModal("appointment");
-      const currentService = data.find((e) => e.id === 1);
-      setSpecificService(currentService.specificService[0].name);
-      setPrice(currentService.specificService[0].price);
+      setSpecificService(specific_service.name);
+      setPrice(specific_service.price);
     }
 
     if (selectedDate) {
@@ -144,8 +146,9 @@ function AppointmentModal({
         <h4>We're almost there!</h4>
         <p>
           Your {specificService} appointment is set for{" "}
-          {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-          The total cost will be ${price}. Thank you.
+          {DateTime.fromISO(selectedDate).toLocaleString()} at{" "}
+          {selectedTime.toLocaleString([], { hour12: true })}. The total cost
+          will be ${price}. Thank you.
         </p>
       </div>
       <button

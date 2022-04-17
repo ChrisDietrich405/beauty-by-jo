@@ -15,16 +15,22 @@ import "../styles/components/parallax.scss";
 
 import { useDispatch } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
-import { bookService } from "../store/actions/schedule";
+import {
+  bookService,
+  specificService,
+  setSpecificService,
+} from "../store/actions/schedule";
 
 export default function Eyebrow() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [value, onChange] = useState(new Date());
   const dispatch = useDispatch();
 
-  const handleBooking = () => {
+  const handleBooking = (service) => {
     dispatch(bookService({ isBooking: true }));
     dispatch(display_appointment_modal(true));
+    dispatch(specificService({ specific_service_id: 2 }));
+    dispatch(setSpecificService({ specific_service: service }));
   };
 
   const questions = [
@@ -100,7 +106,17 @@ export default function Eyebrow() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button onClick={handleBooking} className="price-button">
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 4,
+                    name: "brow lamination",
+                    price: "50.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
                 Book
               </button>
             </div>
@@ -134,7 +150,19 @@ export default function Eyebrow() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 5,
+                    name: "brow lamination wax and tint",
+                    price: "70.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
         </div>
