@@ -134,7 +134,19 @@ export default function Eyebrow() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 6,
+                    name: "brow lamination wax or tint",
+                    price: "60.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">

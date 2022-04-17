@@ -8,12 +8,22 @@ import BeautySupplies from "../assets/images/about-us.jpg";
 
 import DatePicker from "react-date-picker";
 
+import { useDispatch } from "react-redux";
+import { display_appointment_modal } from "../store/actions/auth";
+import {
+  bookService,
+  specificService,
+  setSpecificService,
+} from "../store/actions/schedule";
+
 import "../styles/pages/services.scss";
 import "../styles/components/parallax.scss";
 
 export default function Waxing() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [value, onChange] = useState(new Date());
+
+  const dispatch = useDispatch();
 
   const timeArray = [
     "9:00AM",
@@ -31,6 +41,13 @@ export default function Waxing() {
     "3:30PM",
     "4:00PM",
   ];
+
+  const handleBooking = (service) => {
+    dispatch(bookService({ isBooking: true }));
+    dispatch(display_appointment_modal(true));
+    dispatch(specificService({ specific_service_id: 2 }));
+    dispatch(setSpecificService({ specific_service: service }));
+  };
 
   return (
     <div className="service-container">

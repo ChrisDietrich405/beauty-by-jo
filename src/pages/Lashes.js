@@ -9,12 +9,29 @@ import BeautySupplies from "../assets/images/about-us.jpg";
 
 import DatePicker from "react-date-picker";
 
+import { useDispatch } from "react-redux";
+import { display_appointment_modal } from "../store/actions/auth";
+import {
+  bookService,
+  specificService,
+  setSpecificService,
+} from "../store/actions/schedule";
+
 import "../styles/pages/services.scss";
 import "../styles/components/parallax.scss";
 
 export default function Lashes() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [value, onChange] = useState(new Date());
+
+  const dispatch = useDispatch();
+
+  const handleBooking = (service) => {
+    dispatch(bookService({ isBooking: true }));
+    dispatch(display_appointment_modal(true));
+    dispatch(specificService({ specific_service_id: 4 }));
+    dispatch(setSpecificService({ specific_service: service }));
+  };
 
   const timeArray = [
     "9:00AM",
@@ -96,7 +113,19 @@ export default function Lashes() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 2,
+                    name: "lash lift",
+                    price: "55.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -112,7 +141,19 @@ export default function Lashes() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 3,
+                    name: "lash lift and tint",
+                    price: "70.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
         </div>
