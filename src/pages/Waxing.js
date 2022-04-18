@@ -105,7 +105,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 8,
+                    name: "half leg",
+                    price: "35.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -121,7 +133,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 9,
+                    name: "full arm",
+                    price: "40.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -137,7 +161,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 10,
+                    name: "half arm",
+                    price: "30.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -153,7 +189,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 11,
+                    name: "armpits",
+                    price: "20.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -169,7 +217,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 12,
+                    name: "bikini",
+                    price: "30.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -185,7 +245,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 13,
+                    name: "french bikini",
+                    price: "45.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -201,7 +273,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 14,
+                    name: "brazilian",
+                    price: "65.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -217,7 +301,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 15,
+                    name: "lip or chin",
+                    price: "10.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -233,7 +329,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 16,
+                    name: "full face",
+                    price: "40.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -249,7 +357,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 17,
+                    name: "eyebrow shaping",
+                    price: "15.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
         </div>

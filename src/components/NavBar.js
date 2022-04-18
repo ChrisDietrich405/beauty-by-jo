@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
-import { connect, useDispatch, useSelector } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { BsFillPersonFill } from "react-icons/bs";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import ServicesModal from './ServicesModal';
+import ServicesModal from "./ServicesModal";
 
 import {
   get,
   display_appointment_modal,
   displayServiceModal,
-} from '../store/actions/auth';
-import { kindService } from '../store/actions/schedule';
+} from "../store/actions/auth";
+import { kindService } from "../store/actions/schedule";
 
 function Navbar({ display_appointment_modal }) {
   const { signin_success } = useSelector((state) => state.auth);
   const { show_service_modal } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const handleServices = () => {
-    console.log('KindServices');
-    dispatch(kindService({ serviceName: 'Services' }));
+    console.log("KindServices");
+    dispatch(kindService({ serviceName: "Services" }));
     dispatch(displayServiceModal(true));
   };
   return (
@@ -85,9 +85,9 @@ function Navbar({ display_appointment_modal }) {
                 <div className="btn">
                   <BsFillPersonFill color="white" size="30" />
                   {signin_success ? (
-                    <span className="noselect">Sign Out</span>
+                    <span className="noselect">Log Out</span>
                   ) : (
-                    <span className="noselect">Sign In</span>
+                    <span className="noselect">Log In</span>
                   )}
                 </div>
               </Link>

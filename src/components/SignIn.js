@@ -1,23 +1,23 @@
-import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { Formik, ErrorMessage } from 'formik';
+import { Link } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { Formik, ErrorMessage } from "formik";
 
-import { signin, SIGNIN_SUCCESS, ERROR } from '../store/actions/auth';
+import { signin, SIGNIN_SUCCESS, ERROR } from "../store/actions/auth";
 
-import '../styles/components/sign-in-create-account.scss';
-import { useState, useEffect } from 'react';
-import { subscribe } from '../store';
-import { add } from '../store/actions/schedule';
+import "../styles/components/sign-in-create-account.scss";
+import { useState, useEffect } from "react";
+import { subscribe } from "../store";
+import { add } from "../store/actions/schedule";
 
-import AppointmentModal from './AppointmentModal';
+import AppointmentModal from "./AppointmentModal";
 
 function SignIn({ user, signin, location, add }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(SIGNIN_SUCCESS, () => {
-      alert('logged successfully');
+      alert("logged successfully");
       add();
       setModalOpen(false);
 
@@ -25,7 +25,7 @@ function SignIn({ user, signin, location, add }) {
     });
 
     const unsubscribeAuthError = subscribe.on(ERROR, () => {
-      alert('you fucked up');
+      alert("you fucked up");
       // TODO: Show error messages, example Email and/or password are invalid!
     });
 
@@ -38,21 +38,21 @@ function SignIn({ user, signin, location, add }) {
   return (
     <Formik
       initialValues={{
-        username: '',
-        password: '',
+        username: "",
+        password: "",
       }}
       validate={(values) => {
-        console.log('Validate', values);
+        console.log("Validate", values);
         const errors = {};
         if (!values.username.trim()) {
-          errors.username = 'username required';
+          errors.username = "username required";
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.username)
         ) {
-          errors.username = 'Invalid username address';
+          errors.username = "Invalid username address";
         }
         if (!values.password.trim()) {
-          errors.password = 'Password is required';
+          errors.password = "Password is required";
         }
         console.log(errors);
         return errors;
@@ -79,7 +79,7 @@ function SignIn({ user, signin, location, add }) {
             </p>
           )}
           <form onSubmit={handleSubmit}>
-            <h2>Sign in</h2>
+            <h2>Log in</h2>
             <label htmlFor="username">
               username
               <input
