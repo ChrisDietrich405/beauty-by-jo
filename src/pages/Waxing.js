@@ -25,6 +25,13 @@ export default function Waxing() {
 
   const dispatch = useDispatch();
 
+  const handleBooking = (service) => {
+    dispatch(bookService({ isBooking: true }));
+    dispatch(display_appointment_modal(true));
+    dispatch(specificService({ specific_service_id: 5 }));
+    dispatch(setSpecificService({ specific_service: service }));
+  };
+
   const timeArray = [
     "9:00AM",
     "9:30AM",
@@ -42,13 +49,6 @@ export default function Waxing() {
     "4:00PM",
   ];
 
-  const handleBooking = (service) => {
-    dispatch(bookService({ isBooking: true }));
-    dispatch(display_appointment_modal(true));
-    dispatch(specificService({ specific_service_id: 2 }));
-    dispatch(setSpecificService({ specific_service: service }));
-  };
-
   return (
     <div className="service-container">
       <Parallax
@@ -57,7 +57,6 @@ export default function Waxing() {
         strength={500}
       >
         <div className="parallax-container-text">
-          {/* <div style={{ height: 400 }}> */}
           <h1>
             <b>Waxing</b>
           </h1>
@@ -78,7 +77,19 @@ export default function Waxing() {
               </p>
             </div>
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 7,
+                    name: "full leg",
+                    price: "55.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">

@@ -9,23 +9,6 @@ import {
 } from "../store/actions/service";
 
 function TimeList({ onSelectTime, availability }) {
-  // const arrayOfTimes = [
-  //   "9:00AM",
-  //   "9:30AM",
-  //   "10:00AM",
-  //   "10:30AM",
-  //   "11:00AM",
-  //   "11:30AM",
-  //   "12:00PM",
-  //   "1:00PM",
-  //   "1:30PM",
-  //   "2:00PM",
-  //   "2:30PM",
-  //   "3:00PM",
-  //   "3:30PM",
-  //   "4:00PM",
-  // ];
-
   return (
     <div className="time-list">
       <div className="time-list-button">
@@ -35,7 +18,7 @@ function TimeList({ onSelectTime, availability }) {
               disable={available == "0"}
               className="time"
               onClick={() => {
-                onSelectTime(DateTime.fromISO(Date).toFormat("hh:mm"));
+                onSelectTime(DateTime.fromISO(Date).toFormat("hh:mma"));
               }}
             >
               {DateTime.fromISO(Date).toFormat("h:mma")}
