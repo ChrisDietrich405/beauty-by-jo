@@ -7,6 +7,14 @@ import BeautySupplies from "../assets/images/about-us.jpg";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
+import { useDispatch } from "react-redux";
+import { display_appointment_modal } from "../store/actions/auth";
+import {
+  bookService,
+  specificService,
+  setSpecificService,
+} from "../store/actions/schedule";
+
 import "../styles/pages/services.scss";
 import "../styles/pages/facials.scss";
 import "../styles/components/parallax.scss";
@@ -14,6 +22,15 @@ import "../styles/components/parallax.scss";
 export default function Facials() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [value, onChange] = useState(new Date());
+
+  const dispatch = useDispatch();
+
+  const handleBooking = (service) => {
+    dispatch(bookService({ isBooking: true }));
+    dispatch(display_appointment_modal(true));
+    dispatch(specificService({ specific_service_id: 2 }));
+    dispatch(setSpecificService({ specific_service: service }));
+  };
 
   const timeArray = [
     "9:00AM",
@@ -65,7 +82,19 @@ export default function Facials() {
             </div>
 
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 18,
+                    name: "mini-makeover",
+                    price: "60.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -89,7 +118,19 @@ export default function Facials() {
             </div>
 
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 19,
+                    name: "signature jo-glo",
+                    price: "80.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -113,7 +154,19 @@ export default function Facials() {
             </div>
 
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 20,
+                    name: "the desired detox",
+                    price: "100.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -136,7 +189,19 @@ export default function Facials() {
             </div>
 
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 21,
+                    name: "the sensitive skin serenity",
+                    price: "85.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
           <div className="price-wrapper">
@@ -158,7 +223,19 @@ export default function Facials() {
             </div>
 
             <div className="button-wrapper">
-              <button className="price-button">Book</button>
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 22,
+                    name: "anti age radiate rejuvenate",
+                    price: "85.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
             </div>
           </div>
         </div>

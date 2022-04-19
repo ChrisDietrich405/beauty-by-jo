@@ -1,21 +1,21 @@
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { connect, useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import { add } from '../store/actions/schedule';
-import { get, display_appointment_modal } from '../store/actions/auth';
+import { add } from "../store/actions/schedule";
+import { get, display_appointment_modal } from "../store/actions/auth";
 
-import AppointmentModal from './AppointmentModal';
+import AppointmentModal from "./AppointmentModal";
 
-import Logo from '../assets/images/logo.jpg';
+import Logo from "../assets/images/logo.jpg";
 
 function Header({ access_token, add, get }) {
   const dispatch = useDispatch();
   const { show_appointment_modal, show_service_modal } = useSelector(
     (state) => state.auth
   );
-  console.log('ModalState', show_appointment_modal);
+  console.log("ModalState", show_appointment_modal);
 
   useEffect(async () => {
     await get();
@@ -24,7 +24,7 @@ function Header({ access_token, add, get }) {
   const handleSchedule = () => {
     dispatch(display_appointment_modal(true));
 
-    console.log('HandleSchedule');
+    console.log("HandleSchedule");
     add();
   };
 
@@ -36,13 +36,13 @@ function Header({ access_token, add, get }) {
             <Link
               className="btn"
               to={{
-                pathname: '/signin',
+                pathname: "/signin",
                 state: {
                   btSchedule: true,
                 },
               }}
             >
-              Schedule an appointment-UNAUTHORIZED
+              Schedule an appointment
             </Link>
           ) : (
             <button

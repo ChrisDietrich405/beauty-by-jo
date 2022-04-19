@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
 
 import { signin, SIGNIN_SUCCESS, ERROR } from "../store/actions/auth";
@@ -15,12 +15,23 @@ import AppointmentModal from "./AppointmentModal";
 function SignIn({ user, signin, location, add }) {
   const [modalOpen, setModalOpen] = useState(false);
 
+  const { specific_service_id, isBooking } = useSelector(
+    (state) => state.schedule.schedule
+  );
+
+  const data = useSelector((state) => state.service.services);
+
+  const history = useHistory();
+
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(SIGNIN_SUCCESS, () => {
       alert("logged successfully");
-      add();
+      // add();
+      if (specific_service_id && isBooking) {
+        const currentService = data.find((e) => e.id === specific_service_id);
+        history.push(currentService.path);
+      }
       setModalOpen(false);
-
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });
 
