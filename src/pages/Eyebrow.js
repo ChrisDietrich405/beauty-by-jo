@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Parallax, Background } from "react-parallax";
 
 import { BiTimeFive } from "react-icons/bi";
@@ -13,24 +14,32 @@ import FAQ from "../components/FAQ";
 import "../styles/pages/services.scss";
 import "../styles/components/parallax.scss";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import {
   bookService,
   specificService,
   setSpecificService,
+  change,
 } from "../store/actions/schedule";
 
 export default function Eyebrow() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [value, onChange] = useState(new Date());
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const { access_token } = useSelector((state) => state.auth);
 
   const handleBooking = (service) => {
     dispatch(bookService({ isBooking: true }));
-    dispatch(display_appointment_modal(true));
-    dispatch(specificService({ specific_service_id: 2 }));
-    dispatch(setSpecificService({ specific_service: service }));
+    dispatch(change({ specific_service_id: 3 }));
+    dispatch(change({ specific_service: service }));
+    if (access_token) {
+      dispatch(display_appointment_modal(true));
+    } else {
+      history.push("/signin");
+    }
   };
 
   const questions = [

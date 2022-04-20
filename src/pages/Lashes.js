@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Parallax, Background } from "react-parallax";
 
 import { BiTimeFive } from "react-icons/bi";
@@ -9,12 +10,13 @@ import BeautySupplies from "../assets/images/about-us.jpg";
 
 import DatePicker from "react-date-picker";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import {
   bookService,
   specificService,
   setSpecificService,
+  change,
 } from "../store/actions/schedule";
 
 import "../styles/pages/services.scss";
@@ -26,11 +28,19 @@ export default function Lashes() {
 
   const dispatch = useDispatch();
 
+  const history = useHistory();
+
+  const { access_token } = useSelector((state) => state.auth);
+
   const handleBooking = (service) => {
     dispatch(bookService({ isBooking: true }));
-    dispatch(display_appointment_modal(true));
-    dispatch(specificService({ specific_service_id: 4 }));
-    dispatch(setSpecificService({ specific_service: service }));
+    dispatch(change({ specific_service_id: 4 }));
+    dispatch(change({ specific_service: service }));
+    if (access_token) {
+      dispatch(display_appointment_modal(true));
+    } else {
+      history.push("/signin");
+    }
   };
 
   const timeArray = [
