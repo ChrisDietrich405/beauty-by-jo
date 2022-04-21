@@ -116,16 +116,7 @@ function AppointmentModal({
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
               />
-              {/* <Datetime
-                timeFormat={false}
-                closeOnSelect={true}
-                value={selectedDate}
-                onChange={(date) => {
-                  //console.log(date.format("YYYY-MM-DD"));
-                  setSelectedDate(date.format("YYYY-MM-DD"));
-                  // change({ date: date.toDate().toISOString() });
-                }}
-              /> */}
+
               <TimeList
                 availability={availability}
                 onSelectTime={(timeSelected) => {

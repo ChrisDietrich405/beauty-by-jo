@@ -9,6 +9,7 @@ export const KIND_SERVICE = "KIND_SERVICE";
 export const BOOK_SERVICE = "BOOK_SERVICE";
 export const SPECIFIC_SERVICE_ID = "SPECIFIC_SERVICE_ID";
 export const SPECIFIC_SERVICE = "SPECIFIC_SERVICE";
+export const BACK_SERVICE = "BACK_SERVICE";
 
 export const add = () => (dispatch) => {
   dispatch({ type: ADD });
@@ -41,4 +42,8 @@ export const specificService = (payload) => (dispatch) => {
 
 export const setSpecificService = (payload) => (dispatch) => {
   dispatch({ type: SPECIFIC_SERVICE, payload });
+};
+
+export const backService = (payload) => (dispatch) => {
+  dispatch({ type: BACK_SERVICE, payload });
 };

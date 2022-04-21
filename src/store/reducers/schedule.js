@@ -7,6 +7,7 @@ import {
   SAVE_SUCCESS,
   SPECIFIC_SERVICE_ID,
   SPECIFIC_SERVICE,
+  BACK_SERVICE,
 } from "../actions/schedule";
 
 const initialState = {
@@ -18,6 +19,7 @@ const initialState = {
     isBooking: false,
     date: null,
     status: null,
+    back_service: false,
   },
   schedules: [],
   error: {},
@@ -32,6 +34,7 @@ export default function reducer(state = initialState, action) {
     case KIND_SERVICE:
     case SPECIFIC_SERVICE:
     case SPECIFIC_SERVICE_ID:
+    case BACK_SERVICE:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };
     case SAVE_SUCCESS:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };
