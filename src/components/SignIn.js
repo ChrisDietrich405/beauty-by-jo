@@ -30,6 +30,8 @@ function SignIn({ user, signin, location, add }) {
       if (specific_service_id && isBooking) {
         const currentService = data.find((e) => e.id === specific_service_id);
         history.push(currentService.path);
+      } else {
+        history.push("/");
       }
       setModalOpen(false);
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
@@ -104,7 +106,7 @@ function SignIn({ user, signin, location, add }) {
               <ErrorMessage name="username" />
             </label>
             <label htmlFor="password">
-              Password
+              password
               <input
                 type="password"
                 name="password"

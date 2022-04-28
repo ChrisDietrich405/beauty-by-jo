@@ -35,6 +35,8 @@ export default function reducer(state = initialState, action) {
     case SIGN_OUT:
       return {
         ...state,
+        access_token: null,
+        signin_success: false,
         user: { ...initialState.user },
         errors: {},
         auth: { ...initialState },
