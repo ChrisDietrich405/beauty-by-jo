@@ -1,4 +1,5 @@
 import {
+  SIGN_OUT,
   SIGNIN,
   SIGNIN_SUCCESS,
   GET_SUCCESS,
@@ -6,9 +7,9 @@ import {
   UNAUTHORIZED,
   SHOW_APPOINTMENT_MODAL,
   SHOW_SERVICE_MODAL,
-} from '../actions/auth';
+} from "../actions/auth";
 
-const initialState = {
+export const initialState = {
   access_token: null,
   show_appointment_modal: false,
   show_service_modal: false,
@@ -30,6 +31,13 @@ export default function reducer(state = initialState, action) {
         user: { ...state.user, ...action.payload.user },
         access_token: action.payload.access_token,
         signin_success: action.payload.success,
+      };
+    case SIGN_OUT:
+      return {
+        ...state,
+        user: { ...initialState.user },
+        errors: {},
+        auth: { ...initialState },
       };
     case SHOW_APPOINTMENT_MODAL:
       return {

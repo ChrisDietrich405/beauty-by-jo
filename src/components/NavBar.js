@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { connect, useDispatch, useSelector } from "react-redux";
@@ -10,6 +10,7 @@ import {
   get,
   display_appointment_modal,
   displayServiceModal,
+  signout,
 } from "../store/actions/auth";
 import { kindService } from "../store/actions/schedule";
 
@@ -18,10 +19,18 @@ function Navbar({ display_appointment_modal }) {
   const { show_service_modal } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const handleServices = () => {
-    console.log("KindServices");
     dispatch(kindService({ serviceName: "Services" }));
     dispatch(displayServiceModal(true));
   };
+
+  const handleLogOut = () => {
+    dispatch(signout());
+  };
+
+  useEffect(() => {
+    console.log("hello", signin_success);
+  }, [signin_success]);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -85,7 +94,9 @@ function Navbar({ display_appointment_modal }) {
                 <div className="btn">
                   <BsFillPersonFill color="white" size="30" />
                   {signin_success ? (
-                    <span className="noselect">Log Out</span>
+                    <span className="noselect" onClick={handleLogOut}>
+                      Log Out
+                    </span>
                   ) : (
                     <span className="noselect">Log In</span>
                   )}
