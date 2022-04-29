@@ -167,7 +167,7 @@ function AppointmentModal({
         <p>
           Your {specificService} appointment has been scheduled for{" "}
           {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-          The cost will be {price}.
+          The cost will be ${price}.
         </p>
       </div>
       <button

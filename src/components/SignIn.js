@@ -65,7 +65,7 @@ function SignIn({ user, signin, location, add }) {
           errors.username = "Invalid username address";
         }
         if (!values.password.trim()) {
-          errors.password = "Password is required";
+          errors.password = "password is required";
         }
         console.log(errors);
         return errors;
@@ -103,7 +103,7 @@ function SignIn({ user, signin, location, add }) {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              <ErrorMessage name="username" />
+              <ErrorMessage name="username" className="error-message" />
             </label>
             <label htmlFor="password">
               password
@@ -115,7 +115,7 @@ function SignIn({ user, signin, location, add }) {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              <ErrorMessage name="password" />
+              <ErrorMessage className="error-message" name="password" />
             </label>
 
             <button type="submit" className="sign-in-button">
