@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 import "../styles/components/sign-in-create-account.scss";
 
@@ -8,9 +9,40 @@ export default function CreateAccount() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const inputRef = useRef();
+
   const submit = (e) => {
     e.preventDefault();
+
+    var templateParams = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      message: message,
+    };
+
+    emailjs
+      .send(
+        "service_y7fq1o3",
+        "template_89dj9rt",
+        templateParams,
+        "Y8tiOkzf-c7ZDYAZy"
+      )
+      .then(
+        function (response) {},
+        function (error) {}
+      );
+
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+    inputRef.current.focus();
   };
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
     <div className="form-container">
@@ -19,6 +51,7 @@ export default function CreateAccount() {
         <label htmlFor="name">
           First Name
           <input
+            ref={inputRef}
             type="text"
             id="name"
             value={firstName}
