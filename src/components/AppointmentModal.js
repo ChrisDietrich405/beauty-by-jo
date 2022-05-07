@@ -102,7 +102,6 @@ function AppointmentModal({
   const handleOnChange = (service) => {
     console.log("handleOnchanse");
     setService(service.name);
-    //showCurrentModal('preconfirmation');
   };
   const DatePicker = () => {
     return (

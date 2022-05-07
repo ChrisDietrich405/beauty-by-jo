@@ -1,19 +1,19 @@
-import classNames from 'classnames';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { display_appointment_modal } from '../store/actions/auth';
+import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { display_appointment_modal } from "../store/actions/auth";
 
 export default function ServicesList({
   label,
   services,
   className,
   onSelect,
-  type = 'Schedule',
+  type = "Schedule",
 }) {
   const history = useHistory();
   const dispatch = useDispatch();
   return (
-    <div className={classNames('title', className)}>
+    <div className={classNames("title", className)}>
       <h2>{label}</h2>
       <hr />
       <div className="link-container">
@@ -22,8 +22,8 @@ export default function ServicesList({
             key={service.id}
             className="service-button"
             onClick={() => {
-              console.log('ServicesList');
-              if (type === 'Services') {
+              console.log("ServicesList");
+              if (type === "Services") {
                 dispatch(display_appointment_modal(false));
               }
               history.push(service.path);
@@ -31,7 +31,7 @@ export default function ServicesList({
               onSelect(service);
             }}
           >
-            {service.name} &nbsp;
+            {service.name} &nbsp; {service.price && <span>$</span>}{" "}
             {service.price}
           </button>
         ))}
