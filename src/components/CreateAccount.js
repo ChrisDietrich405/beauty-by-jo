@@ -91,7 +91,9 @@ function CreateAccount({ user, save }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                <ErrorMessage name="firstName" />
+                <ErrorMessage name="firstName">
+                  {(message) => <div className="error-message">{message}</div>}
+                </ErrorMessage>
               </label>
               <label htmlFor="lastName">
                 Last Name
@@ -103,7 +105,9 @@ function CreateAccount({ user, save }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                <ErrorMessage name="lastName" />
+                <ErrorMessage name="lastName">
+                  {(message) => <div className="error-message">{message}</div>}
+                </ErrorMessage>
               </label>
               <label htmlFor="email">
                 Email
@@ -115,7 +119,9 @@ function CreateAccount({ user, save }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                <ErrorMessage name="email" />
+                <ErrorMessage name="email">
+                  {(message) => <div className="error-message">{message}</div>}
+                </ErrorMessage>
               </label>
               <label htmlFor="password">
                 Password
@@ -127,7 +133,9 @@ function CreateAccount({ user, save }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                <ErrorMessage name="password" />
+                <ErrorMessage name="password">
+                  {(message) => <div className="error-message">{message}</div>}
+                </ErrorMessage>
               </label>
 
               <button type="submit" className="sign-in-button">
