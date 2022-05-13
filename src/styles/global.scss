@@ -11,6 +11,34 @@
 @import "./pages/calendar.scss";
 @import "./components/time-list.scss";
 
+:root {
+  --toastify-icon-color-success: #d1c4f2 !important;
+  --toastify-text-color-success: #fff !important;
+}
+
+.Toastify__toast-body {
+  color: #fff !important;
+}
+
+.Toastify__toast--error {
+  background-color: #10171d !important;
+  color: red;
+  font-weight: bold;
+}
+
+.Toastify__progress-bar-theme--dark {
+  background: #d1c4f2 !important;
+}
+
+.Toastify__toast--success {
+  background: #000 !important;
+  color: #fff;
+}
+
+.Toastify__progress-bar--success {
+  background: #d1c4f2 !important;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }

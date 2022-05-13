@@ -27,9 +27,7 @@ function Navbar({ display_appointment_modal }) {
     dispatch(signout());
   };
 
-  useEffect(() => {
-    console.log("hello", signin_success);
-  }, [signin_success]);
+  useEffect(() => {}, [signin_success]);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">

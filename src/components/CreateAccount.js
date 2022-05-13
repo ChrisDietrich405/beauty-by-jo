@@ -12,16 +12,17 @@ import "../styles/components/sign-in-create-account.scss";
 import { useEffect } from "react";
 
 function CreateAccount({ user, save }) {
-  const notify = () => toast.success("Your account has been created");
   const { user: currentUser } = useSelector((state) => state.user);
   const history = useHistory();
 
   useEffect(() => {
     if (currentUser.firstName !== null) {
-      notify();
-      setTimeout(() => {
-        history.push("/signin");
-      }, 6000);
+      toast.success("Your account has been created", {
+        onClose: (props) => {
+          history.push("/");
+        },
+        autoClose: 3000,
+      });
     }
   }, [currentUser]);
 

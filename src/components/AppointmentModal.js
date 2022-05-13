@@ -80,7 +80,6 @@ function AppointmentModal({
   }, [selectedDate, specific_service_id]);
 
   const onModalBack = () => {
-    console.log("onModalBack");
     if (showServices === true) {
       setShowAppointmentConfirmation(true);
       setShowServices(false);
@@ -100,7 +99,6 @@ function AppointmentModal({
   };
 
   const handleOnChange = (service) => {
-    console.log("handleOnchanse");
     setService(service.name);
   };
   const DatePicker = () => {
@@ -191,7 +189,6 @@ function AppointmentModal({
     } else if (state === "confirmation") {
       setShowPreconfirmation(false);
       setShowAppointmentConfirmation(true);
-      console.log("hello");
     } else if (state === "additionalAppointment") {
       setShowAppointmentConfirmation(false);
       setShowServices(true);

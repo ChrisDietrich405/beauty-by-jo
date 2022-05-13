@@ -17,7 +17,7 @@ import AppointmentModal from "./AppointmentModal";
 
 function SignIn({ user, signin, location, add }) {
   const [modalOpen, setModalOpen] = useState(false);
-  const notify = () => toast.success("You signed in successfully");
+
   const { specific_service_id, isBooking } = useSelector(
     (state) => state.schedule.schedule
   );
@@ -32,7 +32,7 @@ function SignIn({ user, signin, location, add }) {
         const currentService = data.find((e) => e.id === specific_service_id);
         history.push(currentService.path);
       } else {
-        toast.success("You signed in successfully", {
+        toast.dark("You signed in successfully", {
           onClose: (props) => {
             history.push("/");
           },
@@ -44,7 +44,7 @@ function SignIn({ user, signin, location, add }) {
     });
 
     const unsubscribeAuthError = subscribe.on(ERROR, () => {
-      alert("you fucked up");
+      toast.error("Incorrect username or password entered");
       // TODO: Show error messages, example Email and/or password are invalid!
     });
 
@@ -56,14 +56,16 @@ function SignIn({ user, signin, location, add }) {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer
+        progressClassName="toastProgress"
+        bodyClassName="toastBody"
+      />
       <Formik
         initialValues={{
           username: "",
           password: "",
         }}
         validate={(values) => {
-          console.log("Validate", values);
           const errors = {};
           if (!values.username.trim()) {
             errors.username = "username required";
@@ -75,12 +77,11 @@ function SignIn({ user, signin, location, add }) {
           if (!values.password.trim()) {
             errors.password = "password is required";
           }
-          console.log(errors);
+
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
           signin(values);
-          console.log(values);
         }}
       >
         {({

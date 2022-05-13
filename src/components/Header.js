@@ -15,7 +15,6 @@ function Header({ access_token, add, get }) {
   const { show_appointment_modal, show_service_modal } = useSelector(
     (state) => state.auth
   );
-  console.log("ModalState", show_appointment_modal);
 
   useEffect(async () => {
     await get();
@@ -23,8 +22,6 @@ function Header({ access_token, add, get }) {
 
   const handleSchedule = () => {
     dispatch(display_appointment_modal(true));
-
-    console.log("HandleSchedule");
     add();
   };
 

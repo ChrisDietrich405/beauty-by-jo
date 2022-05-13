@@ -22,7 +22,6 @@ export default function ServicesList({
             key={service.id}
             className="service-button"
             onClick={() => {
-              console.log("ServicesList");
               if (type === "Services") {
                 dispatch(display_appointment_modal(false));
               }
