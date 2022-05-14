@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
 
-import { change, save } from "../store/actions/schedule";
+import { change, save, backService } from "../store/actions/schedule";
 import { index } from "../store/actions/service";
 import { verifyAvailability } from "../store/actions/service";
 
@@ -206,6 +206,7 @@ function AppointmentModal({
         }
         setShowServices(false);
         setShowSpecificServices(true);
+        dispatch(backService({ back_service: true }));
 
         break;
       case "appointment":
