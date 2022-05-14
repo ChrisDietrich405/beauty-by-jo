@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Parallax, Background } from "react-parallax";
 
@@ -13,6 +13,7 @@ import DatePicker from "react-date-picker";
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import {
+  backService,
   bookService,
   specificService,
   setSpecificService,
@@ -32,7 +33,12 @@ export default function Lashes() {
 
   const { access_token } = useSelector((state) => state.auth);
 
+  useEffect(() => {
+    dispatch(display_appointment_modal(false));
+  }, []);
+
   const handleBooking = (service) => {
+    dispatch(backService({ back_service: false }));
     dispatch(bookService({ isBooking: true }));
     dispatch(change({ specific_service_id: 4 }));
     dispatch(change({ specific_service: service }));

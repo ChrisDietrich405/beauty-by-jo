@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Parallax, Background } from "react-parallax";
 
@@ -18,6 +18,7 @@ import {
   specificService,
   setSpecificService,
   change,
+  backService,
 } from "../store/actions/schedule";
 
 export default function MakeUp() {
@@ -28,7 +29,12 @@ export default function MakeUp() {
 
   const { access_token } = useSelector((state) => state.auth);
 
+  useEffect(() => {
+    dispatch(display_appointment_modal(false));
+  }, []);
+
   const handleBooking = (service) => {
+    dispatch(backService({ back_service: false }));
     dispatch(bookService({ isBooking: true }));
     dispatch(change({ specific_service_id: 1 }));
     dispatch(change({ specific_service: service }));

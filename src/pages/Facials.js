@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Parallax, Background } from "react-parallax";
 import DatePicker from "react-date-picker";
@@ -11,6 +11,7 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import {
+  backService,
   bookService,
   specificService,
   setSpecificService,
@@ -29,9 +30,14 @@ export default function Facials() {
 
   const history = useHistory();
 
+  useEffect(() => {
+    dispatch(display_appointment_modal(false));
+  }, []);
+
   const { access_token } = useSelector((state) => state.auth);
 
   const handleBooking = (service) => {
+    dispatch(backService({ back_service: false }));
     dispatch(bookService({ isBooking: true }));
     dispatch(change({ specific_service_id: 2 }));
     dispatch(change({ specific_service: service }));

@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
 import { Parallax, Background } from "react-parallax";
-import Waxing from "../assets/images/home4.jpg";
 
 import SlideShow from "../components/SlideShow";
 import ZoomInZoomOut from "../components/ZoomInZoomOut";
+
+import { display_appointment_modal } from "../store/actions/auth";
+
+import Waxing from "../assets/images/home4.jpg";
 import BeautySupplies from "../assets/images/home5.jpg";
 import Grid1 from "../assets/images/grid-pic1.jpg";
 import Grid2 from "../assets/images/grid-pic2.jpg";
@@ -10,6 +16,11 @@ import Grid3 from "../assets/images/grid-pic3.jpg";
 import Grid4 from "../assets/images/grid-pic4.jpg";
 
 export default function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(display_appointment_modal(false));
+  }, []);
+
   return (
     <div className="home-container">
       <SlideShow />

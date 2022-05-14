@@ -210,12 +210,16 @@ function AppointmentModal({
 
         break;
       case "appointment":
+        if (serviceName === "Services") {
+          dispatch(backService({ back_service: false }));
+        }
         setShowSpecificServices(false);
         setShowServices(false);
         setShowAppointmentCal(true);
 
         break;
       case "preconfirmation":
+        dispatch(backService({ back_service: true }));
         setShowAppointmentCal(false);
         setShowPreconfirmation(true);
         break;
