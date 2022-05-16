@@ -1,15 +1,14 @@
+import { useEffect } from "react";
 import { bindActionCreators } from "redux";
 import { connect, useSelector } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 
-import "react-toastify/dist/ReactToastify.css";
-
 import { save } from "../store/actions/user";
 
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/components/sign-in-create-account.scss";
-import { useEffect } from "react";
 
 function CreateAccount({ user, save }) {
   const { user: currentUser } = useSelector((state) => state.user);
@@ -71,15 +70,6 @@ function CreateAccount({ user, save }) {
           isSubmitting,
         }) => (
           <div className="form-container">
-            {JSON.stringify({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-            })}
             <form onSubmit={handleSubmit}>
               <h2>Create account</h2>
               <label htmlFor="firstName">

@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import "../styles/components/sign-in-create-account.scss";
 
 export default function CreateAccount() {
@@ -29,15 +33,21 @@ export default function CreateAccount() {
         "Y8tiOkzf-c7ZDYAZy"
       )
       .then(
-        function (response) {},
-        function (error) {}
+        function (response) {
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setMessage("");
+          toast.success("message sent");
+          console.log("success", response);
+        },
+        function (error) {
+          toast.error("message wasn't sent");
+          console.log("failure", error);
+        }
       );
 
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setMessage("");
-    inputRef.current.focus();
+    // inputRef.current.focus();
   };
 
   useEffect(() => {
@@ -45,49 +55,52 @@ export default function CreateAccount() {
   }, []);
 
   return (
-    <div className="form-container">
-      <form className="contact" onSubmit={submit}>
-        <h2>Contact Us</h2>
-        <label htmlFor="name">
-          First Name
-          <input
-            ref={inputRef}
-            type="text"
-            id="name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </label>
-        <label htmlFor="name">
-          Last Name
-          <input
-            type="text"
-            id="name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </label>
-        <label htmlFor="email">
-          Email
-          <input
-            type="text"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label>
-          Message
-          <textarea
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </label>
-        <button type="submit" className="sign-in-button">
-          Submit
-        </button>
-      </form>
-    </div>
+    <>
+      <ToastContainer />
+      <div className="form-container">
+        <form className="contact" onSubmit={submit}>
+          <h2>Contact Us</h2>
+          <label htmlFor="name">
+            First Name
+            <input
+              ref={inputRef}
+              type="text"
+              id="name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </label>
+          <label htmlFor="name">
+            Last Name
+            <input
+              type="text"
+              id="name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </label>
+          <label htmlFor="email">
+            Email
+            <input
+              type="text"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <label>
+            Message
+            <textarea
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </label>
+          <button type="submit" className="sign-in-button">
+            Submit
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
