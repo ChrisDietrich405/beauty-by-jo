@@ -2,7 +2,6 @@
 // operable program or batch file. I tried to install react-script, then I
 // tried npm install
 
-
 //services pages book button should be black, dollar and time icon should be twice the size
 
 //create your account button
@@ -31,7 +30,6 @@ import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import CreateAccount from "./components/CreateAccount";
 import AboutUs from "./pages/AboutUs";
-import Beauty from "./pages/Beauty";
 import MakeUp from "./pages/MakeUp";
 import Lashes from "./pages/Lashes";
 import Waxing from "./pages/Waxing";
@@ -65,7 +63,6 @@ function App() {
             <Switch>
               <Route path="/" exact={true} component={Home} />
               <Route path="/about-us" component={AboutUs} />
-              <Route path="/beauty" component={Beauty} />
               <Route path="/make-up" component={MakeUp} />
               <Route path="/lashes" component={Lashes} />
               <Route path="/waxing" component={Waxing} />

@@ -1,23 +1,27 @@
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 
-import BeautySupplies from "../assets/images/about-us.jpg"
-import GridPic from "../assets/images/grid-pic1.jpg"
+import TestimonialsSlideShow from "../components/TestimonialsSlideShow";
 
-import Tab from "../components/Tab"
-import TestimonialsSlideShow from "../components/TestimonialsSlideShow"
+import "../styles/pages/reviews.scss";
 
-import "../styles/pages/reviews.scss"
+import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Testimonials() {
-    return (
-        <div className="about-us-container">
-                <Parallax className="parallax-container" bgImage={BeautySupplies} strength={500}>
-                    <div className="parallax-container-text">{/* <div style={{ height: 400 }}> */}
-                        <h1><b>Testimonials</b></h1>                  
-                    </div>
-                </Parallax>
-                <TestimonialsSlideShow/>
-                {/* <Tab/> */}
+  return (
+    <div className="about-us-container">
+      <Parallax
+        className="parallax-container"
+        bgImage={BeautySupplies}
+        strength={500}
+      >
+        <div className="parallax-container-text">
+          {/* <div style={{ height: 400 }}> */}
+          <h1>
+            <b>Testimonials</b>
+          </h1>
         </div>
-    )
+      </Parallax>
+      <TestimonialsSlideShow />
+    </div>
+  );
 }

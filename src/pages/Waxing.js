@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Parallax, Background } from "react-parallax";
-
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
-
-import BeautySupplies from "../assets/images/about-us.jpg";
-
-import DatePicker from "react-date-picker";
 
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
@@ -21,6 +16,8 @@ import {
 
 import "../styles/pages/services.scss";
 import "../styles/components/parallax.scss";
+
+import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Waxing() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);

@@ -1,11 +1,8 @@
-import { Parallax, Background } from "react-parallax";
-
-import BeautySupplies from "../assets/images/about-us.jpg";
-import GridPic from "../assets/images/grid-pic1.jpg";
-
-import Tab from "../components/Tab";
+import { Parallax } from "react-parallax";
 
 import "../styles/pages/policies.scss";
+
+import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Policies() {
   return (

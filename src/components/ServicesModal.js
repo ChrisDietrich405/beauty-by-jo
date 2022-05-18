@@ -1,15 +1,13 @@
 import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 
 import { bindActionCreators } from "redux";
 import { connect, useDispatch } from "react-redux";
+import { index } from "../store/actions/service";
+import { displayServiceModal } from "../store/actions/auth";
 
 import ServicesList from "./ServicesList";
 import ModalTemplate from "./ModalTemplate";
-import { index } from "../store/actions/service";
-import { useEffect } from "react";
-import { displayServiceModal } from "../store/actions/auth";
-
-// import services from "../assets/data/services";
 
 function ServicesModal({ label, onClose, index, services }) {
   const history = useHistory();

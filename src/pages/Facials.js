@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Parallax, Background } from "react-parallax";
-import DatePicker from "react-date-picker";
-
-import BeautySupplies from "../assets/images/about-us.jpg";
-
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
@@ -21,6 +17,8 @@ import {
 import "../styles/pages/services.scss";
 import "../styles/pages/facials.scss";
 import "../styles/components/parallax.scss";
+
+import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Facials() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);

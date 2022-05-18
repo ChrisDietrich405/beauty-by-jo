@@ -1,18 +1,8 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Parallax, Background } from "react-parallax";
-
+import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
-
-import EyebrowThreading from "../assets/images/eyebrow-threading2.jpg";
-
-import DatePicker from "react-date-picker";
-
-import FAQ from "../components/FAQ";
-
-import "../styles/pages/services.scss";
-import "../styles/components/parallax.scss";
 
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
@@ -23,6 +13,13 @@ import {
   setSpecificService,
   change,
 } from "../store/actions/schedule";
+
+import FAQ from "../components/FAQ";
+
+import "../styles/pages/services.scss";
+import "../styles/components/parallax.scss";
+
+import EyebrowThreading from "../assets/images/eyebrow-threading2.jpg";
 
 export default function Eyebrow() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);

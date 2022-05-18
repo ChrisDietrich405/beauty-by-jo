@@ -7,7 +7,6 @@ import { bindActionCreators } from "redux";
 import ServicesModal from "./ServicesModal";
 
 import {
-  get,
   display_appointment_modal,
   displayServiceModal,
   signout,

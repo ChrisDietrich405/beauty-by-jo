@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { connect, useSelector } from "react-redux";
@@ -9,7 +10,6 @@ import { signin, SIGNIN_SUCCESS, ERROR } from "../store/actions/auth";
 import "../styles/components/sign-in-create-account.scss";
 import "react-toastify/dist/ReactToastify.css";
 
-import { useState, useEffect } from "react";
 import { subscribe } from "../store";
 import { add } from "../store/actions/schedule";
 

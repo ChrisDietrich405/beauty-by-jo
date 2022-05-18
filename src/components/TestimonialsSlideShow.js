@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+
 import data from "../assets/data/testimonial-slideshow-data";
 
 import "../styles/components/testimonials-slideshow.scss";
@@ -36,7 +37,10 @@ function Slideshow() {
             if (personIndex === index) {
               position = "activeSlide";
             }
-            if (personIndex === index - 1 || (index === 0 && personIndex === people.length - 1)) {
+            if (
+              personIndex === index - 1 ||
+              (index === 0 && personIndex === people.length - 1)
+            ) {
               position = "lastSlide";
             }
 

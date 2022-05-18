@@ -1,16 +1,9 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Parallax, Background } from "react-parallax";
-
+import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
-import BeautySupplies from "../assets/images/makeup.jpg";
-
-import DatePicker from "react-date-picker";
-
-import "../styles/pages/make-up.scss";
-import "../styles/components/parallax.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import {
@@ -20,6 +13,11 @@ import {
   change,
   backService,
 } from "../store/actions/schedule";
+
+import "../styles/pages/make-up.scss";
+import "../styles/components/parallax.scss";
+
+import BeautySupplies from "../assets/images/makeup.jpg";
 
 export default function MakeUp() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);

@@ -1,14 +1,8 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Parallax, Background } from "react-parallax";
-
+import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
-
-import FAQ from "../components/FAQ";
-import BeautySupplies from "../assets/images/about-us.jpg";
-
-import DatePicker from "react-date-picker";
 
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
@@ -20,8 +14,12 @@ import {
   change,
 } from "../store/actions/schedule";
 
+import FAQ from "../components/FAQ";
+
 import "../styles/pages/services.scss";
 import "../styles/components/parallax.scss";
+
+import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Lashes() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);

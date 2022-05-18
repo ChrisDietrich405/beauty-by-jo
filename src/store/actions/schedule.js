@@ -45,6 +45,5 @@ export const setSpecificService = (payload) => (dispatch) => {
 };
 
 export const backService = (payload) => (dispatch) => {
-  console.log("backservice", payload);
   dispatch({ type: BACK_SERVICE, payload });
 };

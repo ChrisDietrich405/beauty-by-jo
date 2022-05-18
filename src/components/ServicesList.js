@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+
 import { display_appointment_modal } from "../store/actions/auth";
 
 export default function ServicesList({

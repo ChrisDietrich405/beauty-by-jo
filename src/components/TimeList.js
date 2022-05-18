@@ -2,11 +2,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { DateTime } from "luxon";
 
-import {
-  verifyAvailability,
-  VERIFY_AVAILABILITY_SUCCESS,
-  ERROR,
-} from "../store/actions/service";
+import { verifyAvailability } from "../store/actions/service";
 
 function TimeList({ onSelectTime, availability }) {
   return (

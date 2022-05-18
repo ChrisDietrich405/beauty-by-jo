@@ -1,10 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-
 import "../styles/components/sign-in-create-account.scss";
 
 export default function CreateAccount() {
@@ -46,8 +44,6 @@ export default function CreateAccount() {
           console.log("failure", error);
         }
       );
-
-    // inputRef.current.focus();
   };
 
   useEffect(() => {
