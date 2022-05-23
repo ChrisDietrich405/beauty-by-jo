@@ -5,6 +5,7 @@ import { DateTime } from "luxon";
 import { verifyAvailability } from "../store/actions/service";
 
 function TimeList({ onSelectTime, availability }) {
+  console.log(availability);
   return (
     <div className="time-list">
       <div className="time-list-button">

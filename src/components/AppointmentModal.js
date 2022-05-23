@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Datetime from "react-datetime";
+
 import { bindActionCreators } from "redux";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
@@ -58,6 +58,8 @@ function AppointmentModal({
   const [currentTitle, setCurrentTittle] = useState("My title");
   const dispatch = useDispatch();
 
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
+
   useEffect(() => {
     index();
     const now = DateTime.now();
@@ -101,6 +103,14 @@ function AppointmentModal({
   const handleOnChange = (service) => {
     setService(service.name);
   };
+
+  if (selectedDate && selectedTime && !selectedDateTime) {
+    const parsedDate = DateTime.fromISO(
+      selectedDate + "T" + selectedTime.replace("AM", "").replace("PM", "")
+    );
+    setSelectedDateTime(parsedDate);
+  }
+
   const DatePicker = () => {
     return (
       <div className="appointment-container">
@@ -114,13 +124,15 @@ function AppointmentModal({
                 onChange={(e) => setSelectedDate(e.target.value)}
               />
 
-              <TimeList
-                availability={availability}
-                onSelectTime={(timeSelected) => {
-                  setSelectedTime(timeSelected);
-                  showCurrentModal("preconfirmation");
-                }}
-              />
+              {selectedDate ? (
+                <TimeList
+                  availability={availability}
+                  onSelectTime={(timeSelected) => {
+                    setSelectedTime(timeSelected);
+                    showCurrentModal("preconfirmation");
+                  }}
+                />
+              ) : null}
             </div>
           </div>
         </div>
@@ -144,10 +156,8 @@ function AppointmentModal({
         onClick={() => {
           save({
             ...schedule,
-            date: DateTime.fromString(
-              `${selectedDate} ${selectedTime}`,
-              "yyyy-MM-dd hh:mm"
-            ).toISO(),
+            date: selectedDateTime.toISO(),
+            status: true,
           });
           showCurrentModal("confirmation");
         }}

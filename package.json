@@ -30,12 +30,8 @@
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "4.0.3",
-<<<<<<< HEAD
     "react-slideshow-image": "^3.7.5",
-=======
     "react-slick": "^0.29.0",
-    "react-slideshow-image": "^3.5.0",
->>>>>>> 52dc042b4f4c0579908a63b8088de25320a6d6d8
     "react-toastify": "^9.0.1",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",

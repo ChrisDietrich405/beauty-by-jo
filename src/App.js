@@ -1,3 +1,5 @@
+  // "react-slideshow-image": "^3.5.0",  - from package.json
+
 // 'react-scripts' is not recognized as an internal or external command,
 // operable program or batch file. I tried to install react-script, then I
 // tried npm install
