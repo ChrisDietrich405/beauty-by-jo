@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import { bindActionCreators } from "redux";
 import { connect, useDispatch, useSelector } from "react-redux";
@@ -100,16 +99,16 @@ function AppointmentModal({
     }
   };
 
-  const handleOnChange = (service) => {
-    setService(service.name);
+  const handleSave = () => {
+    if (selectedDateTime) {
+      save({
+        ...schedule,
+        date: selectedDateTime,
+        status: true,
+      });
+      showCurrentModal("confirmation");
+    }
   };
-
-  if (selectedDate && selectedTime && !selectedDateTime) {
-    const parsedDate = DateTime.fromISO(
-      selectedDate + "T" + selectedTime.replace("AM", "").replace("PM", "")
-    );
-    setSelectedDateTime(parsedDate);
-  }
 
   const DatePicker = () => {
     return (
@@ -127,7 +126,10 @@ function AppointmentModal({
               {selectedDate ? (
                 <TimeList
                   availability={availability}
-                  onSelectTime={(timeSelected) => {
+                  onSelectTime={(dateTimeSelected) => {
+                    const timeSelected =
+                      DateTime.fromISO(dateTimeSelected).toFormat(TIME_FORMAT);
+                    setSelectedDateTime(dateTimeSelected);
                     setSelectedTime(timeSelected);
                     showCurrentModal("preconfirmation");
                   }}
@@ -151,17 +153,7 @@ function AppointmentModal({
           will be ${price}. Thank you.
         </p>
       </div>
-      <button
-        className="confirm-button"
-        onClick={() => {
-          save({
-            ...schedule,
-            date: selectedDateTime.toISO(),
-            status: true,
-          });
-          showCurrentModal("confirmation");
-        }}
-      >
+      <button className="confirm-button" onClick={handleSave}>
         Confirm your appointment
       </button>
     </>
