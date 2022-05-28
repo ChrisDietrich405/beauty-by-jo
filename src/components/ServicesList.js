@@ -25,8 +25,8 @@ export default function ServicesList({
             onClick={() => {
               if (type === "Services") {
                 dispatch(display_appointment_modal(false));
+                history.push(service.path);
               }
-              history.push(service.path);
 
               onSelect(service);
             }}
