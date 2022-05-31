@@ -44,7 +44,7 @@ function Navbar({ display_appointment_modal }) {
         </button>
 
         <div
-          className="collapse navbar-collapse alignment"
+          className="collapse navbar-collapse alignment navbar-position"
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav ml-auto">
@@ -85,22 +85,21 @@ function Navbar({ display_appointment_modal }) {
                 </div>
               </Link>
             </li>
-
-            <div>
-              <Link to="/signin" className="nav-link">
-                <div className="btn">
-                  <BsFillPersonFill color="white" size="30" />
-                  {signin_success ? (
-                    <span className="noselect" onClick={handleLogOut}>
-                      Log Out
-                    </span>
-                  ) : (
-                    <span className="noselect">Log In</span>
-                  )}
-                </div>
-              </Link>
-            </div>
           </ul>
+          <div className="position-login">
+            <Link to="/signin" className="nav-link">
+              <div className="btn">
+                <BsFillPersonFill color="white" size="30" />
+                {signin_success ? (
+                  <span className="noselect" onClick={handleLogOut}>
+                    Log Out
+                  </span>
+                ) : (
+                  <span className="noselect">Log In</span>
+                )}
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
       {show_service_modal && (

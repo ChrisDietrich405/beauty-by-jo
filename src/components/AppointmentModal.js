@@ -76,7 +76,6 @@ function AppointmentModal({
     if (selectedDate) {
       verifyAvailability({
         date: selectedDate,
-        specificServiceId: 1,
       });
     }
   }, [selectedDate, specific_service_id]);
@@ -105,6 +104,7 @@ function AppointmentModal({
       setSavingAppointment(true);
       save({
         ...schedule,
+        id: null,
         date: selectedDateTime,
         status: true,
       });
@@ -116,6 +116,7 @@ function AppointmentModal({
     return (
       <div className="appointment-container">
         <div className="modal-bod">
+          <h3>{specificService}</h3>
           <h4>Choose a day and time that works for you.</h4>
           <div className="date-picker-container">
             <div className="date-container">
@@ -273,7 +274,7 @@ function AppointmentModal({
       {showSpecificServices && (
         <ServicesList
           className="specific"
-          label={"Now please choose a specific service"}
+          label={`Now please choose a specific service from ${service}`}
           services={getSpecificServices()}
           onSelect={(specificService) => {
             setSpecificService(specificService.name);
