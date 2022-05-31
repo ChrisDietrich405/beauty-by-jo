@@ -86,7 +86,7 @@ function Navbar({ display_appointment_modal }) {
               </Link>
             </li>
 
-            <li className="nav-item">
+            <div>
               <Link to="/signin" className="nav-link">
                 <div className="btn">
                   <BsFillPersonFill color="white" size="30" />
@@ -99,7 +99,7 @@ function Navbar({ display_appointment_modal }) {
                   )}
                 </div>
               </Link>
-            </li>
+            </div>
           </ul>
         </div>
       </div>

@@ -36,6 +36,7 @@ function AppointmentModal({
   const [showPreconfirmation, setShowPreconfirmation] = useState(false);
   const [showAppointmentConfirmation, setShowAppointmentConfirmation] =
     useState(false);
+  const [savingAppointment, setSavingAppointment] = useState(false);
 
   const [service, setService] = useState("");
   const [specificService, setSpecificService] = useState("");
@@ -101,6 +102,7 @@ function AppointmentModal({
 
   const handleSave = () => {
     if (selectedDateTime) {
+      setSavingAppointment(true);
       save({
         ...schedule,
         date: selectedDateTime,
@@ -153,7 +155,11 @@ function AppointmentModal({
           will be ${price}. Thank you.
         </p>
       </div>
-      <button className="confirm-button" onClick={handleSave}>
+      <button
+        className="confirm-button"
+        onClick={handleSave}
+        disabled={savingAppointment}
+      >
         Confirm your appointment
       </button>
     </>
@@ -215,6 +221,7 @@ function AppointmentModal({
         if (serviceName === "Services") {
           dispatch(backService({ back_service: false }));
         }
+        setSavingAppointment(false);
         setShowSpecificServices(false);
         setShowServices(false);
         setShowAppointmentCal(true);
