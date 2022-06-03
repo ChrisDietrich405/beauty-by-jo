@@ -1,4 +1,4 @@
-  // "react-slideshow-image": "^3.5.0",  - from package.json
+// "react-slideshow-image": "^3.5.0",  - from package.json
 
 // 'react-scripts' is not recognized as an internal or external command,
 // operable program or batch file. I tried to install react-script, then I
@@ -31,6 +31,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import CreateAccount from "./components/CreateAccount";
+import ForgotPassword from "./pages/ForgotPassword";
 import AboutUs from "./pages/AboutUs";
 import MakeUp from "./pages/MakeUp";
 import Lashes from "./pages/Lashes";
@@ -76,6 +77,7 @@ function App() {
               <Route path="/signin" component={SignIn} />
               <Route path="/create-account" component={CreateAccount} />
               <Route path="/contact" component={Contact} />
+              <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
             <Footer />
           </Browser>

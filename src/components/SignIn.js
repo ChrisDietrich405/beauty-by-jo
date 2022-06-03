@@ -134,8 +134,11 @@ function SignIn({ user, signin, location, add }) {
               <button type="submit" className="sign-in-button">
                 Submit
               </button>
+              <Link to="/forgot-password">
+                {" "}
+                <p className="forgot-password">Forgot password?</p>
+              </Link>
 
-              <p className="forgot-password">Forgot password?</p>
               <p className="new-to-beauty">New to Beauty by Jo?</p>
               <Link to="/create-account" className="btn create-account-btn">
                 Create your Beauty by Jo account

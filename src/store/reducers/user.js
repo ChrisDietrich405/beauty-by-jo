@@ -1,4 +1,11 @@
-import { ADD, SAVE, SAVE_SUCCESS, ERROR } from "../actions/user";
+import {
+  ADD,
+  SAVE,
+  SAVE_SUCCESS,
+  ERROR,
+  FORGOT_PASSWORD,
+  FORGOT_PASSWORD_SUCCESS,
+} from "../actions/user";
 
 const initialState = {
   user: {
@@ -21,6 +28,10 @@ export default function reducer(state = initialState, action) {
       return { ...state, user: { ...state.user, ...action.payload } };
     case ERROR:
       return { ...state, errors: action.payload };
+    case FORGOT_PASSWORD:
+      return { ...state, user: { ...state.user, email: action.payload } };
+    case FORGOT_PASSWORD_SUCCESS:
+      return { ...state, user: { ...state.user, ...action.payload } };
     default:
       return state;
   }
