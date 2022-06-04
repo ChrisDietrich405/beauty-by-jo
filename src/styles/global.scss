@@ -82,6 +82,7 @@ p {
 
 .price-cost-time {
   display: flex;
+  justify-content: space-around;
 
   p {
     margin: 0 -146px -2px 0;
