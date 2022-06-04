@@ -136,3 +136,18 @@
     margin-right: 15px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .position-login {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-social-media {
+    justify-content: center;
+  }
+
+  .footer-address img {
+    padding-bottom: 20px;
+  }
+}

@@ -52,7 +52,7 @@ export default function Footer() {
           </form>
         </div>
 
-        <img src={Logo} />
+        <img src={Logo} className="footer-logo" />
       </div>
     </div>
   );

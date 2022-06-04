@@ -32,7 +32,7 @@ function Navbar({ display_appointment_modal }) {
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <button
-          className="navbar-toggler"
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -40,13 +40,9 @@ function Navbar({ display_appointment_modal }) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div
-          className="collapse navbar-collapse alignment navbar-position"
-          id="navbarSupportedContent"
-        >
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to="/" className="nav-link">
@@ -102,14 +98,14 @@ function Navbar({ display_appointment_modal }) {
           </div>
         </div>
       </div>
-      {show_service_modal && (
+      {/* {show_service_modal && (
         <ServicesModal
           label="Go to page"
           onClose={() => {
             // display_appointment_modal(false);
           }}
         />
-      )}
+      )} */}
     </nav>
   );
 }
