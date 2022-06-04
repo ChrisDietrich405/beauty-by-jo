@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
-import { connect, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 
-import { signin, SIGNIN_SUCCESS, ERROR } from "../store/actions/auth";
+import {
+  signin,
+  SIGNIN_SUCCESS,
+  SHOW_TOAST,
+  ERROR,
+} from "../store/actions/auth";
 
 import "../styles/components/sign-in-create-account.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,7 +20,9 @@ import { add } from "../store/actions/schedule";
 
 import AppointmentModal from "./AppointmentModal";
 
-function SignIn({ user, signin, location, add }) {
+function Login({ user, signin, location, add }) {
+  const dispatch = useDispatch();
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const { specific_service_id, isBooking } = useSelector(
@@ -32,12 +39,8 @@ function SignIn({ user, signin, location, add }) {
         const currentService = data.find((e) => e.id === specific_service_id);
         history.push(currentService.path);
       } else {
-        toast.dark("You signed in successfully", {
-          onClose: (props) => {
-            history.push("/");
-          },
-          autoClose: 1500,
-        });
+        dispatch({ type: SHOW_TOAST });
+        history.push("/");
       }
       setModalOpen(false);
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
@@ -165,4 +168,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ signin, add }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

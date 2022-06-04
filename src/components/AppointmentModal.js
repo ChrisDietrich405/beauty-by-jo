@@ -131,7 +131,7 @@ function AppointmentModal({
                   availability={availability}
                   onSelectTime={(dateTimeSelected) => {
                     const timeSelected =
-                      DateTime.fromISO(dateTimeSelected).toFormat(TIME_FORMAT);
+                      DateTime.fromISO(dateTimeSelected).toFormat("h:mma");
                     setSelectedDateTime(dateTimeSelected);
                     setSelectedTime(timeSelected);
                     showCurrentModal("preconfirmation");
@@ -151,9 +151,8 @@ function AppointmentModal({
         <h4>We're almost there!</h4>
         <p>
           Your {specificService} appointment is set for{" "}
-          {DateTime.fromISO(selectedDate).toLocaleString()} at{" "}
-          {selectedTime.toLocaleString([], { hour12: true })}. The total cost
-          will be ${price}. Thank you.
+          {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+          The total cost will be ${price}. Thank you.
         </p>
       </div>
       <button

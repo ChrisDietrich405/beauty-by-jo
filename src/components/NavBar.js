@@ -98,14 +98,14 @@ function Navbar({ display_appointment_modal }) {
           </div>
         </div>
       </div>
-      {/* {show_service_modal && (
+      {show_service_modal && (
         <ServicesModal
           label="Go to page"
           onClose={() => {
             // display_appointment_modal(false);
           }}
         />
-      )} */}
+      )}
     </nav>
   );
 }
