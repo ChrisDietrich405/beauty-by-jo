@@ -47,6 +47,7 @@ import "@popperjs/core";
 import "bootstrap/dist/js/bootstrap";
 
 import "./styles/global.scss";
+import ResetPassword from "./pages/ResetPassword";
 
 const { store, persistor } = createStore();
 
@@ -78,6 +79,7 @@ function App() {
               <Route path="/create-account" component={CreateAccount} />
               <Route path="/contact" component={Contact} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/reset-password/:hash" component={ResetPassword} />
             </Switch>
             <Footer />
           </Browser>
