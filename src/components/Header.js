@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { add } from "../store/actions/schedule";
+import { add, setServiceModalType } from "../store/actions/schedule";
 import { get, display_appointment_modal } from "../store/actions/auth";
 
 import AppointmentModal from "./AppointmentModal";
@@ -22,6 +22,7 @@ function Header({ access_token, add, get }) {
 
   const handleSchedule = () => {
     dispatch(display_appointment_modal(true));
+    dispatch(setServiceModalType("Schedule"));
     add();
   };
 
@@ -42,14 +43,7 @@ function Header({ access_token, add, get }) {
               Schedule an appointment
             </Link>
           ) : (
-            <button
-              // disabled={access_token === null}
-              className="btn"
-              onClick={
-                handleSchedule
-                // setModalOpen(true);
-              }
-            >
+            <button className="btn" onClick={handleSchedule}>
               Schedule an appointment
             </button>
           )}

@@ -205,7 +205,7 @@ function AppointmentModal({
 
   const showCurrentModal = (state) => {
     setCurrentTittle(
-      serviceName === "Services" ? "Got to page" : "Pick schedule"
+      serviceName === "Services" ? "Go to page" : "Pick schedule"
     );
     switch (state) {
       case "services":

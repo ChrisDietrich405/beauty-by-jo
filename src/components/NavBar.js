@@ -11,7 +11,7 @@ import {
   displayServiceModal,
   signout,
 } from "../store/actions/auth";
-import { kindService } from "../store/actions/schedule";
+import { kindService, setServiceModalType } from "../store/actions/schedule";
 
 function Navbar({ display_appointment_modal }) {
   const { signin_success } = useSelector((state) => state.auth);
@@ -19,6 +19,7 @@ function Navbar({ display_appointment_modal }) {
   const dispatch = useDispatch();
   const handleServices = () => {
     dispatch(kindService({ serviceName: "Services" }));
+    dispatch(setServiceModalType("Services"));
     dispatch(displayServiceModal(true));
   };
 

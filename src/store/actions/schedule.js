@@ -10,6 +10,7 @@ export const BOOK_SERVICE = "BOOK_SERVICE";
 export const SPECIFIC_SERVICE_ID = "SPECIFIC_SERVICE_ID";
 export const SPECIFIC_SERVICE = "SPECIFIC_SERVICE";
 export const BACK_SERVICE = "BACK_SERVICE";
+export const CHANGE_SERVICE_MODAL_TYPE = "CHANGE_SERVICE_MODAL_TYPE";
 
 export const add = () => (dispatch) => {
   dispatch({ type: ADD });
@@ -46,4 +47,8 @@ export const setSpecificService = (payload) => (dispatch) => {
 
 export const backService = (payload) => (dispatch) => {
   dispatch({ type: BACK_SERVICE, payload });
+};
+
+export const setServiceModalType = (payload) => (dispatch) => {
+  dispatch({ type: CHANGE_SERVICE_MODAL_TYPE, payload });
 };

@@ -22,7 +22,6 @@ function ServicesModal({ label, onClose, index, services }) {
       <ServicesList
         services={services}
         label={label}
-        type="Services"
         onSelect={(service) => {
           dispatch(displayServiceModal(false));
           history.push(service.path);

@@ -1,16 +1,11 @@
 import classNames from "classnames";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { display_appointment_modal } from "../store/actions/auth";
 
-export default function ServicesList({
-  label,
-  services,
-  className,
-  onSelect,
-  type = "Schedule",
-}) {
+export default function ServicesList({ label, services, className, onSelect }) {
+  const { type } = useSelector((state) => state.schedule.schedule);
   const history = useHistory();
   const dispatch = useDispatch();
   return (
@@ -27,7 +22,6 @@ export default function ServicesList({
                 dispatch(display_appointment_modal(false));
                 history.push(service.path);
               }
-
               onSelect(service);
             }}
           >
