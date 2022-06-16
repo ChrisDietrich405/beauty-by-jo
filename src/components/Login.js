@@ -35,20 +35,22 @@ function Login({ user, signin, location, add }) {
 
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(SIGNIN_SUCCESS, () => {
+      let nextURL = "/";
       if (specific_service_id && isBooking) {
         const currentService = data.find((e) => e.id === specific_service_id);
-        history.push(currentService.path);
+        nextURL = currentService.path;
       } else {
         dispatch({ type: SHOW_TOAST });
-        history.push("/");
       }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => {
+        window.location = nextURL;
+      }, 100);
       setModalOpen(false);
-      // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });
 
     const unsubscribeAuthError = subscribe.on(ERROR, () => {
       toast.error("Incorrect username or password entered");
-      // TODO: Show error messages, example Email and/or password are invalid!
     });
 
     return () => {
