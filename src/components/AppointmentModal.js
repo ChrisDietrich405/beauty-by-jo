@@ -258,7 +258,7 @@ function AppointmentModal({
     <ModalTemplate
       onBack={onModalBack}
       onClose={onClose}
-      isShowBackButton={!showServices}
+      isShowBackButton={true}
     >
       {showServices && (
         <ServicesList
