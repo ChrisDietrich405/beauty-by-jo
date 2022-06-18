@@ -48,6 +48,7 @@ import "bootstrap/dist/js/bootstrap";
 
 import "./styles/global.scss";
 import ResetPassword from "./pages/ResetPassword";
+import Navbar2 from "./components/Navbar2";
 
 const { store, persistor } = createStore();
 
@@ -63,7 +64,8 @@ function App() {
           </Helmet>
           <Browser>
             <Header />
-            <NavBar />
+            {/* <NavBar /> */}
+            <Navbar2 />
             <Switch>
               <Route path="/" exact={true} component={Home} />
               <Route path="/about-us" component={AboutUs} />
