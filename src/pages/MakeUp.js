@@ -71,7 +71,7 @@ export default function MakeUp() {
                 onClick={() =>
                   handleBooking({
                     id: 1,
-                    name: "make up consultation",
+                    name: "Make up consultation",
                     price: "50.00",
                     status: true,
                   })

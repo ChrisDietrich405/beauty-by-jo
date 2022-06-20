@@ -74,6 +74,8 @@ p {
   display: grid;
   margin-bottom: 2rem;
   grid-template-columns: 2fr 1fr 1fr;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
 }
 
 .price-title {

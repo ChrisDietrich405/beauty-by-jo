@@ -92,8 +92,23 @@ function Navbar2({ display_appointment_modal }) {
           </div>
         </Link>
       </div>{" "}
+      {show_service_modal && (
+        <ServicesModal
+          label="Go to page"
+          onClose={() => {
+            // display_appointment_modal(false);
+          }}
+        />
+      )}
     </nav>
   );
 }
 
-export default Navbar2;
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ display_appointment_modal }, dispatch);
+
+const mapStateToProps = (state) => ({
+  show_appointment_modal: state.auth.show_appointment_modal,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar2);

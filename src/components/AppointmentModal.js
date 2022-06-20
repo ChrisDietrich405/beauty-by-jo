@@ -115,12 +115,13 @@ function AppointmentModal({
   const DatePicker = () => {
     return (
       <div className="appointment-container">
-        <div className="modal-bod">
+        <div className="modal-body">
           <h3>{specificService}</h3>
           <h4>Choose a day and time that works for you.</h4>
           <div className="date-picker-container">
             <div className="date-container">
               <input
+                className="date-input"
                 type="date"
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
@@ -147,7 +148,7 @@ function AppointmentModal({
 
   const PreConfirmation = () => (
     <>
-      <div className="modal-bod">
+      <div className="modal-body">
         <h4>We're almost there!</h4>
         <p>
           Your {specificService} appointment is set for{" "}
@@ -167,7 +168,7 @@ function AppointmentModal({
 
   const AppointmentConfirmation = () => (
     <>
-      <div className="modal-bod">
+      <div className="modal-body">
         <h4>Thank you for your business!</h4>
         <p>
           Your {specificService} appointment has been scheduled for{" "}
