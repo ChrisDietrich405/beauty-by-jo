@@ -137,3 +137,39 @@ p {
 .another-appointment-button:hover {
   opacity: 0.8;
 }
+
+@media screen and (max-width: 880px) {
+  .price-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .price-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .price-cost-time {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .price-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .price-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .price-cost-time {
+    margin-bottom: 20px;
+  }
+}
