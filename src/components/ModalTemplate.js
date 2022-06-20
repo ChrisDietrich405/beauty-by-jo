@@ -35,7 +35,7 @@ export default function ModalTemplate({ onBack, isShowBackButton, children }) {
               modalBackButtonVisible: isShowBackButton,
             })}
           >
-            {back_service && (
+            {back_service && onBack && (
               <button
                 onClick={() => {
                   onBack();
