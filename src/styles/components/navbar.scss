@@ -144,7 +144,8 @@
   }
 
   .footer-social-media {
-    justify-content: center;
+    display: flex;
+    justify-content: center !important;
   }
 
   .footer-address img {

@@ -20,7 +20,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
               <AiOutlineInstagram size={60} />
             </a>
-            <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
+            <a href="https://www.facebook.com/Beautyybyjo" target="_blank">
               <AiOutlineFacebook size={60} className="facebook" />
             </a>
           </div>

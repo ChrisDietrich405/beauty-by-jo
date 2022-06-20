@@ -94,6 +94,10 @@
     flex-direction: column;
     background-color: $secondary;
   }
+
+  .footer-social-media {
+    margin: 0 auto;
+  }
 }
 
 @media only screen and(max-width: 480px) {
