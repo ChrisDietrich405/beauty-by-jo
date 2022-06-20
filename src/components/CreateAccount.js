@@ -2,32 +2,26 @@ import { useEffect } from "react";
 import { bindActionCreators } from "redux";
 import { connect, useSelector } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
-import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 
 import { save } from "../store/actions/user";
 
-import "react-toastify/dist/ReactToastify.css";
 import "../styles/components/sign-in-create-account.scss";
+import { successToast } from "../store/actions/toast";
 
-function CreateAccount({ user, save }) {
+function CreateAccount({ user, save, successToast }) {
   const { user: currentUser } = useSelector((state) => state.user);
   const history = useHistory();
 
   useEffect(() => {
     if (currentUser.firstName !== null) {
-      toast.success("Your account has been created", {
-        onClose: (props) => {
-          history.push("/");
-        },
-        autoClose: 3000,
-      });
+      history.push("/");
+      successToast("Your account has been created");
     }
   }, [currentUser]);
 
   return (
     <>
-      <ToastContainer />
       <Formik
         initialValues={{
           firstName: "",
@@ -145,6 +139,7 @@ const mapStateToProps = (state) => ({
   errors: state.user.errors,
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ save }, dispatch);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ save, successToast }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateAccount);

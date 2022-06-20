@@ -3,19 +3,18 @@ import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { connect, useSelector } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
-import { ToastContainer, toast } from "react-toastify";
 
 import { signin, SIGNIN_SUCCESS, ERROR } from "../store/actions/auth";
 
 import "../styles/components/sign-in-create-account.scss";
-import "react-toastify/dist/ReactToastify.css";
 
 import { subscribe } from "../store";
 import { add } from "../store/actions/schedule";
 
 import AppointmentModal from "./AppointmentModal";
+import { successToast, errorToast } from "../store/actions/toast";
 
-function SignIn({ user, signin, location, add }) {
+function SignIn({ user, signin, location, add, successToast, errorToast }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { specific_service_id, isBooking } = useSelector(
@@ -32,19 +31,15 @@ function SignIn({ user, signin, location, add }) {
         const currentService = data.find((e) => e.id === specific_service_id);
         history.push(currentService.path);
       } else {
-        toast.dark("You signed in successfully", {
-          onClose: (props) => {
-            history.push("/");
-          },
-          autoClose: 1500,
-        });
+        successToast("You signed in successfully");
+        history.push("/");
       }
       setModalOpen(false);
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });
 
     const unsubscribeAuthError = subscribe.on(ERROR, () => {
-      toast.error("Incorrect username or password entered");
+      errorToast("Incorrect username or password entered");
       // TODO: Show error messages, example Email and/or password are invalid!
     });
 
@@ -56,10 +51,6 @@ function SignIn({ user, signin, location, add }) {
 
   return (
     <>
-      <ToastContainer
-        progressClassName="toastProgress"
-        bodyClassName="toastBody"
-      />
       <Formik
         initialValues={{
           username: "",
@@ -163,6 +154,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ signin, add }, dispatch);
+  bindActionCreators({ signin, add, successToast, errorToast }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

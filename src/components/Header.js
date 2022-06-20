@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
+import { ToastContainer, toast } from "react-toastify";
 
 import { add, setServiceModalType } from "../store/actions/schedule";
 import { get, display_appointment_modal } from "../store/actions/auth";
 
 import AppointmentModal from "./AppointmentModal";
 
+import { subscribe } from "../store";
+
 import Logo from "../assets/images/logo.jpg";
+
+import { SCROLL_TOP, SHOW_ERROR, SHOW_SUCCESS } from "../store/actions/toast";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function Header({ access_token, add, get }) {
   const dispatch = useDispatch();
@@ -20,6 +27,29 @@ function Header({ access_token, add, get }) {
     await get();
   }, []);
 
+  useEffect(() => {
+    const unsubscribeToastSuccess = subscribe.on(SHOW_SUCCESS, (action) => {
+      toast.success(action.payload);
+    });
+
+    const unsubscribeToastError = subscribe.on(SHOW_ERROR, (action) => {
+      toast.error(action.payload);
+    });
+
+    const unsubscribeScrollTop = subscribe.on(SCROLL_TOP, () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
+    });
+
+    return () => {
+      unsubscribeToastSuccess();
+      unsubscribeToastError();
+      unsubscribeScrollTop();
+    };
+  }, []);
+
   const handleSchedule = () => {
     dispatch(display_appointment_modal(true));
     dispatch(setServiceModalType("Schedule"));
@@ -28,6 +58,10 @@ function Header({ access_token, add, get }) {
 
   return (
     <>
+      <ToastContainer
+        progressClassName="toastProgress"
+        bodyClassName="toastBody"
+      />
       <div className="header">
         <div className="header-container">
           {access_token === null ? (

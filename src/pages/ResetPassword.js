@@ -1,11 +1,9 @@
 import "../styles/components/sign-in-create-account.scss";
-import "react-toastify/dist/ReactToastify.css";
 
 import { ErrorMessage, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import { bindActionCreators } from "redux";
 
 import { subscribe } from "../store";
@@ -14,10 +12,11 @@ import {
   RESET_PASSWORD_SUCCESS,
   resetPassword,
 } from "../store/actions/user";
+import { errorToast, successToast } from "../store/actions/toast";
 
 // import AppointmentModal from "./AppointmentModal";
 
-function ResetPassword({ resetPassword, location }) {
+function ResetPassword({ resetPassword, successToast, errorToast }) {
   const history = useHistory();
   const { hash } = useParams();
   const [saving, setSaving] = useState(false);
@@ -26,12 +25,7 @@ function ResetPassword({ resetPassword, location }) {
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(RESET_PASSWORD_SUCCESS, () => {
       setSuccess(true);
-      toast.dark("Your password was reseted successfully", {
-        onClose: (props) => {
-          history.push("/signin");
-        },
-        autoClose: 3000,
-      });
+      successToast("Your password was reseted successfully");
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });
 
@@ -41,16 +35,13 @@ function ResetPassword({ resetPassword, location }) {
       if (response && response.payload) {
         const { message, type } = response.payload;
         if (type === "expired") {
-          toast.error(message, {
-            onClose: (props) => {
-              history.push("/forgot-password");
-            },
-          });
+          errorToast(message);
+          history.push("/forgot-password");
         } else {
-          toast.error(message);
+          errorToast(message);
         }
       } else {
-        toast.error("Error while resetting password");
+        errorToast("Error while resetting password");
       }
       // TODO: Show error messages, example Email and/or password are invalid!
     });
@@ -63,10 +54,6 @@ function ResetPassword({ resetPassword, location }) {
 
   return (
     <>
-      <ToastContainer
-        progressClassName="toastProgress"
-        bodyClassName="toastBody"
-      />
       <Formik
         initialValues={{
           password: "",
@@ -180,6 +167,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ resetPassword }, dispatch);
+  bindActionCreators({ resetPassword, successToast, errorToast }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResetPassword);

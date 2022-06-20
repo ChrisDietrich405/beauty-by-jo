@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
 
-import "react-toastify/dist/ReactToastify.css";
 import "../styles/components/sign-in-create-account.scss";
+import { errorToast, successToast } from "../store/actions/toast";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-export default function CreateAccount() {
+function Contact({ successToast, errorToast }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,12 +37,10 @@ export default function CreateAccount() {
           setLastName("");
           setEmail("");
           setMessage("");
-          toast.success("message sent");
-          console.log("success", response);
+          successToast("message sent");
         },
         function (error) {
-          toast.error("message wasn't sent");
-          console.log("failure", error);
+          errorToast("message wasn't sent");
         }
       );
   };
@@ -52,7 +51,6 @@ export default function CreateAccount() {
 
   return (
     <>
-      <ToastContainer />
       <div className="form-container">
         <form className="contact" onSubmit={submit}>
           <h2>Contact Us</h2>
@@ -100,3 +98,10 @@ export default function CreateAccount() {
     </>
   );
 }
+
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ successToast, errorToast }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);

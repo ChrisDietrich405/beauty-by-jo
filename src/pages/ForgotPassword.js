@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { connect, useSelector } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
-import { ToastContainer, toast } from "react-toastify";
 
 import {
   forgotPassword,
@@ -12,31 +11,25 @@ import {
 } from "../store/actions/user";
 
 import "../styles/components/sign-in-create-account.scss";
-import "react-toastify/dist/ReactToastify.css";
 
 import { subscribe } from "../store";
+import { errorToast, successToast } from "../store/actions/toast";
 
 // import AppointmentModal from "./AppointmentModal";
 
-function ForgotPassword({ forgotPassword, location }) {
+function ForgotPassword({ forgotPassword, successToast, errorToast }) {
   const history = useHistory();
 
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(FORGOT_PASSWORD_SUCCESS, () => {
-      toast.dark(
-        "you will receive an email with details on how to reset your password",
-        {
-          onClose: (props) => {
-            history.push("/");
-          },
-          autoClose: 3000,
-        }
+      successToast(
+        "you will receive an email with details on how to reset your password"
       );
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });
 
     const unsubscribeAuthError = subscribe.on(ERROR, () => {
-      toast.error("Incorrect email entered");
+      errorToast("Incorrect email entered");
       // TODO: Show error messages, example Email and/or password are invalid!
     });
 
@@ -48,10 +41,6 @@ function ForgotPassword({ forgotPassword, location }) {
 
   return (
     <>
-      <ToastContainer
-        progressClassName="toastProgress"
-        bodyClassName="toastBody"
-      />
       <Formik
         initialValues={{
           email: "",
@@ -123,6 +112,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ forgotPassword }, dispatch);
+  bindActionCreators({ forgotPassword, successToast, errorToast }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ForgotPassword);
