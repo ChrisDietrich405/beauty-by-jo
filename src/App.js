@@ -27,7 +27,6 @@ import createStore from "./store";
 
 import Home from "./pages/Home";
 import Header from "./components/Header";
-import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import CreateAccount from "./components/CreateAccount";
