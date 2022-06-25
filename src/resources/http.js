@@ -2,7 +2,9 @@ import axios from "axios";
 
 import { store } from "../store";
 
-const http = axios.create({ baseURL: "http://localhost:3003" });
+const apiUrl = process.env.API_URL ? process.env.API_URL : 'http://localhost:3003';
+
+const http = axios.create({ baseURL: apiUrl });
 
 http.interceptors.request.use(
   function (config) {
