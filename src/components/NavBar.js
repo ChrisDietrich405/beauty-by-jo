@@ -107,6 +107,7 @@ function Navbar({ display_appointment_modal }) {
           }}
         />
       )}
+      <h1>hello</h1>
     </nav>
   );
 }
