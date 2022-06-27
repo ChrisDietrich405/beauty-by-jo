@@ -15,8 +15,8 @@ function CreateAccount({ user, save, successToast }) {
 
   useEffect(() => {
     if (currentUser.firstName !== null) {
-      history.push("/");
       successToast("Your account has been created");
+      history.push("/");
     }
   }, [currentUser]);
 
