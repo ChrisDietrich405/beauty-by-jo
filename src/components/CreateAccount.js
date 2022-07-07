@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect, useSelector } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
@@ -10,15 +10,19 @@ import "../styles/components/sign-in-create-account.scss";
 import { successToast } from "../store/actions/toast";
 
 function CreateAccount({ user, save, successToast }) {
+
+  const [saveStatus, setSaveStatus] = useState(false);
   const { user: currentUser } = useSelector((state) => state.user);
   const history = useHistory();
 
   useEffect(() => {
     if (currentUser.firstName !== null) {
-      successToast("Your account has been created");
-      history.push("/");
+      if(saveStatus) {
+        successToast("Your account has been created");
+        history.push("/");
+      }
     }
-  }, [currentUser]);
+  }, [saveStatus]);
 
   return (
     <>
@@ -51,7 +55,14 @@ function CreateAccount({ user, save, successToast }) {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          save(values);
+          (async() => {
+            try {
+              const saveUser = await save(values);
+              setSaveStatus(saveUser ? saveUser : false);
+            } catch(err) {
+              setSaveStatus(false);
+            }
+          })();
         }}
       >
         {({
