@@ -7,22 +7,11 @@ import { useHistory } from "react-router-dom";
 import { save } from "../store/actions/user";
 
 import "../styles/components/sign-in-create-account.scss";
-import { successToast } from "../store/actions/toast";
+import { successToast, errorToast } from "../store/actions/toast";
 
-function CreateAccount({ user, save, successToast }) {
+function CreateAccount({ save, successToast, errorToast }) {
 
-  const [saveStatus, setSaveStatus] = useState(false);
-  const { user: currentUser } = useSelector((state) => state.user);
   const history = useHistory();
-
-  useEffect(() => {
-    if (currentUser.firstName !== null) {
-      if(saveStatus) {
-        successToast("Your account has been created");
-        history.push("/");
-      }
-    }
-  }, [saveStatus]);
 
   return (
     <>
@@ -55,14 +44,15 @@ function CreateAccount({ user, save, successToast }) {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          (async() => {
-            try {
-              const saveUser = await save(values);
-              setSaveStatus(saveUser ? saveUser : false);
-            } catch(err) {
-              setSaveStatus(false);
+          save(values)
+          .then(res => {
+            if(res) {
+              successToast("Your account has been created. Now you can sign in.");
+              history.push("/signin");
+            } else {
+              errorToast("Unable to create your account. Try again.");
             }
-          })();
+          })
         }}
       >
         {({
@@ -151,6 +141,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ save, successToast }, dispatch);
+  bindActionCreators({ save, successToast, errorToast }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateAccount);
