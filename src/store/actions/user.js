@@ -22,9 +22,17 @@ export const save = (payload) => async (dispatch) => {
   dispatch({ type: SAVE, payload });
   try {
     const response = await UserResource.post(payload);
-    dispatch({ type: SAVE_SUCCESS, payload: response.data });
+    if(response.data) {
+      dispatch({ type: SAVE_SUCCESS, payload: response.data });
+      return true;
+    } else {
+      return false;
+    }
   } catch (error) {
-    dispatch({ type: ERROR, payload: error.response.data });
+    if(error.response) {
+      dispatch({ type: ERROR, payload: error.response.data });
+    }
+    return false;
   }
 };
 
