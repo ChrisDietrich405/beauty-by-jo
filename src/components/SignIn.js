@@ -14,7 +14,7 @@ import { add } from "../store/actions/schedule";
 import AppointmentModal from "./AppointmentModal";
 import { successToast, errorToast } from "../store/actions/toast";
 
-function SignIn({ user, signin, location, add, successToast, errorToast }) {
+function SignIn({ access_token, signin, location, successToast, errorToast }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { specific_service_id, isBooking } = useSelector(
@@ -83,12 +83,11 @@ function SignIn({ user, signin, location, add, successToast, errorToast }) {
           handleBlur,
           handleSubmit,
           isSubmitting,
-          /* and other goodies */
         }) => (
           <div className="form-container">
-            {location?.state?.btSchedule && (
+            {access_token === null && (
               <p className="signin-message">
-                In order to schedule an appointment please first sign in.
+                In order to schedule an appointment please first log in.
               </p>
             )}
             <form onSubmit={handleSubmit}>
@@ -151,6 +150,7 @@ function SignIn({ user, signin, location, add, successToast, errorToast }) {
 const mapStateToProps = (state) => ({
   user: state.auth.user,
   errors: state.auth.errors,
+  access_token: state.auth.access_token,
 });
 
 const mapDispatchToProps = (dispatch) =>
