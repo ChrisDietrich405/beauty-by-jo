@@ -16,7 +16,6 @@ import "../styles/components/modal.scss";
 import { display_appointment_modal } from "../store/actions/auth";
 
 const DATE_FORMAT = "yyyy-MM-dd";
-const TIME_FORMAT = "HH:mm";
 
 function AppointmentModal({
   label,
@@ -28,7 +27,6 @@ function AppointmentModal({
   save,
   availability,
   verifyAvailability,
-  specific_service_id,
 }) {
   const [showServices, setShowServices] = useState(true);
   const [showSpecificServices, setShowSpecificServices] = useState(false);
@@ -46,12 +44,8 @@ function AppointmentModal({
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedDateTime, setSelectedDateTime] = useState(null);
 
-  const {
-    serviceName,
-    isBooking,
-    specific_service_id: specificServiceId,
-    specific_service,
-  } = useSelector((state) => state.schedule.schedule);
+  const { serviceName, isBooking, specific_service_id, specific_service } =
+    useSelector((state) => state.schedule.schedule);
 
   const dispatch = useDispatch();
 
@@ -59,7 +53,7 @@ function AppointmentModal({
     index();
     const now = DateTime.now();
     setSelectedDate(now.toFormat(DATE_FORMAT));
-  }, []);
+  }, [index]);
 
   useEffect(() => {
     if (isBooking) {
