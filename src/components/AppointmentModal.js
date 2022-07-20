@@ -55,7 +55,6 @@ function AppointmentModal({
 
   const data = useSelector((state) => state.service.services);
 
-  const [currentTitle, setCurrentTittle] = useState("My title");
   const dispatch = useDispatch();
 
   const [selectedDateTime, setSelectedDateTime] = useState(null);
@@ -185,29 +184,7 @@ function AppointmentModal({
     </>
   );
 
-  const toggleState = (state) => {
-    if (state === "services") {
-      setShowSpecificServices(true);
-      setShowServices(false);
-    } else if (state === "appointment") {
-      setShowAppointmentCal(true);
-      setShowSpecificServices(false);
-    } else if (state === "preconfirmation") {
-      setShowAppointmentCal(false);
-      setShowPreconfirmation(true);
-    } else if (state === "confirmation") {
-      setShowPreconfirmation(false);
-      setShowAppointmentConfirmation(true);
-    } else if (state === "additionalAppointment") {
-      setShowAppointmentConfirmation(false);
-      setShowServices(true);
-    }
-  };
-
   const showCurrentModal = (state) => {
-    setCurrentTittle(
-      serviceName === "Services" ? "Go to page" : "Pick schedule"
-    );
     switch (state) {
       case "services":
         if (serviceName === "Services") {
