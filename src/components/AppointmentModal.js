@@ -44,6 +44,7 @@ function AppointmentModal({
 
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
 
   const {
     serviceName,
@@ -52,11 +53,7 @@ function AppointmentModal({
     specific_service,
   } = useSelector((state) => state.schedule.schedule);
 
-  const data = useSelector((state) => state.service.services);
-
   const dispatch = useDispatch();
-
-  const [selectedDateTime, setSelectedDateTime] = useState(null);
 
   useEffect(() => {
     index();
@@ -223,7 +220,6 @@ function AppointmentModal({
   };
 
   const getSpecificServices = () => {
-    // DONT UNDERSTAND
     const filterServices = services.filter((value) => value.name === service);
     if (filterServices.length) {
       return filterServices[0].specificService;
@@ -279,6 +275,3 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ index, change, save, verifyAvailability }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
-
-//mapDispatchtoProps connects the actions to the AppointmentModel and dispatch is
-// dependency
