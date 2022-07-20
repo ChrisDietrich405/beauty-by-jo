@@ -45,7 +45,6 @@ function AppointmentModal({
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
-  const { show_appointment_modal } = useSelector((state) => state.auth);
   const {
     serviceName,
     isBooking,
