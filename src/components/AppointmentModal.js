@@ -16,7 +16,6 @@ import "../styles/components/modal.scss";
 import { display_appointment_modal } from "../store/actions/auth";
 
 const DATE_FORMAT = "yyyy-MM-dd";
-const TIME_FORMAT = "HH:mm";
 
 function AppointmentModal({
   label,
@@ -28,7 +27,6 @@ function AppointmentModal({
   save,
   availability,
   verifyAvailability,
-  specific_service_id,
 }) {
   const [showServices, setShowServices] = useState(true);
   const [showSpecificServices, setShowSpecificServices] = useState(false);
@@ -44,27 +42,18 @@ function AppointmentModal({
 
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
-
-  const { show_appointment_modal } = useSelector((state) => state.auth);
-  const {
-    serviceName,
-    isBooking,
-    specific_service_id: specificServiceId,
-    specific_service,
-  } = useSelector((state) => state.schedule.schedule);
-
-  const data = useSelector((state) => state.service.services);
-
-  const [currentTitle, setCurrentTittle] = useState("My title");
-  const dispatch = useDispatch();
-
   const [selectedDateTime, setSelectedDateTime] = useState(null);
+
+  const { serviceName, isBooking, specific_service_id, specific_service } =
+    useSelector((state) => state.schedule.schedule);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     index();
     const now = DateTime.now();
     setSelectedDate(now.toFormat(DATE_FORMAT));
-  }, []);
+  }, [index]);
 
   useEffect(() => {
     if (isBooking) {
@@ -185,29 +174,7 @@ function AppointmentModal({
     </>
   );
 
-  const toggleState = (state) => {
-    if (state === "services") {
-      setShowSpecificServices(true);
-      setShowServices(false);
-    } else if (state === "appointment") {
-      setShowAppointmentCal(true);
-      setShowSpecificServices(false);
-    } else if (state === "preconfirmation") {
-      setShowAppointmentCal(false);
-      setShowPreconfirmation(true);
-    } else if (state === "confirmation") {
-      setShowPreconfirmation(false);
-      setShowAppointmentConfirmation(true);
-    } else if (state === "additionalAppointment") {
-      setShowAppointmentConfirmation(false);
-      setShowServices(true);
-    }
-  };
-
   const showCurrentModal = (state) => {
-    setCurrentTittle(
-      serviceName === "Services" ? "Go to page" : "Pick schedule"
-    );
     switch (state) {
       case "services":
         if (serviceName === "Services") {
@@ -247,7 +214,6 @@ function AppointmentModal({
   };
 
   const getSpecificServices = () => {
-    // DONT UNDERSTAND
     const filterServices = services.filter((value) => value.name === service);
     if (filterServices.length) {
       return filterServices[0].specificService;
@@ -303,6 +269,3 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ index, change, save, verifyAvailability }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
-
-//mapDispatchtoProps connects the actions to the AppointmentModel and dispatch is
-// dependency
