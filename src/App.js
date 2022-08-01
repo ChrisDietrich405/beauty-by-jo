@@ -1,20 +1,3 @@
-// "react-slideshow-image": "^3.5.0",  - from package.json
-
-// 'react-scripts' is not recognized as an internal or external command,
-// operable program or batch file. I tried to install react-script, then I
-// tried npm install
-
-//services pages book button should be black, dollar and time icon should be twice the size
-
-//create your account button
-//password - user should have the ability to see the password they are typing
-// and they need to type the password twice when they create a password
-
-//MVP
-
-//FAQ
-//for any questions that only have one item don't have a bullet
-
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
