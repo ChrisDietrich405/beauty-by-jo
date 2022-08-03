@@ -17,10 +17,10 @@ export default function Footer() {
       <div className="footer-wrapper">
         <div className="footer-social-media-contact">
           <div className="footer-social-media">
-            <a href="https://www.instagram.com/beautybyjo._/" target="_blank">
+            <a href="https://www.instagram.com/beautybyjo._/" rel="noreferrer" target="_blank">
               <AiOutlineInstagram size={60} />
             </a>
-            <a href="https://www.facebook.com/Beautyybyjo" target="_blank">
+            <a href="https://www.facebook.com/Beautyybyjo" rel="noreferrer" target="_blank">
               <AiOutlineFacebook size={60} className="facebook" />
             </a>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
           </form>
         </div>
 
-        <img src={Logo} className="footer-logo" />
+        <img src={Logo} alt="Beauty By Jo" className="footer-logo" />
       </div>
     </div>
   );

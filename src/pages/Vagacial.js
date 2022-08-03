@@ -9,7 +9,7 @@ import VagacialPic from "../assets/images/vagacial.jpeg";
 
 export default function Vagacial() {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
-  const [value, onChange] = useState(new Date());
+  const [dateValue] = useState(new Date());
 
   const timeArray = [
     "9:00AM",
@@ -56,7 +56,7 @@ export default function Vagacial() {
             <div className="date-container">
               <DatePicker
                 onChange={() => setIsTimeVisible(true)}
-                value={value}
+                value={dateValue}
               />
             </div>
             <div className="time-container">
