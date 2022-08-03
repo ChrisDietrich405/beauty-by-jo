@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 
 import { save } from "../store/actions/user";
 
-import "../styles/components/sign-in-create-account.scss";
+import "../styles/components/sign-in-create-account-contact.scss";
 import { successToast, errorToast } from "../store/actions/toast";
 
 function CreateAccount({ save, successToast, errorToast }) {

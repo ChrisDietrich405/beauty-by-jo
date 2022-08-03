@@ -50,7 +50,7 @@ function AppointmentModal({
   const dispatch = useDispatch();
 
   useEffect(() => {
-    index();
+    index();                  
     const now = DateTime.now();
     setSelectedDate(now.toFormat(DATE_FORMAT));
   }, [index]);
