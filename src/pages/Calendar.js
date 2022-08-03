@@ -22,11 +22,7 @@ export default function Calendar() {
             hidden: false,
             id: 2
         }, 
-        {
-            name: "Vagacial",
-            hidden: false,
-            id: 3
-        }, 
+      
         {
             name: "Lashes",
             hidden: false,

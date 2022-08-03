@@ -1,4 +1,4 @@
-import "../styles/components/sign-in-create-account.scss";
+import "../styles/components/sign-in-create-account-contact.scss";
 
 import { ErrorMessage, Formik } from "formik";
 import { useEffect, useState } from "react";
@@ -13,8 +13,6 @@ import {
   resetPassword,
 } from "../store/actions/user";
 import { errorToast, successToast } from "../store/actions/toast";
-
-// import AppointmentModal from "./AppointmentModal";
 
 function ResetPassword({ resetPassword, successToast, errorToast }) {
   const history = useHistory();

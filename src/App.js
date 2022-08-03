@@ -19,7 +19,6 @@ import MakeUp from "./pages/MakeUp";
 import Lashes from "./pages/Lashes";
 import Waxing from "./pages/Waxing";
 import Eyebrow from "./pages/Eyebrow";
-import Vagacial from "./pages/Vagacial";
 import Facials from "./pages/Facials";
 import Testimonials from "./pages/Testimonials";
 import Policies from "./pages/Policies";
@@ -55,7 +54,6 @@ function App() {
               <Route path="/lashes" component={Lashes} />
               <Route path="/waxing" component={Waxing} />
               <Route path="/eyebrow" component={Eyebrow} />
-              <Route path="/vagacial" component={Vagacial} />
               <Route path="/facials" component={Facials} />
               <Route path="/testimonials" component={Testimonials} />
               <Route path="/policies" component={Policies} />

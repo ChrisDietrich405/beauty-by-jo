@@ -10,7 +10,7 @@ import {
   ERROR,
 } from "../store/actions/user";
 
-import "../styles/components/sign-in-create-account.scss";
+import "../styles/components/sign-in-create-account-contact.scss";
 
 import { subscribe } from "../store";
 import { errorToast, successToast } from "../store/actions/toast";
