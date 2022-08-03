@@ -84,7 +84,7 @@ function Header({ access_token, add, get }) {
             </button>
           )}
           <Link to="/" className="logo-btn">
-            <img src={Logo} />
+            <img src={Logo} alt="Logo" />
           </Link>
 
           <Link to="/contact" className="btn">
