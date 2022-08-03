@@ -67,7 +67,7 @@ function AppointmentModal({
         date: selectedDate,
       });
     }
-  }, [selectedDate, specific_service_id]);
+  }, [selectedDate, isBooking, verifyAvailability, specific_service.name, specific_service.price, specific_service_id]);
 
   const onModalBack = () => {
     if (showServices === true) {

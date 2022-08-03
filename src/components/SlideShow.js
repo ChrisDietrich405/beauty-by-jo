@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "react-slideshow-image/dist/styles.css";
 
