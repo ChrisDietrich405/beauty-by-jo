@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
@@ -8,8 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import {
   bookService,
-  specificService,
-  setSpecificService,
   change,
   backService,
 } from "../store/actions/schedule";
@@ -20,8 +18,7 @@ import "../styles/components/parallax.scss";
 import BeautySupplies from "../assets/images/makeup.jpg";
 
 export default function MakeUp() {
-  const [isTimeVisible, setIsTimeVisible] = useState(false);
-  const [value, onChange] = useState(new Date());
+  
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -29,6 +26,8 @@ export default function MakeUp() {
 
   useEffect(() => {
     dispatch(display_appointment_modal(false));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleBooking = (service) => {
