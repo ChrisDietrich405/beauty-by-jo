@@ -14,8 +14,10 @@ export const get = () => async (dispatch) => {
   try {
     const response = await AuthResource.get();
     dispatch({ type: GET_SUCCESS, payload: response.data });
+    return true;
   } catch (error) {
     dispatch({ type: UNAUTHORIZED });
+    return false;
   }
 };
 

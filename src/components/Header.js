@@ -27,7 +27,7 @@ function Header({ access_token, add, get }) {
     (async() => {
       await get()
     })();
-  }, []);
+  }, [get]);
 
   useEffect(() => {
     const unsubscribeToastSuccess = subscribe.on(SHOW_SUCCESS, (action) => {
