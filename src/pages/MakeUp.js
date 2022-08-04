@@ -26,7 +26,6 @@ export default function MakeUp() {
 
   useEffect(() => {
     dispatch(display_appointment_modal(false));
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
