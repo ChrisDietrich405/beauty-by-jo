@@ -40,10 +40,12 @@ export const signout = () => async (dispatch) => {
 export const display_appointment_modal = (payload) => (dispatch) => {
   dispatch({ type: SHOW_APPOINTMENT_MODAL, payload });
 };
+
 export const displayServiceModal = (payload) => ({
   type: SHOW_SERVICE_MODAL,
   payload,
 });
+
 export const scheduleService = (payload) => (dispatch) => {
   dispatch({ type: SCHEDULE_SERVICE, payload });
 };

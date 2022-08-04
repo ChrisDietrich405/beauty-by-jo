@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
@@ -9,8 +9,6 @@ import { display_appointment_modal } from "../store/actions/auth";
 import {
   backService,
   bookService,
-  specificService,
-  setSpecificService,
   change,
 } from "../store/actions/schedule";
 
@@ -22,8 +20,7 @@ import "../styles/components/parallax.scss";
 import EyebrowThreading from "../assets/images/eyebrow-threading2.jpg";
 
 export default function Eyebrow() {
-  const [isTimeVisible, setIsTimeVisible] = useState(false);
-  const [value, onChange] = useState(new Date());
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -31,6 +28,7 @@ export default function Eyebrow() {
 
   useEffect(() => {
     dispatch(display_appointment_modal(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleBooking = (service) => {
@@ -196,23 +194,4 @@ export default function Eyebrow() {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="price-title">Brow Lamination</div>
-                        <div className="price-cost-time">$50: 45 minutes advertised ( 1 hour on my schedule)</div>
-                        <div className="button-wrapper">
-                            <button className="price-button">Book</button>
-                        </div>
-                    </div>
-                    <div className="price-wrapper">
-                        <div className="price-title">Brow Lamination + Wax OR Tint</div>
-                        <div className="price-cost-time">$60: 55 minutes (1 hour on my schedule) </div>
-                        <div className="button-wrapper">
-                            <button className="price-button">Book</button>
-                        </div>
-                    </div>
-                    <div className="price-wrapper">
-                        <div className="price-title">Brow Lamination, Wax AND Tint</div>
-                        <div className="price-cost-time">$70: 1 hour ( 1 hour 10 minutes on my schedule)</div> */
 }
