@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import { Formik, ErrorMessage } from "formik";
 
 import {
@@ -10,15 +10,12 @@ import {
   ERROR,
 } from "../store/actions/user";
 
-import "../styles/components/sign-in-create-account.scss";
+import "../styles/components/sign-in-create-account-contact.scss";
 
 import { subscribe } from "../store";
 import { errorToast, successToast } from "../store/actions/toast";
 
-// import AppointmentModal from "./AppointmentModal";
-
 function ForgotPassword({ forgotPassword, successToast, errorToast }) {
-  const history = useHistory();
 
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(FORGOT_PASSWORD_SUCCESS, () => {
@@ -37,7 +34,7 @@ function ForgotPassword({ forgotPassword, successToast, errorToast }) {
       unsubscribeAuthSuccess();
       unsubscribeAuthError();
     };
-  }, []);
+  }, [errorToast, successToast]);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import "../styles/components/sign-in-create-account.scss";
+import "../styles/components/sign-in-create-account-contact.scss";
 
 import { ErrorMessage, Formik } from "formik";
 import { useEffect, useState } from "react";
@@ -14,8 +14,6 @@ import {
 } from "../store/actions/user";
 import { errorToast, successToast } from "../store/actions/toast";
 
-// import AppointmentModal from "./AppointmentModal";
-
 function ResetPassword({ resetPassword, successToast, errorToast }) {
   const history = useHistory();
   const { hash } = useParams();
@@ -23,6 +21,7 @@ function ResetPassword({ resetPassword, successToast, errorToast }) {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
+
     const unsubscribeAuthSuccess = subscribe.on(RESET_PASSWORD_SUCCESS, () => {
       setSuccess(true);
       successToast("Your password was reseted successfully");
@@ -50,7 +49,7 @@ function ResetPassword({ resetPassword, successToast, errorToast }) {
       unsubscribeAuthSuccess();
       unsubscribeAuthError();
     };
-  }, []);
+  }, [errorToast, history, successToast]);
 
   return (
     <>

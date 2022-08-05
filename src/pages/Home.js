@@ -10,10 +10,12 @@ import ZoomInZoomOut from "../components/ZoomInZoomOut";
 import BeautySupplies from "../assets/images/home5.jpg";
 
 export default function Home() {
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(display_appointment_modal(false));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="home-container">

@@ -14,8 +14,10 @@ export const get = () => async (dispatch) => {
   try {
     const response = await AuthResource.get();
     dispatch({ type: GET_SUCCESS, payload: response.data });
+    return true;
   } catch (error) {
     dispatch({ type: UNAUTHORIZED });
+    return false;
   }
 };
 
@@ -38,10 +40,12 @@ export const signout = () => async (dispatch) => {
 export const display_appointment_modal = (payload) => (dispatch) => {
   dispatch({ type: SHOW_APPOINTMENT_MODAL, payload });
 };
+
 export const displayServiceModal = (payload) => ({
   type: SHOW_SERVICE_MODAL,
   payload,
 });
+
 export const scheduleService = (payload) => (dispatch) => {
   dispatch({ type: SCHEDULE_SERVICE, payload });
 };

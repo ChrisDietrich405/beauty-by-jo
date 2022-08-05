@@ -6,7 +6,7 @@ import { Formik, ErrorMessage } from "formik";
 
 import { signin, SIGNIN_SUCCESS, ERROR } from "../store/actions/auth";
 
-import "../styles/components/sign-in-create-account.scss";
+import "../styles/components/sign-in-create-account-contact.scss";
 
 import { subscribe } from "../store";
 import { add } from "../store/actions/schedule";
@@ -47,7 +47,7 @@ function SignIn({ access_token, signin, location, successToast, errorToast }) {
       unsubscribeAuthSuccess();
       unsubscribeAuthError();
     };
-  }, []);
+  }, [data, errorToast, history, isBooking, specific_service_id, successToast]);
 
   return (
     <>

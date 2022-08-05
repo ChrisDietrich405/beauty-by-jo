@@ -10,8 +10,8 @@ import { bookService } from "../store/actions/schedule";
 
 export default function ModalTemplate({ onBack, isShowBackButton, children }) {
   const [closeMainModal, setCloseMainModal] = useState(false);
-  const [backAction, setBackAction] = useState(false);
-  const { isBooking, back_service } = useSelector(
+  //const [backAction, setBackAction] = useState(false);
+  const { back_service } = useSelector(
     (state) => state.schedule.schedule
   );
 

@@ -12,7 +12,7 @@ function TimeList({ onSelectTime, availability }) {
           return (
             <button
               key={Date}
-              disabled={available == "0"}
+              disabled={available === "0"}
               className="time"
               onClick={() => {
                 onSelectTime(Date);

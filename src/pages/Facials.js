@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
@@ -9,8 +9,6 @@ import { display_appointment_modal } from "../store/actions/auth";
 import {
   backService,
   bookService,
-  specificService,
-  setSpecificService,
   change,
 } from "../store/actions/schedule";
 
@@ -21,15 +19,13 @@ import "../styles/components/parallax.scss";
 import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Facials() {
-  const [isTimeVisible, setIsTimeVisible] = useState(false);
-  const [value, onChange] = useState(new Date());
 
   const dispatch = useDispatch();
-
   const history = useHistory();
 
   useEffect(() => {
     dispatch(display_appointment_modal(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { access_token } = useSelector((state) => state.auth);
@@ -45,23 +41,6 @@ export default function Facials() {
       history.push("/signin");
     }
   };
-
-  const timeArray = [
-    "9:00AM",
-    "9:30AM",
-    "10:00AM",
-    "10:30AM",
-    "11:00AM",
-    "11:30AM",
-    "12:00PM",
-    "1:00PM",
-    "1:30PM",
-    "2:00PM",
-    "2:30PM",
-    "3:00PM",
-    "3:30PM",
-    "4:00PM",
-  ];
 
   return (
     <div className="service-container">
@@ -256,42 +235,4 @@ export default function Facials() {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="price-wrapper">
-<div className="price-title">MINI MAKEOVER</div>
-<div className="price-cost-time">$50:$60: 45 minutes (On calendar schedule on my end it would block off an hour of time, leaving 15 minutes to clean after service)</div>
-<div className="button-wrapper">
-    <button className="price-button">Book</button>
-</div>
-</div>
-<div className="price-wrapper">
-<div className="price-title">SIGNATURE JO-GLOW</div>
-<div className="price-cost-time">$80: 1 hour (On calendar schedule on my end it would block off an hour and 15 minutes of time, leaving 15 minutes to clean after service) </div>
-<div className="button-wrapper">
-    <button className="price-button">Book</button>
-</div>
-</div>    
-<div className="price-wrapper">
-<div className="price-title">THE DESIRED DETOX</div>
-<div className="price-cost-time">$100: 1 hour 15 minutes (On calendar schedule on my end it would block off an hour and 30 minutes of time, leaving 15 minutes to clean after service)</div>
-<div className="button-wrapper">
-    <button className="price-button">Book</button>
-</div>
-</div>
-<div className="price-wrapper">
-<div className="price-title">THE SENSITIVE SKIN SERENITY</div>
-<div className="price-cost-time">$85: 1 hour (On calendar schedule on my end it would block off an hour and 15 minutes of time, leaving 15 minutes to clean after service)</div>
-<div className="button-wrapper">
-    <button className="price-button">Book</button>
-</div>
-</div>
-<div className="price-wrapper">
-<div className="price-title">ANTI-AGE RADIATE REJUVENATE</div>
-<div className="price-cost-time">$85: 1 hour (On calendar schedule on my end it would block off an hour and 15 minutes of time, leaving 15 minutes to clean after service)</div>
-<div className="button-wrapper">
-    <button className="price-button">Book</button>
-</div>
-</div> */
 }

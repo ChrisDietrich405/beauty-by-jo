@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
-import "../styles/components/sign-in-create-account.scss";
+import "../styles/components/sign-in-create-account-contact.scss";
 import { errorToast, successToast } from "../store/actions/toast";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";

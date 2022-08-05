@@ -19,13 +19,15 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Header({ access_token, add, get }) {
   const dispatch = useDispatch();
-  const { show_appointment_modal, show_service_modal } = useSelector(
+  const { show_appointment_modal } = useSelector(
     (state) => state.auth
   );
 
-  useEffect(async () => {
-    await get();
-  }, []);
+  useEffect(() => {
+    (async() => {
+      await get()
+    })();
+  }, [get]);
 
   useEffect(() => {
     const unsubscribeToastSuccess = subscribe.on(SHOW_SUCCESS, (action) => {
@@ -82,7 +84,7 @@ function Header({ access_token, add, get }) {
             </button>
           )}
           <Link to="/" className="logo-btn">
-            <img src={Logo} />
+            <img src={Logo} alt="Logo" />
           </Link>
 
           <Link to="/contact" className="btn">
