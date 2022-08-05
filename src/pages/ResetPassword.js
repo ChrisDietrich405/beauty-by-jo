@@ -21,6 +21,7 @@ function ResetPassword({ resetPassword, successToast, errorToast }) {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
+
     const unsubscribeAuthSuccess = subscribe.on(RESET_PASSWORD_SUCCESS, () => {
       setSuccess(true);
       successToast("Your password was reseted successfully");
@@ -48,7 +49,7 @@ function ResetPassword({ resetPassword, successToast, errorToast }) {
       unsubscribeAuthSuccess();
       unsubscribeAuthError();
     };
-  }, []);
+  }, [errorToast, history, successToast]);
 
   return (
     <>

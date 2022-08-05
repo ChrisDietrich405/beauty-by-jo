@@ -47,7 +47,7 @@ function SignIn({ access_token, signin, location, successToast, errorToast }) {
       unsubscribeAuthSuccess();
       unsubscribeAuthError();
     };
-  }, []);
+  }, [data, errorToast, history, isBooking, specific_service_id, successToast]);
 
   return (
     <>

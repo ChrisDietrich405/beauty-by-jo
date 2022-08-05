@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 import people from "../assets/data/testimonial-slideshow-data";
 
-// import React, { Component } from "react";
-// import Slider from "react-slick";
-
-import testimonialImage1 from "../assets/images/home4.jpg";
-
-// import "slick-carousel/slick/slick-theme.css";
-// import "slick-carousel/slick/slick.css";
 import "../styles/components/testimonials-slideshow.scss";
 
 const TestimonialSlideShow = () => {
+
   const [index, setIndex] = useState(0);
-  //   const settings = {
-  //     dots: true,
-  //     infinite: true,
-  //     speed: 500,
-  //     slidesToShow: 1,
-  //     slidesToScroll: 1,
-  //     centerMode: true,
-  //   };
+
   return (
     <div className="testimonials-slideshow">
       <section className="section">

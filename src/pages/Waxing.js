@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
@@ -9,8 +9,6 @@ import { display_appointment_modal } from "../store/actions/auth";
 import {
   backService,
   bookService,
-  specificService,
-  setSpecificService,
   change,
 } from "../store/actions/schedule";
 
@@ -20,8 +18,7 @@ import "../styles/components/parallax.scss";
 import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Waxing() {
-  const [isTimeVisible, setIsTimeVisible] = useState(false);
-  const [value, onChange] = useState(new Date());
+  
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -29,6 +26,7 @@ export default function Waxing() {
 
   useEffect(() => {
     dispatch(display_appointment_modal(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleBooking = (service) => {
@@ -42,23 +40,6 @@ export default function Waxing() {
       history.push("/signin");
     }
   };
-
-  const timeArray = [
-    "9:00AM",
-    "9:30AM",
-    "10:00AM",
-    "10:30AM",
-    "11:00AM",
-    "11:30AM",
-    "12:00PM",
-    "1:00PM",
-    "1:30PM",
-    "2:00PM",
-    "2:30PM",
-    "3:00PM",
-    "3:30PM",
-    "4:00PM",
-  ];
 
   return (
     <div className="service-container">

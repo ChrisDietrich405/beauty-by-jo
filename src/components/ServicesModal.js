@@ -15,7 +15,7 @@ function ServicesModal({ label, onClose, index, services }) {
 
   useEffect(() => {
     index();
-  }, []);
+  }, [index]);
 
   return (
     <ModalTemplate onClose={onClose}>

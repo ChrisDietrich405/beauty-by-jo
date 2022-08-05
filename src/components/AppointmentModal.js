@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import { bindActionCreators } from "redux";
 import { connect, useDispatch, useSelector } from "react-redux";
@@ -44,30 +44,18 @@ function AppointmentModal({
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedDateTime, setSelectedDateTime] = useState(null);
 
-  const { serviceName, isBooking, specific_service_id, specific_service } =
+  const { serviceName, isBooking, specific_service } =
     useSelector((state) => state.schedule.schedule);
 
+  /**
+   * Dispatch the actions
+   */
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    index();                  
-    const now = DateTime.now();
-    setSelectedDate(now.toFormat(DATE_FORMAT));
-  }, [index]);
+  /**
+   * Functions
+   */
 
-  useEffect(() => {
-    if (isBooking) {
-      showCurrentModal("appointment");
-      setSpecificService(specific_service.name);
-      setPrice(specific_service.price);
-    }
-
-    if (selectedDate) {
-      verifyAvailability({
-        date: selectedDate,
-      });
-    }
-  }, [selectedDate, isBooking, verifyAvailability, specific_service.name, specific_service.price, specific_service_id]);
 
   const onModalBack = () => {
     if (showServices === true) {
@@ -174,7 +162,7 @@ function AppointmentModal({
     </>
   );
 
-  const showCurrentModal = (state) => {
+  const showCurrentModal = useCallback((state) => {
     switch (state) {
       case "services":
         if (serviceName === "Services") {
@@ -183,7 +171,6 @@ function AppointmentModal({
         setShowServices(false);
         setShowSpecificServices(true);
         dispatch(backService({ back_service: true }));
-
         break;
       case "appointment":
         if (serviceName === "Services") {
@@ -211,7 +198,7 @@ function AppointmentModal({
       default:
         break;
     }
-  };
+  }, [dispatch, serviceName]);
 
   const getSpecificServices = () => {
     const filterServices = services.filter((value) => value.name === service);
@@ -220,6 +207,29 @@ function AppointmentModal({
     }
     return [];
   };
+
+  /**
+   * Use effects
+   */
+  useEffect(() => {
+    index();
+    const now = DateTime.now();
+    setSelectedDate(now.toFormat(DATE_FORMAT));
+  }, [index]);
+
+  useEffect(() => {
+    if (isBooking) {
+      showCurrentModal("appointment");
+      setSpecificService(specific_service.name);
+      setPrice(specific_service.price);
+    }
+
+    if (selectedDate) {
+      verifyAvailability({
+        date: selectedDate,
+      });
+    }
+  }, [selectedDate, isBooking, showCurrentModal, verifyAvailability, specific_service]);
 
   return (
     <ModalTemplate
