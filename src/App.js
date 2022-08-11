@@ -1,5 +1,6 @@
 import { BrowserRouter as Browser, Switch, Route } from "react-router-dom";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
+import {Helmet, HelmetProvider} from "react-helmet-async"
 
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -25,11 +26,9 @@ import Contact from "./pages/Contact";
 import ResetPassword from "./pages/ResetPassword";
 import Navbar2 from "./components/Navbar2";
 
-// JS dependencies
 import "@popperjs/core";
 import "bootstrap/dist/js/bootstrap";
 
-// Styling dependencies
 import "./styles/global.scss";
 import "react-datetime/css/react-datetime.css";
 
@@ -37,13 +36,13 @@ const { store, persistor } = createStore();
 
 function App() {
   return (
+    <HelmetProvider>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <div className="App">
           <Helmet>
             <meta charSet="utf-8" />
             <title>Beauty By Jo</title>
-            <link rel="canonical" href="http://mysite.com/example" />
           </Helmet>
           <Browser>
             <Header />
@@ -69,6 +68,8 @@ function App() {
         </div>
       </PersistGate>
     </Provider>
+
+    </HelmetProvider>
   );
 }
 

@@ -14,10 +14,12 @@ export const get = () => async (dispatch) => {
   try {
     const response = await AuthResource.get();
     dispatch({ type: GET_SUCCESS, payload: response.data });
+    console.log("hello with success")
     return true;
-  } catch (error) {
+  } catch (error){
+    console.log("hello with error")
     dispatch({ type: UNAUTHORIZED });
-    return false;
+    // return false;
   }
 };
 

@@ -1,4 +1,3 @@
-// import { SCHEDULE_SERVICE } from "../actions/auth";
 
 import {
   INDEX_SUCCESS,
@@ -23,7 +22,6 @@ export default function reducer(state = initialState, action) {
       return { ...state, errors: action.payload };
     case VERIFY_AVAILABILITY_SUCCESS:
       return { ...state, availability: action.payload };
-
     default:
       return state;
   }
