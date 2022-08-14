@@ -7,15 +7,15 @@ const apiUrl = process.env.API_URL ? process.env.API_URL : 'http://localhost:300
 const http = axios.create({ baseURL: apiUrl });
 
 http.interceptors.request.use(
-  function (config) {
+  (config) => {
     const state = store.getState();
     if (state.auth.access_token && config && config.headers) {
       config.headers.authorization = `Bearer ${state.auth.access_token}`;
     }
     return config;
   },
-  function (error) {
-    return Promise.reject(error);
+  (error) => {
+    return error;
   }
 );
 
