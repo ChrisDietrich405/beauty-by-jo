@@ -19,7 +19,9 @@ You will also see any lint errors in the console.
 
 Loading Page
 
-![image](https://user-images.githubusercontent.com/70533870/132955620-46ff99b1-8e2b-4eb0-8ea8-7715166fb12e.png)
+![beauty-by-jo-1](https://user-images.githubusercontent.com/70533870/198284015-61f7545c-1a9d-46ab-808d-be3d818e8e94.png)
+
+
 
 Home Page
 
