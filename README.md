@@ -19,7 +19,7 @@ You will also see any lint errors in the console.
 
 Loading Page
 
-![image](../public/images/beauty-by-jo-1)
+![image](../public/images/beauty-by-jo-1.png)
 
 ![image](https://user-images.githubusercontent.com/70533870/132955620-46ff99b1-8e2b-4eb0-8ea8-7715166fb12e.png)
 
