@@ -10,7 +10,6 @@ import ZoomInZoomOut from "../components/ZoomInZoomOut";
 import BeautySupplies from "../assets/images/home5.jpg";
 
 export default function Home() {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,14 +25,15 @@ export default function Home() {
       <div className="about-section">
         <ZoomInZoomOut className="zoom-in-zoom-out" />
         <div className="about-section-definition">
-          <h3>Beauty By Jo Salon</h3>
+          <h3>Beauty By Jo</h3>
           <hr />
           <p>
-            Visit She Brows And Beauty for all of your eyebrow and eyelash
-            needs. When you come to our salon in Philadelphia, we treat you with
-            the same high level of care we would want to receive. Our main goal
-            is for you to leave here feeling more confident with beautiful
-            eyebrows and eyelashes.
+            Visit Beauty by Jo for all your beauty needs! My main goal as your
+            esthetician is to make those who come visit me leave feeling
+            empowered in their own skin. Whether it be a simple brow wax or
+            tailoring a home care regimen to work with your skin, I take pride
+            in creating the most comfortable environment to allow you to enjoy
+            and relax while receiving custom, luxury, treatments.
           </p>
         </div>
       </div>
@@ -45,17 +45,10 @@ export default function Home() {
         >
           <div className="beauty-supplies-container-text">
             {/* <div style={{ height: 400 }}> */}
-            <h1>
-              A Range of Beauty Services To Keep You Looking and Feeling Great
-            </h1>
+            <h1>Specializing in Anuel</h1>
             <p>
-              The trained and experienced beauty experts at She Brows And Beauty
-              LLC offer more than just skill and expertise. Visit our
-              esthetician salon for attentive service that is customized
-              according to your particular requirements. Benefit from practical
-              beauty tips from our qualified estheticians. Treat yourself to top
-              quality beauty products at a fully equipped esthetician salon
-              offering a range of services.
+              Attentive and customized services including skin, brow, & lash
+              treatments, as well as spray tans and make up for any event
             </p>
           </div>
         </Parallax>

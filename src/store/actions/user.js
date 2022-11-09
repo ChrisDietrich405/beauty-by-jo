@@ -31,8 +31,9 @@ export const save = (payload) => async (dispatch) => {
   } catch (error) {
     if(error.response) {
       dispatch({ type: ERROR, payload: error.response.data });
+      throw error.response
     }
-    return false;
+    // return false;
   }
 };
 

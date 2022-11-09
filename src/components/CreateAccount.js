@@ -9,7 +9,6 @@ import "../styles/components/sign-in-create-account-contact.scss";
 import { successToast, errorToast } from "../store/actions/toast";
 
 function CreateAccount({ save, successToast, errorToast }) {
-
   const history = useHistory();
 
   return (
@@ -20,7 +19,8 @@ function CreateAccount({ save, successToast, errorToast }) {
           lastName: "",
           email: "",
           password: "",
-        }}
+          birthday: ""
+         }}
         validate={(values) => {
           const errors = {};
           if (!values.firstName.trim()) {
@@ -44,16 +44,21 @@ function CreateAccount({ save, successToast, errorToast }) {
         }}
         onSubmit={(values, { setSubmitting }) => {
           save(values)
-          .then(res => {
-            if(res) {
-              successToast("Your account has been created. Now you can sign in.");
-              history.push("/signin");
-            } else {
-              errorToast("Unable to create your account. Try again.");
-            }
-          })
+            .then((res) => {
+              console.log(res);
+              if (res) {
+                successToast(
+                  "Your account has been created. Now you can sign in."
+                );
+                history.push("/signin");
+              }
+            })
+            .catch((error) => {
+              console.log(error)
+              errorToast(error.data.message);
+            });
         }}
-      >
+      > 
         {({
           values,
           errors,
@@ -119,6 +124,22 @@ function CreateAccount({ save, successToast, errorToast }) {
                   onBlur={handleBlur}
                 />
                 <ErrorMessage name="password">
+                  {(message) => <div className="error-message">{message}</div>}
+                </ErrorMessage>
+              </label>
+              <label htmlFor="password">
+                Birthday
+                <input
+                  type="date"
+                  min="1940-01-01"
+                  
+                  name="birthday"
+                  id="birthday"
+                  value={values.birthday}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                <ErrorMessage name="birthday">
                   {(message) => <div className="error-message">{message}</div>}
                 </ErrorMessage>
               </label>
