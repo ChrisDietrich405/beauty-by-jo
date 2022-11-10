@@ -19,8 +19,8 @@ function CreateAccount({ save, successToast, errorToast }) {
           lastName: "",
           email: "",
           password: "",
-          birthday: ""
-         }}
+          birthday: "",
+        }}
         validate={(values) => {
           const errors = {};
           if (!values.firstName.trim()) {
@@ -54,11 +54,11 @@ function CreateAccount({ save, successToast, errorToast }) {
               }
             })
             .catch((error) => {
-              console.log(error)
+              console.log(error);
               errorToast(error.data.message);
             });
         }}
-      > 
+      >
         {({
           values,
           errors,
@@ -132,7 +132,7 @@ function CreateAccount({ save, successToast, errorToast }) {
                 <input
                   type="date"
                   min="1940-01-01"
-                  
+                  max="2011-01-01"
                   name="birthday"
                   id="birthday"
                   value={values.birthday}
