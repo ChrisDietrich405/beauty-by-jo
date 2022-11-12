@@ -45,7 +45,7 @@ export default function Home() {
         >
           <div className="beauty-supplies-container-text">
             {/* <div style={{ height: 400 }}> */}
-            <h1>Specializing in Anuel</h1>
+            <h1>Specializing in:</h1>
             <p>
               Attentive and customized services including skin, brow, & lash
               treatments, as well as spray tans and make up for any event
