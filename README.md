@@ -37,6 +37,7 @@ Modal
 
 
 
+<<<<<<< HEAD
 >>>>>>> 393df19ac11efb4027d59c6d8663ee0e09e40a27
 Home Page
 
@@ -53,3 +54,5 @@ Slider
 Modal 
 
 ![beauty-by-jo-4](https://user-images.githubusercontent.com/70533870/198284092-af6e0cd1-030c-49c6-bddb-fe6c5c4a1346.png)
+=======
+>>>>>>> 97a7679e14bb627f7de43d3055e6dd54d3ccf0f1
