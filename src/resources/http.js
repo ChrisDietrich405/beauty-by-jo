@@ -17,6 +17,8 @@ http.interceptors.request.use(
     return config;
   },
   (error) => {
+    // Only in the future if you want to catch this error using this condition
+    // if (error.response.status)
     return error;
   }
 );
