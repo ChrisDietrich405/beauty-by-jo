@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+
 import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ToastContainer, toast } from "react-toastify";
@@ -18,15 +19,15 @@ import { SCROLL_TOP, SHOW_ERROR, SHOW_SUCCESS } from "../store/actions/toast";
 import "react-toastify/dist/ReactToastify.css";
 
 function Header({ access_token, add, get }) {
+
   const dispatch = useDispatch();
+
   const { show_appointment_modal } = useSelector(
     (state) => state.auth
   );
 
   useEffect(() => {
-    (async() => {
-      await get()
-    })();
+    get();
   }, [get]);
 
   useEffect(() => {
