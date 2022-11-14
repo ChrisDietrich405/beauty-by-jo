@@ -25,7 +25,7 @@ export default function ServicesList({ label, services, className, onSelect }) {
               onSelect(service);
             }}
           >
-            <span>{service.name}</span> &nbsp;
+            <span style={{color: "black"}}>{service.name}</span> &nbsp;
             {service.min_price && service.max_price ? (
               <span>&nbsp; TBD</span>
             ) : (

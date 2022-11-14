@@ -44,8 +44,9 @@ function AppointmentModal({
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedDateTime, setSelectedDateTime] = useState(null);
 
-  const { serviceName, isBooking, specific_service } =
-    useSelector((state) => state.schedule.schedule);
+  const { serviceName, isBooking, specific_service } = useSelector(
+    (state) => state.schedule.schedule
+  );
 
   /**
    * Dispatch the actions
@@ -55,7 +56,6 @@ function AppointmentModal({
   /**
    * Functions
    */
-
 
   const onModalBack = () => {
     if (showServices === true) {
@@ -127,11 +127,19 @@ function AppointmentModal({
     <>
       <div className="modal-body">
         <h4>We're almost there!</h4>
-        <p>
-          Your {specificService} appointment is set for{" "}
-          {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-          The total cost will be ${price}. Thank you.
-        </p>
+        {specificService === "Make up session" ? (
+          <p>
+            Your {specificService} appointment is set for{" "}
+            {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+            Please finalize pricing with Jordan. Thank you.
+          </p>
+        ) : (
+          <p>
+            Your {specificService} appointment is set for{" "}
+            {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+            The total cost will be ${price}. Thank you.
+          </p>
+        )}
       </div>
       <button
         className="confirm-button"
@@ -146,12 +154,20 @@ function AppointmentModal({
   const AppointmentConfirmation = () => (
     <>
       <div className="modal-body">
-        <h4>Thank you for your business!</h4>
-        <p>
-          Your {specificService} appointment has been scheduled for{" "}
-          {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-          The cost will be ${price}.
-        </p>
+        <h4>Thank you!</h4>
+        {specificService === "Make up session" ? (
+           <p>
+           Your {specificService} appointment has been scheduled for{" "}
+           {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+           Please finalize pricing with Jordan.
+         </p>
+        ) : (
+          <p>
+            Your {specificService} appointment has been scheduled for{" "}
+            {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+            The cost will be ${price}.
+          </p>
+        )}
       </div>
       <button
         className="another-appointment-button"
@@ -162,43 +178,46 @@ function AppointmentModal({
     </>
   );
 
-  const showCurrentModal = useCallback((state) => {
-    switch (state) {
-      case "services":
-        if (serviceName === "Services") {
-          dispatch(display_appointment_modal(false));
-        }
-        setShowServices(false);
-        setShowSpecificServices(true);
-        dispatch(backService({ back_service: true }));
-        break;
-      case "appointment":
-        if (serviceName === "Services") {
-          dispatch(backService({ back_service: false }));
-        }
-        setSavingAppointment(false);
-        setShowSpecificServices(false);
-        setShowServices(false);
-        setShowAppointmentCal(true);
+  const showCurrentModal = useCallback(
+    (state) => {
+      switch (state) {
+        case "services":
+          if (serviceName === "Services") {
+            dispatch(display_appointment_modal(false));
+          }
+          setShowServices(false);
+          setShowSpecificServices(true);
+          dispatch(backService({ back_service: true }));
+          break;
+        case "appointment":
+          if (serviceName === "Services") {
+            dispatch(backService({ back_service: false }));
+          }
+          setSavingAppointment(false);
+          setShowSpecificServices(false);
+          setShowServices(false);
+          setShowAppointmentCal(true);
 
-        break;
-      case "preconfirmation":
-        dispatch(backService({ back_service: true }));
-        setShowAppointmentCal(false);
-        setShowPreconfirmation(true);
-        break;
-      case "confirmation":
-        setShowPreconfirmation(false);
-        setShowAppointmentConfirmation(true);
-        break;
-      case "additionalAppointment":
-        setShowAppointmentConfirmation(false);
-        setShowServices(true);
-        break;
-      default:
-        break;
-    }
-  }, [dispatch, serviceName]);
+          break;
+        case "preconfirmation":
+          dispatch(backService({ back_service: true }));
+          setShowAppointmentCal(false);
+          setShowPreconfirmation(true);
+          break;
+        case "confirmation":
+          setShowPreconfirmation(false);
+          setShowAppointmentConfirmation(true);
+          break;
+        case "additionalAppointment":
+          setShowAppointmentConfirmation(false);
+          setShowServices(true);
+          break;
+        default:
+          break;
+      }
+    },
+    [dispatch, serviceName]
+  );
 
   const getSpecificServices = () => {
     const filterServices = services.filter((value) => value.name === service);
@@ -229,7 +248,13 @@ function AppointmentModal({
         date: selectedDate,
       });
     }
-  }, [selectedDate, isBooking, showCurrentModal, verifyAvailability, specific_service]);
+  }, [
+    selectedDate,
+    isBooking,
+    showCurrentModal,
+    verifyAvailability,
+    specific_service,
+  ]);
 
   return (
     <ModalTemplate
