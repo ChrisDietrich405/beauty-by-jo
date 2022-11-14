@@ -25,8 +25,19 @@ export default function ServicesList({ label, services, className, onSelect }) {
               onSelect(service);
             }}
           >
-            {service.name} &nbsp; {service.price && <span>$</span>}{" "}
-            {service.price}
+            <span>{service.name}</span> &nbsp;
+            {service.min_price && service.max_price ? (
+              <span>&nbsp; TBD</span>
+            ) : (
+              <>
+                {service.price
+                  ? new Intl.NumberFormat("en-EN", {
+                      style: "currency",
+                      currency: "USD",
+                    }).format(service.price)
+                  : ""}
+              </>
+            )}
           </button>
         ))}
       </div>
