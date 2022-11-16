@@ -56,6 +56,63 @@ export default function Waxing() {
       </Parallax>
       <div className="price-content">
         <div className="price">
+        <div className="price-wrapper">
+            <div className="price-title">
+              <h5>New Brazilian wax client or returning client after 5+ weeks</h5>
+            </div>
+            <div className="price-cost-time">
+              <p>
+                <AiOutlineDollarCircle /> $65
+              </p>
+              <p>
+                <BiTimeFive /> 60min
+              </p>
+            </div>
+            <div className="button-wrapper">
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 7,
+                    name: "New Brazilian wax client or returning client after 5+ weeks",
+                    price: "65.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
+            </div>
+          </div>
+          <div className="price-wrapper">
+            <div className="price-title">
+              <h5>Deluxe Vajacial</h5>
+            </div>
+            <div className="price-cost-time">
+              <p>
+                <AiOutlineDollarCircle /> $100
+              </p>
+              <p>
+                <BiTimeFive /> 1hr 20min
+              </p>
+            </div>
+            <div className="button-wrapper">
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 7,
+                    name: "deluxe vajacial",
+                    price: "100.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
+            </div>
+          </div>
+          
           <div className="price-wrapper">
             <div className="price-title">
               <h5>FULL LEG</h5>
@@ -177,7 +234,7 @@ export default function Waxing() {
                 <AiOutlineDollarCircle /> $20
               </p>
               <p>
-                <BiTimeFive /> 1h
+                <BiTimeFive /> 15m
               </p>
             </div>
             <div className="button-wrapper">

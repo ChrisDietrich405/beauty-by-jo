@@ -133,6 +133,34 @@ export default function Eyebrow() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
+              <h5>BROW LAMI TRIO</h5>
+            </div>
+            <div className="price-cost-time">
+              <p>
+                <AiOutlineDollarCircle /> $70
+              </p>
+              <p>
+                <BiTimeFive /> 1hr 15minutes
+              </p>
+            </div>
+            <div className="button-wrapper">
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 6,
+                    name: "brow lami trio",
+                    price: "70.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
+            </div>
+          </div>
+          <div className="price-wrapper">
+            <div className="price-title">
               <h5>BROW LAMINATION + WAX OR TINT</h5>
             </div>
             <div className="price-cost-time">
