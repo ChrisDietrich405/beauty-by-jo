@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="footer-contact">
             <p>
               <AiFillPhone size={20} />
-              &nbsp; (410)292-4710
+              &nbsp; (410) 292-4710
             </p>
             <p>
               <AiTwotoneMail size={20} />
