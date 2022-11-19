@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { bindActionCreators } from "redux";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
+import emailjs from "@emailjs/browser";
 
 import { change, save, backService } from "../store/actions/schedule";
 import { index } from "../store/actions/service";
@@ -48,6 +49,12 @@ function AppointmentModal({
     (state) => state.schedule.schedule
   );
 
+  const { user } = useSelector((state) => state.user.user)
+
+  useEffect(() => {
+    console.log(user)
+  },[user])
+
   /**
    * Dispatch the actions
    */
@@ -86,7 +93,34 @@ function AppointmentModal({
         status: true,
       });
       showCurrentModal("confirmation");
+      var templateParams = {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        message: "hello world"
+      };
+  
+      emailjs
+        .send(
+          "service_y7fq1o3",
+          "template_89dj9rt",
+          templateParams,
+          "Y8tiOkzf-c7ZDYAZy"
+        )
+        .then(
+          function (response) {
+            // setFirstName("");
+            // setLastName("");
+            // setEmail("");
+            // setMessage("");
+            // successToast("message sent");
+          },
+          function (error) {
+            // errorToast("message wasn't sent");
+          }
+        );
     }
+
   };
 
   const DatePicker = () => {
@@ -129,15 +163,15 @@ function AppointmentModal({
         <h4>We're almost there!</h4>
         {specificService === "Make up session" ? (
           <p>
-            Your {specificService} appointment is set for{" "}
-            {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-            Please finalize pricing with Jordan. Thank you.
+            Your <strong>{specificService.toLowerCase()}</strong> appointment is
+            set for {DateTime.fromISO(selectedDate).toLocaleString()} at{" "}
+            {selectedTime}. Please finalize pricing with Jordan. Thank you.
           </p>
         ) : (
           <p>
-            Your {specificService} appointment is set for{" "}
-            {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-            The total cost will be ${price}. Thank you.
+            Your <strong>{specificService.toLowerCase()}</strong> appointment is
+            set for {DateTime.fromISO(selectedDate).toLocaleString()} at{" "}
+            {selectedTime}. The total cost will be ${price}. Thank you.
           </p>
         )}
       </div>
@@ -156,14 +190,15 @@ function AppointmentModal({
       <div className="modal-body">
         <h4>Thank you!</h4>
         {specificService === "Make up session" ? (
-           <p>
-           Your {specificService} appointment has been scheduled for{" "}
-           {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
-           Please finalize pricing with Jordan.
-         </p>
+          <p>
+            Your <strong>{specificService.toLowerCase()}</strong> appointment
+            has been scheduled for{" "}
+            {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
+            Please finalize pricing with Jordan.
+          </p>
         ) : (
           <p>
-            Your {specificService} appointment has been scheduled for{" "}
+            Your <strong>{specificService.toLowerCase()}</strong> appointment has been scheduled for{" "}
             {DateTime.fromISO(selectedDate).toLocaleString()} at {selectedTime}.
             The cost will be ${price}.
           </p>

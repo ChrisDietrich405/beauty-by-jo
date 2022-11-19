@@ -93,7 +93,7 @@ function SignIn({ access_token, signin, location, successToast, errorToast }) {
             <form onSubmit={handleSubmit}>
               <h2>Log in</h2>
               <label htmlFor="username">
-                username
+                email
                 <input
                   type="text"
                   name="username"

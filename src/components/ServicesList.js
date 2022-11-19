@@ -10,7 +10,9 @@ export default function ServicesList({ label, services, className, onSelect }) {
   const dispatch = useDispatch();
   return (
     <div className={classNames("title", className)}>
-      <h2>{label}</h2>
+      <h3>
+        <strong>{label}</strong>
+      </h3>
       <hr />
       <div className="link-container">
         {services.map((service) => (
@@ -25,7 +27,7 @@ export default function ServicesList({ label, services, className, onSelect }) {
               onSelect(service);
             }}
           >
-            <span style={{color: "black"}}>{service.name}</span> &nbsp;
+            <span style={{ color: "black" }}>{service.name}</span> &nbsp;
             {service.min_price && service.max_price ? (
               <span>&nbsp; TBD</span>
             ) : (
