@@ -6,7 +6,9 @@ const apiUrl = process.env.API_URL
   ? process.env.API_URL
   : "http://localhost:3003";
 
-const http = axios.create({ baseURL: apiUrl });
+const http = axios.create({
+  baseURL: apiUrl
+});
 
 http.interceptors.request.use(
   (config) => {
@@ -15,11 +17,6 @@ http.interceptors.request.use(
       config.headers.authorization = `Bearer ${state.auth.access_token}`;
     }
     return config;
-  },
-  (error) => {
-    // Only in the future if you want to catch this error using this condition
-    // if (error.response.status)
-    return error;
   }
 );
 
