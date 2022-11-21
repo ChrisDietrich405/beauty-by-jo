@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import { bindActionCreators } from "redux";
 import { connect, useDispatch, useSelector } from "react-redux";
@@ -45,15 +45,14 @@ function AppointmentModal({
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedDateTime, setSelectedDateTime] = useState(null);
 
+  /**
+   * Redux states
+   */
   const { serviceName, isBooking, specific_service } = useSelector(
     (state) => state.schedule.schedule
   );
 
-  const { user } = useSelector((state) => state.user.user)
-
-  useEffect(() => {
-    console.log(user)
-  },[user])
+  const { auth } = useSelector((state) => state)
 
   /**
    * Dispatch the actions
@@ -63,7 +62,6 @@ function AppointmentModal({
   /**
    * Functions
    */
-
   const onModalBack = () => {
     if (showServices === true) {
       setShowAppointmentConfirmation(true);
@@ -83,23 +81,43 @@ function AppointmentModal({
     }
   };
 
+  const templateMessage = (
+    serviceName,
+    date,
+    time,
+    price
+  ) => {
+    return (
+      <>
+        Your <strong> {serviceName.toLowerCase()}</strong> appointment
+        is set for {DateTime.fromISO(date).toLocaleString()} at {time}.
+        {(typeof price == 'undefined' || price == null ? 'Please finalize pricing with Jordan. Thank you.' : `The total cost will be ${price}. Thank you.`)}
+      </>
+    )
+  }
+
   const handleSave = () => {
     if (selectedDateTime) {
+
       setSavingAppointment(true);
+
       save({
         ...schedule,
         id: null,
         date: selectedDateTime,
         status: true,
       });
+
       showCurrentModal("confirmation");
+
       var templateParams = {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        message: "hello world"
+        firstName: auth.user.firstName,
+        lastName: auth.user.lastName,
+        email: auth.user.email,
+        message: `Your ${specificService.toLowerCase()} appointment is set for ${DateTime.fromISO(selectedDate).toLocaleString()} at ${selectedTime}. 
+        ${(typeof price == 'undefined' || price == null ? 'Please finalize pricing with Jordan. Thank you.' : `The total cost will be ${price}. Thank you.`)}`
       };
-  
+
       emailjs
         .send(
           "service_y7fq1o3",
@@ -109,14 +127,10 @@ function AppointmentModal({
         )
         .then(
           function (response) {
-            // setFirstName("");
-            // setLastName("");
-            // setEmail("");
-            // setMessage("");
-            // successToast("message sent");
+            // console.log('Email sent')
           },
           function (error) {
-            // errorToast("message wasn't sent");
+            // console.log('Email not sent')
           }
         );
     }
@@ -163,15 +177,11 @@ function AppointmentModal({
         <h4>We're almost there!</h4>
         {specificService === "Make up session" ? (
           <p>
-            Your <strong>{specificService.toLowerCase()}</strong> appointment is
-            set for {DateTime.fromISO(selectedDate).toLocaleString()} at{" "}
-            {selectedTime}. Please finalize pricing with Jordan. Thank you.
+            {templateMessage(specificService, selectedDate, selectedTime)}
           </p>
         ) : (
           <p>
-            Your <strong>{specificService.toLowerCase()}</strong> appointment is
-            set for {DateTime.fromISO(selectedDate).toLocaleString()} at{" "}
-            {selectedTime}. The total cost will be ${price}. Thank you.
+            {templateMessage(specificService, selectedDate, selectedTime, price)}
           </p>
         )}
       </div>
