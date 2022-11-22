@@ -41,6 +41,10 @@ export const specificService = (payload) => (dispatch) => {
   dispatch({ type: SPECIFIC_SERVICE_ID, payload });
 };
 
+export const setSpecificServiceId = (payload) => (dispatch) => {
+  dispatch({ type: SPECIFIC_SERVICE_ID, payload });
+};
+
 export const setSpecificService = (payload) => (dispatch) => {
   dispatch({ type: SPECIFIC_SERVICE, payload });
 };
@@ -51,4 +55,8 @@ export const backService = (payload) => (dispatch) => {
 
 export const setServiceModalType = (payload) => (dispatch) => {
   dispatch({ type: CHANGE_SERVICE_MODAL_TYPE, payload });
+};
+
+export const setError = (payload) => (dispatch) => {
+  dispatch({ type: ERROR, payload });
 };

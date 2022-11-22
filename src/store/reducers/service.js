@@ -1,4 +1,5 @@
 
+import { KIND_SERVICE } from "../actions/schedule";
 import {
   INDEX_SUCCESS,
   ERROR,
@@ -18,6 +19,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         services: action.payload,
       };
+    case KIND_SERVICE:
+      return { ...state }
     case ERROR:
       return { ...state, errors: action.payload };
     case VERIFY_AVAILABILITY_SUCCESS:
