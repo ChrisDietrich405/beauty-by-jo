@@ -28,7 +28,7 @@ export default function reducer(state = initialState, action) {
     case SIGNIN_SUCCESS:
       return {
         ...state,
-        user: { ...state.user, ...action.payload.user },
+        user: { ...action.payload.user },
         access_token: action.payload.access_token,
         signin_success: action.payload.success,
       };

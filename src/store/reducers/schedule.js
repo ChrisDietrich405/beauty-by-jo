@@ -32,22 +32,23 @@ export default function reducer(state = initialState, action) {
     case ADD:
       return initialState;
     case CHANGE:
+      return { ...state, schedule: { ...state.schedule, ...action.payload } };
     case BOOK_SERVICE:
+      return { ...state, schedule: { ...state.schedule, ...action.payload } };
     case KIND_SERVICE:
+      return { ...state, schedule: { ...state.schedule, ...action.payload } };
     case SPECIFIC_SERVICE:
+      return { ...state, schedule: { ...state.schedule, specific_service: action.payload } };
     case SPECIFIC_SERVICE_ID:
+      return { ...state, schedule: { ...state.schedule, specific_service_id: action.payload } };
     case BACK_SERVICE:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };
     case SAVE_SUCCESS:
       return { ...state, schedule: { ...state.schedule, ...action.payload } };
     case CHANGE_SERVICE_MODAL_TYPE:
-      return {
-        ...state,
-        schedule: { ...state.schedule, type: action.payload },
-      };
+      return { ...state, schedule: { ...state.schedule, type: action.payload } };
     case ERROR:
       return { ...state, error: action.payload };
-
     default:
       return state;
   }

@@ -45,7 +45,6 @@ function CreateAccount({ save, successToast, errorToast }) {
         onSubmit={(values, { setSubmitting }) => {
           save(values)
             .then((res) => {
-              console.log(res);
               if (res) {
                 successToast(
                   "Your account has been created. Now you can sign in."
@@ -54,7 +53,6 @@ function CreateAccount({ save, successToast, errorToast }) {
               }
             })
             .catch((error) => {
-              console.log(error);
               errorToast(error.data.message);
             });
         }}
