@@ -5,7 +5,12 @@ import { connect, useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
 import emailjs from "@emailjs/browser";
 
-import { change, save, backService } from "../store/actions/schedule";
+import {
+  change,
+  save,
+  backService
+} from "../store/actions/schedule";
+
 import { index } from "../store/actions/service";
 import { verifyAvailability } from "../store/actions/service";
 
@@ -15,6 +20,7 @@ import TimeList from "./TimeList";
 
 import "../styles/components/modal.scss";
 import { display_appointment_modal } from "../store/actions/auth";
+import { toast } from "react-toastify";
 
 const DATE_FORMAT = "yyyy-MM-dd";
 
@@ -33,8 +39,7 @@ function AppointmentModal({
   const [showSpecificServices, setShowSpecificServices] = useState(false);
   const [showAppointmentCal, setShowAppointmentCal] = useState(false);
   const [showPreconfirmation, setShowPreconfirmation] = useState(false);
-  const [showAppointmentConfirmation, setShowAppointmentConfirmation] =
-    useState(false);
+  const [showAppointmentConfirmation, setShowAppointmentConfirmation] = useState(false);
   const [savingAppointment, setSavingAppointment] = useState(false);
 
   const [service, setService] = useState("");
@@ -51,6 +56,8 @@ function AppointmentModal({
   const { serviceName, isBooking, specific_service } = useSelector(
     (state) => state.schedule.schedule
   );
+
+  const scheduleReduxState = useSelector(state => state.schedule);
 
   const { auth } = useSelector((state) => state)
 
@@ -97,44 +104,68 @@ function AppointmentModal({
   }
 
   const handleSave = () => {
-    if (selectedDateTime) {
-
-      setSavingAppointment(true);
-
-      save({
-        ...schedule,
-        id: null,
-        date: selectedDateTime,
-        status: true,
-      });
-
-      showCurrentModal("confirmation");
-
-      var templateParams = {
-        firstName: auth.user.firstName,
-        lastName: auth.user.lastName,
-        email: auth.user.email,
-        message: `Your ${specificService.toLowerCase()} appointment is set for ${DateTime.fromISO(selectedDate).toLocaleString()} at ${selectedTime}. 
-        ${(typeof price == 'undefined' || price == null ? 'Please finalize pricing with Jordan. Thank you.' : `The total cost will be ${price}. Thank you.`)}`
-      };
-
-      emailjs
-        .send(
-          "service_y7fq1o3",
-          "template_89dj9rt",
-          templateParams,
-          "Y8tiOkzf-c7ZDYAZy"
-        )
-        .then(
-          function (response) {
-            // console.log('Email sent')
-          },
-          function (error) {
-            // console.log('Email not sent')
-          }
-        );
+    if (!selectedDateTime) {
+      toast.error('First, select date and time.');
+      return;
     }
 
+    /**
+       * Local state
+       */
+    setSavingAppointment(true);
+
+    /**
+     * Trigger the save function on redux - state
+     */
+    const savePayload = {
+      ...schedule,
+      id: null,
+      date: selectedDateTime,
+      status: true,
+    };
+
+    save(savePayload);
+
+    /**
+     * Check if the scheduling action had success
+     */
+    if (scheduleReduxState && scheduleReduxState.error && scheduleReduxState.error.statusCode === 400) {
+      toast.error('Error on saving your appointment. Try again in a few minutes.');
+      setSavingAppointment(false);
+      return;
+    }
+
+    /**
+     * Then send the email
+     */
+    var templateParams = {
+      firstName: auth.user.firstName,
+      lastName: auth.user.lastName,
+      email: auth.user.email,
+      message: `Your ${specificService.toLowerCase()} appointment is set for ${DateTime.fromISO(selectedDate).toLocaleString()} at ${selectedTime}. 
+      ${(typeof price == 'undefined' || price == null ? 'Please finalize pricing with Jordan. Thank you.' : `The total cost will be ${price}. Thank you.`)}`
+    };
+
+    emailjs
+      .send(
+        "service_y7fq1o3",
+        "template_89dj9rt",
+        templateParams,
+        "Y8tiOkzf-c7ZDYAZy"
+      )
+      .then(
+        function (response) {
+          // console.log('Email sent')
+        },
+        function (error) {
+          // console.log('Email not sent')
+        }
+      );
+
+    /**
+     * The confirmation
+     */
+    showCurrentModal("confirmation");
   };
 
   const DatePicker = () => {
@@ -242,7 +273,6 @@ function AppointmentModal({
           setShowSpecificServices(false);
           setShowServices(false);
           setShowAppointmentCal(true);
-
           break;
         case "preconfirmation":
           dispatch(backService({ back_service: true }));
@@ -252,6 +282,7 @@ function AppointmentModal({
         case "confirmation":
           setShowPreconfirmation(false);
           setShowAppointmentConfirmation(true);
+          setShowAppointmentCal(false);
           break;
         case "additionalAppointment":
           setShowAppointmentConfirmation(false);
@@ -260,8 +291,7 @@ function AppointmentModal({
         default:
           break;
       }
-    },
-    [dispatch, serviceName]
+    }, [dispatch, serviceName]
   );
 
   const getSpecificServices = () => {
@@ -283,9 +313,9 @@ function AppointmentModal({
 
   useEffect(() => {
     if (isBooking) {
-      showCurrentModal("appointment");
       setSpecificService(specific_service.name);
       setPrice(specific_service.price);
+      showCurrentModal("appointment");
     }
 
     if (selectedDate) {
@@ -317,6 +347,7 @@ function AppointmentModal({
           }}
         />
       )}
+
       {showSpecificServices && (
         <ServicesList
           className="specific"
@@ -330,7 +361,8 @@ function AppointmentModal({
           }}
         />
       )}
-      {showAppointmentCal && <DatePicker />}
+
+      {showAppointmentCal && !showAppointmentConfirmation && (<DatePicker />)}
       {showPreconfirmation && <PreConfirmation />}
       {showAppointmentConfirmation && <AppointmentConfirmation />}
     </ModalTemplate>
@@ -346,6 +378,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ index, change, save, verifyAvailability }, dispatch);
+  bindActionCreators({
+    index, change, save, verifyAvailability
+  }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentModal);
