@@ -256,6 +256,7 @@ function AppointmentModal({
 
   const showCurrentModal = useCallback(
     (state) => {
+      console.log(state)
       switch (state) {
         case "services":
           if (serviceName === "Services") {
