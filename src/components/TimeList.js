@@ -9,6 +9,7 @@ function TimeList({ onSelectTime, availability }) {
     <div className="time-list">
       <div className="time-list-button">
         {availability.map(({ Date, available }) => {
+          
           return (
             <button
               key={Date}
