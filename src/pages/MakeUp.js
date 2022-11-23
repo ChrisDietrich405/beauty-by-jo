@@ -6,11 +6,7 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
-import {
-  bookService,
-  change,
-  backService,
-} from "../store/actions/schedule";
+import { bookService, change, backService } from "../store/actions/schedule";
 
 import "../styles/pages/make-up.scss";
 import "../styles/components/parallax.scss";
@@ -18,7 +14,6 @@ import "../styles/components/parallax.scss";
 import BeautySupplies from "../assets/images/makeup.jpg";
 
 export default function MakeUp() {
-  
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -71,6 +66,32 @@ export default function MakeUp() {
                     id: 1,
                     name: "Make up consultation",
                     price: "50.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
+            </div>
+          </div>
+          <div className="price-wrapper">
+            <h5 className="price-title">MAKE UP SESSION</h5>
+            <div className="price-cost-time">
+              <p>
+                <AiOutlineDollarCircle /> TBD
+              </p>
+              <p>
+                <BiTimeFive /> 2 hours
+              </p>
+            </div>
+            <div className="button-wrapper">
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 1,
+                    name: "Make up session",
+                    price: "TBD",
                     status: true,
                   })
                 }

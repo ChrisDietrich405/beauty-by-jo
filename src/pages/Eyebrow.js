@@ -6,11 +6,7 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
-import {
-  backService,
-  bookService,
-  change,
-} from "../store/actions/schedule";
+import { backService, bookService, change } from "../store/actions/schedule";
 
 import FAQ from "../components/FAQ";
 
@@ -20,7 +16,6 @@ import "../styles/components/parallax.scss";
 import EyebrowThreading from "../assets/images/eyebrow-threading2.jpg";
 
 export default function Eyebrow() {
-
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -46,7 +41,7 @@ export default function Eyebrow() {
   const questions = [
     {
       id: 1,
-      title: "What is brow lamination?",
+      title: "What is ?",
       info: [
         "Brow Lamination is a chemical process that softens the keratin bonds and the hair follicle. This            allows me to create a new shape, playing with the brow hairs to create a thicker, and more structured       look. Whether you like them fluffy or more defined, this service is great for anyone looking to step            up their brow game.",
       ],
@@ -120,8 +115,36 @@ export default function Eyebrow() {
                 onClick={() =>
                   handleBooking({
                     id: 4,
-                    name: "brow lamination",
+                    name: "Brow lamination",
                     price: "50.00",
+                    status: true,
+                  })
+                }
+                className="price-button"
+              >
+                Book
+              </button>
+            </div>
+          </div>
+          <div className="price-wrapper">
+            <div className="price-title">
+              <h5>BROW LAMI TRIO</h5>
+            </div>
+            <div className="price-cost-time">
+              <p>
+                <AiOutlineDollarCircle /> $70
+              </p>
+              <p>
+                <BiTimeFive /> 1hr 15minutes
+              </p>
+            </div>
+            <div className="button-wrapper">
+              <button
+                onClick={() =>
+                  handleBooking({
+                    id: 6,
+                    name: "Brow lami trio",
+                    price: "70.00",
                     status: true,
                   })
                 }
@@ -148,7 +171,7 @@ export default function Eyebrow() {
                 onClick={() =>
                   handleBooking({
                     id: 6,
-                    name: "brow lamination wax or tint",
+                    name: "Brow lamination wax or tint",
                     price: "60.00",
                     status: true,
                   })
@@ -176,7 +199,7 @@ export default function Eyebrow() {
                 onClick={() =>
                   handleBooking({
                     id: 5,
-                    name: "brow lamination wax and tint",
+                    name: "Brow lamination wax and tint",
                     price: "70.00",
                     status: true,
                   })

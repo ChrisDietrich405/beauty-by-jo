@@ -20,7 +20,7 @@ function ForgotPassword({ forgotPassword, successToast, errorToast }) {
   useEffect(() => {
     const unsubscribeAuthSuccess = subscribe.on(FORGOT_PASSWORD_SUCCESS, () => {
       successToast(
-        "you will receive an email with details on how to reset your password"
+        "You will receive an email with details on how to reset your password"
       );
       // TODO: Execute Success Action, for example, show a success message and redirect to the protected page
     });

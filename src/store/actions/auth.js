@@ -25,7 +25,11 @@ export const signin = (payload) => async (dispatch) => {
     const response = await AuthResource.post(payload);
     dispatch({ type: SIGNIN_SUCCESS, payload: response.data });
   } catch (error) {
-    dispatch({ type: ERROR, payload: error.response.data });
+    if(error && error.response.data && error.response.data.message) {
+      dispatch({ type: ERROR, payload: error.response.data.message });
+    }
+    
+    dispatch({ type: ERROR, payload: 'Error' });
   }
 };
 
