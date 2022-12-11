@@ -1,7 +1,8 @@
 # beauty-by-jo
-
-This is a website built for a salon, my first freelance job 
-This project includes Redux, a couple of outside libraries and SASS
+This was my first freelance job. Using Redux for state management
+and creating the modals were the biggest challenges. The app
+includes the slick-carousel library for the slideshow and axios
+for fetching apis.
 
 ## How To Run This Project
 
