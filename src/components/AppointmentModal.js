@@ -50,9 +50,8 @@ function AppointmentModal({
   /**
    * Redux states
    */
-  const { serviceName, isBooking, specific_service } = useSelector(
-    (state) => state.schedule.schedule
-  );
+  const { serviceName, isBooking, specific_service, specific_service_id } =
+    useSelector((state) => state.schedule.schedule);
 
   const scheduleReduxState = useSelector((state) => state.schedule);
 
@@ -298,6 +297,7 @@ function AppointmentModal({
         case "additionalAppointment":
           setShowAppointmentConfirmation(false);
           setShowServices(true);
+          setShowAppointmentCal(false);
           break;
         default:
           break;
@@ -332,6 +332,7 @@ function AppointmentModal({
 
     if (selectedDate) {
       verifyAvailability({
+        id: specific_service_id,
         date: selectedDate,
       });
     }
@@ -341,6 +342,7 @@ function AppointmentModal({
     showCurrentModal,
     verifyAvailability,
     specific_service,
+    specific_service_id,
   ]);
 
   return (

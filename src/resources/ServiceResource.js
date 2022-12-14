@@ -6,7 +6,7 @@ export default class ServiceResource {
   static index(data) {
     return http.get(ENDPOINT, data);
   }
-  static verifyAvailability(data) {
-    return http.get(ENDPOINT + "/verifyAvailability", { params: data });
+  static verifyAvailability( data ) {  
+    return http.get(ENDPOINT + "/verifyAvailability", { params: data } );
   }
 }
