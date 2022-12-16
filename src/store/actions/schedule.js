@@ -11,6 +11,7 @@ export const SPECIFIC_SERVICE_ID = "SPECIFIC_SERVICE_ID";
 export const SPECIFIC_SERVICE = "SPECIFIC_SERVICE";
 export const BACK_SERVICE = "BACK_SERVICE";
 export const CHANGE_SERVICE_MODAL_TYPE = "CHANGE_SERVICE_MODAL_TYPE";
+export const SEND_EMAIL = "SEND_EMAIL"
 
 export const add = () => (dispatch) => {
   dispatch({ type: ADD });
@@ -60,3 +61,7 @@ export const setServiceModalType = (payload) => (dispatch) => {
 export const setError = (payload) => (dispatch) => {
   dispatch({ type: ERROR, payload });
 };
+
+export const sendEmail = (payload) => (dispatch) => {
+  dispatch({type: SEND_EMAIL, payload})
+}

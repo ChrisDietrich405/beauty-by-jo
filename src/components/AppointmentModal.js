@@ -3,9 +3,13 @@ import React, { useState, useEffect, useCallback } from "react";
 import { bindActionCreators } from "redux";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
-import emailjs from "@emailjs/browser";
 
-import { change, save, backService } from "../store/actions/schedule";
+import {
+  change,
+  save,
+  backService,
+  sendEmail,
+} from "../store/actions/schedule";
 
 import { index } from "../store/actions/service";
 import { verifyAvailability } from "../store/actions/service";
@@ -17,6 +21,7 @@ import TimeList from "./TimeList";
 import "../styles/components/modal.scss";
 import { display_appointment_modal } from "../store/actions/auth";
 import { toast } from "react-toastify";
+import AuthResource from "../resources/AuthResource";
 
 const DATE_FORMAT = "yyyy-MM-dd";
 
@@ -28,6 +33,7 @@ function AppointmentModal({
   change,
   schedule,
   save,
+  sendEmail,
   availability,
   verifyAvailability,
 }) {
@@ -47,9 +53,6 @@ function AppointmentModal({
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedDateTime, setSelectedDateTime] = useState(null);
 
-  /**
-   * Redux states
-   */
   const { serviceName, isBooking, specific_service, specific_service_id } =
     useSelector((state) => state.schedule.schedule);
 
@@ -57,14 +60,8 @@ function AppointmentModal({
 
   const { auth } = useSelector((state) => state);
 
-  /**
-   * Dispatch the actions
-   */
   const dispatch = useDispatch();
 
-  /**
-   * Functions
-   */
   const onModalBack = () => {
     if (showServices === true) {
       setShowAppointmentConfirmation(true);
@@ -102,14 +99,8 @@ function AppointmentModal({
       return;
     }
 
-    /**
-     * Local state
-     */
     setSavingAppointment(true);
 
-    /**
-     * Trigger the save function on redux - state
-     */
     const savePayload = {
       ...schedule,
       id: null,
@@ -119,9 +110,6 @@ function AppointmentModal({
 
     save(savePayload);
 
-    /**
-     * Check if the scheduling action had success
-     */
     if (
       scheduleReduxState &&
       scheduleReduxState.error &&
@@ -133,43 +121,15 @@ function AppointmentModal({
       setSavingAppointment(false);
       return;
     }
-
-    /**
-     * Then send the email
-     */
-    var templateParams = {
+    sendEmail({
       firstName: auth.user.firstName,
       lastName: auth.user.lastName,
       email: auth.user.email,
-      message: `Your ${specificService.toLowerCase()} appointment is set for ${DateTime.fromISO(
-        selectedDate
-      ).toLocaleString()} at ${selectedTime}. 
-      ${
-        typeof price == "undefined" || price == null
-          ? "Please finalize pricing with Jordan. Thank you."
-          : `The total cost will be ${price}. Thank you.`
-      }`,
-    };
-
-    emailjs
-      .send(
-        "service_y7fq1o3",
-        "template_89dj9rt",
-        templateParams,
-        "Y8tiOkzf-c7ZDYAZy"
-      )
-      .then(
-        function (response) {
-          // console.log('Email sent')
-        },
-        function (error) {
-          // console.log('Email not sent')
-        }
-      );
-
-    /**
-     * The confirmation
-     */
+      specificService,
+      selectedDate,
+      selectedTime,
+      price,
+    });
     showCurrentModal("confirmation");
   };
 
@@ -265,7 +225,6 @@ function AppointmentModal({
 
   const showCurrentModal = useCallback(
     (state) => {
-      console.log(state);
       switch (state) {
         case "services":
           if (serviceName === "Services") {
@@ -307,16 +266,10 @@ function AppointmentModal({
   );
 
   const getSpecificServices = () => {
-    const filterServices = services.filter((value) => value.name === service);
-    if (filterServices.length) {
-      return filterServices[0].specificService;
-    }
-    return [];
+    const foundService = services.find((value) => value.name === service);
+    return foundService ? foundService.specificService : []
   };
 
-  /**
-   * Use effects
-   */
   useEffect(() => {
     index();
     const now = DateTime.now();
@@ -398,6 +351,7 @@ const mapDispatchToProps = (dispatch) =>
       change,
       save,
       verifyAvailability,
+      sendEmail,
     },
     dispatch
   );
