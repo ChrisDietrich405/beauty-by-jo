@@ -2,13 +2,12 @@ import { Parallax } from "react-parallax";
 
 import "../styles/pages/policies.scss";
 
-import BeautySupplies from "../assets/images/logo.jpg";
+import BeautySupplies from "../assets/images/parallaxlogo.jpg";
 
 export default function Policies() {
   return (
     <div className="about-us-container">
       <Parallax
-        style={{ height: "200px" }}
         className="parallax-container"
         bgImage={BeautySupplies}
         strength={500}
