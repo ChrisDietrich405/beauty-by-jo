@@ -6,11 +6,7 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
-import {
-  backService,
-  bookService,
-  change,
-} from "../store/actions/schedule";
+import { backService, bookService, change } from "../store/actions/schedule";
 
 import "../styles/pages/services.scss";
 import "../styles/components/parallax.scss";
@@ -18,7 +14,6 @@ import "../styles/components/parallax.scss";
 import BeautySupplies from "../assets/images/about-us.jpg";
 
 export default function Waxing() {
-  
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -56,9 +51,11 @@ export default function Waxing() {
       </Parallax>
       <div className="price-content">
         <div className="price">
-        <div className="price-wrapper">
+          <div className="price-wrapper">
             <div className="price-title">
-              <h5>New Brazilian wax client or returning client after 5+ weeks</h5>
+              <h5>
+                New Brazilian wax client or returning client after 5+ weeks
+              </h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -112,10 +109,10 @@ export default function Waxing() {
               </button>
             </div>
           </div>
-          
+
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>FULL LEG</h5>
+              <h5>Full Leg</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -143,7 +140,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>HALF LEG (above or below the knee)</h5>{" "}
+              <h5>Half leg (above or below the knee)</h5>{" "}
             </div>
             <div className="price-cost-time">
               <p>
@@ -171,7 +168,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>FULL ARM</h5>
+              <h5>Full arm</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -199,7 +196,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>HALF ARM (above or below elbow)</h5>{" "}
+              <h5>Half arm (above or below elbow)</h5>{" "}
             </div>
             <div className="price-cost-time">
               <p>
@@ -227,7 +224,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>ARMPITS</h5>
+              <h5>Armpits</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -255,7 +252,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>BIKINI</h5>
+              <h5>Bikini</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -283,7 +280,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>FRENCH BIKINI</h5>
+              <h5>French bikini</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -311,7 +308,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>BRAZILIAN</h5>
+              <h5>Brazilian</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -339,7 +336,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>LIP OR CHIN</h5>
+              <h5>Lip or chin</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -367,7 +364,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>FULL FACE(lip, chin, brows, sides)</h5>
+              <h5>Full face(lip, chin, brows, sides)</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -395,7 +392,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>EYEBROW SHAPING</h5>
+              <h5>Eyebrow shaping</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -426,15 +423,3 @@ export default function Waxing() {
     </div>
   );
 }
-
-// Full leg- $55: 55 minutes including 10 minutes for clean up
-// Half Leg (above or below the knee)- $35: 40 minutes including 10 minute clean up
-// Full Arm- $40: 40 minutes including 10 minute clean up
-// Half Arm (above or below elbow)- $30: 30 minutes including 10 minute clean up
-// Armpits- $20: 20 minutes including 10 minute clean up
-// Bikini- $30: 25 minutes including 10 minute clean up
-// French Bikini- $45: 35 minutes including 10 minute clean up
-// Brazilian- $65: 45 minutes including 10 minute clean up
-// Lip or Chin- $10: 15 minutes including clean up
-// Full face (lip, chin, brows, sides)- $40: 30 minutes including 10 minute clean up time
-// <p>Eyebrow Shaping- $15: 20 minutes including 10 minute clean up</p>

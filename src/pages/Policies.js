@@ -2,20 +2,20 @@ import { Parallax } from "react-parallax";
 
 import "../styles/pages/policies.scss";
 
-import BeautySupplies from "../assets/images/about-us.jpg";
+import BeautySupplies from "../assets/images/logo.jpg";
 
 export default function Policies() {
   return (
     <div className="about-us-container">
       <Parallax
+        style={{ height: "200px" }}
         className="parallax-container"
         bgImage={BeautySupplies}
         strength={500}
       >
         <div className="parallax-container-text">
-          {/* <div style={{ height: 400 }}> */}
           <h1>
-            <b>Policies</b>
+            <b style={{ color: "#fff" }}>Policies</b>
           </h1>
         </div>
       </Parallax>
@@ -25,8 +25,8 @@ export default function Policies() {
         <h5>DEPOSIT AND PAYMENT:</h5>
         <ul>
           <li>
-            $15 non-refundable deposit through Zelle or venmo (Venmo:
-            Jordancahillxo)
+            $15 non-refundable deposit through Zelle, Venmo (Venmo:
+            Jordancahillxo), or Cashapp ($jcahill0422)
           </li>
           <li>
             No deposit = no appointment, once deposit is sent your appointment

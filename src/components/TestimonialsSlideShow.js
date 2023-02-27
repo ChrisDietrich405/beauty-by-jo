@@ -6,7 +6,6 @@ import people from "../assets/data/testimonial-slideshow-data";
 import "../styles/components/testimonials-slideshow.scss";
 
 const TestimonialSlideShow = () => {
-
   const [index, setIndex] = useState(0);
 
   return (

@@ -41,7 +41,7 @@ export default function Eyebrow() {
   const questions = [
     {
       id: 1,
-      title: "What is ?",
+      title: "What is Brow Lamination?",
       info: [
         "Brow Lamination is a chemical process that softens the keratin bonds and the hair follicle. This            allows me to create a new shape, playing with the brow hairs to create a thicker, and more structured       look. Whether you like them fluffy or more defined, this service is great for anyone looking to step            up their brow game.",
       ],
@@ -109,21 +109,6 @@ export default function Eyebrow() {
               <p>
                 <BiTimeFive /> 45 minutes
               </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 4,
-                    name: "Brow lamination",
-                    price: "50.00",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
             </div>
           </div>
           <div className="price-wrapper">
