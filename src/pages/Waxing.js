@@ -83,7 +83,7 @@ export default function Waxing() {
           </div>
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>Deluxe Vajacial</h5>
+              <h5>Deluxe vagacial</h5>
             </div>
             <div className="price-cost-time">
               <p>
@@ -98,7 +98,7 @@ export default function Waxing() {
                 onClick={() =>
                   handleBooking({
                     id: 7,
-                    name: "deluxe vajacial",
+                    name: "deluxe vagacial",
                     price: "100.00",
                     status: true,
                   })
@@ -112,7 +112,7 @@ export default function Waxing() {
 
           <div className="price-wrapper">
             <div className="price-title">
-              <h5>Full Leg</h5>
+              <h5>Full leg</h5>
             </div>
             <div className="price-cost-time">
               <p>
