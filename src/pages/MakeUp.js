@@ -4,6 +4,8 @@ import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
+import SpecificService from "../components/SpecificService";
+import { index } from "../store/actions/service";
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import { bookService, change, backService } from "../store/actions/schedule";
@@ -21,6 +23,9 @@ export default function MakeUp() {
 
   useEffect(() => {
     dispatch(display_appointment_modal(false));
+    if (services.length === 0) {
+      dispatch(index());
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -36,6 +41,16 @@ export default function MakeUp() {
     }
   };
 
+  const { services } = useSelector((state) => state.service);
+
+  const getSpecificService = (id) => {
+    return (
+      services.find((serviceItem) => serviceItem.id === id) || {
+        specificService: [],
+      }
+    );
+  };
+
   return (
     <div className="service-container">
       <Parallax
@@ -49,7 +64,16 @@ export default function MakeUp() {
       </Parallax>
       <div className="price-content">
         <div className="price">
-          <div className="price-wrapper">
+          {getSpecificService(1).specificService?.map((service) => {
+            return (
+              <SpecificService
+                key={service.id}
+                specific_service={service}
+                handleBooking={handleBooking}
+              />
+            );
+          })}
+          {/* <div className="price-wrapper">
             <h5 className="price-title">MAKE UP CONSULTATION</h5>
             <div className="price-cost-time">
               <p>
@@ -100,7 +124,7 @@ export default function MakeUp() {
                 Book
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="service-definition">

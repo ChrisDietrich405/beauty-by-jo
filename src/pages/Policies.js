@@ -2,12 +2,18 @@ import { Parallax } from "react-parallax";
 
 import "../styles/pages/policies.scss";
 
-import BeautySupplies from "../assets/images/parallaxlogo.jpg";
+import BeautySupplies from "../assets/images/logo.jpg";
 
 export default function Policies() {
   return (
     <div className="about-us-container">
-      <Parallax
+      <div
+        style={{ backgroundImage: `url(${BeautySupplies})` }}
+        className="banner-image"
+      >
+        <h1>Policies</h1>
+      </div>
+      {/* <Parallax
         className="parallax-container"
         bgImage={BeautySupplies}
         strength={500}
@@ -17,7 +23,7 @@ export default function Policies() {
             <b style={{ color: "#fff" }}>Policies</b>
           </h1>
         </div>
-      </Parallax>
+      </Parallax> */}
       <div className="policies-container">
         <h3>Please read the following before booking!</h3>
         <br />

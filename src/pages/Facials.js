@@ -5,30 +5,41 @@ import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
-import { display_appointment_modal } from "../store/actions/auth";
-import {
-  backService,
-  bookService,
-  change,
-} from "../store/actions/schedule";
+import { display_appointment_modal, get } from "../store/actions/auth";
+import { backService, bookService, change } from "../store/actions/schedule";
+import { index } from "../store/actions/service";
 
 import "../styles/pages/services.scss";
 import "../styles/pages/facials.scss";
 import "../styles/components/parallax.scss";
 
 import BeautySupplies from "../assets/images/about-us.jpg";
+import SpecificService from "../components/SpecificService";
 
 export default function Facials() {
-
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
     dispatch(display_appointment_modal(false));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { access_token } = useSelector((state) => state.auth);
+  const { services } = useSelector((state) => state.service);
+
+  const getSpecificService = (id) => {
+    return (
+      services.find((serviceItem) => serviceItem.id === id) || {
+        specificService: [],
+      }
+    );
+  };
+  console.log(getSpecificService(2));
+  useEffect(() => {
+    if (services.length === 0) {
+      dispatch(index());
+    }
+  }, []);
 
   const handleBooking = (service) => {
     dispatch(backService({ back_service: false }));
@@ -56,7 +67,17 @@ export default function Facials() {
       </Parallax>
       <div className="price-content">
         <div className="price">
-          <div className="price-wrapper">
+          {getSpecificService(2).specificService?.map((service) => {
+            return (
+              <SpecificService
+                key={service.id}
+                specific_service={service}
+                handleBooking={handleBooking}
+              />
+            );
+          })}
+
+          {/* <div className="price-wrapper">
             <div className="price-title">
               <h5>MINI MAKEOVER</h5>
               <p>
@@ -79,7 +100,7 @@ export default function Facials() {
                 onClick={() =>
                   handleBooking({
                     id: 18,
-                    name: "mini-makeover",
+                    name: "er",
                     price: "60.00",
                     status: true,
                   })
@@ -230,7 +251,7 @@ export default function Facials() {
                 Book
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
