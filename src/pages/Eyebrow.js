@@ -9,6 +9,7 @@ import { display_appointment_modal } from "../store/actions/auth";
 import { backService, bookService, change } from "../store/actions/schedule";
 
 import FAQ from "../components/FAQ";
+import SpecificService from "../components/SpecificService";
 
 import "../styles/pages/services.scss";
 import "../styles/components/parallax.scss";
@@ -83,6 +84,17 @@ export default function Eyebrow() {
       ],
     },
   ];
+
+  const { services } = useSelector((state) => state.service);
+
+  const getSpecificService = (id) => {
+    return (
+      services.find((serviceItem) => serviceItem.id === id) || {
+        specificService: [],
+      }
+    );
+  };
+
   return (
     <div className="service-container">
       <Parallax
@@ -98,105 +110,18 @@ export default function Eyebrow() {
       </Parallax>
       <div className="price-content">
         <div className="price">
-          <div className="price-wrapper">
-            <div className="price-title">
-              <h5>BROW LAMINATION</h5>
-            </div>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> $50
-              </p>
-              <p>
-                <BiTimeFive /> 45 minutes
-              </p>
-            </div>
-          </div>
-          <div className="price-wrapper">
-            <div className="price-title">
-              <h5>BROW LAMI TRIO</h5>
-            </div>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> $70
-              </p>
-              <p>
-                <BiTimeFive /> 1hr 15minutes
-              </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 6,
-                    name: "Brow lami trio",
-                    price: "70.00",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
-            </div>
-          </div>
-          <div className="price-wrapper">
-            <div className="price-title">
-              <h5>BROW LAMINATION + WAX OR TINT</h5>
-            </div>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> $60
-              </p>
-              <p>
-                <BiTimeFive /> 55 minutes
-              </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 6,
-                    name: "Brow lamination wax or tint",
-                    price: "60.00",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
-            </div>
-          </div>
-          <div className="price-wrapper">
-            <div className="price-title">
-              <h5>BROW LAMINATION + WAX AND TINT</h5>
-            </div>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> $70
-              </p>
-              <p>
-                <BiTimeFive /> 1 hour
-              </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 5,
-                    name: "Brow lamination wax and tint",
-                    price: "70.00",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
-            </div>
-          </div>
+          {getSpecificService(3).specificService?.map((service) => {
+            return (
+              <SpecificService
+                key={service.id}
+                specific_service={service}
+                handleBooking={handleBooking}
+              />
+            );
+          })}
         </div>
       </div>
+
       <div className="service-description">
         <FAQ questions={questions} />
       </div>

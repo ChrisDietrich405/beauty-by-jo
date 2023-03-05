@@ -10,20 +10,8 @@ export default function Policies() {
       <div
         style={{ backgroundImage: `url(${BeautySupplies})` }}
         className="banner-image"
-      >
-        <h1>Policies</h1>
-      </div>
-      {/* <Parallax
-        className="parallax-container"
-        bgImage={BeautySupplies}
-        strength={500}
-      >
-        <div className="parallax-container-text">
-          <h1>
-            <b style={{ color: "#fff" }}>Policies</b>
-          </h1>
-        </div>
-      </Parallax> */}
+      ></div>
+      <h1 style={{ marginTop: "20px", textAlign: "center" }}>Policies</h1>
       <div className="policies-container">
         <h3>Please read the following before booking!</h3>
         <br />

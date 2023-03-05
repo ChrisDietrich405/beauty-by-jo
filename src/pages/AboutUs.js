@@ -2,24 +2,17 @@ import { Parallax } from "react-parallax";
 
 import "../styles/pages/about-us.scss";
 
-import BeautySupplies from "../assets/images/about-us.jpg";
+import BeautySupplies from "../assets/images/logo.jpg";
 import GridPic from "../assets/images/grid-pic1.jpg";
 
 export default function AboutUs() {
   return (
     <div className="about-us-container">
-      <Parallax
-        className="parallax-container"
-        bgImage={BeautySupplies}
-        strength={500}
-      >
-        <div className="parallax-container-text">
-          {/* <div style={{ height: 400 }}> */}
-          <h1>
-            <b>About Us</b>
-          </h1>
-        </div>
-      </Parallax>
+      <div
+        style={{ backgroundImage: `url(${BeautySupplies})` }}
+        className="banner-image"
+      ></div>
+      <h1 style={{ marginTop: "20px", textAlign: "center" }}>About Us</h1>
       <div className="about-us-content">
         <h2>Welcome to Beauty By Jo!</h2>
         <p>
@@ -36,7 +29,6 @@ export default function AboutUs() {
         </p>
       </div>
       <div className="about-us-intro">
-       
         <div className="about-us-intro-pic-container">
           <img className="about-us-intro-pic" src={GridPic} alt="" />
         </div>

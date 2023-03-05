@@ -73,58 +73,7 @@ export default function MakeUp() {
               />
             );
           })}
-          {/* <div className="price-wrapper">
-            <h5 className="price-title">MAKE UP CONSULTATION</h5>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> $50
-              </p>
-              <p>
-                <BiTimeFive /> 1h - 1h30min
-              </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 1,
-                    name: "Make up consultation",
-                    price: "50.00",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
-            </div>
-          </div>
-          <div className="price-wrapper">
-            <h5 className="price-title">MAKE UP SESSION</h5>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> TBD
-              </p>
-              <p>
-                <BiTimeFive /> 2 hours
-              </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 1,
-                    name: "Make up session",
-                    price: "TBD",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
-            </div>
-          </div> */}
+         
         </div>
       </div>
       <div className="service-definition">

@@ -4,6 +4,8 @@ import { Parallax } from "react-parallax";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
+import SpecificService from "../components/SpecificService";
+
 import { useDispatch, useSelector } from "react-redux";
 import { display_appointment_modal } from "../store/actions/auth";
 import {
@@ -79,6 +81,16 @@ export default function Lashes() {
     },
   ];
 
+  const { services } = useSelector((state) => state.service);
+
+  const getSpecificService = (id) => {
+    return (
+      services.find((serviceItem) => serviceItem.id === id) || {
+        specificService: [],
+      }
+    );
+  };
+
   return (
     <div className="service-container">
       <Parallax
@@ -93,62 +105,15 @@ export default function Lashes() {
       </Parallax>
       <div className="price-content">
         <div className="price">
-          <div className="price-wrapper">
-            <div className="price-title">
-              <h5>LASH LIFT</h5>
-            </div>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> $55
-              </p>
-              <p>
-                <BiTimeFive /> 45min
-              </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 2,
-                    name: "lash lift",
-                    price: "55.00",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
-            </div>
-          </div>
-          <div className="price-wrapper">
-            <div className="price-title">
-              <h5>LASH LIFT AND TINT</h5>
-            </div>
-            <div className="price-cost-time">
-              <p>
-                <AiOutlineDollarCircle /> $70
-              </p>
-              <p>
-                <BiTimeFive /> 55min
-              </p>
-            </div>
-            <div className="button-wrapper">
-              <button
-                onClick={() =>
-                  handleBooking({
-                    id: 3,
-                    name: "lash lift and tint",
-                    price: "70.00",
-                    status: true,
-                  })
-                }
-                className="price-button"
-              >
-                Book
-              </button>
-            </div>
-          </div>
+          {getSpecificService(4).specificService?.map((service) => {
+            return (
+              <SpecificService
+                key={service.id}
+                specific_service={service}
+                handleBooking={handleBooking}
+              />
+            );
+          })}
         </div>
       </div>
       <FAQ questions={faqContent} />
