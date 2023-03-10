@@ -65,6 +65,8 @@ function Header({ access_token, add, get }) {
       <div className="header">
         <div className="header-container">
           <a
+            target="_blank"
+            rel="noreferrer"
             href="https://book.heygoldie.com/Beauty-by-Jo-f7fc9317598a"
             className="btn"
           >
