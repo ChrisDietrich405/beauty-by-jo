@@ -46,11 +46,11 @@ function Navbar2({ display_appointment_modal }) {
           </Link>
         </li>
 
-        <li className="nav-item" id="service-item">
+        {/* <li className="nav-item" id="service-item">
           <button className="services-btn btn" onClick={handleServices}>
             <span className="noselect">Services</span>
           </button>
-        </li>
+        </li> */}
 
         <li className="nav-item">
           <Link to="/policies" className="nav-link">
