@@ -19,16 +19,13 @@ import { SCROLL_TOP, SHOW_ERROR, SHOW_SUCCESS } from "../store/actions/toast";
 import "react-toastify/dist/ReactToastify.css";
 
 function Header({ access_token, add, get }) {
-
   const dispatch = useDispatch();
 
-  const { show_appointment_modal } = useSelector(
-    (state) => state.auth
-  );
+  const { show_appointment_modal } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    get();
-  }, [get]);
+  // useEffect(() => {
+  //   get();
+  // }, [get]);
 
   useEffect(() => {
     const unsubscribeToastSuccess = subscribe.on(SHOW_SUCCESS, (action) => {
@@ -67,7 +64,15 @@ function Header({ access_token, add, get }) {
       />
       <div className="header">
         <div className="header-container">
-          {access_token === null ? (
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://book.heygoldie.com/Beauty-by-Jo-f7fc9317598a"
+            className="btn"
+          >
+            Schedule an appointment
+          </a>
+          {/* {access_token === null ? (
             <Link
               className="btn"
               to={{
@@ -80,10 +85,11 @@ function Header({ access_token, add, get }) {
               Schedule an appointment
             </Link>
           ) : (
+           
             <button className="btn" onClick={handleSchedule}>
               Schedule an appointment
             </button>
-          )}
+          )} */}
           <Link to="/" className="logo-btn">
             <img src={Logo} alt="Logo" />
           </Link>
@@ -92,12 +98,12 @@ function Header({ access_token, add, get }) {
             Contact Us
           </Link>
         </div>
-        {show_appointment_modal && (
+        {/* {show_appointment_modal && (
           <AppointmentModal
             label="Pick a service to schedule your appointment"
             onClose={display_appointment_modal(false)}
           />
-        )}
+        )} */}
       </div>
     </>
   );

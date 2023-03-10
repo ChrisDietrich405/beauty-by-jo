@@ -46,11 +46,11 @@ function Navbar2({ display_appointment_modal }) {
           </Link>
         </li>
 
-        <li className="nav-item" id="service-item">
+        {/* <li className="nav-item" id="service-item">
           <button className="services-btn btn" onClick={handleServices}>
             <span className="noselect">Services</span>
           </button>
-        </li>
+        </li> */}
 
         <li className="nav-item">
           <Link to="/policies" className="nav-link">
@@ -76,7 +76,7 @@ function Navbar2({ display_appointment_modal }) {
           </Link>
         </li>
       </ul>
-      <div className={`login-item ${isOpen ? "" : "disable-nav"} `}>
+      {/* <div className={`login-item ${isOpen ? "" : "disable-nav"} `}>
         <Link to="/signin" className="nav-link">
           <div className="btn login-btn">
             <BsFillPersonFill color="white" size="30" />
@@ -89,7 +89,7 @@ function Navbar2({ display_appointment_modal }) {
             )}
           </div>
         </Link>
-      </div>{" "}
+      </div>{" "} */}
       {show_service_modal && (
         <ServicesModal
           label="Go to page"
