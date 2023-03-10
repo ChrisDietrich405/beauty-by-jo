@@ -84,7 +84,7 @@ function Navbar({ display_appointment_modal }) {
             </li>
           </ul>
           <div className="position-login">
-            <Link to="/signin" className="nav-link">
+            {/* <Link to="/signin" className="nav-link">
               <div className="btn">
                 <BsFillPersonFill color="white" size="30" />
                 {signin_success ? (
@@ -95,7 +95,7 @@ function Navbar({ display_appointment_modal }) {
                   <span className="noselect">Log In</span>
                 )}
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

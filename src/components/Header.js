@@ -19,16 +19,13 @@ import { SCROLL_TOP, SHOW_ERROR, SHOW_SUCCESS } from "../store/actions/toast";
 import "react-toastify/dist/ReactToastify.css";
 
 function Header({ access_token, add, get }) {
-
   const dispatch = useDispatch();
 
-  const { show_appointment_modal } = useSelector(
-    (state) => state.auth
-  );
+  const { show_appointment_modal } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    get();
-  }, [get]);
+  // useEffect(() => {
+  //   get();
+  // }, [get]);
 
   useEffect(() => {
     const unsubscribeToastSuccess = subscribe.on(SHOW_SUCCESS, (action) => {

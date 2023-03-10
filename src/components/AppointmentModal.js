@@ -11,7 +11,7 @@ import {
   sendEmail,
 } from "../store/actions/schedule";
 
-import { index } from "../store/actions/service";
+// import { index } from "../store/actions/service";
 import { verifyAvailability } from "../store/actions/service";
 
 import ServicesList from "./ServicesList";
@@ -267,14 +267,15 @@ function AppointmentModal({
 
   const getSpecificServices = () => {
     const foundService = services.find((value) => value.name === service);
-    return foundService ? foundService.specificService : []
+    return foundService ? foundService.specificService : [];
   };
 
   useEffect(() => {
-    index();
+    // index();
     const now = DateTime.now();
     setSelectedDate(now.toFormat(DATE_FORMAT));
-  }, [index]);
+  }, []);
+  // }, [index]);
 
   useEffect(() => {
     if (isBooking) {
@@ -347,7 +348,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
-      index,
+      // index,
       change,
       save,
       verifyAvailability,
