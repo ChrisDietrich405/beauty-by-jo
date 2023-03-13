@@ -12,9 +12,18 @@ export default function AboutUs() {
         style={{ backgroundImage: `url(${BeautySupplies})` }}
         className="banner-image"
       ></div>
-      <h1 style={{ marginTop: "20px", textAlign: "center" }}>About Us</h1>
+      <h1
+        style={{
+          margin: "20px auto",
+          width: "150px",
+          textAlign: "center",
+          fontSize: "27px",
+          borderBottom: "1px solid lightgray",
+        }}
+      >
+        About Us
+      </h1>
       <div className="about-us-content">
-        <h2>Welcome to Beauty By Jo!</h2>
         <p>
           My name is Jordan Cahill, I am a 21 year old licensed esthetician
           located in Glen Burnie, MD. I've had a love for all things beauty for

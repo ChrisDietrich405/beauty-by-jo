@@ -13,7 +13,17 @@ export default function Testimonials() {
         style={{ backgroundImage: `url(${BeautySupplies})` }}
         className="banner-image"
       ></div>
-      <h1 style={{ marginTop: "20px", textAlign: "center" }}>Testimonials</h1>
+      <h1
+        style={{
+          margin: "20px auto",
+          width: "200px",
+          textAlign: "center",
+          fontSize: "27px",
+          borderBottom: "1px solid lightgray",
+        }}
+      >
+        Testimonials
+      </h1>
       <TestimonialsSlideShow />
     </div>
   );

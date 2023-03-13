@@ -8,6 +8,22 @@ import "../styles/components/testimonials-slideshow.scss";
 const TestimonialSlideShow = () => {
   const [index, setIndex] = useState(0);
 
+  const moveLeft = () => {
+    if (index === 0) {
+      setIndex(people.length - 1);
+    } else {
+      setIndex(index - 1);
+    }
+  };
+
+  const moveRight = () => {
+    if (people.length === index + 1) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  };
+
   return (
     <div className="testimonials-slideshow">
       <section className="section">
@@ -37,10 +53,10 @@ const TestimonialSlideShow = () => {
           })}
 
           <div className="arrows-wrapper">
-            <button className="prev" onClick={() => setIndex(index - 1)}>
+            <button className="prev" onClick={moveLeft}>
               <FiChevronLeft />
             </button>
-            <button className="next" onClick={() => setIndex(index + 1)}>
+            <button className="next" onClick={moveRight}>
               <FiChevronRight />
             </button>
           </div>
