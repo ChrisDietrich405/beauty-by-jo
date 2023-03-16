@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-import Eyebrow from "../assets/images/home2.jpg";
+import Eyebrow from "../assets/images/home-pic.jpg";
 
 export default function ZoomInZoomOut() {
   const scrollTo = useRef();
@@ -18,7 +18,10 @@ export default function ZoomInZoomOut() {
   return (
     <div
       ref={scrollTo}
-      style={{ backgroundImage: "url(" + Eyebrow + ")" }}
+      style={{
+        backgroundImage: "url(" + Eyebrow + ")",
+        width: "45%"
+      }}
     ></div>
   );
 }

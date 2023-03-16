@@ -11,7 +11,17 @@ export default function Policies() {
         style={{ backgroundImage: `url(${BeautySupplies})` }}
         className="banner-image"
       ></div>
-      <h1 style={{ marginTop: "20px", textAlign: "center" }}>Policies</h1>
+      <h1
+        style={{
+          margin: "20px auto",
+          width: "150px",
+          textAlign: "center",
+          fontSize: "27px",
+          borderBottom: "1px solid lightgray",
+        }}
+      >
+        Policies
+      </h1>
       <div className="policies-container">
         <h3>Please read the following before booking!</h3>
         <br />
