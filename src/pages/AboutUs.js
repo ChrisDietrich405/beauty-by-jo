@@ -3,7 +3,7 @@ import { Parallax } from "react-parallax";
 import "../styles/pages/about-us.scss";
 
 import BeautySupplies from "../assets/images/logo.jpg";
-import GridPic from "../assets/images/bbj1.jpg";
+import GridPic from "../assets/images/about-us.jpg";
 
 export default function AboutUs() {
   return (
