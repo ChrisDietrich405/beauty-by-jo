@@ -8,6 +8,7 @@ import SlideShow from "../components/SlideShow";
 import ZoomInZoomOut from "../components/ZoomInZoomOut";
 
 import BeautySupplies from "../assets/images/home5.jpg";
+import GridPic from "../assets/images/grid-item-a.jpg";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -53,9 +54,13 @@ export default function Home() {
           </div>
         </Parallax>
       </div>
+      
       <div className="grid">
         <div className="grid-item-container">
-          <div className="grid-item-1 grid-item" />
+          <div>
+            <img className="grid-item-1 grid-item" src={GridPic} alt="" />
+          </div>
+
           <div className="grid-item-2 grid-item" />
           <div className="grid-item-3 grid-item" />
           <div className="grid-item-4 grid-item" />
